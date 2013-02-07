@@ -1,0 +1,71 @@
+<script language="JavaScript">
+	function showProductsByCategory(category) {
+		location='/refinery/sites/products?category='+category+'&gender=<%=@gender%>'
+	}
+	function showProductsByGender(gender) {
+		location='/refinery/sites/products?gender='+gender+'&category=<%=@category%>'
+	}
+</script>
+<ul>
+  <% if ::Refinery::Sites::Admin::ProductsController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.sites_admin_products_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_sites_admin_product_path,
+                :class => "add_icon" %>
+  </li>
+  <% if !searching? && ::Refinery::Sites::Admin::ProductsController.sortable? && ::Refinery::Sites::Product.any? %>
+    <li>
+      <%= link_to t('.reorder', :what => "Products"),
+                  refinery.sites_admin_products_path,
+                  :id => "reorder_action",
+                  :class => "reorder_icon" %>
+
+      <%= link_to t('.reorder_done', :what => "Products"),
+                  refinery.sites_admin_products_path,
+                  :id => "reorder_action_done",
+                  :style => "display: none;",
+                  :class => "reorder_icon" %>
+    </li>
+  <% end %>
+</ul>
+<% if @site.use_categories %>
+  <span style="font-weight: bold;"><%= t('filter_category') %></span>
+	<hr>
+	<form name="select-category">
+	  <ul>
+	    <li>
+	      <%= radio_button_tag('none', '', @category == 0, :onClick => 'showProductsByCategory(0)') %>
+	      <%= t('no_category') %>
+	    </li>
+	    <% ::Refinery::Sites::ProductCategory.where({:site_id => session[:current_site]
+	                                                }).order("position").each do |category| %>
+		    <li>
+		      <%= radio_button_tag(category.name, '',
+		                           @category == category.id,
+		                           :onClick => 'showProductsByCategory(' + category.id.to_s + ')') %>
+		      <%= category.name %>
+		    </li>
+			<% end %>
+	  </ul>
+	</form>
+<% end %>
+<% if @site.use_gender %>
+  <span style="font-weight: bold;"><%= t('filter_gender') %></span>
+	<hr>
+	<form name="select-gender">
+	  <ul>
+	    <li>
+	      <%= radio_button_tag(:none, '', (@gender == 0), :onClick => 'showProductsByGender(0)') %><%= t('none') %>
+	    </li>
+	    <li>
+	      <%= radio_button_tag(:male, '', (@gender == 1), :onClick => 'showProductsByGender(1)') %><%= t('male') %>
+	    </li>
+	    <li>
+	      <%= radio_button_tag(:female, '', (@gender == 2), :onClick => 'showProductsByGender(2)') %><%= t('female') %>
+	    </li>
+	  </ul>
+	</form>
+<% end %>

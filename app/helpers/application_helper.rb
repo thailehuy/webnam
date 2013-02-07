@@ -1,0 +1,75 @@
+module ApplicationHelper
+
+
+	def darken_color(hex_color, amount=0.5)
+		hex_color = hex_color.gsub('#','')
+		rgb = hex_color.scan(/../).map {|color| color.hex}
+		rgb[0] = (rgb[0].to_i * amount).round
+		rgb[1] = (rgb[1].to_i * amount).round
+		rgb[2] = (rgb[2].to_i * amount).round
+		"#%02x%02x%02x" % rgb
+	end
+
+	def get_size_from_style(style)
+		style.split(' ')[0]
+	end
+
+	def get_color_from_style(style)
+		style.split(' ')[1]
+	end
+
+	def get_weight_from_style(style)
+		style.split(' ')[2]
+  end
+
+
+  def menu_title(page)
+    case page
+      when 'aboutus'
+        @site.aboutus_page.menu_title.blank? ? t('aboutus') : @site.aboutus_page.menu_title
+
+      when 'services'
+        @site.services_page.menu_title.blank? ? t('services') : @site.services_page.menu_title
+
+      when 'products'
+        @site.products_title.blank? ? t('products') : @site.products_title
+
+      else
+        t(page)
+    end
+  end
+
+
+  def language_display_tag(language)
+
+    check_box_tag "site[languages][]",
+                  language,
+                  @site.languages.include?(language),
+                  :class => 'display'
+
+  end
+
+  def carousel_page_display_tag(page)
+
+    check_box_tag "site[carousel_pages][]",
+                  page,
+                  @site.carousel_pages.include?(page),
+                  :class => 'display'
+
+  end
+
+
+  def background_repeat(bg_repeat)
+    Refinery::Sites::Design::BG_REPEAT[bg_repeat]
+  end
+
+
+  def product_length(picture)
+    if picture.nil?
+      'product-long'
+    else
+      'product-short'
+    end
+  end
+
+end

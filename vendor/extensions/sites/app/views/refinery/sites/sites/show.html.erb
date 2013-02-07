@@ -1,0 +1,155 @@
+<% if @site.published %>
+  <% content_for :stylesheets do %>
+    <%= stylesheet_link_tag "style" %>
+  <% end %>
+
+  <div id="container">
+	  <header id="header">
+	    <nav id="main-menu">
+	      <ul>
+	        <% @menu_items.each do |site_page| %>
+			      <% if site_page == 'home' %>
+	            <li>
+	              <a href="/sites/<%= @slug %>/<%= site_page %>" title="<%= t(site_page) %>">
+	                <% if @site.logo.nil?  %>
+	                  <div class="menu-text"  <% if site_page == @selected_menu %> style="color: white;"<% end %>><%= @site.name %></div>
+			            <% else %>
+			              <div class="menu-logo">
+                      <%= image_fu @site.logo %>
+			              </div>
+		              <% end %>
+	              </a>
+	            </li>
+	          <% else %>
+	            <li>
+	              <a href="/sites/<%= @slug %>/<%= site_page %>" title="<%= menu_title(site_page) %>">
+	                <div class="menu-text"  <% if site_page == @selected_menu %> style="color: white;"<% end %>>
+	                  <%= menu_title(site_page) %>
+	                </div>
+	              </a>
+	            </li>
+	          <% end %>
+	        <% end %>
+	      </ul>
+	    </nav>
+		  <div id="search-bar">
+		    <%= form_tag (refinery.search_site_url(@site)), :action => "search", :method => :get do %>
+			      <%= text_field_tag(:query, {}, {:class => "search-text", :value => (params[:query] if params[:query])}) %>
+			      <%= image_submit_tag("loupe.png", :class => 'search-img') %>
+			    <% end %>
+		  </div>
+	  </header>
+	  <% unless @site.music.nil? %>
+	    <%= image_tag 'music-on.png', :id => "music-control",
+	                  :style => "position: absolute; left:7px;top:57px;z-index:999" %>
+	    <audio id="music-player" autoplay="autoplay" loop="loop" preload="auto">
+	      <source src='<%= @site.music.url %>' />
+	    </audio>
+	  <% end %>
+	  <div id="language-menu">
+	    <% if (locales ||= ::Refinery::I18n.frontend_locales).present? and locales.many? %>
+	      <ul>
+	        <% locales.each do |new_locale| %>
+			      <% if @site.languages_key.include?(new_locale.to_s) %>
+		          <li>
+		            <%= link_to refinery_icon_tag("flags/#{new_locale}.png", :size => '16x11'),
+		                        refinery.url_for(params.merge(new_locale: new_locale)) %>
+		          </li>
+	          <% end %>
+	        <% end %>
+	      </ul>
+	    <% end %>
+	  </div>
+	  <div id="main" role="main">
+	    <%= render :template => @requested_page %>
+	  </div>
+	  <footer id="footer">
+	    <div class="extra">
+	      <a href="/sites/<%= @slug %>/contact" title="<%= t('contact') %>" class="contactus"><%= t('contact') %></a>
+	    </div>
+	    <div class="social-icons">
+	      <% unless @site.facebook_page.nil? || @site.facebook_page.blank? %>
+	        <%=  link_to image_tag('/assets/facebook.png'), @site.facebook_page, :target => :blank, :title => 'Facebook' %>
+	      <% end %>
+	      <% unless @site.zingme_page.nil? || @site.zingme_page.blank? %>
+	        <%=  link_to image_tag('/assets/zingme.png'), @site.zingme_page, :target => :blank, :title => 'ZingMe' %>
+	      <% end %>
+	      <% unless @site.govn_page.nil? || @site.govn_page.blank? %>
+	        <%=  link_to image_tag('/assets/go-vn.png'), @site.govn_page, :target => :blank, :title => 'Go Vn' %>
+	      <% end %>
+	      <% unless @site.twitter_page.nil? || @site.twitter_page.blank? %>
+	        <%=  link_to image_tag('/assets/twitter.png'), @site.twitter_page, :target => :blank, :title => 'Twitter' %>
+	      <% end %>
+	      <% unless @site.linkedin_page.nil? || @site.linkedin_page.blank? %>
+	        <%=  link_to image_tag('/assets/linkedin.png'), @site.linkedin_page, :target => :blank, :title => 'LinkedIn' %>
+	      <% end %>
+	      <% unless @site.youtube_page.nil? || @site.youtube_page.blank? %>
+	        <%=  link_to image_tag('/assets/youtube.png'), @site.youtube_page, :target => :blank, :title => 'YouTube' %>
+	      <% end %>
+	    </div>
+		  <%= link_to 'http://webnam.net.vn/', :target => :top do %>
+	      <% if @site.webnam_logo.nil?  %>
+	        <div class="copyright"><%= t('powered_by') %> WebNam</div>
+	      <% else %>
+	        <div class="copyright"><p><%= t('powered_by') %></p>
+	          <%= image_tag @site.webnam_logo.thumbnail("x32").url %></div>
+	      <% end %>
+		  <% end %>
+	  </footer>
+	</div> <!--! end of #container -->
+
+	<% content_for :javascripts do %>
+	  <script>
+
+		  $('#music-control').click(function() {
+			  if ($(this).attr('src') == "/assets/music-on.png") {
+				  $('#music-player').trigger('pause');
+				  $(this).attr('src','/assets/music-off.png');
+			  } else {
+				  $('#music-player').trigger('play');
+				  $(this).attr('src','/assets/music-on.png');
+			  }
+		  });
+
+		  $(document).ready(function() {
+
+		    color = '<%= @site.design.foreground_color %>';
+			  shade = -25;
+			  var colorInt = parseInt(color.substring(1),16);
+
+			  var R = (colorInt & 0xFF0000) >> 16;
+			  var G = (colorInt & 0x00FF00) >> 8;
+			  var B = (colorInt & 0x0000FF) >> 0;
+
+			  R = R + Math.floor((shade/255)*R);
+			  G = G + Math.floor((shade/255)*G);
+			  B = B + Math.floor((shade/255)*B);
+
+			  var newColorInt = (R<<16) + (G<<8) + (B);
+			  var newColorStr = "#"+newColorInt.toString(16);
+
+			  $('tr:nth-child(odd)').css('background-color',newColorStr);
+		  });
+
+	  </script>
+  <% end %>
+
+<% else %>
+	<style type="text/css">
+		body {
+			background: #56CFF1;
+		}
+		img {
+			width: 300px;
+			height: 100px;
+			margin: 50px 0px;
+		}
+	</style>
+	<div style="width: 100%;height: 100%">
+	  <div style="width: 500px;text-align: center;margin: 10px auto 0px;font-family: Calibri;font-size: 1.3em;color: white">
+	    <%= image_tag 'white-pink.png' %><br/>
+	    <%= raw t('not_activated', :site_name => @site.name) %>
+	  </div>
+	</div>
+
+<% end %>

@@ -1,0 +1,2 @@
+$('#print-coupon-<%=@coupon.id%>').html("<%= escape_javascript(render '/refinery/sites/coupons/printed_coupon') %>");
+window.print();

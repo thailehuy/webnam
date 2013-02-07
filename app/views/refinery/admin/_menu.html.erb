@@ -1,0 +1,30 @@
+<% is_owner = !current_refinery_user.site_id.present? %>
+<% editing_site = (session[:current_site].present? && (session[:current_site] != -1)) %>
+<% is_new_site = (not @site.nil?) && @site.new_record? %>
+<nav id="menu">
+  <% ::Refinery::Plugins.active.in_menu.each do |plugin| -%>
+		<% case plugin.title %>
+	    <% when 'Sites' %>
+        <%= link_to ((!is_owner || editing_site) ? 'Site' : 'Sites'), refinery.url_for(plugin.url),
+                    :class => ("active" if plugin.highlighted?(params)),
+                    :id => "plugin_#{plugin.name}" %>
+
+
+			<%  when 'Users' %>
+        <%= link_to ((!is_owner || editing_site) ? 'Editors' : 'Administrators'), refinery.url_for(plugin.url),
+                    :class => ("active" if plugin.highlighted?(params)),
+                    :id => "plugin_#{plugin.name}" unless is_new_site %>
+
+			<% else %>
+				<% unless ['Dashboard','Pages'].include?(plugin.title) %>
+	        <%= link_to plugin.title, refinery.url_for(plugin.url),
+	                    :class => ("active" if plugin.highlighted?(params)),
+	                    :id => "plugin_#{plugin.name}" unless !editing_site || is_new_site %>
+        <% end %>
+		<% end %>
+	<% end %>
+</nav>
+
+
+
+

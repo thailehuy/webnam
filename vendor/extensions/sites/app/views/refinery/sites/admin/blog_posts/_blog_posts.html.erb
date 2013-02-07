@@ -1,0 +1,2 @@
+<%= will_paginate @blog_posts if Refinery::Sites::Admin::BlogPostsController.pageable? %>
+<%= render 'sortable_list' %>

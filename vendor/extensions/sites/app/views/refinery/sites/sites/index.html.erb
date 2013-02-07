@@ -1,0 +1,11 @@
+<% content_for :body_content_left do %>
+  <ul id="sites">
+    <% @sites.each do |site| %>
+      <li>
+        <%= link_to site.name, refinery.sites_site_path(site) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

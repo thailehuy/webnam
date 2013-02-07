@@ -1,0 +1,11 @@
+<% content_for :body_content_left do %>
+  <ul id="home_pages">
+    <% @home_pages.each do |home_page| %>
+      <li>
+        <%= link_to home_page, refinery.sites_home_page_path(home_page) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

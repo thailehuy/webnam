@@ -1,0 +1,143 @@
+<style type="text/css">
+
+	.goog-picker-container {
+		background-color: #AAAAAA;
+/*		display: none; */
+/*		position: absolute; */
+		width: 158px;
+		margin: 15px 15px;
+	}
+	.goog-palette {
+		-moz-user-select: none;
+		cursor: default;
+		outline: medium none;
+		padding: 5px;
+	}
+	.goog-palette-table {
+		border-collapse: collapse;
+	}
+	.goog-palette-cell {
+		border: 0 none;
+		font-size: 1px;
+		height: 13px;
+		margin: 0;
+		text-align: center;
+		vertical-align: middle;
+		width: 13px;
+	}
+	.goog-palette-colorswatch {
+		border: 1px solid #FFFFFF;
+		height: 13px;
+		margin: 3px;
+		position: relative;
+		width: 13px;
+	}
+	.goog-palette-cell-hover .goog-palette-colorswatch {
+		border: 1px solid #666666;
+	}
+	.goog-palette-cell-selected .goog-palette-colorswatch {
+		border: 1px solid #000000;
+		color: #FFFFFF;
+	}
+	#choosen-google-color {
+		display: inline-block;
+		height: 17px;
+		vertical-align: bottom;
+		padding: 0.4% 0.7%;
+		color: white;
+		background-color: black;
+		border-color: #A0A0A0;
+		border-style: solid;
+		border-width: 1px;
+		border-radius: 3px;
+		-moz-border-radius: 3px;
+		-webkit-border-radius: 3px;
+	}
+</style>
+<div class='field'>
+  <%= f.label :bg_color -%>
+  <%= f.hidden_field :bg_color  -%>
+	<div id="choosen-google-color">account</div>
+</div>
+<div id="bg-picker-div" class="goog-picker-container">
+	<div class="goog-palette" style="-moz-user-select: none;" tabindex="0">
+	  <table cellspacing="0" cellpadding="0" class="goog-palette-table" role="grid" aria-activedescendent="goog-palette-cell-3">
+	    <tbody class="goog-palette-body">
+	    <tr class="goog-palette-row"><td class="goog-palette-cell" id="goog-palette-cell-0" role="gridcell"><div class="goog-palette-colorswatch" style="background-color: rgb(204, 51, 51);" title="RGB (204, 51, 51)"></div>
+	    </td><td class="goog-palette-cell" id="goog-palette-cell-1" role="gridcell"><div class="goog-palette-colorswatch" style="background-color: rgb(221, 68, 119);" title="RGB (221, 68, 119)"></div>
+	    </td><td class="goog-palette-cell" id="goog-palette-cell-2" role="gridcell"><div class="goog-palette-colorswatch" style="background-color: rgb(153, 68, 153);" title="RGB (153, 68, 153)"></div>
+	    </td><td class="goog-palette-cell" id="goog-palette-cell-3" role="gridcell"><div class="goog-palette-colorswatch" style="background-color: rgb(102, 51, 204);" title="RGB (102, 51, 204)"></div>
+	    </td><td class="goog-palette-cell" id="goog-palette-cell-4" role="gridcell"><div class="goog-palette-colorswatch" style="background-color: rgb(51, 102, 153);" title="RGB (51, 102, 153)"></div>
+	    </td><td class="goog-palette-cell goog-palette-cell-selected" id="goog-palette-cell-5" role="gridcell"><div class="goog-palette-colorswatch" style="background-color: rgb(51, 102, 204);" title="RGB (51, 102, 204)"></div>
+	    </td><td class="goog-palette-cell" id="goog-palette-cell-6" role="gridcell"><div class="goog-palette-colorswatch" style="background-color: rgb(34, 170, 153);" title="RGB (34, 170, 153)"></div>
+	    </td></tr><tr class="goog-palette-row"><td class="goog-palette-cell" id="goog-palette-cell-7" role="gridcell"><div class="goog-palette-colorswatch" style="background-color: rgb(50, 146, 98);" title="RGB (50, 146, 98)"></div>
+	    </td><td class="goog-palette-cell" id="goog-palette-cell-8" role="gridcell"><div class="goog-palette-colorswatch" style="background-color: rgb(16, 150, 24);" title="RGB (16, 150, 24)"></div>
+	    </td><td class="goog-palette-cell" id="goog-palette-cell-9" role="gridcell"><div class="goog-palette-colorswatch" style="background-color: rgb(102, 170, 0);" title="RGB (102, 170, 0)"></div>
+	    </td><td class="goog-palette-cell" id="goog-palette-cell-10" role="gridcell"><div class="goog-palette-colorswatch" style="background-color: rgb(170, 170, 17);" title="RGB (170, 170, 17)"></div>
+	    </td><td class="goog-palette-cell" id="goog-palette-cell-11" role="gridcell"><div class="goog-palette-colorswatch" style="background-color: rgb(214, 174, 0);" title="RGB (214, 174, 0)"></div>
+	    </td><td class="goog-palette-cell" id="goog-palette-cell-12" role="gridcell"><div class="goog-palette-colorswatch" style="background-color: rgb(238, 136, 0);" title="RGB (238, 136, 0)"></div>
+	    </td><td class="goog-palette-cell" id="goog-palette-cell-13" role="gridcell"><div class="goog-palette-colorswatch" style="background-color: rgb(221, 85, 17);" title="RGB (221, 85, 17)"></div>
+	    </td></tr><tr class="goog-palette-row"><td class="goog-palette-cell" id="goog-palette-cell-14" role="gridcell"><div class="goog-palette-colorswatch" style="background-color: rgb(168, 112, 112);" title="RGB (168, 112, 112)"></div>
+	    </td><td class="goog-palette-cell" id="goog-palette-cell-15" role="gridcell"><div class="goog-palette-colorswatch" style="background-color: rgb(140, 109, 140);" title="RGB (140, 109, 140)"></div>
+	    </td><td class="goog-palette-cell" id="goog-palette-cell-16" role="gridcell"><div class="goog-palette-colorswatch" style="background-color: rgb(98, 116, 135);" title="RGB (98, 116, 135)"></div>
+	    </td><td class="goog-palette-cell" id="goog-palette-cell-17" role="gridcell"><div class="goog-palette-colorswatch" style="background-color: rgb(112, 131, 168);" title="RGB (112, 131, 168)"></div>
+	    </td><td class="goog-palette-cell" id="goog-palette-cell-18" role="gridcell"><div class="goog-palette-colorswatch" style="background-color: rgb(92, 141, 135);" title="RGB (92, 141, 135)"></div>
+	    </td><td class="goog-palette-cell" id="goog-palette-cell-19" role="gridcell"><div class="goog-palette-colorswatch" style="background-color: rgb(137, 137, 81);" title="RGB (137, 137, 81)"></div>
+	    </td><td class="goog-palette-cell" id="goog-palette-cell-20" role="gridcell"><div class="goog-palette-colorswatch" style="background-color: rgb(176, 139, 89);" title="RGB (176, 139, 89)"></div>
+	    </td></tr><tr class="goog-palette-row"><td class="goog-palette-cell" id="goog-palette-cell-21" role="gridcell"><div class="goog-palette-colorswatch" style="background-color: rgb(159, 53, 1);" title="RGB (159, 53, 1)"></div>
+	    </td><td class="goog-palette-cell" id="goog-palette-cell-22" role="gridcell"><div class="goog-palette-colorswatch" style="background-color: rgb(138, 45, 56);" title="RGB (138, 45, 56)"></div>
+	    </td><td class="goog-palette-cell" id="goog-palette-cell-23" role="gridcell"><div class="goog-palette-colorswatch" style="background-color: rgb(150, 33, 129);" title="RGB (150, 33, 129)"></div>
+	    </td><td class="goog-palette-cell" id="goog-palette-cell-24" role="gridcell"><div class="goog-palette-colorswatch" style="background-color: rgb(64, 33, 117);" title="RGB (64, 33, 117)"></div>
+	    </td><td class="goog-palette-cell" id="goog-palette-cell-25" role="gridcell"><div class="goog-palette-colorswatch" style="background-color: rgb(48, 72, 126);" title="RGB (48, 72, 126)"></div>
+	    </td><td class="goog-palette-cell" id="goog-palette-cell-26" role="gridcell"><div class="goog-palette-colorswatch" style="background-color: rgb(24, 33, 134);" title="RGB (24, 33, 134)"></div>
+	    </td><td class="goog-palette-cell" id="goog-palette-cell-27" role="gridcell"><div class="goog-palette-colorswatch" style="background-color: rgb(31, 117, 60);" title="RGB (31, 117, 60)"></div>
+	    </td></tr><tr class="goog-palette-row"><td class="goog-palette-cell" id="goog-palette-cell-28" role="gridcell"><div class="goog-palette-colorswatch" style="background-color: rgb(61, 130, 21);" title="RGB (61, 130, 21)"></div>
+	    </td><td class="goog-palette-cell" id="goog-palette-cell-29" role="gridcell"><div class="goog-palette-colorswatch" style="background-color: rgb(90, 154, 8);" title="RGB (90, 154, 8)"></div>
+	    </td><td class="goog-palette-cell" id="goog-palette-cell-30" role="gridcell"><div class="goog-palette-colorswatch" style="background-color: rgb(129, 145, 11);" title="RGB (129, 145, 11)"></div>
+	    </td><td class="goog-palette-cell" id="goog-palette-cell-31" role="gridcell"><div class="goog-palette-colorswatch" style="background-color: rgb(157, 112, 0);" title="RGB (157, 112, 0)"></div>
+	    </td><td class="goog-palette-cell" id="goog-palette-cell-32" role="gridcell"><div class="goog-palette-colorswatch" style="background-color: rgb(170, 90, 0);" title="RGB (170, 90, 0)"></div>
+	    </td><td class="goog-palette-cell" id="goog-palette-cell-33" role="gridcell"><div class="goog-palette-colorswatch" style="background-color: rgb(141, 69, 0);" title="RGB (141, 69, 0)"></div>
+	    </td><td class="goog-palette-cell" id="goog-palette-cell-34" role="gridcell"><div class="goog-palette-colorswatch" style="background-color: rgb(116, 53, 0);" title="RGB (116, 53, 0)"></div>
+	    </td></tr><tr class="goog-palette-row"><td class="goog-palette-cell" id="goog-palette-cell-35" role="gridcell"><div class="goog-palette-colorswatch" style="background-color: rgb(135, 11, 80);" title="RGB (135, 11, 80)"></div>
+	    </td><td class="goog-palette-cell" id="goog-palette-cell-36" role="gridcell"><div class="goog-palette-colorswatch" style="background-color: rgb(112, 35, 127);" title="RGB (112, 35, 127)"></div>
+	    </td><td class="goog-palette-cell" id="goog-palette-cell-37" role="gridcell"><div class="goog-palette-colorswatch" style="background-color: rgb(37, 97, 125);" title="RGB (37, 97, 125)"></div>
+	    </td><td class="goog-palette-cell" id="goog-palette-cell-38" role="gridcell"><div class="goog-palette-colorswatch" style="background-color: rgb(81, 81, 81);" title="RGB (81, 81, 81)"></div>
+	    </td><td class="goog-palette-cell" id="goog-palette-cell-39" role="gridcell"><div class="goog-palette-colorswatch" style="background-color: rgb(34, 127, 99);" title="RGB (34, 127, 99)"></div>
+	    </td><td class="goog-palette-cell" id="goog-palette-cell-40" role="gridcell"><div class="goog-palette-colorswatch" style="background-color: rgb(165, 145, 20);" title="RGB (165, 145, 20)"></div>
+	    </td><td class="goog-palette-cell" id="goog-palette-cell-41" role="gridcell"><div class="goog-palette-colorswatch" style="background-color: rgb(135, 17, 17);" title="RGB (135, 17, 17)"></div>
+	    </td></tr>
+	    </tbody>
+	  </table>
+	</div>
+</div>
+
+<% content_for :javascripts do %>
+  <script>
+
+	  function hexc(colorval) {
+
+		  var parts = colorval.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+			// parts now should be ["rgb(0, 70, 255", "0", "70", "255"]
+
+		  delete (parts[0]);
+		  for (var i = 1; i <= 3; ++i) {
+			  parts[i] = parseInt(parts[i]).toString(16);
+			  if (parts[i].length == 1) parts[i] = '0' + parts[i];
+		  }
+		  return('#'+parts.join('').toUpperCase()); // "#0070FF"
+	  }
+
+	  $(document).ready(function() {
+
+		  /* Background color */
+		  $('.goog-palette-colorswatch').click(function () {chooseBg($(this).css('backgroundColor'))});
+		  function chooseBg (color) {
+			  var color_string = hexc(color);
+				$('#choosen-google-color').css("background-color",color_string);
+			  $('#google_calendar_bg_color').val(color_string);
+		  }
+
+		  $('#choosen-google-color').css("background-color",$('#google_calendar_bg_color').val());
+	  });
+  </script>
+<% end %>

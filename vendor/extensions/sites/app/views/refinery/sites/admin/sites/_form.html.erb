@@ -1,0 +1,319 @@
+<%= form_for [refinery, :sites_admin, @site] do |f| -%>
+
+  <%= render "locale_picker",
+             :current_locale => Thread.current[:globalize_locale] if Refinery.i18n_enabled? %>
+
+  <%= render '/refinery/admin/error_messages',
+              :object => @site,
+              :include_object_name => true %>
+
+  <div id="accordion">
+    <h4><a href="#">General</a></h4>
+    <div id="general">
+      <div class='field'>
+        <%= f.label :name -%>
+        <%= f.text_field :name, :class => 'larger widest'  -%>
+      </div>
+      <div class='field'>
+        <%= label_tag 'website_url_l', 'Website URL' -%>
+        <% unless @site.new_record? || @site.slug.nil? %>
+          <%= text_field_tag 'website_url', 'http://webnambackoffice.net.vn/sites/' + @site.slug, :disabled => true, :class => 'larger widest'   -%>
+	      <% else %>
+          <%= text_field_tag 'website_url', '< Please save the website to generate this field >', :disabled => true, :class => 'larger widest'   -%>
+      <% end %>
+      </div>
+
+      <div class='field'>
+	      <%= f.label :language_flags -%>
+	      <% Refinery::Sites::Site::LANGUAGE_NAMES.each do |language| %>
+	          <%= language_display_tag(language) %><%= language %><br/>
+			  <% end %>
+      </div>
+
+      <div class='field'>
+        <%= f.label :flags_position -%>
+        <%= f.select(:flags_position,
+                     options_for_select(['left','right'], @site.flags_position)) %>
+      </div>
+
+      <div class='field'>
+        <%= f.label :flags_border -%>
+        <%= f.text_field :flags_border, :size => 10,
+                         :class => "color {hash:true,pickerPosition:'right',pickerClosable:true}" %>
+      </div>
+
+      <div class='field'>
+        <%= f.required_label :contact_email -%>
+        <%= f.email_field :contact_email, :class => 'larger widest', :placeholder => 'Email of business' -%>
+      </div>
+
+      <div class='field'>
+        <%= f.label :options -%>
+        <% if current_refinery_user.site_id.nil? %>
+          <%= f.check_box :published, :checked => @site[:published]  -%>Is activated
+        <% end %>
+      </div>
+      <div class='field'>
+        <%= f.check_box :has_coupons, :checked => @site[:has_coupons]  -%>Has coupons
+      </div>
+      <div class='field'>
+        <%= f.check_box :has_blog, :checked => @site[:has_blog]  -%>Has a blog
+      </div>
+      <div class='field'>
+        <%= f.check_box :has_events, :checked => @site[:has_events]  -%>Has events
+      </div>
+
+      <div class='field'>
+        <%= f.label :logo -%>
+        <%= render '/refinery/admin/image_picker',
+                   :f => f,
+                   :field => :logo_id,
+                   :image => @site.logo,
+                   :toggle_image_display => false %>
+
+      </div>
+
+      <div class='field'>
+        <%= f.label :carousel_images, "Images carousel" -%>
+        <%= render :partial => "/refinery/sites/admin/flowing/images", :locals => {:f => f} %>
+      </div>
+
+      <div class='field'>
+        <%= f.label :carousel_pages, 'Pages with carousel' -%>
+        <% Refinery::Sites::Site::SITE_PAGES.first(4).each do |page| %>
+          <%= carousel_page_display_tag(page) %><%= t(page) %><br/>
+        <% end %>
+      </div>
+
+      <div class='field'>
+        <%= f.label :carousel_pause, 'Pause time in miliseconds' -%>
+        <%= f.number_field :carousel_pause  -%>
+      </div>
+
+
+      <div class='field'>
+        <%= f.label :carousel_transition, 'Transition time in miliseconds' -%>
+        <%= f.number_field :carousel_transition  -%>
+      </div>
+
+      <div class='field'>
+        <%= f.label :music -%>
+        <%= render '/refinery/admin/resource_picker',
+                   :f => f,
+                   :field => :music_id,
+                   :resource => @site.music %>
+
+      </div>
+
+      <div class='field'>
+        <%= f.label :webnam_logo -%>
+        <%= render '/refinery/admin/image_picker',
+                   :f => f,
+                   :field => :webnam_logo_id,
+                   :image => @site.webnam_logo,
+                   :toggle_image_display => false %>
+
+      </div>
+
+      <div class='field'>
+        <%= f.label :analytics_code -%>
+        <%= f.text_field :analytics_code, :maxlength => 15 -%>
+      </div>
+
+    </div>
+    <h4><a href="#">Home page</a></h4>
+    <div id="homepage">
+
+      <div class='field'>
+        <%= f.label :home_images, "Images slideshow" -%>
+        <%= render :partial => "/refinery/sites/admin/slide/images", :locals => {:f => f} %>
+      </div>
+
+      <div class='field'>
+        <%= f.label :slide_effect -%>
+        <%= f.select(:slide_effect, options_for_select([['simple','simpleFade'],
+                                                        ['horizontal', 'scrollHorz'],
+                                                        ['vertical', 'scrollBottom'],
+                                                        ['mosaic', 'mosaic'],
+                                                        ['stampede', 'stampede'],
+                                                        ['slice','curtainSliceLeft'],
+                                                        ['curtain','blindCurtainTopLeft']], @site.slide_effect)) %>
+      </div>
+
+      <div class='field'>
+        <%= f.label :slide_delay -%>
+        <%= f.number_field :slide_delay  -%>
+      </div>
+
+
+      <div class='field'>
+        <%= f.label :slide_transition -%>
+        <%= f.number_field :slide_transition  -%>
+      </div>
+
+      <%= f.fields_for :home_page do |f_home| -%>
+        <%= render '/refinery/sites/admin/home_pages/home_page_form', :f => f_home, :home_page => @site.home_page %>
+      <% end -%>
+
+      <div class='field'>
+        <%= f.label :virtual_tour -%>
+        <%= render '/refinery/admin/image_picker',
+                   :f => f,
+                   :field => :virtual_tour_id,
+                   :image => @site.virtual_tour,
+                   :toggle_image_display => false %>
+
+      </div>
+    </div>
+    <h4><a href="#">About us</a></h4>
+    <div id="aboutus">
+      <%= f.fields_for :aboutus_page do |f_aboutus| -%>
+        <%= render '/refinery/sites/admin/aboutus_pages/aboutus_page_form', :f => f_aboutus, :aboutus_page => @site.aboutus_page %>
+      <% end -%>
+    </div>
+    <h4><a href="#">Services</a></h4>
+    <div id="services">
+      <div class='field'>
+        <%= f.check_box :has_services, :checked => @site[:has_services] -%>Has services
+      </div>
+      <%= f.fields_for :services_page do |f_services| -%>
+        <%= render '/refinery/sites/admin/services_pages/services_page_form', :f => f_services, :services_page => @site.services_page %>
+      <% end -%>
+    </div>
+    <h4><a href="#">Products</a></h4>
+    <div id="products">
+      <div class='field'>
+        <%= f.check_box :has_products, :checked => @site[:has_products]  -%>Has products
+      </div>
+      <div class='field'>
+        <%= f.check_box :use_categories, :checked => @site[:use_categories]  -%>Uses categories
+      </div>
+      <div class='field'>
+        <%= f.check_box :use_gender, :checked => @site[:use_gender]  -%>Uses gender
+      </div>
+
+      <div class='field'>
+        <%= f.label :products_title -%>
+        <%= f.text_field :products_title, :class => 'widest' -%>
+      </div>
+
+      <div class='field'>
+        <%= f.label :seo_product_title -%>
+        <%= f.text_field :seo_product_title, :class => 'widest' -%>
+      </div>
+
+      <div class='field'>
+        <%= f.label :seo_product_keywords -%>
+        <%= f.text_field :seo_product_keywords, :class => 'widest' -%>
+      </div>
+
+      <div class='field'>
+        <%= f.label :seo_product_description -%>
+        <%= f.text_area :seo_product_description, :class => 'widest', :rows => 7 %>
+      </div>
+    </div>
+    <h4><a href="#">Media gallery</a></h4>
+    <div id="media-gallery">
+      <div class='field'>
+        <%= f.check_box :has_gallery, :checked => @site[:has_gallery]  -%>Has gallery
+      </div>
+      <div class='field'>
+        <%= f.label :site_images, "Image gallery" -%>
+        <%= render :partial => "/refinery/sites/admin/gallery/images", :locals => {:f => f} %>
+      </div>
+      <div class='field'>
+        <div id='page-tabs' class='clearfix ui-tabs ui-widget ui-widget-content ui-corner-all'>
+          <ul id='page_parts'>
+            <% [:videos].each_with_index do |part, part_index| %>
+              <li class='ui-state-default<%= ' ui-state-active' if part_index == 0 %>'>
+                <%= link_to t("#{part}", :scope => "activerecord.attributes.refinery/sites/event", :default => part.to_s.titleize), "##{part}" %>
+              </li>
+            <% end %>
+          </ul>
+          <div id='page_part_editors'>
+            <% [:videos].each do |part| %>
+              <div class='page_part' id='<%= part %>'>
+                <%= f.text_area part, :rows => 20, :class => 'wymeditor saisie' -%>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h4><a href="#">Social medias</a></h4>
+    <div id="social-media">
+
+      <div class='field'>
+        <%= f.label :facebook_page -%>
+        <%= f.text_field :facebook_page, :class => 'larger widest' -%>
+      </div>
+
+      <div class='field'>
+        <%= f.label :zingme_page -%>
+        <%= f.text_field :zingme_page, :class => 'larger widest' -%>
+      </div>
+
+      <div class='field'>
+        <%= f.label :govn_page -%>
+        <%= f.text_field :govn_page, :class => 'larger widest' -%>
+      </div>
+
+      <div class='field'>
+        <%= f.label :twitter_page -%>
+        <%= f.text_field :twitter_page, :class => 'larger widest' -%>
+      </div>
+
+      <div class='field'>
+        <%= f.label :linkedin_page -%>
+        <%= f.text_field :linkedin_page, :class => 'larger widest' -%>
+      </div>
+
+      <div class='field'>
+        <%= f.label :youtube_page -%>
+        <%= f.text_field :youtube_page, :class => 'larger widest' -%>
+      </div>
+    </div>
+    <h4><a href="#">Google calendar</a></h4>
+    <div id="calendar">
+      <div class='field'>
+        <%= f.check_box :has_calendars, :checked => @site[:has_calendars]  -%>Has a Google calendar
+      </div>
+      <div class='field'>
+        <%= f.label :calendar_mode -%>
+        <%= f.select(:calendar_mode, options_for_select([['Day','DAY'],['Week','WEEK']], @site.calendar_mode)) %>
+      </div>
+
+      <div class='field'>
+        <%= f.label :calendar_height -%>
+        <%= f.number_field :calendar_height  -%> pixels
+      </div>
+    </div>
+    <h4><a href="#">Design</a></h4>
+    <div id="design">
+      <%= render '/refinery/sites/admin/designs/design_show' %>
+      <%= f.fields_for :design do |f_design| -%>
+        <%= render '/refinery/sites/admin/designs/design_form', :f => f_design, :design => @site.design %>
+      <% end %>
+    </div>
+  </div>
+
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :hide_delete => true,
+             :cancel_url => @site.new_record? ? refinery.new_sites_admin_site_path : refinery.edit_sites_admin_site_path(@site),
+             :delete_title => t('delete', :scope => 'refinery.sites.admin.sites.site'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @site.name) %>
+
+	<% end -%>
+
+<% content_for :javascripts do %>
+  <script>
+	  $(document).ready(function() {
+		  // Accordion
+		  $("#accordion").accordion({ header: "h4", autoHeight: false  });
+	  });
+  </script>
+<% end %>
+
+
+

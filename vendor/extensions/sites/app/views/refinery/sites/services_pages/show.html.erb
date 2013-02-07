@@ -1,0 +1,22 @@
+<% content_for :meta_tags do %>
+  <title><%= @services_page.seo_title if @services_page.seo_title.present?  %></title>
+  <%= raw(%(<meta name="description" content="#{@services_page.seo_description}" />)) if @services_page.seo_description.present? -%>
+  <%= raw(%(<meta name="keywords" content="#{@services_page.seo_keywords}">)) if @services_page.seo_keywords.present? -%>
+<% end %>
+
+<section id="content" class="content">
+  <article class="list">
+    <div class="col left-col">
+      <%=raw @services_page.left_col %>
+    </div>
+    <div class="col right-col">
+      <%=raw @services_page.right_col %>
+    </div>
+  </article>
+</section>
+<% if @site.carousel_pages.include?('services') %>
+  <%= render '/refinery/sites/sites/carousel' %>
+<% end %>
+
+
+

@@ -1,0 +1,316 @@
+nl:
+  refinery:
+    plugins:
+      google_calendars:
+        title: Google Calendars
+      products:
+        title: Products
+      product_categories:
+        title: Product Categories
+      events:
+        title: Events
+      blog_posts:
+        title: Blog Posts
+      coupons:
+        title: Coupons
+      coupons_pages:
+        title: Coupons Pages
+      services_pages:
+        title: Services Pages
+      designs:
+        title: Designs
+      aboutus_pages:
+        title: Aboutus Pages
+      home_pages:
+        title: Home Pages
+      sites:
+        title: Sites
+    sites:
+      admin:
+        google_calendars:
+          actions:
+            create_new: Maak een nieuwe Google Calendar
+            reorder: Wijzig de volgorde van de Google Calendars
+            reorder_done: Klaar met het wijzingen van de volgorde van de Google Calendars
+          records:
+            title: Google Calendars
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Google Calendars. Druk op 'Maak een nieuwe
+              Google Calendar' om de eerste aan te maken.
+          google_calendar:
+            view_live_html: Bekijk deze google calendar op de website <br/><em>(opent
+              een nieuw venster)</em>
+            edit: Bewerk deze google calendar
+            delete: Verwijder deze google calendar voor eeuwig
+        products:
+          actions:
+            create_new: Maak een nieuwe Product
+            reorder: Wijzig de volgorde van de Products
+            reorder_done: Klaar met het wijzingen van de volgorde van de Products
+          records:
+            title: Products
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Products. Druk op 'Maak een nieuwe Product'
+              om de eerste aan te maken.
+          product:
+            view_live_html: Bekijk deze product op de website <br/><em>(opent een
+              nieuw venster)</em>
+            edit: Bewerk deze product
+            delete: Verwijder deze product voor eeuwig
+        product_categories:
+          actions:
+            create_new: Maak een nieuwe Product Category
+            reorder: Wijzig de volgorde van de Product Categories
+            reorder_done: Klaar met het wijzingen van de volgorde van de Product Categories
+          records:
+            title: Product Categories
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Product Categories. Druk op 'Maak een nieuwe
+              Product Category' om de eerste aan te maken.
+          product_category:
+            view_live_html: Bekijk deze product category op de website <br/><em>(opent
+              een nieuw venster)</em>
+            edit: Bewerk deze product category
+            delete: Verwijder deze product category voor eeuwig
+        events:
+          actions:
+            create_new: Maak een nieuwe Event
+            reorder: Wijzig de volgorde van de Events
+            reorder_done: Klaar met het wijzingen van de volgorde van de Events
+          records:
+            title: Events
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Events. Druk op 'Maak een nieuwe Event'
+              om de eerste aan te maken.
+          event:
+            view_live_html: Bekijk deze event op de website <br/><em>(opent een nieuw
+              venster)</em>
+            edit: Bewerk deze event
+            delete: Verwijder deze event voor eeuwig
+        blog_posts:
+          actions:
+            create_new: Maak een nieuwe Blog Post
+            reorder: Wijzig de volgorde van de Blog Posts
+            reorder_done: Klaar met het wijzingen van de volgorde van de Blog Posts
+          records:
+            title: Blog Posts
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Blog Posts. Druk op 'Maak een nieuwe Blog
+              Post' om de eerste aan te maken.
+          blog_post:
+            view_live_html: Bekijk deze blog post op de website <br/><em>(opent een
+              nieuw venster)</em>
+            edit: Bewerk deze blog post
+            delete: Verwijder deze blog post voor eeuwig
+        coupons:
+          actions:
+            create_new: Maak een nieuwe Coupon
+            reorder: Wijzig de volgorde van de Coupons
+            reorder_done: Klaar met het wijzingen van de volgorde van de Coupons
+          records:
+            title: Coupons
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Coupons. Druk op 'Maak een nieuwe Coupon'
+              om de eerste aan te maken.
+          coupon:
+            view_live_html: Bekijk deze coupon op de website <br/><em>(opent een nieuw
+              venster)</em>
+            edit: Bewerk deze coupon
+            delete: Verwijder deze coupon voor eeuwig
+        coupons_pages:
+          actions:
+            create_new: Maak een nieuwe Coupons Page
+            reorder: Wijzig de volgorde van de Coupons Pages
+            reorder_done: Klaar met het wijzingen van de volgorde van de Coupons Pages
+          records:
+            title: Coupons Pages
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Coupons Pages. Druk op 'Maak een nieuwe
+              Coupons Page' om de eerste aan te maken.
+          coupons_page:
+            view_live_html: Bekijk deze coupons page op de website <br/><em>(opent
+              een nieuw venster)</em>
+            edit: Bewerk deze coupons page
+            delete: Verwijder deze coupons page voor eeuwig
+        services_pages:
+          actions:
+            create_new: Maak een nieuwe Services Page
+            reorder: Wijzig de volgorde van de Services Pages
+            reorder_done: Klaar met het wijzingen van de volgorde van de Services
+              Pages
+          records:
+            title: Services Pages
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Services Pages. Druk op 'Maak een nieuwe
+              Services Page' om de eerste aan te maken.
+          services_page:
+            view_live_html: Bekijk deze services page op de website <br/><em>(opent
+              een nieuw venster)</em>
+            edit: Bewerk deze services page
+            delete: Verwijder deze services page voor eeuwig
+        designs:
+          actions:
+            create_new: Maak een nieuwe Design
+            reorder: Wijzig de volgorde van de Designs
+            reorder_done: Klaar met het wijzingen van de volgorde van de Designs
+          records:
+            title: Designs
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Designs. Druk op 'Maak een nieuwe Design'
+              om de eerste aan te maken.
+          design:
+            view_live_html: Bekijk deze design op de website <br/><em>(opent een nieuw
+              venster)</em>
+            edit: Bewerk deze design
+            delete: Verwijder deze design voor eeuwig
+        aboutus_pages:
+          actions:
+            create_new: Maak een nieuwe Aboutus Page
+            reorder: Wijzig de volgorde van de Aboutus Pages
+            reorder_done: Klaar met het wijzingen van de volgorde van de Aboutus Pages
+          records:
+            title: Aboutus Pages
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Aboutus Pages. Druk op 'Maak een nieuwe
+              Aboutus Page' om de eerste aan te maken.
+          aboutus_page:
+            view_live_html: Bekijk deze aboutus page op de website <br/><em>(opent
+              een nieuw venster)</em>
+            edit: Bewerk deze aboutus page
+            delete: Verwijder deze aboutus page voor eeuwig
+        home_pages:
+          actions:
+            create_new: Maak een nieuwe Home Page
+            reorder: Wijzig de volgorde van de Home Pages
+            reorder_done: Klaar met het wijzingen van de volgorde van de Home Pages
+          records:
+            title: Home Pages
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Home Pages. Druk op 'Maak een nieuwe Home
+              Page' om de eerste aan te maken.
+          home_page:
+            view_live_html: Bekijk deze home page op de website <br/><em>(opent een
+              nieuw venster)</em>
+            edit: Bewerk deze home page
+            delete: Verwijder deze home page voor eeuwig
+        sites:
+          actions:
+            create_new: Maak een nieuwe Site
+            reorder: Wijzig de volgorde van de Sites
+            reorder_done: Klaar met het wijzingen van de volgorde van de Sites
+          records:
+            title: Sites
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Sites. Druk op 'Maak een nieuwe Site' om
+              de eerste aan te maken.
+          site:
+            view_live_html: Bekijk deze site op de website <br/><em>(opent een nieuw
+              venster)</em>
+            edit: Bewerk deze site
+            delete: Verwijder deze site voor eeuwig
+      google_calendars:
+        show:
+          other: Andere Google Calendars
+      products:
+        show:
+          other: Andere Products
+      product_categories:
+        show:
+          other: Andere Product Categories
+      events:
+        show:
+          other: Andere Events
+      blog_posts:
+        show:
+          other: Andere Blog Posts
+      coupons:
+        show:
+          other: Andere Coupons
+      coupons_pages:
+        show:
+          other: Andere Coupons Pages
+      services_pages:
+        show:
+          other: Andere Services Pages
+      designs:
+        show:
+          other: Andere Designs
+      aboutus_pages:
+        show:
+          other: Andere Aboutus Pages
+      home_pages:
+        show:
+          other: Andere Home Pages
+      sites:
+        show:
+          other: Andere Sites
+  activerecord:
+    attributes:
+      refinery/sites/google_calendar:
+        site_id: Site
+        account: Account
+        bg_color: Bg Color
+      refinery/sites/product:
+        name: Name
+        description: Description
+        picture: Picture
+        product_category_id: Product Category
+        gender: Gender
+        site_id: Site
+      refinery/sites/product_category:
+        site_id: Site
+        name: Name
+      refinery/sites/event:
+        site_id: Site
+        published: Published
+        event_title: Event Title
+        event_summary: Event Summary
+        event_date: Event Date
+      refinery/sites/blog_post:
+        site_id: Site
+        published: Published
+        title: Title
+        content: Content
+      refinery/sites/coupon:
+        site_id: Site
+        displayed: Displayed
+        decoration: Decoration
+        title: Title
+        description: Description
+        picture: Picture
+        expiry: Expiry
+        max_number: Max Number
+        seed_number: Seed Number
+      refinery/sites/coupons_page:
+        site_id: Site
+        displayed: Displayed
+        decoration: Decoration
+        title: Title
+        description: Description
+        picture: Picture
+        expiry: Expiry
+        max_number: Max Number
+        seed_number: Seed Number
+      refinery/sites/services_page:
+        site_id: Site
+        left_col: Left Col
+        right_col: Right Col
+      refinery/sites/design:
+        site_id: Site
+        scss_model: Scss Model
+        background_color: Background Color
+        font_family: Font Family
+        font_color: Font Color
+      refinery/sites/aboutus_page:
+        site_id: Site
+        category: Category
+        established: Established
+        features: Features
+      refinery/sites/home_page:
+        site_id: Site
+        description: Description
+        logo: Logo
+      refinery/sites/site:
+        name: Name
+        published: Published
+        slug: Slug

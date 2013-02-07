@@ -1,0 +1,25 @@
+<ul>
+  <% if ::Refinery::Sites::Admin::GoogleCalendarsController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.sites_admin_google_calendars_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_sites_admin_google_calendar_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::Sites::Admin::GoogleCalendarsController.sortable? && ::Refinery::Sites::GoogleCalendar.any? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Google Calendars"),
+                 refinery.sites_admin_google_calendars_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Google Calendars"),
+                 refinery.sites_admin_google_calendars_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

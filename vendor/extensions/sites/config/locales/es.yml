@@ -1,0 +1,315 @@
+es:
+  refinery:
+    plugins:
+      google_calendars:
+        title: Google Calendars
+      products:
+        title: Products
+      product_categories:
+        title: Product Categories
+      events:
+        title: Events
+      blog_posts:
+        title: Blog Posts
+      coupons:
+        title: Coupons
+      coupons_pages:
+        title: Coupons Pages
+      services_pages:
+        title: Services Pages
+      designs:
+        title: Designs
+      aboutus_pages:
+        title: Aboutus Pages
+      home_pages:
+        title: Home Pages
+      sites:
+        title: Sites
+    sites:
+      admin:
+        google_calendars:
+          actions:
+            create_new: Crear nuevo google calendar
+            reorder: Reordenar google calendars
+            reorder_done: Reordenación de google calendars completada
+          records:
+            title: Google Calendars
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay google calendars todavía. Pulsa en "Crear nuevo Google
+              Calendar" para crear tu primer google calendar.
+          google_calendar:
+            view_live_html: Ver este google calendar como abierto al público <br/><em>(abre
+              en ventana nueva)</em>
+            edit: Editar este google calendar
+            delete: Borrar este google calendar para siempre
+        products:
+          actions:
+            create_new: Crear nuevo product
+            reorder: Reordenar products
+            reorder_done: Reordenación de products completada
+          records:
+            title: Products
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay products todavía. Pulsa en "Crear nuevo Product"
+              para crear tu primer product.
+          product:
+            view_live_html: Ver este product como abierto al público <br/><em>(abre
+              en ventana nueva)</em>
+            edit: Editar este product
+            delete: Borrar este product para siempre
+        product_categories:
+          actions:
+            create_new: Crear nuevo product category
+            reorder: Reordenar product categories
+            reorder_done: Reordenación de product categories completada
+          records:
+            title: Product Categories
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay product categories todavía. Pulsa en "Crear nuevo
+              Product Category" para crear tu primer product category.
+          product_category:
+            view_live_html: Ver este product category como abierto al público <br/><em>(abre
+              en ventana nueva)</em>
+            edit: Editar este product category
+            delete: Borrar este product category para siempre
+        events:
+          actions:
+            create_new: Crear nuevo event
+            reorder: Reordenar events
+            reorder_done: Reordenación de events completada
+          records:
+            title: Events
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay events todavía. Pulsa en "Crear nuevo Event" para
+              crear tu primer event.
+          event:
+            view_live_html: Ver este event como abierto al público <br/><em>(abre
+              en ventana nueva)</em>
+            edit: Editar este event
+            delete: Borrar este event para siempre
+        blog_posts:
+          actions:
+            create_new: Crear nuevo blog post
+            reorder: Reordenar blog posts
+            reorder_done: Reordenación de blog posts completada
+          records:
+            title: Blog Posts
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay blog posts todavía. Pulsa en "Crear nuevo Blog Post"
+              para crear tu primer blog post.
+          blog_post:
+            view_live_html: Ver este blog post como abierto al público <br/><em>(abre
+              en ventana nueva)</em>
+            edit: Editar este blog post
+            delete: Borrar este blog post para siempre
+        coupons:
+          actions:
+            create_new: Crear nuevo coupon
+            reorder: Reordenar coupons
+            reorder_done: Reordenación de coupons completada
+          records:
+            title: Coupons
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay coupons todavía. Pulsa en "Crear nuevo Coupon" para
+              crear tu primer coupon.
+          coupon:
+            view_live_html: Ver este coupon como abierto al público <br/><em>(abre
+              en ventana nueva)</em>
+            edit: Editar este coupon
+            delete: Borrar este coupon para siempre
+        coupons_pages:
+          actions:
+            create_new: Crear nuevo coupons page
+            reorder: Reordenar coupons pages
+            reorder_done: Reordenación de coupons pages completada
+          records:
+            title: Coupons Pages
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay coupons pages todavía. Pulsa en "Crear nuevo Coupons
+              Page" para crear tu primer coupons page.
+          coupons_page:
+            view_live_html: Ver este coupons page como abierto al público <br/><em>(abre
+              en ventana nueva)</em>
+            edit: Editar este coupons page
+            delete: Borrar este coupons page para siempre
+        services_pages:
+          actions:
+            create_new: Crear nuevo services page
+            reorder: Reordenar services pages
+            reorder_done: Reordenación de services pages completada
+          records:
+            title: Services Pages
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay services pages todavía. Pulsa en "Crear nuevo Services
+              Page" para crear tu primer services page.
+          services_page:
+            view_live_html: Ver este services page como abierto al público <br/><em>(abre
+              en ventana nueva)</em>
+            edit: Editar este services page
+            delete: Borrar este services page para siempre
+        designs:
+          actions:
+            create_new: Crear nuevo design
+            reorder: Reordenar designs
+            reorder_done: Reordenación de designs completada
+          records:
+            title: Designs
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay designs todavía. Pulsa en "Crear nuevo Design" para
+              crear tu primer design.
+          design:
+            view_live_html: Ver este design como abierto al público <br/><em>(abre
+              en ventana nueva)</em>
+            edit: Editar este design
+            delete: Borrar este design para siempre
+        aboutus_pages:
+          actions:
+            create_new: Crear nuevo aboutus page
+            reorder: Reordenar aboutus pages
+            reorder_done: Reordenación de aboutus pages completada
+          records:
+            title: Aboutus Pages
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay aboutus pages todavía. Pulsa en "Crear nuevo Aboutus
+              Page" para crear tu primer aboutus page.
+          aboutus_page:
+            view_live_html: Ver este aboutus page como abierto al público <br/><em>(abre
+              en ventana nueva)</em>
+            edit: Editar este aboutus page
+            delete: Borrar este aboutus page para siempre
+        home_pages:
+          actions:
+            create_new: Crear nuevo home page
+            reorder: Reordenar home pages
+            reorder_done: Reordenación de home pages completada
+          records:
+            title: Home Pages
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay home pages todavía. Pulsa en "Crear nuevo Home Page"
+              para crear tu primer home page.
+          home_page:
+            view_live_html: Ver este home page como abierto al público <br/><em>(abre
+              en ventana nueva)</em>
+            edit: Editar este home page
+            delete: Borrar este home page para siempre
+        sites:
+          actions:
+            create_new: Crear nuevo site
+            reorder: Reordenar sites
+            reorder_done: Reordenación de sites completada
+          records:
+            title: Sites
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay sites todavía. Pulsa en "Crear nuevo Site" para crear
+              tu primer site.
+          site:
+            view_live_html: Ver este site como abierto al público <br/><em>(abre en
+              ventana nueva)</em>
+            edit: Editar este site
+            delete: Borrar este site para siempre
+      google_calendars:
+        show:
+          other: Otros google calendars
+      products:
+        show:
+          other: Otros products
+      product_categories:
+        show:
+          other: Otros product categories
+      events:
+        show:
+          other: Otros events
+      blog_posts:
+        show:
+          other: Otros blog posts
+      coupons:
+        show:
+          other: Otros coupons
+      coupons_pages:
+        show:
+          other: Otros coupons pages
+      services_pages:
+        show:
+          other: Otros services pages
+      designs:
+        show:
+          other: Otros designs
+      aboutus_pages:
+        show:
+          other: Otros aboutus pages
+      home_pages:
+        show:
+          other: Otros home pages
+      sites:
+        show:
+          other: Otros sites
+  activerecord:
+    attributes:
+      refinery/sites/google_calendar:
+        site_id: Site
+        account: Account
+        bg_color: Bg Color
+      refinery/sites/product:
+        name: Name
+        description: Description
+        picture: Picture
+        product_category_id: Product Category
+        gender: Gender
+        site_id: Site
+      refinery/sites/product_category:
+        site_id: Site
+        name: Name
+      refinery/sites/event:
+        site_id: Site
+        published: Published
+        event_title: Event Title
+        event_summary: Event Summary
+        event_date: Event Date
+      refinery/sites/blog_post:
+        site_id: Site
+        published: Published
+        title: Title
+        content: Content
+      refinery/sites/coupon:
+        site_id: Site
+        displayed: Displayed
+        decoration: Decoration
+        title: Title
+        description: Description
+        picture: Picture
+        expiry: Expiry
+        max_number: Max Number
+        seed_number: Seed Number
+      refinery/sites/coupons_page:
+        site_id: Site
+        displayed: Displayed
+        decoration: Decoration
+        title: Title
+        description: Description
+        picture: Picture
+        expiry: Expiry
+        max_number: Max Number
+        seed_number: Seed Number
+      refinery/sites/services_page:
+        site_id: Site
+        left_col: Left Col
+        right_col: Right Col
+      refinery/sites/design:
+        site_id: Site
+        scss_model: Scss Model
+        background_color: Background Color
+        font_family: Font Family
+        font_color: Font Color
+      refinery/sites/aboutus_page:
+        site_id: Site
+        category: Category
+        established: Established
+        features: Features
+      refinery/sites/home_page:
+        site_id: Site
+        description: Description
+        logo: Logo
+      refinery/sites/site:
+        name: Name
+        published: Published
+        slug: Slug

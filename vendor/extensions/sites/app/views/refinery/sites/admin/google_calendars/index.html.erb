@@ -1,0 +1,15 @@
+<style type="text/css">
+	.google-calendar-account {
+		color: white;
+		border-radius: 3px;
+		padding: 0px 10px;
+	}
+</style>
+
+<section id='records'>
+  <%= render 'records' %>
+</section>
+<aside id='actions'>
+  <%= render 'actions' %>
+</aside>
+<%= render '/refinery/admin/make_sortable', :tree => false if !searching? and ::Refinery::Sites::Admin::GoogleCalendarsController.sortable? and ::Refinery::Sites::GoogleCalendar.count > 1 %>

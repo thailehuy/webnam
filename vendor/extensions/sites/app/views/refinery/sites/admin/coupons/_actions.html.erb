@@ -1,0 +1,25 @@
+<ul>
+  <% if ::Refinery::Sites::Admin::CouponsController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.sites_admin_coupons_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_sites_admin_coupon_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::Sites::Admin::CouponsController.sortable? && ::Refinery::Sites::Coupon.any? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Coupons"),
+                 refinery.sites_admin_coupons_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Coupons"),
+                 refinery.sites_admin_coupons_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

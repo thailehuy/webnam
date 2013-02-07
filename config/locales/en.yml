@@ -1,0 +1,67 @@
+en:
+  home: "Home"
+  aboutus: "About us"
+  services: "Services"
+  products: "Products"
+  coupons: "Coupons"
+  mediagallery: "Media gallery"
+  blog: "Blog"
+  events: "Events"
+  contact: "Contact us"
+
+  category: "Category"
+  no_category: "No category"
+  all_categories: "All categories"
+  gender: "Gender"
+  none: "Both"
+  male: "Male"
+  female: "Female"
+  filter_category: "Filter by product category"
+  filter_gender: "Filter by product gender"
+
+  posted_on: "Posted on"
+  contact_form: "Contact form"
+  please_send : "Please send us a message and we will contact you shortly"
+  name: "Name"
+  email: "Email"
+  phone: "Phone"
+  message: "Message"
+  send: "Send my message"
+  send_ok: "Thank you !<br/><br/>Your message has been successfully sent.<br/><br/>We will get back to you shortly"
+  send_nok: "Sorry but something went wrong !<br/><br/>Please try again later"
+  send_too_many: "You already sent a message, our team will revert promptly. Please wait before sending another message."
+  inquiry_notif_subject: "Thank you for your inquiry"
+  inquiry_notif_body: "Thank you for your inquiry %{inquirer},\n\nThis email is a receipt to confirm we have received your inquiry and we'll be in touch shortly.\n\nThanks.\n%{site_name}"
+
+  search_results_for: "Found %{count} results for the query '%{what}' on the following pages :"
+
+  please_cut: "PLEASE CUT CLEANLY ALONG THE DOTTED LINE"
+  coupon_status: "COUPON PRINT STATUS"
+  not_valid: "NOT A VALID PRINT"
+  no_coupons: "NO COUPONS LEFT"
+  coupon_id: "COUPON ID #"
+  hidden: "HIDDEN"
+  valid_coupon: "VALID COUPON"
+  coupon_expiry: "COUPON EXPIRY"
+  click_to_print: "Click to print this coupon !"
+
+  add_image: "Add an image"
+  photos_gallery: "Photos gallery"
+  videos_gallery: "Videos gallery"
+
+  not_activated: "The site < %{site_name} > is not currently activated<br/><br/>If you are the owner, please contact us"
+
+  virtual_tour_tip: "Drag your mouse to navigate through the panorama."
+  calendar_title: "Schedule of our services"
+
+  meet_us: "Meet us"
+  powered_by: "Powered by"
+
+
+
+
+
+
+
+
+

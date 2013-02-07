@@ -1,0 +1,11 @@
+<% content_for :body_content_left do %>
+  <ul id="coupons">
+    <% @coupons.each do |coupon| %>
+      <li>
+        <%= link_to coupon, refinery.sites_coupon_path(coupon) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

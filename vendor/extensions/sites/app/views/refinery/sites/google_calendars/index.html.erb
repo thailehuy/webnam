@@ -1,0 +1,11 @@
+<% content_for :body_content_left do %>
+  <ul id="google_calendars">
+    <% @google_calendars.each do |google_calendar| %>
+      <li>
+        <%= link_to google_calendar.account, refinery.sites_google_calendar_path(google_calendar) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

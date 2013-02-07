@@ -1,0 +1,58 @@
+<% content_for :body_content_title do %>
+  <%= @blog_post.title %>
+<% end %>
+
+<% content_for :body_content_left do %>
+
+  <section>
+    <h1>Site</h1>
+    <p>
+
+      <%=raw @blog_post.site_id %>
+
+    </p>
+  </section>
+
+  <section>
+    <h1>Published</h1>
+    <p>
+
+      <%=raw @blog_post.published %>
+
+    </p>
+  </section>
+
+  <section>
+    <h1>Title</h1>
+    <p>
+
+      <%=raw @blog_post.title %>
+
+    </p>
+  </section>
+
+  <section>
+    <h1>Content</h1>
+    <p>
+
+      <%=raw @blog_post.content %>
+
+    </p>
+  </section>
+
+<% end %>
+
+<% content_for :body_content_right do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="blog_posts">
+      <% @blog_posts.each do |blog_post| %>
+        <li>
+          <%= link_to blog_post.title, refinery.sites_blog_post_path(blog_post) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

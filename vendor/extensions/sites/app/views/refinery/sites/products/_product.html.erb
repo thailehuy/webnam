@@ -1,0 +1,32 @@
+<div class='product-container'>
+  <div class='product-item'>
+    <div class='product-title'>
+      <h2><%= product.name %></h2>
+    </div>
+    <div class='product-category'>
+      <h3>
+	      <% if @site.use_categories %>
+          <%= product.product_category.name unless product.product_category.nil? %>
+		    <% end %>
+        <% if @site.use_gender %>
+          <br/><%= t(product.gender_name) %><br/>
+        <% end %>
+      </h3>
+    </div>
+    <div class='product-description'>
+      <div class='product-text <%= product_length(product.picture) %>'>
+        <%= raw product.description %>
+      </div>
+      <div class='product-photo'>
+	      <% unless product.picture.nil? %>
+          <%= image_tag product.picture.thumbnail("170x130#").url %>
+	      <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+
+
+
+

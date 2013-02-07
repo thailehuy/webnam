@@ -1,0 +1,42 @@
+<div class='field'>
+  <%= f.label :menu_title -%>
+  <%= f.text_field :menu_title, :class => 'widest' -%>
+</div>
+<br/>
+
+<div id="services-tabs">
+  <ul>
+    <li><a href="#services-left-col">Left column</a></li>
+    <li><a href="#services-right-col">Right column</a></li>
+  </ul>
+  <div id="services-left-col">
+    <%= f.text_area :left_col, :rows => 20, :class => 'wymeditor saisie' -%>
+  </div>
+  <div id="services-right-col">
+    <%= f.text_area :right_col, :rows => 20, :class => 'wymeditor saisie' -%>
+  </div>
+</div>
+
+<div class='field'>
+  <%= f.label :seo_title -%>
+  <%= f.text_field :seo_title, :class => 'widest' -%>
+</div>
+
+<div class='field'>
+  <%= f.label :seo_keywords -%>
+  <%= f.text_field :seo_keywords, :class => 'widest' -%>
+</div>
+
+<div class='field'>
+  <%= f.label :seo_description -%>
+  <%= f.text_area :seo_description, :class => 'widest', :rows => 7 %>
+</div>
+
+<% content_for :javascripts do %>
+  <script>
+	  $(document).ready(function(){
+		  $('#services-tabs').tabs();
+	  });
+  </script>
+<% end %>
+

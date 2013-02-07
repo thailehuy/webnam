@@ -1,0 +1,62 @@
+fr:
+  home: "Accueil"
+  aboutus: "A propos"
+  services: "Services"
+  products: "Produits"
+  coupons: "Coupons"
+  mediagallery: "Galerie"
+  blog: "Blog"
+  events: "Evènements"
+  contact: "Contactez-nous"
+
+  category: "Categorie"
+  no_category: "Pas de catégorie"
+  all_categories: "Toutes les catégories"
+  gender: "Genre"
+  none: "Indifférencié"
+  male: "Homme"
+  female: "Femme"
+  filter_category: "Filtrer par catégorie"
+  filter_gender: "Filtrer par genre"
+
+  posted_on: "Posté le"
+  contact_form: "Formulaire de contact"
+  please_send : "Veuillez nous envoyer un message et nous vous contacterons rapidement"
+  name: "Nom"
+  email: "Email"
+  phone: "Téléphone"
+  message: "Message"
+  send: "Envoyer mon message"
+  send_ok: "Merci !<br/><br/>Votre message a bien été envoyé.<br/><br/>Nous reviendrons vers vous rapidement."
+  send_nok: "Sorry but something went wrong !<br/><br/>Please try again later"
+  send_too_many: "Vous avez déjà envoyé un message, notre équipe va revenir vers vous rapidement. Veuillez patienter avant d'envoyer un autre message."
+  inquiry_notif_subject: "Merci pour votre demande"
+  inquiry_notif_body: "Merci pour votre demande %{inquirer},\n\nCet email est une confirmation que nous avons reçu votre demande et que nous vous recontacterons rapidement.\n\nMerci.\n%{site_name}"
+
+  search_results_for: "Trouvé %{count} résultats pour la requête '%{what}' sur les pages suivantes :"
+
+  please_cut: "VEUILLEZ DECOUPER NETTEMENT SUR LA LIGNE POINTILLEE"
+  coupon_status: "STATUT D'IMPRESSION"
+  not_valid: "IMPRESSION NON VALIDE"
+  no_coupons: "COUPONS EPUISES"
+  coupon_id: "N° DE COUPON"
+  hidden: "MASQUE"
+  valid_coupon: "COUPON VALIDE"
+  coupon_expiry: "ECHEANCE DU COUPON"
+  click_to_print: "Cliquez pour imprimer ce coupon !"
+
+  add_image: "Ajouter une image"
+  photos_gallery: "Galerie photos"
+  videos_gallery: "Galerie vidéos"
+
+  not_activated: "Le site < %{site_name} > n'est pas activé actuellement<br/><br/>Si vous en êtes le propriétaire, veuillez nous contacter"
+
+  virtual_tour_tip: "Déplacer avec la souris pour naviguer dans le panorama."
+
+  calendar_title: "Agenda de nos services"
+
+  meet_us: "Rencontrez nous"
+  powered_by: "Powered by"
+
+
+

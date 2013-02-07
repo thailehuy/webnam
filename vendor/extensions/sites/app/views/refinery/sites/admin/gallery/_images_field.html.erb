@@ -1,0 +1,34 @@
+<div class='wym_box field images_field'>
+  <ul id='page_gallery_images' class='clearfix'>
+    <%= f.fields_for :gallery_images do |image_form| %>
+      <li id='gallery-image_<%= image_form.object.id %>'>
+        <%= image_form.hidden_field :id %>
+        <%= image_fu image_form.object, '135x135#c' %>
+        <% index = image_form.object_name.split('[').last.split(']').first.to_i %>
+        <%= hidden_field_tag "#{f.object_name.demodulize}[gallery_images_attributes][#{index}][site_image_id]",
+                             f.object.site_image_id_for_image_index(index) %>
+        <% if true # yes we want captions %>
+          <div class='textarea_wrapper_for_wym'>
+            <%= text_area_tag "#{f.object_name.demodulize}[gallery_images_attributes][#{index}][caption]",
+                              f.object.caption_for_gallery_image_index(index),
+                              :style => 'display: none',
+                              :id => "page_gallery_captions_#{index}",
+                              :class => 'page_caption' %>
+          </div>
+        <% end %>
+      </li>
+    <% end %>
+    <li class='gallery empty'>
+      <%= hidden_field_tag "#{f.object_name.demodulize}[gallery_images_attributes][#{f.object.gallery_images.size}][id]" %>
+      <% if true # yes we want captions %>
+        <div class='textarea_wrapper_for_wym'>
+          <%= text_area_tag "#{f.object_name.demodulize}[gallery_images_attributes][#{f.object.gallery_images.size}][caption]",
+                            '',
+                            :style => 'display: none',
+                            :id => "page_gallery_captions_#{f.object.gallery_images.size}",
+                            :class => 'page_caption' %>
+        </div>
+      <% end %>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,315 @@
+nb:
+  refinery:
+    plugins:
+      google_calendars:
+        title: Google Calendars
+      products:
+        title: Products
+      product_categories:
+        title: Product Categories
+      events:
+        title: Events
+      blog_posts:
+        title: Blog Posts
+      coupons:
+        title: Coupons
+      coupons_pages:
+        title: Coupons Pages
+      services_pages:
+        title: Services Pages
+      designs:
+        title: Designs
+      aboutus_pages:
+        title: Aboutus Pages
+      home_pages:
+        title: Home Pages
+      sites:
+        title: Sites
+    sites:
+      admin:
+        google_calendars:
+          actions:
+            create_new: Lag en ny Google Calendar
+            reorder: Endre rekkefølgen på Google Calendars
+            reorder_done: Ferdig å endre rekkefølgen Google Calendars
+          records:
+            title: Google Calendars
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Google Calendars enda. Klikk på "Lag en ny
+              Google Calendar" for å legge til din første google calendar.
+          google_calendar:
+            view_live_html: Vis hvordan denne google calendar ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne google calendar
+            delete: Fjern denne google calendar permanent
+        products:
+          actions:
+            create_new: Lag en ny Product
+            reorder: Endre rekkefølgen på Products
+            reorder_done: Ferdig å endre rekkefølgen Products
+          records:
+            title: Products
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Products enda. Klikk på "Lag en ny Product"
+              for å legge til din første product.
+          product:
+            view_live_html: Vis hvordan denne product ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne product
+            delete: Fjern denne product permanent
+        product_categories:
+          actions:
+            create_new: Lag en ny Product Category
+            reorder: Endre rekkefølgen på Product Categories
+            reorder_done: Ferdig å endre rekkefølgen Product Categories
+          records:
+            title: Product Categories
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Product Categories enda. Klikk på "Lag en ny
+              Product Category" for å legge til din første product category.
+          product_category:
+            view_live_html: Vis hvordan denne product category ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne product category
+            delete: Fjern denne product category permanent
+        events:
+          actions:
+            create_new: Lag en ny Event
+            reorder: Endre rekkefølgen på Events
+            reorder_done: Ferdig å endre rekkefølgen Events
+          records:
+            title: Events
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Events enda. Klikk på "Lag en ny Event" for
+              å legge til din første event.
+          event:
+            view_live_html: Vis hvordan denne event ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne event
+            delete: Fjern denne event permanent
+        blog_posts:
+          actions:
+            create_new: Lag en ny Blog Post
+            reorder: Endre rekkefølgen på Blog Posts
+            reorder_done: Ferdig å endre rekkefølgen Blog Posts
+          records:
+            title: Blog Posts
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Blog Posts enda. Klikk på "Lag en ny Blog Post"
+              for å legge til din første blog post.
+          blog_post:
+            view_live_html: Vis hvordan denne blog post ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne blog post
+            delete: Fjern denne blog post permanent
+        coupons:
+          actions:
+            create_new: Lag en ny Coupon
+            reorder: Endre rekkefølgen på Coupons
+            reorder_done: Ferdig å endre rekkefølgen Coupons
+          records:
+            title: Coupons
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Coupons enda. Klikk på "Lag en ny Coupon" for
+              å legge til din første coupon.
+          coupon:
+            view_live_html: Vis hvordan denne coupon ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne coupon
+            delete: Fjern denne coupon permanent
+        coupons_pages:
+          actions:
+            create_new: Lag en ny Coupons Page
+            reorder: Endre rekkefølgen på Coupons Pages
+            reorder_done: Ferdig å endre rekkefølgen Coupons Pages
+          records:
+            title: Coupons Pages
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Coupons Pages enda. Klikk på "Lag en ny Coupons
+              Page" for å legge til din første coupons page.
+          coupons_page:
+            view_live_html: Vis hvordan denne coupons page ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne coupons page
+            delete: Fjern denne coupons page permanent
+        services_pages:
+          actions:
+            create_new: Lag en ny Services Page
+            reorder: Endre rekkefølgen på Services Pages
+            reorder_done: Ferdig å endre rekkefølgen Services Pages
+          records:
+            title: Services Pages
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Services Pages enda. Klikk på "Lag en ny Services
+              Page" for å legge til din første services page.
+          services_page:
+            view_live_html: Vis hvordan denne services page ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne services page
+            delete: Fjern denne services page permanent
+        designs:
+          actions:
+            create_new: Lag en ny Design
+            reorder: Endre rekkefølgen på Designs
+            reorder_done: Ferdig å endre rekkefølgen Designs
+          records:
+            title: Designs
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Designs enda. Klikk på "Lag en ny Design" for
+              å legge til din første design.
+          design:
+            view_live_html: Vis hvordan denne design ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne design
+            delete: Fjern denne design permanent
+        aboutus_pages:
+          actions:
+            create_new: Lag en ny Aboutus Page
+            reorder: Endre rekkefølgen på Aboutus Pages
+            reorder_done: Ferdig å endre rekkefølgen Aboutus Pages
+          records:
+            title: Aboutus Pages
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Aboutus Pages enda. Klikk på "Lag en ny Aboutus
+              Page" for å legge til din første aboutus page.
+          aboutus_page:
+            view_live_html: Vis hvordan denne aboutus page ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne aboutus page
+            delete: Fjern denne aboutus page permanent
+        home_pages:
+          actions:
+            create_new: Lag en ny Home Page
+            reorder: Endre rekkefølgen på Home Pages
+            reorder_done: Ferdig å endre rekkefølgen Home Pages
+          records:
+            title: Home Pages
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Home Pages enda. Klikk på "Lag en ny Home Page"
+              for å legge til din første home page.
+          home_page:
+            view_live_html: Vis hvordan denne home page ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne home page
+            delete: Fjern denne home page permanent
+        sites:
+          actions:
+            create_new: Lag en ny Site
+            reorder: Endre rekkefølgen på Sites
+            reorder_done: Ferdig å endre rekkefølgen Sites
+          records:
+            title: Sites
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Sites enda. Klikk på "Lag en ny Site" for å
+              legge til din første site.
+          site:
+            view_live_html: Vis hvordan denne site ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne site
+            delete: Fjern denne site permanent
+      google_calendars:
+        show:
+          other: Andre Google Calendars
+      products:
+        show:
+          other: Andre Products
+      product_categories:
+        show:
+          other: Andre Product Categories
+      events:
+        show:
+          other: Andre Events
+      blog_posts:
+        show:
+          other: Andre Blog Posts
+      coupons:
+        show:
+          other: Andre Coupons
+      coupons_pages:
+        show:
+          other: Andre Coupons Pages
+      services_pages:
+        show:
+          other: Andre Services Pages
+      designs:
+        show:
+          other: Andre Designs
+      aboutus_pages:
+        show:
+          other: Andre Aboutus Pages
+      home_pages:
+        show:
+          other: Andre Home Pages
+      sites:
+        show:
+          other: Andre Sites
+  activerecord:
+    attributes:
+      refinery/sites/google_calendar:
+        site_id: Site
+        account: Account
+        bg_color: Bg Color
+      refinery/sites/product:
+        name: Name
+        description: Description
+        picture: Picture
+        product_category_id: Product Category
+        gender: Gender
+        site_id: Site
+      refinery/sites/product_category:
+        site_id: Site
+        name: Name
+      refinery/sites/event:
+        site_id: Site
+        published: Published
+        event_title: Event Title
+        event_summary: Event Summary
+        event_date: Event Date
+      refinery/sites/blog_post:
+        site_id: Site
+        published: Published
+        title: Title
+        content: Content
+      refinery/sites/coupon:
+        site_id: Site
+        displayed: Displayed
+        decoration: Decoration
+        title: Title
+        description: Description
+        picture: Picture
+        expiry: Expiry
+        max_number: Max Number
+        seed_number: Seed Number
+      refinery/sites/coupons_page:
+        site_id: Site
+        displayed: Displayed
+        decoration: Decoration
+        title: Title
+        description: Description
+        picture: Picture
+        expiry: Expiry
+        max_number: Max Number
+        seed_number: Seed Number
+      refinery/sites/services_page:
+        site_id: Site
+        left_col: Left Col
+        right_col: Right Col
+      refinery/sites/design:
+        site_id: Site
+        scss_model: Scss Model
+        background_color: Background Color
+        font_family: Font Family
+        font_color: Font Color
+      refinery/sites/aboutus_page:
+        site_id: Site
+        category: Category
+        established: Established
+        features: Features
+      refinery/sites/home_page:
+        site_id: Site
+        description: Description
+        logo: Logo
+      refinery/sites/site:
+        name: Name
+        published: Published
+        slug: Slug

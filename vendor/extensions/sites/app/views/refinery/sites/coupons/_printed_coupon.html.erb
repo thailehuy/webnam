@@ -1,0 +1,40 @@
+<div class='printed-coupon-container'>
+  <div class='coupon-cut'>
+    <%= t('please_cut') %>
+  </div>
+  <div class='coupon'>
+    <div style="width:260px; float:left">
+      <%=raw @coupon.decoration %>
+    </div>
+    <div style="width:520px; float:right">
+      <div style="width:520px; float:right">
+        <%=raw @coupon.title %>
+      </div>
+      <div style="width:520px; float:right">
+        <%=raw @coupon.description %>
+      </div>
+    </div>
+    <div style="width:780px; border-top: 1px solid #000000; float:left">
+      <div  style="width:260px; float:left" >
+        <%= t('coupon_status') %><br/>
+        <% unless @printed_coupon.nil? %>
+		      <span style="color: green"><%= t('valid_coupon') %></span>
+        <% else %>
+          <span style="color: red"><%= t('no_coupons') %></span>
+	      <% end %>
+      </div>
+      <div style="width:260px; float:left">
+        <%= t('coupon_id') %><br/>
+	      <% unless @printed_coupon.nil? %>
+          <span style="color: green;"><%= @printed_coupon.coupon_number.to_s %></span>
+		    <% else %>
+	        <span style="color: red"><%= t('no_coupons') %></span>
+	      <% end %>
+      </div>
+      <div style="width:260px; float:left" >
+        <%= t('coupon_expiry') %><br/>
+        <%= I18n.localize(@coupon.expiry, :format => "%d %B %Y").upcase %>
+      </div>
+    </div>
+  </div>
+</div>

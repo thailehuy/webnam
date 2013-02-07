@@ -1,0 +1,14 @@
+<div class='event-item-container'>
+  <div class='event-item'>
+    <h2 class="event-title"><%= raw event.event_title %></h2>
+    <h3><%= I18n.localize(event.event_date, :format => "%d-%m-%Y") %></h3>
+    <div class='event-content'>
+      <%= raw event.event_summary %>
+    </div>
+    <hr>
+  </div>
+</div>
+
+
+
+

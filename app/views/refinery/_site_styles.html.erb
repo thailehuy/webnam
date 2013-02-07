@@ -1,0 +1,207 @@
+<style>
+  body{
+	  <% if site.design.background_image.present? %>
+		  background: <%= site.design.background_color %> url("<%= site.design.background_image.url %>") <%= background_repeat(site.design.background_repeat) %> top center;
+	  <% else %>
+	    background-color: <%= site.design.background_color %>;
+	  <% end %>
+	  font-family: <%= site.design.font_family %>;
+  }
+
+  #container {
+	  background-color: <%= site.design.foreground_color %>;
+  }
+
+  #header {
+
+	  <% light = site.design.menu_color %>
+	  <% no_gradient = darken_color(site.design.menu_color,0.8) %>
+	  <% dark = darken_color(site.design.menu_color,0.6) %>
+	  <% lightie = '#FF' + light[1..-1] %>
+	  <% darkie = '#FF' + dark[1..-1] %>
+
+	  background-color: <%= no_gradient %>;
+	  background-image: -moz-linear-gradient(top, <%= light %> 35%, <%= dark %> 75%);
+
+	  background-image: -webkit-linear-gradient(top, <%= light %> 35%, <%= dark %> 75%);
+
+	  background-image: -ms-linear-gradient(top, <%= light %> 35%, <%= dark %> 75%);
+	  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(75%, <%= dark %>), color-stop(35%, <%= light %>));
+
+	  background-image: -o-linear-gradient(top, <%= light %> 35%, <%= dark %> 75%);
+	  background-image: linear-gradient(top, <%= light %> 35%, <%= dark %> 75%);
+	  background-repeat: repeat-x;
+
+	  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='<%= lightie %>', endColorstr='<%= darkie %>',
+	  GradientType=0);
+
+  }
+
+
+  .menu-text {
+	  color: <%= get_color_from_style(site.design.menu_style) %>;
+	  font-family: <%= site.design.font_family %>;
+	  font-size: <%= get_size_from_style(site.design.menu_style) %>;
+	  font-weight: <%= get_weight_from_style(site.design.menu_style) %>;
+  }
+
+  #main-menu li a:hover span {
+	  color: white;
+  }
+
+  .menu-logo img {
+	  <% if site.logo.present? %>
+	    margin-top: <%= ((50 - site.logo.height)/2).to_i %>px;
+	  <% end %>
+  }
+
+  #main {
+	  background-color: <%= site.design.foreground_color %>;
+	  font-family: <%= site.design.font_family %>;
+	  font-size: <%= get_size_from_style(site.design.p_style) %>;
+	  color: <%= get_color_from_style(site.design.p_style) %>;
+	  font-weight: <%= get_weight_from_style(site.design.p_style) %>;
+	  min-height: 650px;
+  }
+
+  #footer {
+	  background-image: -o-linear-gradient(top, <%= site.design.foreground_color %> 25%, <%= darken_color(site.design.menu_color,0.75) %> 75%);
+	  background-image: -moz-linear-gradient(top, <%= site.design.foreground_color %> 25%, <%= darken_color(site.design.menu_color,0.75) %> 75%);
+	  background-image: -webkit-linear-gradient(top, <%= site.design.foreground_color %> 25%,<%= darken_color(site.design.menu_color,0.75) %> 75%);
+	  background-image: -ms-linear-gradient(top, <%= site.design.foreground_color %> 25%, <%= darken_color(site.design.menu_color,0.75) %> 75%);
+	  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(75%, <%= darken_color(site.design.menu_color,0.75) %>), color-stop(25%, <%= site.design.foreground_color %>));
+  }
+
+  #footer {
+	  font-family: <%= site.design.font_family %>;
+	  font-size: <%= get_size_from_style(site.design.p_style) %>;
+	  color: <%= get_color_from_style(site.design.p_style) %>;
+  }
+
+  #footer .extra a.contactus {
+	  color: <%= get_color_from_style(site.design.menu_style) %>;
+  }
+
+  h1 {
+	  font-family: <%= site.design.font_family %>;
+	  font-size: <%= get_size_from_style(site.design.h1_style) %>;
+	  color: <%= get_color_from_style(site.design.h1_style) %>;
+	  font-weight: <%= get_weight_from_style(site.design.h1_style) %>;
+  }
+
+  h2 {
+	  font-family: <%= site.design.font_family %>;
+	  font-size: <%= get_size_from_style(site.design.h2_style) %>;
+	  color: <%= get_color_from_style(site.design.h2_style) %>;
+	  font-weight: <%= get_weight_from_style(site.design.h2_style) %>;
+  }
+
+  h3 {
+	  font-family: <%= site.design.font_family %>;
+	  font-size: <%= get_size_from_style(site.design.h3_style) %>;
+	  color: <%= get_color_from_style(site.design.h3_style) %>;
+	  font-weight: <%= get_weight_from_style(site.design.h3_style) %>;
+  }
+
+  .post p {
+	  font-family: <%= site.design.font_family %>;
+	  font-size: <%= get_size_from_style(site.design.p_style) %>;
+	  color: <%= get_color_from_style(site.design.p_style) %>;
+	  font-weight: <%= get_weight_from_style(site.design.p_style) %>;
+  }
+
+  p {
+	  font-family: <%= site.design.font_family %>;
+	  font-size: <%= get_size_from_style(site.design.p_style) %>;
+	  color: <%= get_color_from_style(site.design.p_style) %>;
+	  font-weight: <%= get_weight_from_style(site.design.p_style) %>;
+  }
+
+  a {
+	  font-size: <%= get_size_from_style(site.design.p_style) %>;
+  }
+
+  table {
+	  border: 0px solid black;
+  }
+
+  caption {
+	  border: 0px solid black;
+	  border-bottom: 0px;
+	  padding: 4px 10px;
+  }
+
+  td {
+	  border: 0px solid black;
+	  padding: 1px 10px;
+  }
+
+  table caption, table td {
+	  font-family: <%= site.design.font_family %>;
+  }
+
+  table caption {
+	  font-size: <%= get_size_from_style(site.design.table_caption_style) %>;
+	  color: <%= get_color_from_style(site.design.table_caption_style) %>;
+	  font-weight: <%= get_weight_from_style(site.design.table_caption_style) %>;
+  }
+
+  table td {
+	  font-size: <%= get_size_from_style(site.design.table_row_style) %>;
+	  color: <%= get_color_from_style(site.design.table_row_style) %>;
+	  font-weight: <%= get_weight_from_style(site.design.table_row_style) %>;
+  }
+
+  <% unless site.design.table_border_style.nil? %>
+  .product-photo img {
+	  border: 2px solid <%= get_color_from_style(site.design.table_border_style) %>;
+  }
+  <% end %>
+
+  .filter-title {
+	  font-family: <%= site.design.font_family %>;
+	  font-size: <%= get_size_from_style(site.design.h3_style) %>;
+	  color: <%= get_color_from_style(site.design.h3_style) %>;
+	  font-weight: <%= get_weight_from_style(site.design.h3_style) %>;
+  }
+
+  #category {
+	  font-family: <%= site.design.font_family %>;
+	  font-size: <%= get_size_from_style(site.design.p_style) %>;
+  }
+
+  #gender {
+	  font-family: <%= site.design.font_family %>;
+	  font-size: <%= get_size_from_style(site.design.p_style) %>;
+  }
+
+  input:invalid, textarea:invalid {
+	  background-color: #F0DDDD;
+  }
+
+  <% if @site.logo.nil?  %>
+	  #main-menu {
+		  width: 680px;
+	  }
+	<% end %>
+
+  #main-menu li {
+	  padding: 0px <%= @menu_padding.nil? ? 0 : @menu_padding %>px;
+  }
+
+ #language-menu {
+		<%= @site.flags_position %>: 8px;
+  }
+
+  #language-menu img {
+	  border: 1px solid <%= @site.flags_border %>;
+  }
+
+  .camera_caption {
+		  font-family: <%= site.design.font_family %>;
+		  font-size: <%= get_size_from_style(site.design.h3_style) %>;
+		  font-weight: <%= get_weight_from_style(site.design.h3_style) %>;
+	  text-align: center;
+	  }
+
+</style>

@@ -1,0 +1,16 @@
+<div class='blog-post-container'>
+  <div class='blog-post'>
+    <h2 class="blog-post-title"><%= raw blog_post.title %></h2>
+    <div class='blog-post-content'>
+      <%= raw blog_post.content %>
+    </div>
+    <div class='blog-post-date'>
+      <p style="font-size: 1.1em;font-style: italic;"><%= t('posted_on') %> <%= I18n.localize(blog_post.created_at, :format => "%d-%m-%Y") %></p>
+    </div>
+    <hr>
+  </div>
+</div>
+
+
+
+

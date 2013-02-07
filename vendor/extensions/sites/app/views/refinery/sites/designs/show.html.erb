@@ -1,0 +1,51 @@
+<% content_for :body_content_title do %>
+  <%= @design.scss_model %>
+<% end %>
+
+<% content_for :body_content_left do %>
+  <section>
+    <h1>Site</h1>
+    <p>
+      <%=raw @design.site_id %>
+    </p>
+  </section>
+  <section>
+    <h1>Scss Model</h1>
+    <p>
+      <%=raw @design.scss_model %>
+    </p>
+  </section>
+  <section>
+    <h1>Background Color</h1>
+    <p>
+      <%=raw @design.background_color %>
+    </p>
+  </section>
+  <section>
+    <h1>Font Family</h1>
+    <p>
+      <%=raw @design.font_family %>
+    </p>
+  </section>
+  <section>
+    <h1>Font Color</h1>
+    <p>
+      <%=raw @design.font_color %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :body_content_right do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="designs">
+      <% @designs.each do |design| %>
+        <li>
+          <%= link_to design.scss_model, refinery.sites_design_path(design) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

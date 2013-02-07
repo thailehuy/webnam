@@ -1,0 +1,11 @@
+<% content_for :body_content_left do %>
+  <ul id="designs">
+    <% @designs.each do |design| %>
+      <li>
+        <%= link_to design.scss_model, refinery.sites_design_path(design) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

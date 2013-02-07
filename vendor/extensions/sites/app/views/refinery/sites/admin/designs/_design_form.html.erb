@@ -1,0 +1,442 @@
+<div class='field'>
+  <%= f.label :font_family -%>
+  <%= f.select :font_family, ['Arial',
+                              'Arial Black',
+                              'Calibri',
+                              'Courier',
+                              'Garamond',
+                              'Geneva',
+                              'Georgia',
+                              'Helvetica',
+                              'MS Sans Serif',
+                              'Sans Serif',
+                              'Tahoma',
+                              'Times',
+                              'Verdana']  -%>
+</div>
+
+<div class='field'>
+  <%= f.label :menu_style -%>
+  <%= f.hidden_field :menu_style  -%>
+  <input id="menu-size" value="" size="6"/>
+  <select id="menu-weight">
+    <option value="normal">normal</option>
+    <option value="bold" >bold</option>
+  </select>
+  <input id="menu-color" value="#000000" maxlength="7" class="color {hash:true,pickerPosition:'right',pickerClosable:true}" />
+</div>
+
+<div class='field'>
+  <%= f.label :p_style -%>
+  <%= f.hidden_field :p_style  -%>
+  <input id="p-size" value="" size="6"/>
+  <select id="p-weight">
+    <option value="normal">normal</option>
+    <option value="bold" >bold</option>
+  </select>
+  <input id="p-color" value="#000000" maxlength="7" class="color {hash:true,pickerPosition:'right',pickerClosable:true}" />
+</div>
+
+<div class='field'>
+  <%= f.label :h1_style -%>
+  <%= f.hidden_field :h1_style  -%>
+  <input id="h1-size" value="" size="6"/>
+  <select id="h1-weight">
+    <option value="normal">normal</option>
+    <option value="bold" >bold</option>
+  </select>
+  <input id="h1-color" value="#000000" maxlength="7" class="color {hash:true,pickerPosition:'right',pickerClosable:true}" />
+</div>
+
+<div class='field'>
+  <%= f.label :h2_style -%>
+  <%= f.hidden_field :h2_style  -%>
+  <input id="h2-size" value="" size="6"/>
+  <select id="h2-weight">
+    <option value="normal">normal</option>
+    <option value="bold" >bold</option>
+  </select>
+  <input id="h2-color" value="#000000" maxlength="7" class="color {hash:true,pickerPosition:'right',pickerClosable:true}" />
+</div>
+
+<div class='field'>
+  <%= f.label :h3_style -%>
+  <%= f.hidden_field :h3_style  -%>
+  <input id="h3-size" value="" size="6"/>
+  <select id="h3-weight">
+    <option value="normal">normal</option>
+    <option value="bold" >bold</option>
+  </select>
+  <input id="h3-color" value="#000000" size="7" class="color {hash:true,pickerPosition:'right',pickerClosable:true}" />
+</div>
+
+<div class='field'>
+  <%= f.label :table_caption_style -%>
+  <%= f.hidden_field :table_caption_style  -%>
+  <input id="table_caption-size" value="" size="6"/>
+  <select id="table_caption-weight">
+    <option value="normal">normal</option>
+    <option value="bold" >bold</option>
+  </select>
+  <input id="table_caption-color" value="#000000" size="7" class="color {hash:true,pickerPosition:'right',pickerClosable:true}" />
+</div>
+
+<div class='field'>
+  <%= f.label :table_row_style -%>
+  <%= f.hidden_field :table_row_style  -%>
+  <input id="table_row-size" value="" size="6"/>
+  <select id="table_row-weight">
+    <option value="normal">normal</option>
+    <option value="bold" >bold</option>
+  </select>
+  <input id="table_row-color" value="#000000" size="7" class="color {hash:true,pickerPosition:'right',pickerClosable:true}" />
+</div>
+
+<div class='field'>
+  <span class="design-grounds">Menuground</span>
+  <%= f.text_field :menu_color, :maxlength => 7,
+                   :class => "back-color color {hash:true,pickerPosition:'right',pickerClosable:true}" -%>
+</div>
+
+<div class='field'>
+  <span class="design-grounds">Foreground</span>
+  <%= f.text_field :foreground_color, :maxlength => 7,
+                   :class => "back-color color {hash:true,pickerPosition:'right',pickerClosable:true}" -%>
+</div>
+
+<div class='field'>
+  <span class="design-grounds">Background</span>
+  <%= f.text_field :background_color, :maxlength => 7,
+                   :class => "back-color color {hash:true,pickerPosition:'right',pickerClosable:true}" -%>
+</div>
+
+<div class='field'>
+  <%= f.label :background_image, 'Background image' -%>
+  <%= render '/refinery/admin/image_picker',
+             :f => f,
+             :field => :background_image_id,
+             :image => design.background_image,
+             :toggle_image_display => false %>
+
+</div>
+
+<div class='field'>
+  <%= f.label :background_repeat -%>
+  <%= f.select(:background_repeat, options_for_select([['No repeat', 0],
+                                                  ['Horizontal', 1],
+                                                  ['Vertical', 2],
+                                                  ['Both', 3]], @site.design.background_repeat)) %>
+</div>
+
+
+
+<% content_for :javascripts do %>
+
+  <script>
+
+	  $(document).ready(function() {
+
+		  /* P Style */
+		  $('#p-size').keyup(function () {displayPsize($(this).val()); savePstyle();});
+		  $('#p-size').blur(function () {displayPsize($(this).val()); savePstyle();});
+		  $('#p-weight').change(function () {displayPweight($(this).val()); savePstyle();});
+		  $('#p-color').keyup(function () {displayPcolor($(this).val()); savePstyle();});
+		  $('#p-color').blur(function () {displayPcolor($(this).val()); savePstyle();});
+		  $('#p-color').change(function () {displayPcolor($(this).val()); savePstyle();});
+		  function displayPsize (size) {
+			  $('#design-show p').css("font-size", size);
+		  }
+		  function displayPweight (weight) {$('#design-show p').css("font-weight", weight);}
+		  function displayPcolor (color) {
+			  $('#design-show p').css("color", color);
+		  }
+		  function savePstyle() {
+			  $('#site_design_attributes_p_style').val($('#p-size').val()+' '+$('#p-color').val()+' '+$('#p-weight').val());
+		  }
+		  function displayPstyle (style) {
+			  var style_part=style.split(" ");
+			  $('#p-size').val(style_part[0]);
+			  $('#p-weight').val(style_part[2]);
+			  $('#p-color').val(style_part[1]);
+			  displayPsize(style_part[0]);
+			  displayPweight(style_part[2]);
+			  displayPcolor(style_part[1]);
+		  }
+		  displayPstyle ($('#site_design_attributes_p_style').val());
+
+		  $('#site_design_attributes_font_family').change(function () {displayFontFamily($(this).val());});
+		  $('#site_design_attributes_font_family').keydown(function () {displayFontFamily($(this).val());});
+		  $('#site_design_attributes_font_family').keyup(function () {displayFontFamily($(this).val());});
+		  $('#site_design_attributes_font_family').blur(function () {displayFontFamily($(this).val());});
+		  function displayFontFamily (family) {
+			  $('#design-show p').css("font-family", family);
+			  $('#design-show h1').css("font-family", family);
+			  $('#design-show h2').css("font-family", family);
+			  $('#design-show h3').css("font-family", family);
+			  $('#design-show a').css("font-family", family);
+			  $('#design-show #main-menu li a span').css("font-family", family);
+			  $('#design-show caption').css("font-family", family);
+			  $('#design-show td').css("font-family", family);
+		  }
+		  displayFontFamily($('#site_design_attributes_font_family').val());
+
+
+		  /* Menu Style */
+		  $('#menu-size').keyup(function () {displayMenusize($(this).val()); saveMenustyle();});
+		  $('#menu-size').blur(function () {displayMenusize($(this).val()); saveMenustyle();});
+		  $('#menu-weight').change(function () {displayMenuweight($(this).val()); saveMenustyle();});
+		  $('#menu-color').keyup(function () {displayMenucolor($(this).val()); saveMenustyle();});
+		  $('#menu-color').blur(function () {displayMenucolor($(this).val()); saveMenustyle();});
+		  $('#menu-color').change(function () {displayMenucolor($(this).val()); saveMenustyle();});
+		  function displayMenusize (size) {
+			  $('#design-show #main-menu li a span').css("font-size", size);
+		  }
+		  function displayMenuweight (weight) {$('#design-show #main-menu li a span').css("font-weight", weight);}
+		  function displayMenucolor (color) {
+			  $('#design-show #main-menu li a span').css("color", color);
+		  }
+		  function saveMenustyle() {
+			  $('#site_design_attributes_menu_style').val($('#menu-size').val()+' '+$('#menu-color').val()+' '+$('#menu-weight').val());
+		  }
+		  function displayMenustyle (style) {
+			  var style_part=style.split(" ");
+			  $('#menu-size').val(style_part[0]);
+			  $('#menu-weight').val(style_part[2]);
+			  $('#menu-color').val(style_part[1]);
+			  displayMenusize(style_part[0]);
+			  displayMenuweight(style_part[2]);
+			  displayMenucolor(style_part[1]);
+		  }
+		  displayMenustyle ($('#site_design_attributes_menu_style').val());
+
+
+
+		  /* H1 Style */
+		  $('#h1-size').keyup(function () {displayH1size($(this).val()); saveH1style();});
+		  $('#h1-size').blur(function () {displayH1size($(this).val()); saveH1style();});
+		  $('#h1-weight').change(function () {displayH1weight($(this).val()); saveH1style();});
+		  $('#h1-color').keyup(function () {displayH1color($(this).val()); saveH1style();});
+		  $('#h1-color').blur(function () {displayH1color($(this).val()); saveH1style();});
+		  $('#h1-color').change(function () {displayH1color($(this).val()); saveH1style();});
+		  function displayH1size (size) {$('#design-show h1').css("font-size", size);}
+		  function displayH1weight (weight) {$('#design-show h1').css("font-weight", weight);}
+		  function displayH1color (color) {
+			  $('#design-show h1').css("color", color);
+		  }
+		  function saveH1style() {
+			  $('#site_design_attributes_h1_style').val($('#h1-size').val()+' '+$('#h1-color').val()+' '+$('#h1-weight').val());
+		  }
+		  function displayH1style (style) {
+			  var style_part=style.split(" ");
+			  $('#h1-size').val(style_part[0]);
+			  $('#h1-weight').val(style_part[2]);
+			  $('#h1-color').val(style_part[1]);
+			  displayH1size(style_part[0]);
+			  displayH1weight(style_part[2]);
+			  displayH1color(style_part[1]);
+		  }
+		  displayH1style ($('#site_design_attributes_h1_style').val());
+
+		  /* H2 Style */
+		  $('#h2-size').keyup(function () {displayH2size($(this).val()); saveH2style();});
+		  $('#h2-size').blur(function () {displayH2size($(this).val()); saveH2style();});
+		  $('#h2-weight').change(function () {displayH2weight($(this).val()); saveH2style();});
+		  $('#h2-color').keyup(function () {displayH2color($(this).val()); saveH2style();});
+		  $('#h2-color').blur(function () {displayH2color($(this).val()); saveH2style();});
+		  $('#h2-color').change(function () {displayH2color($(this).val()); saveH2style();});
+		  function displayH2size (size) {$('#design-show h2').css("font-size", size);}
+		  function displayH2weight (weight) {$('#design-show h2').css("font-weight", weight);}
+		  function displayH2color (color) {
+			  $('#design-show h2').css("color", color);
+		  }
+		  function saveH2style() {
+			  $('#site_design_attributes_h2_style').val($('#h2-size').val()+' '+$('#h2-color').val()+' '+$('#h2-weight').val());
+		  }
+		  function displayH2style (style) {
+			  var style_part=style.split(" ");
+			  $('#h2-size').val(style_part[0]);
+			  $('#h2-weight').val(style_part[2]);
+			  $('#h2-color').val(style_part[1]);
+			  displayH2size(style_part[0]);
+			  displayH2weight(style_part[2]);
+			  displayH2color(style_part[1]);
+		  }
+		  displayH2style ($('#site_design_attributes_h2_style').val());
+
+		  /* H3 Style */
+		  $('#h3-size').keyup(function () {displayH3size($(this).val()); saveH3style();});
+		  $('#h3-size').blur(function () {displayH3size($(this).val()); saveH3style();});
+		  $('#h3-weight').change(function () {displayH3weight($(this).val()); saveH3style();});
+		  $('#h3-color').keyup(function () {displayH3color($(this).val()); saveH3style();});
+		  $('#h3-color').blur(function () {displayH3color($(this).val()); saveH3style();});
+		  $('#h3-color').change(function () {displayH3color($(this).val()); saveH3style();});
+		  function displayH3size (size) {$('#design-show h3').css("font-size", size);}
+		  function displayH3weight (weight) {$('#design-show h3').css("font-weight", weight);}
+		  function displayH3color (color) {
+			  $('#design-show h3').css("color", color);
+		  }
+		  function saveH3style() {
+			  $('#site_design_attributes_h3_style').val($('#h3-size').val()+' '+$('#h3-color').val()+' '+$('#h3-weight').val());
+		  }
+		  function displayH3style (style) {
+			  var style_part=style.split(" ");
+			  $('#h3-size').val(style_part[0]);
+			  $('#h3-weight').val(style_part[2]);
+			  $('#h3-color').val(style_part[1]);
+			  displayH3size(style_part[0]);
+			  displayH3weight(style_part[2]);
+			  displayH3color(style_part[1]);
+		  }
+		  displayH3style ($('#site_design_attributes_h3_style').val());
+
+		  /* Caption Style */
+		  $('#table_caption-size').keyup(function () {displayCaptionsize($(this).val()); saveCaptionstyle();});
+		  $('#table_caption-size').blur(function () {displayCaptionsize($(this).val()); saveCaptionstyle();});
+		  $('#table_caption-weight').change(function () {displayCaptionweight($(this).val()); saveCaptionstyle();});
+		  $('#table_caption-color').keyup(function () {displayCaptioncolor($(this).val()); saveCaptionstyle();});
+		  $('#table_caption-color').blur(function () {displayCaptioncolor($(this).val()); saveCaptionstyle();});
+		  $('#table_caption-color').change(function () {displayCaptioncolor($(this).val()); saveCaptionstyle();});
+		  function displayCaptionsize (size) {
+			  $('#design-show caption').css("font-size", size);
+			  $('#design-show caption').css("line-height", size);
+		  }
+		  function displayCaptionweight (weight) {$('#design-show caption').css("font-weight", weight);}
+		  function displayCaptioncolor (color) {
+			  $('#design-show caption').css("color", color);
+		  }
+		  function saveCaptionstyle() {
+			  $('#site_design_attributes_table_caption_style').val($('#table_caption-size').val()+' '+$('#table_caption-color').val()+' '+$('#table_caption-weight').val());
+		  }
+		  function displayCaptionstyle (style) {
+			  var style_part=style.split(" ");
+			  $('#table_caption-size').val(style_part[0]);
+			  $('#table_caption-weight').val(style_part[2]);
+			  $('#table_caption-color').val(style_part[1]);
+			  displayCaptionsize(style_part[0]);
+			  displayCaptionweight(style_part[2]);
+			  displayCaptioncolor(style_part[1]);
+		  }
+		  displayCaptionstyle ($('#site_design_attributes_table_caption_style').val());
+
+		  /* Row Style */
+		  $('#table_row-size').keyup(function () {displayRowsize($(this).val()); saveRowstyle();});
+		  $('#table_row-size').blur(function () {displayRowsize($(this).val()); saveRowstyle();});
+		  $('#table_row-weight').change(function () {displayRowweight($(this).val()); saveRowstyle();});
+		  $('#table_row-color').keyup(function () {displayRowcolor($(this).val()); saveRowstyle();});
+		  $('#table_row-color').blur(function () {displayRowcolor($(this).val()); saveRowstyle();});
+		  $('#table_row-color').change(function () {displayRowcolor($(this).val()); saveRowstyle();});
+		  function displayRowsize (size) {
+			  $('#design-show td').css("font-size", size);
+			  $('#design-show td').css("line-height", size);
+		  }
+		  function displayRowweight (weight) {$('#design-show td').css("font-weight", weight);}
+		  function displayRowcolor (color) {
+			  $('#design-show td').css("color", color);
+		  }
+		  function saveRowstyle() {
+			  $('#site_design_attributes_table_row_style').val($('#table_row-size').val()+' '+$('#table_row-color').val()+' '+$('#table_row-weight').val());
+		  }
+		  function displayRowstyle (style) {
+			  var style_part=style.split(" ");
+			  $('#table_row-size').val(style_part[0]);
+			  $('#table_row-weight').val(style_part[2]);
+			  $('#table_row-color').val(style_part[1]);
+			  displayRowsize(style_part[0]);
+			  displayRowweight(style_part[2]);
+			  displayRowcolor(style_part[1]);
+		  }
+		  displayRowstyle ($('#site_design_attributes_table_row_style').val());
+
+		  /* Background color */
+		  $('#site_design_attributes_background_color').keyup(function () {displayBgColor($(this).val())});
+		  $('#site_design_attributes_background_color').blur(function () {displayBgColor($(this).val())});
+		  $('#site_design_attributes_background_color').change(function () {displayBgColor($(this).val())});
+		  function displayBgColor (color) {
+			  $('#design-show').css("background-color",color);
+		  }
+		  displayBgColor ($('#site_design_attributes_background_color').val());
+
+		  function displayBgImage (image) {
+			  $('#design-show').css("background-image",image);
+		  }
+
+		  /* Background repeat */
+		  $('#site_design_attributes_background_repeat').change(function () {displayBgRepeat($(this).val())});
+		  function displayBgRepeat (repeat) {
+			  var bg_repeat = ["no-repeat","repeat-x","repeat-y","repeat"];
+			  $('#design-show').css("background-repeat", bg_repeat[repeat]);
+		  }
+
+		  /* Foreground color */
+		  $('#site_design_attributes_foreground_color').keyup(function () {displayFg($(this).val())});
+		  $('#site_design_attributes_foreground_color').blur(function () {displayFg($(this).val())});
+		  $('#site_design_attributes_foreground_color').change(function () {displayFg($(this).val())});
+		  function displayFg (color) {
+			  $('#design-container').css("background-color",color);
+			  displayMn ($('#site_design_attributes_menu_color').val());
+			  setAlternateRowsColor(color);
+		  }
+		  displayFg ($('#site_design_attributes_foreground_color').val());
+
+		  /* Menu color */
+		  $('#site_design_attributes_menu_color').keyup(function () {displayMn($(this).val())});
+		  $('#site_design_attributes_menu_color').blur(function () {displayMn($(this).val())});
+		  $('#site_design_attributes_menu_color').change(function () {displayMn($(this).val())});
+		  function displayMn (color) {
+
+			  var gradient_menu_chrome = "-webkit-gradient(linear, left top, left bottom, color-stop(75%, " + darkenColor(color,0.6) + "), color-stop(35%, "+ color +"))";
+			  var gradient_menu_mozilla = "-moz-linear-gradient(top, " + color + " 35%, " + darkenColor(color,0.6) + " 75%)";
+
+			  $('div #design-show #header').css("background-image", gradient_menu_mozilla);
+			  $('div #design-show #header').css("background-image", gradient_menu_chrome);
+
+			  var forecolor = $('#site_design_attributes_foreground_color').val();
+			  var gradient_footer_chrome = "-webkit-gradient(linear, left top, left bottom, color-stop(75%, " + darkenColor(color,0.6) + "), color-stop(25%, "+ forecolor +"))";
+			  var gradient_footer_mozilla = "-moz-linear-gradient(top, " + forecolor + " 25%, " + darkenColor(color,0.75) + " 75%)";
+
+			  $('div #design-show #footer').css("background-image", gradient_footer_mozilla);
+			  $('div #design-show #footer').css("background-image", gradient_footer_chrome);
+		  }
+		  displayMn ($('#site_design_attributes_menu_color').val());
+
+
+		  function darkenColor(color,amount) {
+
+			  var colorInt = parseInt(color.substring(1),16);
+
+			  var R = (colorInt & 0xFF0000) >> 16;
+			  var G = (colorInt & 0x00FF00) >> 8;
+			  var B = (colorInt & 0x0000FF) >> 0;
+
+			  R = Math.floor(R*amount);
+			  G = Math.floor(G*amount);
+			  B = Math.floor(B*amount);
+
+			  var newColorInt = (R<<16) + (G<<8) + (B);
+			  return ("#"+newColorInt.toString(16));
+		  }
+
+		  function setAlternateRowsColor(color) {
+
+			  shade = -20;
+			  var colorInt = parseInt(color.substring(1),16);
+
+			  var R = (colorInt & 0xFF0000) >> 16;
+			  var G = (colorInt & 0x00FF00) >> 8;
+			  var B = (colorInt & 0x0000FF) >> 0;
+
+			  R = R + Math.floor((shade/255)*R);
+			  G = G + Math.floor((shade/255)*G);
+			  B = B + Math.floor((shade/255)*B);
+
+			  var newColorInt = (R<<16) + (G<<8) + (B);
+			  var newColorStr = "#"+newColorInt.toString(16);
+
+			  $('tr:nth-child(odd)').css('background-color', newColorStr);
+		  }
+	  });
+  </script>
+
+  <%= javascript_include_tag 'jscolor' -%>
+
+<% end %>

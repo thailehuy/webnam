@@ -1,0 +1,29 @@
+<head>
+  <meta charset='<%= Rails.application.config.encoding %>' />
+  <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><![endif]-->
+	<%=  yield :meta_tags %>
+  <%= csrf_meta_tags if Refinery::Core.authenticity_token_on_frontend -%>
+  <%= yield :meta %>
+
+  <%= stylesheet_link_tag "application", "formatting", "theme", "camera" , "carousel" %>
+  <%= stylesheet_link_tag "home" if home_page? %>
+  <%= yield :stylesheets %>
+
+	<% if @site.present? %>
+    <% if @site.published %>
+			<%= render '/refinery/site_styles', :site => @site %>
+
+		  <% if @site.analytics_code.present? %>
+				<% page_code = @site.analytics_code.strip %>
+			  <% unless local_request? or refinery_user? -%>
+			    <script>var _gaq=[['_setAccount','<%= page_code %>'],['_trackPageview'],['_trackPageLoadTime']];(function(d,t){
+				    var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+				    g.async=1;g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)
+			    }(document,'script'))</script>
+			  <% end -%>
+			<% end %>
+    <% end %>
+	<% end %>
+
+  <%= javascript_include_tag 'modernizr-min' %>
+</head>

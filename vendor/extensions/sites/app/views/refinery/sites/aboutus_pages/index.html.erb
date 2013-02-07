@@ -1,0 +1,11 @@
+<% content_for :body_content_left do %>
+  <ul id="aboutus_pages">
+    <% @aboutus_pages.each do |aboutus_page| %>
+      <li>
+        <%= link_to aboutus_page.category, refinery.sites_aboutus_page_path(aboutus_page) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

@@ -1,0 +1,36 @@
+<li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(product) -%>">
+  <span class='title' style="width: 250px;display: inline-block;">
+    <%= product.name %>
+
+    <% if Refinery.i18n_enabled? and Refinery::I18n.frontend_locales.many? %>
+      <span class='preview'>
+        <% product.translations.each do |translation| %>
+          <% if translation.name.present? %>
+            <%= link_to refinery_icon_tag("flags/#{translation.locale}.png", :size => '16x11'),
+                         refinery.edit_sites_admin_product_path(product, :switch_locale => translation.locale),
+                         :class => 'locale' %>
+          <% end %>
+        <% end %>
+      </span>
+    <% end %>
+  </span>
+  <span style="width: 200px;display: inline-block;">
+    <% if @site.use_categories %>
+	    <%= product.product_category.name unless product.product_category.nil? %>
+		<% end %>
+  </span>
+  <span style="width: 100px;display: inline-block;">
+		<% if @site.use_gender %>
+	    <%= t(product.gender_name) %>
+		<% end %>
+  </span>
+  <span class='actions'>
+    <%= link_to refinery_icon_tag("application_edit.png"), refinery.edit_sites_admin_product_path(product),
+         :title => t('.edit') %>
+    <%= link_to refinery_icon_tag("delete.png"), refinery.sites_admin_product_path(product),
+        :class => "cancel confirm-delete",
+        :title => t('.delete'),
+        :confirm => t('message', :scope => 'refinery.admin.delete', :title => product.name),
+        :method => :delete %>
+  </span>
+</li>

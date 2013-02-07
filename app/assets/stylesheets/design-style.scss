@@ -1,0 +1,561 @@
+
+/*	==============================================================================
+	Variables and Functions
+	============================================================================ */
+@mixin rounded($radius: 10px) {
+	border-radius: $radius;
+	-moz-border-radius: $radius;
+	-webkit-border-radius: $radius;
+}
+
+@mixin rounded-side ($radius-top: 10px, $radius-right: 10px,$radius-bottom: 10px,$radius-left: 10px){ 
+	border-radius: $radius-top $radius-right $radius-bottom $radius-left;
+	-moz-border-radius: $radius-top $radius-right $radius-bottom $radius-left;
+	-webkit-border-radius: $radius-top $radius-right $radius-bottom $radius-left;	
+}
+
+@mixin background-color($bgcolor: #fff) {
+  background-color:$bgcolor
+}
+
+@mixin shadow ($offset:0px , $blur: 0px, $size:5px, $color:#888  ){
+	-moz-box-shadow: $offset $blur $size $color;
+	-webkit-box-shadow: $offset $blur $size $color;
+	box-shadow: $offset $blur $size $color;
+}
+
+@mixin font( $size:0px , $family:'"Times New Roman",Georgia,Serif ', $color: #888 , $weight: normal, $style: normal )
+{
+	font-size: $size;
+	font-family:$family;
+	color: $color;
+	font-weight:$weight;
+	font-style:$style;
+}
+
+@mixin background-attr( $bg, $wid:"", $pos01: 0, $pos02: 0, $repeat:no-repeat  )
+{
+	background: url($bg ) $repeat $pos01 $pos02;
+	@if $wid !=""{ width:$wid;}
+	
+}
+
+@mixin mirror ()
+{
+}
+
+@mixin text-shadow( $h-shadow:2px,  $v-shadow:2px, $blur:#ff5500 ){
+	text-shadow: $h-shadow  $v-shadow  $blur;
+}
+
+@mixin extra-block($wid,$bg,$pos01:0, $pos02:0, $pos-type:relative){
+	width: $wid;
+	@include background-attr( $bg, "", 0, 0,no-repeat);
+	position: $pos-type;
+	top: $pos01;
+	left: $pos02;
+}
+
+@mixin hidden-text(){
+	text-indent:-9999px;
+	font-size:0px;
+	line-height:0px;
+	text-transform:uppercase;
+}
+
+@mixin gradient( $from, $to, $xStart:left, $yStart:bottom, $xEnd:left, $yEnd:top, $range-from:100%, $range-to:23% ){
+
+	background-image: linear-gradient(  $yStart, $to $range-to, $from $range-from );
+	background-image: -o-linear-gradient( $yStart, $to $range-to, $from $range-from);
+	background-image: -moz-linear-gradient(  $yStart, $to $range-to, $from $range-from);
+	background-image: -webkit-linear-gradient( $yStart, $to $range-to, $from $range-from);
+	background-image: -ms-linear-gradient( $yStart, $to $range-to, $from $range-from);
+    background-image: -webkit-gradient(
+        linear,
+        $xStart $yStart,
+        $xEnd $yEnd,
+        color-stop($range-to, $to),
+        color-stop($range-from, $from)
+    );
+}
+
+
+$background-body: "../images/backgroundimage.jpg";
+
+$font-name:  sans-serif;
+$font-color: #222;
+$font-size:13px;
+$font-style: italic; 
+$font-weight: bold;
+
+$link-color: #000;
+$link-color-hover: #551a8b;
+
+$address-home:"Bellingham, WA 98226";
+$contact-home:"(360) 734-0246";
+
+
+$logo: "../images/logo.jpg";
+
+$footer-bg: "../images/footer-bg.gif";
+
+$padding: 10px;
+
+$list-title-color:#216550;
+
+#design-show {
+
+  /* =============================================================================
+     HTML5 element display
+     ========================================================================== */
+
+  article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+  audio[controls], canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+
+
+  /* =============================================================================
+     Base
+     ========================================================================== */
+  html { font-size: 100%; overflow-y: scroll; -webkit-overflow-scrolling: touch; -webkit-tap-highlight-color: rgba(0,0,0,0); -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+
+  body { margin: 0; font-size:$font-size;  line-height: 1.231; }
+
+  body, button, input, select, textarea { font-family:$font-name; color:$font-color ; }
+
+  ::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
+  ::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+
+
+  /* =============================================================================
+     Links
+     ========================================================================== */
+
+  a {
+      color:$link-color;
+      text-decoration:none;
+
+      &:visited { color: $link-color;  }
+      &:focus { outline: thin dotted; }
+      &:hover, &:active { outline: 0; color:$link-color-hover }
+
+  }
+
+
+  /* =============================================================================
+     Typography
+     ========================================================================== */
+
+  abbr[title] { border-bottom: 1px dotted; }
+
+  b, strong { font-weight: bold; }
+
+  blockquote { margin: 1em 40px; }
+
+  dfn { font-style: italic; }
+
+  hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+
+  ins { background: #ff9; color: #000; text-decoration: none; }
+
+  mark { background: #ff0; color: #000; font-style: $font-style; font-weight: $font-weight; }
+
+  pre, code, kbd, samp { font-family: monospace, monospace; _font-family: 'courier new', monospace; font-size: 1em; }
+
+  pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+
+  q { quotes: none; }
+  q:before, q:after { content: ""; content: none; }
+
+  small { font-size: 85%; }
+
+  sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+  sup { top: -0.5em; }
+  sub { bottom: -0.25em; }
+
+
+  /* =============================================================================
+     Lists
+     ========================================================================== */
+
+  ul, ol { margin: 1em 0;
+    padding: 0 0 0 40px;
+    margin: 0px 0px 0px 10px;
+  }
+  dd { margin: 0 0 0 40px; }
+  nav ul, nav ol { list-style: none; margin: 0; padding: 0; }
+
+
+  /* =============================================================================
+     Embedded content
+     ========================================================================== */
+  img { border: 0; -ms-interpolation-mode: bicubic; }
+
+  svg:not(:root) {    overflow: hidden;}
+
+  /* =============================================================================
+     Figures
+     ========================================================================== */
+
+  figure { margin: 0; }
+
+
+  /* =============================================================================
+     Forms
+     ========================================================================== */
+
+  form { margin: 0; }
+  fieldset { border: 0; margin: 0; padding: 0; }
+
+  /*
+   * 1. Correct color not inheriting in IE6/7/8/9
+   * 2. Correct alignment displayed oddly in IE6/7
+   */
+
+  legend { border: 0; *margin-left: -7px; padding: 0; }
+
+  /* Indicate that 'label' will shift focus to the associated form element */
+  label { cursor: pointer; }
+
+  /*
+   * 1. Correct font-size not inheriting in all browsers
+   * 2. Remove margins in FF3/4 S5 Chrome
+   * 3. Define consistent vertical alignment display in all browsers
+   */
+
+  button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
+
+  /*
+   * 1. Define line-height as normal to match FF3/4 (set using !important in the UA stylesheet)
+   * 2. Correct inner spacing displayed oddly in IE6/7
+   */
+
+  button, input { line-height: normal; *overflow: visible; }
+
+  /*
+   * 1. Display hand cursor for clickable form elements
+   * 2. Allow styling of clickable form elements in iOS
+   */
+
+  button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; }
+
+  /*
+   * Consistent box sizing and appearance
+   */
+
+  input[type="checkbox"], input[type="radio"] { box-sizing: border-box; }
+  input[type="search"] { -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+
+  /*
+   * Remove inner padding and border in FF3/4
+   * www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
+   */
+
+  button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+
+  /* Remove default vertical scrollbar in IE6/7/8/9 */
+  textarea { overflow: auto; vertical-align: top; }
+
+  /* Colors for form validity */
+  input:valid, textarea:valid {  }
+  input:invalid, textarea:invalid { background-color: #f0dddd; }
+
+
+
+  /* =============================================================================
+     Tables
+     ========================================================================== */
+
+  table { border-collapse: collapse; border-spacing: 0; width:100%; margin-bottom:$padding;
+
+      $bgcolor: #d4cdbe;
+
+      th,td{
+          text-align:left;
+          @include font(14px,'"Times New Roman",Georgia,Serif',#000,normal,normal);
+          vertical-align:top;
+      }
+
+      th{
+          .block-title {
+              margin:0;
+              @include font(18px,'"Times New Roman",Georgia,Serif',#216550,bold,italic);
+          }
+      }
+
+      td.desc{
+          width: 85%;
+      }
+
+      tr.alternative {
+          td {
+              @include background-color($bgcolor);
+
+          }
+      }
+  }
+
+
+  /* =============================================================================
+     Primary styles
+     Author:
+     ========================================================================== */
+  body{
+
+      @include background-attr( $background-body,'', center,top );
+      @include background-color(#4E413B);
+
+   }
+  #design-container {
+      width:100%;
+      margin:10px auto;
+      @include background-color();
+      @include rounded(15px);
+      @include shadow(0, 0 , 8px, #000);
+      overflow:hidden;
+      position:relative;
+      z-index: 999;
+  }
+
+  .mirror {
+      position: relative;
+
+      &:before, &:after {
+          display: block;
+          position: absolute;
+          bottom: -1em; /* You should change this value to fit your font */
+          left: 0;
+          right: 0;
+      }
+
+      &:before {
+          content: 'Reflected Text!';
+          opacity: .3;
+          -webkit-transform: scaleY(-1);
+          -moz-transform: scaleY(-1);
+          -o-transform: scaleY(-1);
+      }
+
+      &:after {
+          /*background: -webkit-gradient(linear, left top, left center, from(rgba(255,255,255,0)), to(rgb(255,255,255)));*/
+          /*background: -moz-linear-gradient(top, rgba(255,255,255,0), rgb(255,255,255));*/
+          content: ' ';
+          height: 1em;
+      }
+
+  }
+
+  #header{
+      height:$padding*5;
+      @include rounded-side(15px,15px,0px,0px);
+      @include gradient(#F0ebF0, #b8a295);
+      #branding{
+          width:0px;
+          float:left;
+
+          h1 {
+                  margin:0;
+                  a {
+                      display:block;
+                      @include hidden-text();
+                      @include background-attr( $logo,'',-5px,-9px, no-repeat );
+                      height:$padding * 5;
+                  }
+          }
+      }
+  }
+
+  #main-menu {
+      float:left;
+      width:100%;
+      overflow: hidden;
+
+      height:$padding*5;
+
+      li {
+          float:left;
+          display:inline-block;
+
+          a {
+              @include font(18px,'"Times New Roman",Georgia,Serif ', #000, bold, normal );
+              display:block;
+              height:$padding * 4;
+              padding: 12px 10px 10px;
+              cursor:pointer;
+
+              &:hover{
+                  @include font(18px,'"Times New Roman",Georgia,Serif ', #fff, bold, normal );
+              }
+
+              span{
+                  display:block;
+              }
+          }
+
+
+          &.last{
+              margin:0;
+          }
+
+      }
+  }
+
+  #banner {
+
+      position:relative;
+
+      .block-text {
+          position:absolute;
+          bottom:25px;
+          @include font(20px,'"Times New Roman",Georgia,Serif ', #000, normal, normal );
+          text-align:center;
+          p{
+              margin:5px 0;
+          }
+      }
+      .contact {
+          right:10px;
+
+          .mirror {
+              @include font(28px,'"Times New Roman",Georgia,Serif ', #000, bold, normal );
+              &:before {
+                  content: $contact-home;
+              }
+          }
+          .hilite{
+              @include text-shadow( -1px, 1px, #FFFFFF);
+              @include font(25px,'"Times New Roman",Georgia,Serif ', #000, bold, normal );
+          }
+      }
+      .address {
+          left:10px;
+          .mirror {
+              &:before {
+                  content: $address-home;
+              }
+          }
+      }
+  }
+
+
+  .post{
+      padding: $padding  $padding * 4 ;
+      overflow:hidden;
+      .post-title{
+          @include font(25px,'Arial', #000, bold, normal);
+      }
+
+      p{
+          @include font(16px,'Arial', #000, normal, normal);
+
+          &.center{
+              text-align:center;
+          }
+      }
+
+  }
+
+  .list {
+
+      @include background-color(#ebe5d9);
+      padding: $padding/2;
+      overflow:hidden;
+      .big-title{
+          @include font(25px,'"Times New Roman",Georgia,Serif', $list-title-color, bold,normal);
+          text-decoration:underline;
+          margin: $padding/2
+      }
+      .center{
+          text-align:center;
+      }
+
+      .col{width:48.5%}
+      .left-col{float:left}
+      .right-col{float:right}
+
+
+  }
+
+  #footer{
+      clear:both;
+      @include rounded-side(0,0,15px,15px);
+      height: 25px;
+      padding: 20px 15px 0 15px;
+      @include gradient(#F0ebF0, #b8a295);
+      overflow:hidden;
+      .copyright{
+          float:right;
+          height:30px;
+      }
+
+      .extra{
+          width: 40%;
+          float:left;
+
+          a.contactus{
+
+              height:37px;
+              display:block;
+              color:$link-color;
+
+              &:hover{
+                  color:$link-color-hover;
+              }
+          }
+
+      }
+  }
+
+
+  /* =============================================================================
+     Non-semantic helper classes
+     Please define your styles before this section.
+     ========================================================================== */
+
+  /* For image replacement */
+  .ir { display: block; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; text-align: left; direction: ltr;
+      br { display: none; }
+   }
+
+
+  .hidden { display: none; visibility: hidden; }
+  .visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+
+  .visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
+  .invisible { visibility: hidden; }
+
+  .clearfix:before, .clearfix:after { content: ""; display: table; }
+  .clearfix:after { clear: both; }
+  .clearfix { zoom: 1; }
+
+}
+
+#design {
+
+  padding-right: 20px;
+
+  input {
+    padding: 2px 3px;
+  }
+
+  .color {
+    width: 70px;
+  }
+
+  .design-grounds {
+    font-weight: bold;
+    width: 113px;
+    display: inline-block;
+    margin-top: 20px;
+  }
+
+  .back-color {
+    height: 25px;
+    text-align: center;
+    @include rounded(3px);
+  }
+}
+
+
+
+

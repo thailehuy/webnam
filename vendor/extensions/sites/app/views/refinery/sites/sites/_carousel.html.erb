@@ -1,0 +1,42 @@
+<% if @site.carousel_images.count > 0 %>
+  <div style="margin-left: 50px; width: 950px;display: inline-block;">
+  <div id="carousel">
+    <% @site.carousel_images.order('position').each do |i| %>
+      <% unless i.flowing_image.nil? %>
+        <%
+           img_height = (170 * i.flowing_image.height) / i.flowing_image.width
+           margin_top =  "margin-top:" + ((img_height < 130) ? (130 - img_height) : 0).to_s + "px"
+        %>
+        <div class="carousel-item" style="text-align: center;">
+          <% unless i.weblink.blank? %>
+            <%= link_to i.weblink do %>
+			        <div class="image-carousel">
+                <%= image_tag i.flowing_image.thumbnail("170x130").url, :style => margin_top %>
+			        </div>
+              <div class="carousel-caption"><%= raw i.caption %></div>
+            <% end %>
+          <% else %>
+            <div class="image-carousel">
+	            <%= image_tag i.flowing_image.thumbnail("170x130").url, :style => margin_top %>
+            </div>
+            <div class="carousel-caption"><%= raw i.caption %></div>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="pagination" id="carousel_pag"></div>
+  </div>
+<% end %>
+
+<% content_for :javascripts do %>
+  <script>
+
+	  $(document).ready(function() {
+		  startCarousel(<%= @site.carousel_pause %>,<%= @site.carousel_transition %>);
+	  });
+
+  </script>
+<% end %>
+
+

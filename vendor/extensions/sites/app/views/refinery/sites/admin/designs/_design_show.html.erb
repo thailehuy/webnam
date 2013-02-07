@@ -1,0 +1,144 @@
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag "design-style" %>
+  <style>
+
+	  div #design-show{
+		  width: 550px;
+		  height: 875px;
+		  float: right;
+		  text-align: left;
+		  border-style: solid;
+		  border-color: #808080;
+		  padding: 10px 50px;
+		  font-size: 14px;
+		  <% if @site.design.background_image.present? %>
+		    background: <%= @site.design.background_color %> url("<%= @site.design.background_image.url %>") <%= background_repeat(@site.design.background_repeat) %>  top center;
+	    <% end %>
+	  }
+
+	  div #design-show #header {
+		  width: 100%;
+	  }
+
+	  <% if @site.logo.present? %>
+		  div #design-show #header #branding h1 a {
+			  background: url("<%= @site.logo.url %>") no-repeat -5px -9px;
+		  }
+	  <% end %>
+
+	  div #design-show #header {
+		  background-image: -o-linear-gradient(top, <%= @site.design.menu_color %> 35%, <%= darken_color(@site.design.menu_color,0.6) %> 75%);
+		  background-image: -moz-linear-gradient(top, <%= @site.design.menu_color %> 35%, <%= darken_color(@site.design.menu_color,0.6) %> 75%);
+		  background-image: -webkit-linear-gradient(top, <%= @site.design.menu_color %> 35%, <%= darken_color(@site.design.menu_color,0.6) %> 75%);
+		  background-image: -ms-linear-gradient(top, <%= @site.design.menu_color %> 35%, <%= darken_color(@site.design.menu_color,0.6) %> 75%);
+		  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(75%, <%= darken_color(@site.design.menu_color,0.6) %>), color-stop(35%, <%= @site.design.menu_color %>));
+	  }
+
+	  div #design-show #footer {
+		  background-image: -o-linear-gradient(top, <%= @site.design.foreground_color %> 25%, <%= darken_color(@site.design.menu_color,0.75) %> 75%);
+		  background-image: -moz-linear-gradient(top, <%= @site.design.foreground_color %> 25%, <%= darken_color(@site.design.menu_color,0.75) %> 75%);
+		  background-image: -webkit-linear-gradient(top, <%= @site.design.foreground_color %> 25%,<%= darken_color(@site.design.menu_color,0.75) %> 75%);
+		  background-image: -ms-linear-gradient(top, <%= @site.design.foreground_color %> 25%, <%= darken_color(@site.design.menu_color,0.75) %> 75%);
+		  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(75%, <%= darken_color(@site.design.menu_color,0.75) %>), color-stop(25%, <%= @site.design.foreground_color %>));
+	  }
+
+	  div #design-show table {
+		  border: 1px solid black;
+	  }
+
+	  div #design-show caption {
+		  border: 1px solid black;
+		  border-bottom: 0px;
+		  padding: 4px 5px;
+	  }
+
+	  div #design-show td {
+		  border: 1px solid black;
+		  border-bottom: 0px;
+		  padding: 4px 5px;
+	  }
+
+	  div #home-content {
+		  padding: 0px 15px;
+	  }
+
+  </style>
+
+<% end %>
+
+<div id="design-show">
+	<div id="design-container">
+    <header id="header">
+	    <div id="branding">
+	      <h1>
+	        <a href="#" title="">Site Name</a>
+	      </h1>
+	    </div>
+	    <nav id="main-menu">
+	      <ul>
+	        <li><a href=""><span>About Us</span></a></li>
+	        <li><a href=""><span>Services</span></a></li>
+	        <li><a href=""><span>Products</span></a></li>
+	        <li><a href=""><span>Coupons</span></a></li>
+	        <li><a href=""><span>Blog</span></a></li>
+	        <li class="last"><a href=""><span>Events</span></a></li>
+	      </ul>
+	    </nav>
+	  </header>
+		<div id="home-content">
+		  <h1>Header 1 with h1 tag</h1>
+		  <h2>Header 2 with h2 tag</h2>
+		  <p>Lorem ipsum dolor sit amet, et sit liber salutandi quaerendum. Nam rebum explicari eu, at modo phaedrum recteque per, usu purto graecis commune ut.</p>
+		  <h3>Header 3 with h3 tag</h3>
+		  <p>Duo at erat pertinax, ea dicam possim explicari vel. Mei ei possim copiosae perfecto, ne oratio semper sit. Per no paulo ancillae. Quem scaevola consulatu te per, et everti impedit sea.</p>
+		  <table>
+		    <caption>Caption of a table</caption>
+		    <tbody>
+		    <tr>
+		      <td>Item 1</td>
+		      <td>Description 1</td>
+		      <td>Price 1</td>
+		    </tr>
+		    <tr>
+		      <td>Item 2</td>
+		      <td>Description 2</td>
+		      <td>Price 2</td>
+		    </tr>
+		    <tr>
+		      <td>Item 3</td>
+		      <td>Description 3</td>
+		      <td>Price 3</td>
+		    </tr>
+		    </tbody>
+		  </table>
+		  <h3>Header 3 with h3 tag</h3>
+		  <p>Eam ex dicta consulatu vulputate, nec ad quis debitis volutpat. Est ne meis fabellas salutatus, vis in eius voluptatibus. Ut sed ignota neglegentur.</p>
+		  <table>
+		    <caption>Caption of a table</caption>
+		    <tbody>
+		    <tr>
+		      <td>This table has 2 columns</td>
+		      <td>Second column</td>
+		    </tr>
+		    <tr>
+		      <td>Eam ex dicta consulatu</td>
+		      <td>Second row</td>
+		    </tr>
+		    <tr>
+		      <td>Nec ad quis debitis volutpat</td>
+		      <td>Third row</td>
+		    </tr>
+		    <tr>
+		      <td>Est ne meis fabellas salutatus</td>
+		      <td>Fourth row</td>
+		    </tr>
+		    </tbody>
+		  </table>
+		  <p>Eam ex dicta consulatu vulputate, nec ad quis debitis volutpat. Est ne meis fabellas salutatus, vis in eius voluptatibus. Ut sed ignota neglegentur.</p>
+		</div>
+	  <footer id="footer">
+	    <div class="extra"><a href="" title="" class="contactus">Contact Us</a> </div>
+	    <div class="copyright">Powered by WebNam</div>
+	  </footer>
+	</div>
+</div>

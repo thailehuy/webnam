@@ -1,0 +1,317 @@
+fr:
+  refinery:
+    plugins:
+      google_calendars:
+        title: Google Calendars
+      products:
+        title: Products
+      product_categories:
+        title: Product Categories
+      events:
+        title: Events
+      blog_posts:
+        title: Blog Posts
+      coupons:
+        title: Coupons
+      coupons_pages:
+        title: Coupons Pages
+      services_pages:
+        title: Services Pages
+      designs:
+        title: Designs
+      aboutus_pages:
+        title: Aboutus Pages
+      home_pages:
+        title: Home Pages
+      sites:
+        title: Sites
+    sites:
+      admin:
+        google_calendars:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Google Calendar
+            reorder: Réordonner les Google Calendars
+            reorder_done: Fin de réordonnancement des Google Calendars
+          records:
+            title: Google Calendars
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) Google Calendar. Cliquer
+              sur "Créer un(e) nouve(au/l/lle) Google Calendar" pour créer votre premi(er/ère)
+              google calendar.
+          google_calendar:
+            view_live_html: Voir ce(t/tte) google calendar <br/><em>(Ouvre une nouvelle
+              fenêtre)</em>
+            edit: Modifier ce(t/tte) google calendar
+            delete: Supprimer définitivement ce(t/tte) google calendar
+        products:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Product
+            reorder: Réordonner les Products
+            reorder_done: Fin de réordonnancement des Products
+          records:
+            title: Products
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) Product. Cliquer sur "Créer
+              un(e) nouve(au/l/lle) Product" pour créer votre premi(er/ère) product.
+          product:
+            view_live_html: Voir ce(t/tte) product <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) product
+            delete: Supprimer définitivement ce(t/tte) product
+        product_categories:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Product Category
+            reorder: Réordonner les Product Categories
+            reorder_done: Fin de réordonnancement des Product Categories
+          records:
+            title: Product Categories
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) Product Category. Cliquer
+              sur "Créer un(e) nouve(au/l/lle) Product Category" pour créer votre
+              premi(er/ère) product category.
+          product_category:
+            view_live_html: Voir ce(t/tte) product category <br/><em>(Ouvre une nouvelle
+              fenêtre)</em>
+            edit: Modifier ce(t/tte) product category
+            delete: Supprimer définitivement ce(t/tte) product category
+        events:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Event
+            reorder: Réordonner les Events
+            reorder_done: Fin de réordonnancement des Events
+          records:
+            title: Events
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) Event. Cliquer sur "Créer
+              un(e) nouve(au/l/lle) Event" pour créer votre premi(er/ère) event.
+          event:
+            view_live_html: Voir ce(t/tte) event <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) event
+            delete: Supprimer définitivement ce(t/tte) event
+        blog_posts:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Blog Post
+            reorder: Réordonner les Blog Posts
+            reorder_done: Fin de réordonnancement des Blog Posts
+          records:
+            title: Blog Posts
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) Blog Post. Cliquer sur "Créer
+              un(e) nouve(au/l/lle) Blog Post" pour créer votre premi(er/ère) blog
+              post.
+          blog_post:
+            view_live_html: Voir ce(t/tte) blog post <br/><em>(Ouvre une nouvelle
+              fenêtre)</em>
+            edit: Modifier ce(t/tte) blog post
+            delete: Supprimer définitivement ce(t/tte) blog post
+        coupons:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Coupon
+            reorder: Réordonner les Coupons
+            reorder_done: Fin de réordonnancement des Coupons
+          records:
+            title: Coupons
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) Coupon. Cliquer sur "Créer
+              un(e) nouve(au/l/lle) Coupon" pour créer votre premi(er/ère) coupon.
+          coupon:
+            view_live_html: Voir ce(t/tte) coupon <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) coupon
+            delete: Supprimer définitivement ce(t/tte) coupon
+        coupons_pages:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Coupons Page
+            reorder: Réordonner les Coupons Pages
+            reorder_done: Fin de réordonnancement des Coupons Pages
+          records:
+            title: Coupons Pages
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) Coupons Page. Cliquer sur
+              "Créer un(e) nouve(au/l/lle) Coupons Page" pour créer votre premi(er/ère)
+              coupons page.
+          coupons_page:
+            view_live_html: Voir ce(t/tte) coupons page <br/><em>(Ouvre une nouvelle
+              fenêtre)</em>
+            edit: Modifier ce(t/tte) coupons page
+            delete: Supprimer définitivement ce(t/tte) coupons page
+        services_pages:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Services Page
+            reorder: Réordonner les Services Pages
+            reorder_done: Fin de réordonnancement des Services Pages
+          records:
+            title: Services Pages
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) Services Page. Cliquer sur
+              "Créer un(e) nouve(au/l/lle) Services Page" pour créer votre premi(er/ère)
+              services page.
+          services_page:
+            view_live_html: Voir ce(t/tte) services page <br/><em>(Ouvre une nouvelle
+              fenêtre)</em>
+            edit: Modifier ce(t/tte) services page
+            delete: Supprimer définitivement ce(t/tte) services page
+        designs:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Design
+            reorder: Réordonner les Designs
+            reorder_done: Fin de réordonnancement des Designs
+          records:
+            title: Designs
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) Design. Cliquer sur "Créer
+              un(e) nouve(au/l/lle) Design" pour créer votre premi(er/ère) design.
+          design:
+            view_live_html: Voir ce(t/tte) design <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) design
+            delete: Supprimer définitivement ce(t/tte) design
+        aboutus_pages:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Aboutus Page
+            reorder: Réordonner les Aboutus Pages
+            reorder_done: Fin de réordonnancement des Aboutus Pages
+          records:
+            title: Aboutus Pages
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) Aboutus Page. Cliquer sur
+              "Créer un(e) nouve(au/l/lle) Aboutus Page" pour créer votre premi(er/ère)
+              aboutus page.
+          aboutus_page:
+            view_live_html: Voir ce(t/tte) aboutus page <br/><em>(Ouvre une nouvelle
+              fenêtre)</em>
+            edit: Modifier ce(t/tte) aboutus page
+            delete: Supprimer définitivement ce(t/tte) aboutus page
+        home_pages:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Home Page
+            reorder: Réordonner les Home Pages
+            reorder_done: Fin de réordonnancement des Home Pages
+          records:
+            title: Home Pages
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) Home Page. Cliquer sur "Créer
+              un(e) nouve(au/l/lle) Home Page" pour créer votre premi(er/ère) home
+              page.
+          home_page:
+            view_live_html: Voir ce(t/tte) home page <br/><em>(Ouvre une nouvelle
+              fenêtre)</em>
+            edit: Modifier ce(t/tte) home page
+            delete: Supprimer définitivement ce(t/tte) home page
+        sites:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Site
+            reorder: Réordonner les Sites
+            reorder_done: Fin de réordonnancement des Sites
+          records:
+            title: Sites
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) Site. Cliquer sur "Créer
+              un(e) nouve(au/l/lle) Site" pour créer votre premi(er/ère) site.
+          site:
+            view_live_html: Voir ce(t/tte) site <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) site
+            delete: Supprimer définitivement ce(t/tte) site
+      google_calendars:
+        show:
+          other: Autres Google Calendars
+      products:
+        show:
+          other: Autres Products
+      product_categories:
+        show:
+          other: Autres Product Categories
+      events:
+        show:
+          other: Autres Events
+      blog_posts:
+        show:
+          other: Autres Blog Posts
+      coupons:
+        show:
+          other: Autres Coupons
+      coupons_pages:
+        show:
+          other: Autres Coupons Pages
+      services_pages:
+        show:
+          other: Autres Services Pages
+      designs:
+        show:
+          other: Autres Designs
+      aboutus_pages:
+        show:
+          other: Autres Aboutus Pages
+      home_pages:
+        show:
+          other: Autres Home Pages
+      sites:
+        show:
+          other: Autres Sites
+  activerecord:
+    attributes:
+      refinery/sites/google_calendar:
+        site_id: Site
+        account: Account
+        bg_color: Bg Color
+      refinery/sites/product:
+        name: Name
+        description: Description
+        picture: Picture
+        product_category_id: Product Category
+        gender: Gender
+        site_id: Site
+      refinery/sites/product_category:
+        site_id: Site
+        name: Name
+      refinery/sites/event:
+        site_id: Site
+        published: Published
+        event_title: Event Title
+        event_summary: Event Summary
+        event_date: Event Date
+      refinery/sites/blog_post:
+        site_id: Site
+        published: Published
+        title: Title
+        content: Content
+      refinery/sites/coupon:
+        site_id: Site
+        displayed: Displayed
+        decoration: Decoration
+        title: Title
+        description: Description
+        picture: Picture
+        expiry: Expiry
+        max_number: Max Number
+        seed_number: Seed Number
+      refinery/sites/coupons_page:
+        site_id: Site
+        displayed: Displayed
+        decoration: Decoration
+        title: Title
+        description: Description
+        picture: Picture
+        expiry: Expiry
+        max_number: Max Number
+        seed_number: Seed Number
+      refinery/sites/services_page:
+        site_id: Site
+        left_col: Left Col
+        right_col: Right Col
+      refinery/sites/design:
+        site_id: Site
+        scss_model: Scss Model
+        background_color: Background Color
+        font_family: Font Family
+        font_color: Font Color
+      refinery/sites/aboutus_page:
+        site_id: Site
+        category: Category
+        established: Established
+        features: Features
+      refinery/sites/home_page:
+        site_id: Site
+        description: Description
+        logo: Logo
+      refinery/sites/site:
+        name: Name
+        published: Published
+        slug: Slug

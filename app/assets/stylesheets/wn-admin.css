@@ -1,0 +1,130 @@
+body.login header {
+    background: #56CFF1;
+}
+
+body.login header div {
+    padding-bottom: 0px;
+    padding-top: 15px;
+    margin: 0px auto;
+    width: 400px;
+}
+
+body.login header img {
+    width: 400px;
+    height: 82px;
+}
+
+#admin-header {
+    border-top-right-radius: 5px;
+    background-color: white;
+    margin: 1px auto 0px;
+    text-align: left;
+    width: 990px;
+    height: 35px;
+}
+.site-infos {
+    display: block;
+    float: left;
+    padding: 20px 40px 15px 20px;
+}
+.site-name {
+    font-size: 2em;
+    font-weight: bold;
+    display: inline-block;
+}
+.site-infos a {
+    display: inline-block;
+}
+.login-infos {
+    display: block;
+    float: right;
+    font-weight: bold;
+    padding: 20px 30px 0px;
+    font-size: 1.1em;
+}
+.record .site-editor span {
+    line-height: 30px;
+    color: #FF8080;
+}
+
+#page_container {
+    padding: 22px 15px 10px;
+    min-height: 545px;
+}
+
+.login #page_container {
+    min-height: 340px;
+    position: relative;
+}
+
+.login #signature {
+    position: absolute;
+    bottom: 3px;
+    right: 5px;
+}
+
+.login #signature img {
+    width: 33px;
+    border-radius: 3px;
+}
+
+#choose-locale {
+    height: 36px;
+    display: inline-block;
+}
+
+#switch_locale_picker {
+    float: left;
+    margin: 0px;
+    padding: 0px;
+}
+
+.color-show {
+  display: inline-block;
+  width: 100px;
+  height: 25px;
+  vertical-align: bottom;
+  padding: 0.4% 0.5%;
+  background-color: black;
+  border-color: #A0A0A0;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+
+.text-show-color {
+  display: inline-block;
+  width: 15px;
+  height: 17px;
+  vertical-align: bottom;
+  padding: 0.4% 0.5%;
+  background-color: black;
+  border-color: #A0A0A0;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+
+.saisie  {
+    width: 850px;
+}
+
+
+.field input[type=text], .field input[type=password], .field textarea {
+    border: 1px solid #7f7f7f;
+    padding: 0.4% 0.5%;
+    line-height: 20px;
+}
+
+#menu {
+    background: grey;
+}
+
+#menu a {
+    background: none;
+}
+

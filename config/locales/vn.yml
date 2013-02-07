@@ -1,0 +1,262 @@
+vn:
+  time:
+    formats:
+      short: "arrrround %H'ish"
+  home: "Trang Chủ"
+  aboutus: "Giới Thiệu"
+  services: "Dịch Vụ"
+  products: "Sản Phẩm"
+  coupons: "Khuyến Mãi"
+  mediagallery: "Hình Ảnh"
+  blog: "Blog"
+  events: "Sự Kiện"
+  contact: "Liên Hệ"
+
+  category: "Danh Mục"
+  no_category: "Không có danh mục nào"
+  all_categories: "Tất cả các danh mục"
+  gender: "Giới Tính"
+  none: "Không"
+  male: "Nam"
+  female: "Nữ"
+  filter_category: "Theo Danh Mục"
+  filter_gender: "Theo Giới Tính"
+
+  posted_on: "Bài Gửi"
+  contact_form: "Liên Hệ"
+  please_send : "Quý khách vui lòng để lại tin nhắn và chúng tôi sẽ liên lạc trong thời gian sớm nhất"
+  name: "Tên"
+  email: "Email"
+  phone: "Điện Thoại"
+  message: "Nội Dung"
+  send: "Gửi"
+  send_ok: "Xin cảm ơn !<br/><br/>Tin nhắn của quý khách đã được gửi đi thành công.<br/><br/>Chúng tôi sẽ liên lạc lại với quý khách trong thời gian sớm nhất"
+  send_nok: "Thật đáng tiếc nhưng đã có lỗi xảy ra !<br/><br/>Xin vui lòng thử lại"
+  send_too_many: "Quý khách đã gửi tin nhắn thành công, chúng tôi sẽ gửi phản hồi trong thời gian sớm nhất. Xin vui lòng đợi trong giây lát trước khi gửi tin nhắn mới."
+  inquiry_notif_subject: "Cảm ơn quý khách đã gửi yêu cầu đến cho chúng tôi"
+  inquiry_notif_body: "Cảm ơn quý khách đã gửi yêu cầu đến cho chúng tôi %{inquirer},\n\nEmail này được coi như một xác thực chúng tôi đã nhận được yêu cầu của quý khách và sẽ liên lạc với bạn trong thời gian sớm nhất.\n\nXin cảm ơn.\n%{site_name}"
+
+  search_results_for: "Đã tìm thấy %{count} các kết quả tìm kiếm '%{what}' trên những trang sau đây :"
+
+  please_cut: "XIN VUI LÒNG XÓA BỎ CÁC THÔNG TIN KHÔNG CẦN THIẾT CHO ĐẾN DẤU CHẤM DÒNG"
+  coupon_status: "TÌNH TRẠNG IN PHIẾU KHUYẾN MÃI"
+  not_valid: "KHÔNG PHẢI LÀ MỘT LỆNH IN HỢP LỆ"
+  no_coupons: "KHÔNG CÒN PHIẾU KHUYẾN MÃI NÀO"
+  coupon_id: "MÃ SỐ PHIẾU KHUYẾN MÃI #"
+  hidden: "ẨN"
+  valid_coupon: "PHIẾU KHUYẾN MÃI HỢP LỆ"
+  coupon_expiry: "PHIẾU KHUYẾN MÃI HẾT HẠN"
+  click_to_print: "Bấm chuột vào để in phiếu khuyến mãi này !"
+
+  add_image: "Thêm Ảnh"
+  photos_gallery: "Hình Ảnh"
+  videos_gallery: "Video"
+
+  not_activated: "Trang web này < %{site_name} > tạm thời vẫn chưa được kích hoạt <br/><br/>Nếu quý khách là chủ sở hữu trang này, xin vui lòng liên hệ với chúng tôi."
+
+  virtual_tour_tip: "Vui lòng di chuyển chuột điều chỉnh hướng viếng thăm để có cái nhìn toàn cảnh."
+  calendar_title: "Thời Gian Biểu Các Dịch Vụ"
+
+  meet_us: "Liên Hệ"
+  powered_by: "Được phát triển bởi"
+
+  date:
+    abbr_day_names:
+    - Chủ nhật
+    - Thứ hai
+    - Thứ ba
+    - Thứ tư
+    - Thứ năm
+    - Thứ sáu
+    - Thứ bảy
+    abbr_month_names:
+    -
+    - Tháng một
+    - Tháng hai
+    - Tháng ba
+    - Tháng tư
+    - Tháng năm
+    - Tháng sáu
+    - Tháng bảy
+    - Tháng tám
+    - Tháng chín
+    - Tháng mười
+    - Tháng mười một
+    - Tháng mười hai
+    day_names:
+    - Chủ nhật
+    - Thứ hai
+    - Thứ ba
+    - Thứ tư
+    - Thứ năm
+    - Thứ sáu
+    - Thứ bảy
+    formats:
+      default: ! '%d-%m-%Y'
+      long: ! '%d %B, %Y'
+      short: ! '%d %b'
+    month_names:
+    -
+    - Tháng một
+    - Tháng hai
+    - Tháng ba
+    - Tháng tư
+    - Tháng năm
+    - Tháng sáu
+    - Tháng bảy
+    - Tháng tám
+    - Tháng chín
+    - Tháng mười
+    - Tháng mười một
+    - Tháng mười hai
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: khoảng 1 giờ
+        other: khoảng %{count} giờ
+      about_x_months:
+        one: khoảng 1 tháng
+        other: khoảng %{count} tháng
+      about_x_years:
+        one: khoảng 1 năm
+        other: khoảng %{count} năm
+      almost_x_years:
+        one: gần 1 năm
+        other: gần %{count} năm
+      half_a_minute: 30 giây
+      less_than_x_minutes:
+        one: chưa tới 1 phút
+        other: chưa tới %{count} phút
+      less_than_x_seconds:
+        one: chưa tới 1 giây
+        other: chưa tới %{count} giây
+      over_x_years:
+        one: hơn 1 năm
+        other: hơn %{count} năm
+      x_days:
+        one: 1 ngày
+        other: ! '%{count} ngày'
+      x_minutes:
+        one: 1 phút
+        other: ! '%{count} phút'
+      x_months:
+        one: 1 tháng
+        other: ! '%{count} tháng'
+      x_seconds:
+        one: 1 giây
+        other: ! '%{count} giây'
+    prompts:
+      day: Ngày
+      hour: Giờ
+      minute: Phút
+      month: Tháng
+      second: Giây
+      year: Năm
+  errors: &errors
+    format: ! '%{attribute} %{message}'
+    messages:
+      accepted: phải được đồng ý
+      blank: không thể để trắng
+      confirmation: không khớp với xác nhận
+      empty: không thể rỗng
+      equal_to: phải bằng %{count}
+      even: phải là số chẵn
+      exclusion: đã được giành trước
+      greater_than: phải lớn hơn %{count}
+      greater_than_or_equal_to: phải lớn hơn hoặc bằng %{count}
+      inclusion: không có trong danh sách
+      invalid: không hợp lệ
+      less_than: phải nhỏ hơn %{count}
+      less_than_or_equal_to: phải nhỏ hơn hoặc bằng %{count}
+      not_a_number: không phải là số
+      not_an_integer: phải là một số nguyên
+      odd: phải là số lẻ
+      taken: đã có
+      too_long: quá dài (tối đa %{count} ký tự)
+      too_short: quá ngắn (tối thiểu %{count} ký tự)
+      wrong_length: độ dài không đúng (phải là %{count} ký tự)
+    template:
+      body: ! 'Có lỗi với các mục sau:'
+      header:
+        one: 1 lỗi ngăn không cho lưu %{model} này
+        other: ! '%{count} lỗi ngăn không cho lưu %{model} này'
+  helpers:
+    select:
+      prompt: Vui lòng chọn
+    submit:
+      create: Tạo %{model}
+      submit: Lưu %{model}
+      update: Cập nhật %{model}
+  number:
+    currency:
+      format:
+        delimiter: .
+        format: ! '%n %u'
+        precision: 2
+        separator: ! ','
+        significant: false
+        strip_insignificant_zeros: false
+        unit: đồng
+    format:
+      delimiter: .
+      precision: 3
+      separator: ! ','
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: ! '%n %u'
+        units:
+          unit: ''
+          billion: Tỷ
+          million: Triệu
+          quadrillion: Triệu tỷ
+          thousand: Nghìn
+          trillion: Nghìn tỷ
+      format:
+        delimiter: ''
+        precision: 1
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: ! '%n %u'
+        units:
+          byte:
+            one: Byte
+            other: Byte
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ''
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: ! ', và '
+      two_words_connector: ! ' và '
+      words_connector: ! ', '
+  time:
+    am: sáng
+    formats:
+      default: ! '%a, %d %b %Y %H:%M:%S %z'
+      long: ! '%d %B, %Y %H:%M'
+      short: ! '%d %b %H:%M'
+    pm: chiều
+  # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
+  activemodel:
+    errors:
+      <<: *errors
+  activerecord:
+    errors:
+      <<: *errors
+      messages:
+        record_invalid: "Lỗi xác nhận: %{errors}"
+        taken: "đã có"

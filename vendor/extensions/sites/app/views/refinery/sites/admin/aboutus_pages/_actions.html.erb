@@ -1,0 +1,25 @@
+<ul>
+  <% if ::Refinery::Sites::Admin::AboutusPagesController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.sites_admin_aboutus_pages_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_sites_admin_aboutus_page_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::Sites::Admin::AboutusPagesController.sortable? && ::Refinery::Sites::AboutusPage.any? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Aboutus Pages"),
+                 refinery.sites_admin_aboutus_pages_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Aboutus Pages"),
+                 refinery.sites_admin_aboutus_pages_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

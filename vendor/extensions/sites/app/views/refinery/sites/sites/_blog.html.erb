@@ -1,0 +1,20 @@
+<% content_for :meta_tags do %>
+  <title><%= (@site.home_page.seo_title + ' - Blog') if @site.home_page.seo_title.present? %></title>
+  <%= raw(%(<meta name="description" content="#{@site.home_page.seo_description}" />)) if @site.home_page.seo_description.present? -%>
+  <%= raw(%(<meta name="keywords" content="#{@site.home_page.seo_keywords}">)) if @site.home_page.seo_keywords.present? -%>
+<% end %>
+
+<section>
+  <article class="post">
+    <ul id="blog">
+      <% @site.blog_posts.order("created_at desc").each do |blog_post| %>
+		    <% if blog_post.published %>
+	        <li>
+	          <%= render :partial => '/refinery/sites/blog_posts/blog_post', :object => blog_post %>
+	        </li>
+        <% end %>
+    <% end %>
+    </ul>
+
+  </article>
+</section>

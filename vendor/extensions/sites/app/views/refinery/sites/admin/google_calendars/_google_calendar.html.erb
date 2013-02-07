@@ -1,0 +1,16 @@
+<li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(google_calendar) -%>">
+  <span class='title'>
+	  <div style="background-color: <%= google_calendar.bg_color %>" class="google-calendar-account" >
+      <%= google_calendar.account %>
+	  </div>
+  </span>
+  <span class='actions'>
+    <%= link_to refinery_icon_tag("application_edit.png"), refinery.edit_sites_admin_google_calendar_path(google_calendar),
+         :title => t('.edit') %>
+    <%= link_to refinery_icon_tag("delete.png"), refinery.sites_admin_google_calendar_path(google_calendar),
+        :class => "cancel confirm-delete",
+        :title => t('.delete'),
+        :confirm => t('message', :scope => 'refinery.admin.delete', :title => google_calendar.account),
+        :method => :delete %>
+  </span>
+</li>

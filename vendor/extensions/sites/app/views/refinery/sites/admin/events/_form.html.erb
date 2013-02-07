@@ -1,0 +1,58 @@
+<%= form_for [refinery, :sites_admin, @event] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @event,
+              :include_object_name => true %>
+
+  <%= render "/refinery/sites/admin/sites/locale_picker",
+             :current_locale => Thread.current[:globalize_locale] if Refinery.i18n_enabled? %>
+
+  <%= f.hidden_field :site_id -%>
+
+  <div class='field'>
+    <%= f.label :event_title -%>
+    <%= f.text_field :event_title  -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :event_date -%>
+    <%= f.date_select :event_date  -%>
+  </div>
+
+  <div class='field'>
+    <div id='page-tabs' class='clearfix ui-tabs ui-widget ui-widget-content ui-corner-all'>
+      <ul id='page_parts'>
+        <% [:event_summary].each_with_index do |part, part_index| %>
+          <li class='ui-state-default<%= ' ui-state-active' if part_index == 0 %>'>
+            <%= link_to t("#{part}", :scope => "activerecord.attributes.refinery/sites/event", :default => part.to_s.titleize), "##{part}" %>
+          </li>
+        <% end %>
+      </ul>
+      <div id='page_part_editors'>
+        <% [:event_summary].each do |part| %>
+          <div class='page_part' id='<%= part %>'>
+            <%= f.text_area part, :rows => 20, :class => 'wymeditor saisie' -%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class='field'>
+    <%= f.label :published -%>
+    <%= f.check_box :published, :checked => @event[:published]  -%>
+  </div>
+
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => true,
+             :delete_title => t('delete', :scope => 'refinery.events.admin.events.event'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @event.event_title) %>
+<% end -%>
+
+<% content_for :javascripts do %>
+  <script>
+    $(document).ready(function(){
+      page_options.init(false, '', '');
+    });
+  </script>
+<% end %>
+

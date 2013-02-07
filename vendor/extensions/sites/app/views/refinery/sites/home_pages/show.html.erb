@@ -1,0 +1,108 @@
+<% content_for :meta_tags do %>
+  <title><%= @home_page.seo_title if @home_page.seo_title.present?  %></title>
+  <%= raw(%(<meta name="description" content="#{@home_page.seo_description}" />)) if @home_page.seo_description.present? -%>
+  <%= raw(%(<meta name="keywords" content="#{@home_page.seo_keywords}">)) if @home_page.seo_keywords.present? -%>
+<% end %>
+
+<% if @site.home_images.count > 0 %>
+	<section id="banner">
+		<div id="first-image">
+			<% image = @site.home_images.order('position').first.slide_image %>
+			<% unless image.nil? %>
+		  <%= image_tag image.url %>
+			<% end %>
+		</div>
+		<% if @site.home_images.count > 1 %>
+		  <div class="camera_wrap hidden" id="slide-show">
+		    <% @site.home_images.order('position').each do |i| %>
+		      <% unless i.slide_image.nil? %>
+			      <div data-src="<%= i.slide_image.url %>">
+				      <% unless i.caption.blank? %>
+				        <div class="camera_caption fadeIn">
+				          <%= strip_tags(i.caption) %>
+				        </div>
+			        <% end %>
+			      </div>
+		      <% end %>
+				<% end %>
+		  </div>
+		<% end %>
+  <section>
+<% end %>
+
+<section>
+  <article class="post">
+    <%=raw @home_page.description %>
+  </article>
+</section>
+<% unless @site.virtual_tour.nil? %>
+  <div id="virtual-tour" style="width: 100%">
+    <div id="virtual-tour-container" style="width: 920px;margin: 0px auto;text-align:center">
+      <h1 style="float:left">Virtual tour</h1>
+      <canvas id="canvas" width="640" height="480">
+        <p>Your browser does not support the HTML5 canvas element.</p>
+      </canvas>
+      </br><%=  t('virtual_tour_tip') %>
+    </div>
+  </div>
+<% end %>
+<% if @site.carousel_pages.include?('home') %>
+  <%= render '/refinery/sites/sites/carousel' %>
+<% end %>
+<% if @site.has_calendars %>
+  <div id="calendar" style="width: 100%">
+    <div id="calendar-container" style="width: 920px;margin: 0px auto;text-align:center">
+      <h1 style="float:left"><%=  t('calendar_title') %></h1>
+      <iframe src="<%= @calendar_url %>" style=" border:solid 1px #777;"
+              width="920" height="<%= @calendar_height %>" frameborder="0" scrolling="no"></iframe>
+    </div>
+  </div>
+<% end %>
+
+<% content_for :javascripts do %>
+  <script>
+
+	  $(window).unload(function() {
+		  close_pano();
+	  });
+
+	  $(document).ready(function() {
+
+		  <% if @site.home_images.count > 1 %>
+
+			  $('#slide-show').camera({
+				  width: '1000px',
+				  height: '500px',
+				  alignment: 'center',
+				  loader: 'none',
+				  overlayer: true,
+				  navigation: false,
+				  navigationHover: false,
+				  mobileNavHover: false,
+				  opacityOnGrid: false,
+				  playPause: false,
+				  pauseOnClick: false,
+				  pagination: true,
+				  thumbnails: false,
+				  fx: '<%= @site.slide_effect %>',
+				  time: <%= @site.slide_delay %>,
+				  transPeriod: <%= @site.slide_transition %>,
+				  rows: 5,
+				  cols: 10,
+				  onLoaded: function() {
+					  $('#first-image').hide();
+					  $('#slide-show').css({marginBottom:40});
+					  $('#slide-show').removeClass('hidden');
+				  }
+			  });
+			<% end %>
+
+      <% unless @site.virtual_tour.nil? %>
+		    init_pano('<%= @site.virtual_tour.url %>');
+		  <% end %>
+
+	  });
+
+  </script>
+<% end %>
+

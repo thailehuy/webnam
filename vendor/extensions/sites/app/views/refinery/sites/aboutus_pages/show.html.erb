@@ -1,0 +1,39 @@
+<% content_for :meta_tags do %>
+  <title><%= @aboutus_page.seo_title if @aboutus_page.seo_title.present?  %></title>
+  <%= raw(%(<meta name="description" content="#{@aboutus_page.seo_description}" />)) if @aboutus_page.seo_description.present? -%>
+  <%= raw(%(<meta name="keywords" content="#{@aboutus_page.seo_keywords}">)) if @aboutus_page.seo_keywords.present? -%>
+<% end %>
+
+<section id="content" class="content">
+  <article class="list">
+    <div class="col left-col">
+      <h2 class="center"><%= t('meet_us') %></h2>
+      <%=raw @aboutus_page.left_col %>
+    </div>
+    <div class="col right-col">
+      <h2 class="center"><%= t('aboutus') %></h2>
+      <%=raw @aboutus_page.right_col %>
+    </div>
+  </article>
+</section>
+<% if @site.carousel_pages.include?('aboutus') %>
+  <%= render '/refinery/sites/sites/carousel' %>
+<% end %>
+
+
+
+<% content_for :javascripts do %>
+
+  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+  <script type="text/javascript">
+
+    $(document).ready(function() {
+
+		  setLocationOnMap(<%= @aboutus_page.latitude %>, <%= @aboutus_page.longitude %>);
+
+	  });
+
+  </script>
+
+<% end %>

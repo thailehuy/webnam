@@ -1,0 +1,104 @@
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag "jquery-ui-1.8.19.custom" %>
+	<style type="text/css">
+    @media print {
+	    @page {size: landscape}
+			#header { display: none; }
+	    #language-menu { display: none; }
+	    #footer { display: none; }
+	    #coupons li {
+		    list-style: none;
+	    }
+	    .coupon-container { display: none; }
+	    button { display: none; }
+	    .printed-coupon-container {
+		    width: 100%;
+		    text-align: center;
+		    margin: 20px 0px;
+	    }
+	    .coupon-cut {
+		    margin: 0px auto;
+		    padding: 0px 5px;
+		    width: 780px;
+		    display: inline-block;
+		    font-size: 0.85em;
+		    color: green;
+	    }
+	    .coupon {
+		    border: 3px dotted #003;
+		    margin: 0px auto;
+		    padding: 5px;
+		    width: 780px;
+		    min-height: 200px;
+		    display: inline-block;'
+	    }
+	    .image-align-left {
+		    float: left;
+		    margin-right: 6px;
+		    margin-bottom: 6px;
+	    }
+
+	    .image-align-right {
+		    float: right;
+		    margin-left: 6px;
+		    margin-bottom: 6px;
+	    }
+		}
+	</style>
+<% end %>
+
+<div class='coupon-container'>
+  <div class='coupon-cut'>
+    <%= t('please_cut') %>
+  </div>
+  <div class='coupon'>
+    <div style="width:260px; float:left">
+      <%= raw coupon.decoration %>
+    </div>
+    <div style="width:520px; float:right">
+      <div style="width:520px; float:right">
+        <%= raw coupon.title %>
+      </div>
+      <div style="width:520px; float:right">
+        <%= raw coupon.description %>
+      </div>
+    </div>
+    <div style="width:780px; border-top: 1px solid #000000; float:left">
+	    <div  style="width:260px; float:left" >
+	      <%= t('coupon_status') %><br/>
+	      <% unless coupon.no_coupons_left %>
+	        <span style="color: red"><%= t('not_valid') %></span>
+			  <% else %>
+	        <span style="color: red"><%= t('no_coupons') %></span>
+	    <% end %>
+	    </div>
+      <div style="width:260px; float:left">
+        <%= t('coupon_id') %><br/>
+        <% unless coupon.no_coupons_left %>
+          <span style="color: red"><%= t('hidden') %></span>
+        <% else %>
+          <span style="color: red"><%= t('no_coupons') %></span>
+      <% end %>
+      </div>
+      <div style="width:260px; float:left" >
+        <%= t('coupon_expiry') %><br/>
+        <%= I18n.localize(coupon.expiry, :format => "%d %B %Y").upcase %>
+      </div>
+    </div>
+  </div>
+	<% unless coupon.no_coupons_left %>
+	  <div class='coupon-cut'>
+	    <span style="font-size: 1.6em; font-weight: bold">
+	      <%= link_to t('click_to_print'),
+	                refinery.coupon_create_url(@site.id, coupon.id),
+	                :remote => true %>
+		    </span>
+	  </div>
+	<% end %>
+</div>
+<div id="print-coupon-<%=coupon.id%>" style="width: 100%;text-align: center;margin: 20px 0px;">
+</div>
+
+
+
+

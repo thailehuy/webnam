@@ -1,0 +1,579 @@
+(in c:/projects/webnam21)
+refinery  / Refinery::Core::Engine
+    root  / refinery/sites/sites#index
+
+Routes for Refinery::Core::Engine:
+                                                        /system/resources/*dragonfly(.:format)                        <Dragonfly::App name=:refinery_resources >
+                         insert_admin_resources GET     /refinery/resources/insert(.:format)                          refinery/admin/resources#insert
+                                admin_resources GET     /refinery/resources(.:format)                                 refinery/admin/resources#index
+                                                POST    /refinery/resources(.:format)                                 refinery/admin/resources#create
+                             new_admin_resource GET     /refinery/resources/new(.:format)                             refinery/admin/resources#new
+                            edit_admin_resource GET     /refinery/resources/:id/edit(.:format)                        refinery/admin/resources#edit
+                                 admin_resource PUT     /refinery/resources/:id(.:format)                             refinery/admin/resources#update
+                                                DELETE  /refinery/resources/:id(.:format)                             refinery/admin/resources#destroy
+                                                        /system/images/*dragonfly(.:format)                           <Dragonfly::App name=:refinery_images >
+                            insert_admin_images GET     /refinery/images/insert(.:format)                             refinery/admin/images#insert
+                                   admin_images GET     /refinery/images(.:format)                                    refinery/admin/images#index
+                                                POST    /refinery/images(.:format)                                    refinery/admin/images#create
+                                new_admin_image GET     /refinery/images/new(.:format)                                refinery/admin/images#new
+                               edit_admin_image GET     /refinery/images/:id/edit(.:format)                           refinery/admin/images#edit
+                                    admin_image PUT     /refinery/images/:id(.:format)                                refinery/admin/images#update
+                                                DELETE  /refinery/images/:id(.:format)                                refinery/admin/images#destroy
+                                admin_dashboard GET     /refinery/dashboard(.:format)                                 refinery/admin/dashboard#index
+                  admin_disable_upgrade_message         /refinery/disable_upgrade_message(.:format)                   refinery/admin/dashboard#disable_upgrade_message
+                                                        /system/resources/*dragonfly(.:format)                        <Dragonfly::App name=:refinery_resources >
+                                                GET     /refinery/resources/insert(.:format)                          refinery/admin/resources#insert
+                                                GET     /refinery/resources(.:format)                                 refinery/admin/resources#index
+                                                POST    /refinery/resources(.:format)                                 refinery/admin/resources#create
+                                                GET     /refinery/resources/new(.:format)                             refinery/admin/resources#new
+                                                GET     /refinery/resources/:id/edit(.:format)                        refinery/admin/resources#edit
+                                                PUT     /refinery/resources/:id(.:format)                             refinery/admin/resources#update
+                                                DELETE  /refinery/resources/:id(.:format)                             refinery/admin/resources#destroy
+                                                        /system/images/*dragonfly(.:format)                           <Dragonfly::App name=:refinery_images >
+                                                GET     /refinery/images/insert(.:format)                             refinery/admin/images#insert
+                                                GET     /refinery/images(.:format)                                    refinery/admin/images#index
+                                                POST    /refinery/images(.:format)                                    refinery/admin/images#create
+                                                GET     /refinery/images/new(.:format)                                refinery/admin/images#new
+                                                GET     /refinery/images/:id/edit(.:format)                           refinery/admin/images#edit
+                                                PUT     /refinery/images/:id(.:format)                                refinery/admin/images#update
+                                                DELETE  /refinery/images/:id(.:format)                                refinery/admin/images#destroy
+                                admin_dashboard GET     /refinery/dashboard(.:format)                                 refinery/admin/dashboard#index
+                  admin_disable_upgrade_message         /refinery/disable_upgrade_message(.:format)                   refinery/admin/dashboard#disable_upgrade_message
+                                                        /system/resources/*dragonfly(.:format)                        <Dragonfly::App name=:refinery_resources >
+                                                GET     /refinery/resources/insert(.:format)                          refinery/admin/resources#insert
+                                                GET     /refinery/resources(.:format)                                 refinery/admin/resources#index
+                                                POST    /refinery/resources(.:format)                                 refinery/admin/resources#create
+                                                GET     /refinery/resources/new(.:format)                             refinery/admin/resources#new
+                                                GET     /refinery/resources/:id/edit(.:format)                        refinery/admin/resources#edit
+                                                PUT     /refinery/resources/:id(.:format)                             refinery/admin/resources#update
+                                                DELETE  /refinery/resources/:id(.:format)                             refinery/admin/resources#destroy
+                                                        /system/images/*dragonfly(.:format)                           <Dragonfly::App name=:refinery_images >
+                                                GET     /refinery/images/insert(.:format)                             refinery/admin/images#insert
+                                                GET     /refinery/images(.:format)                                    refinery/admin/images#index
+                                                POST    /refinery/images(.:format)                                    refinery/admin/images#create
+                                                GET     /refinery/images/new(.:format)                                refinery/admin/images#new
+                                                GET     /refinery/images/:id/edit(.:format)                           refinery/admin/images#edit
+                                                PUT     /refinery/images/:id(.:format)                                refinery/admin/images#update
+                                                DELETE  /refinery/images/:id(.:format)                                refinery/admin/images#destroy
+                                admin_dashboard GET     /refinery/dashboard(.:format)                                 refinery/admin/dashboard#index
+                  admin_disable_upgrade_message         /refinery/disable_upgrade_message(.:format)                   refinery/admin/dashboard#disable_upgrade_message
+                                           root GET     /                                                             refinery/pages#home
+                                  preview_pages POST    /pages/preview(.:format)                                      refinery/pages#preview
+                                   preview_page GET|PUT /pages/*path/preview(.:format)                                refinery/pages#preview
+                                           page GET     /pages/:id(.:format)                                          refinery/pages#show
+                                          admin GET     /refinery/pages/*path/edit(.:format)                          refinery/admin/pages#edit
+                           admin_children_pages GET     /refinery/pages/*path/children(.:format)                      refinery/admin/pages#children
+                                                PUT     /refinery/pages/*path(.:format)                               refinery/admin/pages#update
+                                                DELETE  /refinery/pages/*path(.:format)                               refinery/admin/pages#destroy
+                   update_positions_admin_pages POST    /refinery/pages/update_positions(.:format)                    refinery/admin/pages#update_positions
+                                    admin_pages GET     /refinery/pages(.:format)                                     refinery/admin/pages#index
+                                                POST    /refinery/pages(.:format)                                     refinery/admin/pages#create
+                                 new_admin_page GET     /refinery/pages/new(.:format)                                 refinery/admin/pages#new
+                                edit_admin_page GET     /refinery/pages/:id/edit(.:format)                            refinery/admin/pages#edit
+                                     admin_page PUT     /refinery/pages/:id(.:format)                                 refinery/admin/pages#update
+                                                DELETE  /refinery/pages/:id(.:format)                                 refinery/admin/pages#destroy
+                    link_to_admin_pages_dialogs GET     /refinery/pages_dialogs/link_to(.:format)                     refinery/admin/pages_dialogs#link_to
+                   test_url_admin_pages_dialogs GET     /refinery/pages_dialogs/test_url(.:format)                    refinery/admin/pages_dialogs#test_url
+                 test_email_admin_pages_dialogs GET     /refinery/pages_dialogs/test_email(.:format)                  refinery/admin/pages_dialogs#test_email
+                               admin_page_parts POST    /refinery/page_parts(.:format)                                refinery/admin/page_parts#create
+                            new_admin_page_part GET     /refinery/page_parts/new(.:format)                            refinery/admin/page_parts#new
+                                admin_page_part DELETE  /refinery/page_parts/:id(.:format)                            refinery/admin/page_parts#destroy
+                      new_refinery_user_session GET     /refinery/users/login(.:format)                               refinery/sessions#new
+                          refinery_user_session POST    /refinery/users/login(.:format)                               refinery/sessions#create
+                  destroy_refinery_user_session DELETE  /refinery/users/logout(.:format)                              refinery/sessions#destroy
+                         refinery_user_password POST    /refinery/users/password(.:format)                            refinery/passwords#create
+                     new_refinery_user_password GET     /refinery/users/password/new(.:format)                        refinery/passwords#new
+                    edit_refinery_user_password GET     /refinery/users/password/edit(.:format)                       refinery/passwords#edit
+                                                PUT     /refinery/users/password(.:format)                            refinery/passwords#update
+                      new_refinery_user_session GET     /refinery/login(.:format)                                     refinery/sessions#new
+                  destroy_refinery_user_session GET     /refinery/logout(.:format)                                    refinery/sessions#destroy
+                 new_refinery_user_registration GET     /refinery/users/register(.:format)                            refinery/users#new
+                     refinery_user_registration POST    /refinery/users/register(.:format)                            refinery/users#create
+                                      wymiframe GET     /wymiframe(/:id)(.:format)                                    refinery/fast#wymiframe
+                                        message GET     /refinery/message(.:format)                                   refinery/fast#message
+                                     admin_root         /refinery(.:format)                                           refinery/admin/dashboard#index
+                                  admin_dialogs GET     /refinery/dialogs(.:format)                                   refinery/admin/dialogs#index
+                                   admin_dialog GET     /refinery/dialogs/:id(.:format)                               refinery/admin/dialogs#show
+                 refinery_update_menu_positions         /refinery/update_menu_positions(.:format)                     refinery/admin/core#update_plugin_positions
+                                                GET     /sitemap.xml(.:format)                                        refinery/sitemap#index {:format=>"xml"}
+                                    sites_sites GET     /sites(.:format)                                              refinery/sites/sites#index
+                                     sites_site GET     /sites/:id(.:format)                                          refinery/sites/sites#show
+                                  coupon_create         /sites/:id/coupon_create/:coupon(.:format)                    refinery/sites/sites#coupon_create
+                                   message_post         /sites/:id/message(.:format)                                  refinery/sites/sites#message
+                                    search_site         /sites/:id/search(.:format)                                   refinery/sites/sites#search
+             update_positions_sites_admin_sites POST    /refinery/sites/update_positions(.:format)                    refinery/sites/admin/sites#update_positions
+                         close_sites_admin_site GET     /refinery/sites/:id/close(.:format)                           refinery/sites/admin/sites#close
+                              sites_admin_sites GET     /refinery/sites(.:format)                                     refinery/sites/admin/sites#index
+                                                POST    /refinery/sites(.:format)                                     refinery/sites/admin/sites#create
+                           new_sites_admin_site GET     /refinery/sites/new(.:format)                                 refinery/sites/admin/sites#new
+                          edit_sites_admin_site GET     /refinery/sites/:id/edit(.:format)                            refinery/sites/admin/sites#edit
+                               sites_admin_site PUT     /refinery/sites/:id(.:format)                                 refinery/sites/admin/sites#update
+                                                DELETE  /refinery/sites/:id(.:format)                                 refinery/sites/admin/sites#destroy
+                               sites_home_pages GET     /sites/home_pages(.:format)                                   refinery/sites/home_pages#index
+                                sites_home_page GET     /sites/home_pages/:id(.:format)                               refinery/sites/home_pages#show
+        update_positions_sites_admin_home_pages POST    /refinery/sites/home_pages/update_positions(.:format)         refinery/sites/admin/home_pages#update_positions
+                         sites_admin_home_pages GET     /refinery/sites/home_pages(.:format)                          refinery/sites/admin/home_pages#index
+                                                POST    /refinery/sites/home_pages(.:format)                          refinery/sites/admin/home_pages#create
+                      new_sites_admin_home_page GET     /refinery/sites/home_pages/new(.:format)                      refinery/sites/admin/home_pages#new
+                     edit_sites_admin_home_page GET     /refinery/sites/home_pages/:id/edit(.:format)                 refinery/sites/admin/home_pages#edit
+                          sites_admin_home_page PUT     /refinery/sites/home_pages/:id(.:format)                      refinery/sites/admin/home_pages#update
+                                                DELETE  /refinery/sites/home_pages/:id(.:format)                      refinery/sites/admin/home_pages#destroy
+                            sites_aboutus_pages GET     /sites/aboutus_pages(.:format)                                refinery/sites/aboutus_pages#index
+                             sites_aboutus_page GET     /sites/aboutus_pages/:id(.:format)                            refinery/sites/aboutus_pages#show
+     update_positions_sites_admin_aboutus_pages POST    /refinery/sites/aboutus_pages/update_positions(.:format)      refinery/sites/admin/aboutus_pages#update_positions
+                      sites_admin_aboutus_pages GET     /refinery/sites/aboutus_pages(.:format)                       refinery/sites/admin/aboutus_pages#index
+                                                POST    /refinery/sites/aboutus_pages(.:format)                       refinery/sites/admin/aboutus_pages#create
+                   new_sites_admin_aboutus_page GET     /refinery/sites/aboutus_pages/new(.:format)                   refinery/sites/admin/aboutus_pages#new
+                  edit_sites_admin_aboutus_page GET     /refinery/sites/aboutus_pages/:id/edit(.:format)              refinery/sites/admin/aboutus_pages#edit
+                       sites_admin_aboutus_page PUT     /refinery/sites/aboutus_pages/:id(.:format)                   refinery/sites/admin/aboutus_pages#update
+                                                DELETE  /refinery/sites/aboutus_pages/:id(.:format)                   refinery/sites/admin/aboutus_pages#destroy
+                                                        /sites/:id/:page(.:format)                                    refinery/sites/sites#show
+                                  sites_designs GET     /sites/designs(.:format)                                      refinery/sites/designs#index
+                                   sites_design GET     /sites/designs/:id(.:format)                                  refinery/sites/designs#show
+           update_positions_sites_admin_designs POST    /refinery/sites/designs/update_positions(.:format)            refinery/sites/admin/designs#update_positions
+                            sites_admin_designs GET     /refinery/sites/designs(.:format)                             refinery/sites/admin/designs#index
+                                                POST    /refinery/sites/designs(.:format)                             refinery/sites/admin/designs#create
+                         new_sites_admin_design GET     /refinery/sites/designs/new(.:format)                         refinery/sites/admin/designs#new
+                        edit_sites_admin_design GET     /refinery/sites/designs/:id/edit(.:format)                    refinery/sites/admin/designs#edit
+                             sites_admin_design PUT     /refinery/sites/designs/:id(.:format)                         refinery/sites/admin/designs#update
+                                                DELETE  /refinery/sites/designs/:id(.:format)                         refinery/sites/admin/designs#destroy
+                           sites_services_pages GET     /sites/services_pages(.:format)                               refinery/sites/services_pages#index
+                            sites_services_page GET     /sites/services_pages/:id(.:format)                           refinery/sites/services_pages#show
+    update_positions_sites_admin_services_pages POST    /refinery/sites/services_pages/update_positions(.:format)     refinery/sites/admin/services_pages#update_positions
+                     sites_admin_services_pages GET     /refinery/sites/services_pages(.:format)                      refinery/sites/admin/services_pages#index
+                                                POST    /refinery/sites/services_pages(.:format)                      refinery/sites/admin/services_pages#create
+                  new_sites_admin_services_page GET     /refinery/sites/services_pages/new(.:format)                  refinery/sites/admin/services_pages#new
+                 edit_sites_admin_services_page GET     /refinery/sites/services_pages/:id/edit(.:format)             refinery/sites/admin/services_pages#edit
+                      sites_admin_services_page PUT     /refinery/sites/services_pages/:id(.:format)                  refinery/sites/admin/services_pages#update
+                                                DELETE  /refinery/sites/services_pages/:id(.:format)                  refinery/sites/admin/services_pages#destroy
+                            sites_coupons_pages GET     /sites/coupons_pages(.:format)                                refinery/sites/coupons_pages#index
+                             sites_coupons_page GET     /sites/coupons_pages/:id(.:format)                            refinery/sites/coupons_pages#show
+     update_positions_sites_admin_coupons_pages POST    /refinery/sites/coupons_pages/update_positions(.:format)      refinery/sites/admin/coupons_pages#update_positions
+                      sites_admin_coupons_pages GET     /refinery/sites/coupons_pages(.:format)                       refinery/sites/admin/coupons_pages#index
+                                                POST    /refinery/sites/coupons_pages(.:format)                       refinery/sites/admin/coupons_pages#create
+                   new_sites_admin_coupons_page GET     /refinery/sites/coupons_pages/new(.:format)                   refinery/sites/admin/coupons_pages#new
+                  edit_sites_admin_coupons_page GET     /refinery/sites/coupons_pages/:id/edit(.:format)              refinery/sites/admin/coupons_pages#edit
+                       sites_admin_coupons_page PUT     /refinery/sites/coupons_pages/:id(.:format)                   refinery/sites/admin/coupons_pages#update
+                                                DELETE  /refinery/sites/coupons_pages/:id(.:format)                   refinery/sites/admin/coupons_pages#destroy
+                                  sites_coupons GET     /sites/coupons(.:format)                                      refinery/sites/coupons#index
+                                   sites_coupon GET     /sites/coupons/:id(.:format)                                  refinery/sites/coupons#show
+           update_positions_sites_admin_coupons POST    /refinery/sites/coupons/update_positions(.:format)            refinery/sites/admin/coupons#update_positions
+                            sites_admin_coupons GET     /refinery/sites/coupons(.:format)                             refinery/sites/admin/coupons#index
+                                                POST    /refinery/sites/coupons(.:format)                             refinery/sites/admin/coupons#create
+                         new_sites_admin_coupon GET     /refinery/sites/coupons/new(.:format)                         refinery/sites/admin/coupons#new
+                        edit_sites_admin_coupon GET     /refinery/sites/coupons/:id/edit(.:format)                    refinery/sites/admin/coupons#edit
+                             sites_admin_coupon PUT     /refinery/sites/coupons/:id(.:format)                         refinery/sites/admin/coupons#update
+                                                DELETE  /refinery/sites/coupons/:id(.:format)                         refinery/sites/admin/coupons#destroy
+                               sites_blog_posts GET     /sites/blog_posts(.:format)                                   refinery/sites/blog_posts#index
+                                sites_blog_post GET     /sites/blog_posts/:id(.:format)                               refinery/sites/blog_posts#show
+        update_positions_sites_admin_blog_posts POST    /refinery/sites/blog_posts/update_positions(.:format)         refinery/sites/admin/blog_posts#update_positions
+                         sites_admin_blog_posts GET     /refinery/sites/blog_posts(.:format)                          refinery/sites/admin/blog_posts#index
+                                                POST    /refinery/sites/blog_posts(.:format)                          refinery/sites/admin/blog_posts#create
+                      new_sites_admin_blog_post GET     /refinery/sites/blog_posts/new(.:format)                      refinery/sites/admin/blog_posts#new
+                     edit_sites_admin_blog_post GET     /refinery/sites/blog_posts/:id/edit(.:format)                 refinery/sites/admin/blog_posts#edit
+                          sites_admin_blog_post PUT     /refinery/sites/blog_posts/:id(.:format)                      refinery/sites/admin/blog_posts#update
+                                                DELETE  /refinery/sites/blog_posts/:id(.:format)                      refinery/sites/admin/blog_posts#destroy
+                                   sites_events GET     /sites/events(.:format)                                       refinery/sites/events#index
+                                    sites_event GET     /sites/events/:id(.:format)                                   refinery/sites/events#show
+            update_positions_sites_admin_events POST    /refinery/sites/events/update_positions(.:format)             refinery/sites/admin/events#update_positions
+                             sites_admin_events GET     /refinery/sites/events(.:format)                              refinery/sites/admin/events#index
+                                                POST    /refinery/sites/events(.:format)                              refinery/sites/admin/events#create
+                          new_sites_admin_event GET     /refinery/sites/events/new(.:format)                          refinery/sites/admin/events#new
+                         edit_sites_admin_event GET     /refinery/sites/events/:id/edit(.:format)                     refinery/sites/admin/events#edit
+                              sites_admin_event PUT     /refinery/sites/events/:id(.:format)                          refinery/sites/admin/events#update
+                                                DELETE  /refinery/sites/events/:id(.:format)                          refinery/sites/admin/events#destroy
+                       sites_product_categories GET     /sites/product_categories(.:format)                           refinery/sites/product_categories#index
+                         sites_product_category GET     /sites/product_categories/:id(.:format)                       refinery/sites/product_categories#show
+update_positions_sites_admin_product_categories POST    /refinery/sites/product_categories/update_positions(.:format) refinery/sites/admin/product_categories#update_positions
+                 sites_admin_product_categories GET     /refinery/sites/product_categories(.:format)                  refinery/sites/admin/product_categories#index
+                                                POST    /refinery/sites/product_categories(.:format)                  refinery/sites/admin/product_categories#create
+               new_sites_admin_product_category GET     /refinery/sites/product_categories/new(.:format)              refinery/sites/admin/product_categories#new
+              edit_sites_admin_product_category GET     /refinery/sites/product_categories/:id/edit(.:format)         refinery/sites/admin/product_categories#edit
+                   sites_admin_product_category PUT     /refinery/sites/product_categories/:id(.:format)              refinery/sites/admin/product_categories#update
+                                                DELETE  /refinery/sites/product_categories/:id(.:format)              refinery/sites/admin/product_categories#destroy
+                                 sites_products GET     /sites/products(.:format)                                     refinery/sites/products#index
+                                  sites_product GET     /sites/products/:id(.:format)                                 refinery/sites/products#show
+          update_positions_sites_admin_products POST    /refinery/sites/products/update_positions(.:format)           refinery/sites/admin/products#update_positions
+                           sites_admin_products GET     /refinery/sites/products(.:format)                            refinery/sites/admin/products#index
+                                                POST    /refinery/sites/products(.:format)                            refinery/sites/admin/products#create
+                        new_sites_admin_product GET     /refinery/sites/products/new(.:format)                        refinery/sites/admin/products#new
+                       edit_sites_admin_product GET     /refinery/sites/products/:id/edit(.:format)                   refinery/sites/admin/products#edit
+                            sites_admin_product PUT     /refinery/sites/products/:id(.:format)                        refinery/sites/admin/products#update
+                                                DELETE  /refinery/sites/products/:id(.:format)                        refinery/sites/admin/products#destroy
+                         sites_google_calendars GET     /sites/google_calendars(.:format)                             refinery/sites/google_calendars#index
+                          sites_google_calendar GET     /sites/google_calendars/:id(.:format)                         refinery/sites/google_calendars#show
+  update_positions_sites_admin_google_calendars POST    /refinery/sites/google_calendars/update_positions(.:format)   refinery/sites/admin/google_calendars#update_positions
+                   sites_admin_google_calendars GET     /refinery/sites/google_calendars(.:format)                    refinery/sites/admin/google_calendars#index
+                                                POST    /refinery/sites/google_calendars(.:format)                    refinery/sites/admin/google_calendars#create
+                new_sites_admin_google_calendar GET     /refinery/sites/google_calendars/new(.:format)                refinery/sites/admin/google_calendars#new
+               edit_sites_admin_google_calendar GET     /refinery/sites/google_calendars/:id/edit(.:format)           refinery/sites/admin/google_calendars#edit
+                    sites_admin_google_calendar PUT     /refinery/sites/google_calendars/:id(.:format)                refinery/sites/admin/google_calendars#update
+                                                DELETE  /refinery/sites/google_calendars/:id(.:format)                refinery/sites/admin/google_calendars#destroy
+                                    admin_users GET     /refinery/users(.:format)                                     refinery/admin/users#index
+                                                POST    /refinery/users(.:format)                                     refinery/admin/users#create
+                                 new_admin_user GET     /refinery/users/new(.:format)                                 refinery/admin/users#new
+                                edit_admin_user GET     /refinery/users/:id/edit(.:format)                            refinery/admin/users#edit
+                                     admin_user PUT     /refinery/users/:id(.:format)                                 refinery/admin/users#update
+                                                DELETE  /refinery/users/:id(.:format)                                 refinery/admin/users#destroy
+                                                        /refinery/*path(.:format)                                     refinery/admin/base#error_404
+                                                GET     /sites(.:format)                                              refinery/sites/sites#index
+                                                GET     /sites/:id(.:format)                                          refinery/sites/sites#show
+                                  coupon_create         /sites/:id/coupon_create/:coupon(.:format)                    refinery/sites/sites#coupon_create
+                                   message_post         /sites/:id/message(.:format)                                  refinery/sites/sites#message
+                                    search_site         /sites/:id/search(.:format)                                   refinery/sites/sites#search
+                                                POST    /refinery/sites/update_positions(.:format)                    refinery/sites/admin/sites#update_positions
+                                                GET     /refinery/sites/:id/close(.:format)                           refinery/sites/admin/sites#close
+                                                GET     /refinery/sites(.:format)                                     refinery/sites/admin/sites#index
+                                                POST    /refinery/sites(.:format)                                     refinery/sites/admin/sites#create
+                                                GET     /refinery/sites/new(.:format)                                 refinery/sites/admin/sites#new
+                                                GET     /refinery/sites/:id/edit(.:format)                            refinery/sites/admin/sites#edit
+                                                PUT     /refinery/sites/:id(.:format)                                 refinery/sites/admin/sites#update
+                                                DELETE  /refinery/sites/:id(.:format)                                 refinery/sites/admin/sites#destroy
+                                                GET     /sites/home_pages(.:format)                                   refinery/sites/home_pages#index
+                                                GET     /sites/home_pages/:id(.:format)                               refinery/sites/home_pages#show
+                                                POST    /refinery/sites/home_pages/update_positions(.:format)         refinery/sites/admin/home_pages#update_positions
+                                                GET     /refinery/sites/home_pages(.:format)                          refinery/sites/admin/home_pages#index
+                                                POST    /refinery/sites/home_pages(.:format)                          refinery/sites/admin/home_pages#create
+                                                GET     /refinery/sites/home_pages/new(.:format)                      refinery/sites/admin/home_pages#new
+                                                GET     /refinery/sites/home_pages/:id/edit(.:format)                 refinery/sites/admin/home_pages#edit
+                                                PUT     /refinery/sites/home_pages/:id(.:format)                      refinery/sites/admin/home_pages#update
+                                                DELETE  /refinery/sites/home_pages/:id(.:format)                      refinery/sites/admin/home_pages#destroy
+                                                GET     /sites/aboutus_pages(.:format)                                refinery/sites/aboutus_pages#index
+                                                GET     /sites/aboutus_pages/:id(.:format)                            refinery/sites/aboutus_pages#show
+                                                POST    /refinery/sites/aboutus_pages/update_positions(.:format)      refinery/sites/admin/aboutus_pages#update_positions
+                                                GET     /refinery/sites/aboutus_pages(.:format)                       refinery/sites/admin/aboutus_pages#index
+                                                POST    /refinery/sites/aboutus_pages(.:format)                       refinery/sites/admin/aboutus_pages#create
+                                                GET     /refinery/sites/aboutus_pages/new(.:format)                   refinery/sites/admin/aboutus_pages#new
+                                                GET     /refinery/sites/aboutus_pages/:id/edit(.:format)              refinery/sites/admin/aboutus_pages#edit
+                                                PUT     /refinery/sites/aboutus_pages/:id(.:format)                   refinery/sites/admin/aboutus_pages#update
+                                                DELETE  /refinery/sites/aboutus_pages/:id(.:format)                   refinery/sites/admin/aboutus_pages#destroy
+                                                        /sites/:id/:page(.:format)                                    refinery/sites/sites#show
+                                                GET     /sites/designs(.:format)                                      refinery/sites/designs#index
+                                                GET     /sites/designs/:id(.:format)                                  refinery/sites/designs#show
+                                                POST    /refinery/sites/designs/update_positions(.:format)            refinery/sites/admin/designs#update_positions
+                                                GET     /refinery/sites/designs(.:format)                             refinery/sites/admin/designs#index
+                                                POST    /refinery/sites/designs(.:format)                             refinery/sites/admin/designs#create
+                                                GET     /refinery/sites/designs/new(.:format)                         refinery/sites/admin/designs#new
+                                                GET     /refinery/sites/designs/:id/edit(.:format)                    refinery/sites/admin/designs#edit
+                                                PUT     /refinery/sites/designs/:id(.:format)                         refinery/sites/admin/designs#update
+                                                DELETE  /refinery/sites/designs/:id(.:format)                         refinery/sites/admin/designs#destroy
+                                                GET     /sites/services_pages(.:format)                               refinery/sites/services_pages#index
+                                                GET     /sites/services_pages/:id(.:format)                           refinery/sites/services_pages#show
+                                                POST    /refinery/sites/services_pages/update_positions(.:format)     refinery/sites/admin/services_pages#update_positions
+                                                GET     /refinery/sites/services_pages(.:format)                      refinery/sites/admin/services_pages#index
+                                                POST    /refinery/sites/services_pages(.:format)                      refinery/sites/admin/services_pages#create
+                                                GET     /refinery/sites/services_pages/new(.:format)                  refinery/sites/admin/services_pages#new
+                                                GET     /refinery/sites/services_pages/:id/edit(.:format)             refinery/sites/admin/services_pages#edit
+                                                PUT     /refinery/sites/services_pages/:id(.:format)                  refinery/sites/admin/services_pages#update
+                                                DELETE  /refinery/sites/services_pages/:id(.:format)                  refinery/sites/admin/services_pages#destroy
+                                                GET     /sites/coupons_pages(.:format)                                refinery/sites/coupons_pages#index
+                                                GET     /sites/coupons_pages/:id(.:format)                            refinery/sites/coupons_pages#show
+                                                POST    /refinery/sites/coupons_pages/update_positions(.:format)      refinery/sites/admin/coupons_pages#update_positions
+                                                GET     /refinery/sites/coupons_pages(.:format)                       refinery/sites/admin/coupons_pages#index
+                                                POST    /refinery/sites/coupons_pages(.:format)                       refinery/sites/admin/coupons_pages#create
+                                                GET     /refinery/sites/coupons_pages/new(.:format)                   refinery/sites/admin/coupons_pages#new
+                                                GET     /refinery/sites/coupons_pages/:id/edit(.:format)              refinery/sites/admin/coupons_pages#edit
+                                                PUT     /refinery/sites/coupons_pages/:id(.:format)                   refinery/sites/admin/coupons_pages#update
+                                                DELETE  /refinery/sites/coupons_pages/:id(.:format)                   refinery/sites/admin/coupons_pages#destroy
+                                                GET     /sites/coupons(.:format)                                      refinery/sites/coupons#index
+                                                GET     /sites/coupons/:id(.:format)                                  refinery/sites/coupons#show
+                                                POST    /refinery/sites/coupons/update_positions(.:format)            refinery/sites/admin/coupons#update_positions
+                                                GET     /refinery/sites/coupons(.:format)                             refinery/sites/admin/coupons#index
+                                                POST    /refinery/sites/coupons(.:format)                             refinery/sites/admin/coupons#create
+                                                GET     /refinery/sites/coupons/new(.:format)                         refinery/sites/admin/coupons#new
+                                                GET     /refinery/sites/coupons/:id/edit(.:format)                    refinery/sites/admin/coupons#edit
+                                                PUT     /refinery/sites/coupons/:id(.:format)                         refinery/sites/admin/coupons#update
+                                                DELETE  /refinery/sites/coupons/:id(.:format)                         refinery/sites/admin/coupons#destroy
+                                                GET     /sites/blog_posts(.:format)                                   refinery/sites/blog_posts#index
+                                                GET     /sites/blog_posts/:id(.:format)                               refinery/sites/blog_posts#show
+                                                POST    /refinery/sites/blog_posts/update_positions(.:format)         refinery/sites/admin/blog_posts#update_positions
+                                                GET     /refinery/sites/blog_posts(.:format)                          refinery/sites/admin/blog_posts#index
+                                                POST    /refinery/sites/blog_posts(.:format)                          refinery/sites/admin/blog_posts#create
+                                                GET     /refinery/sites/blog_posts/new(.:format)                      refinery/sites/admin/blog_posts#new
+                                                GET     /refinery/sites/blog_posts/:id/edit(.:format)                 refinery/sites/admin/blog_posts#edit
+                                                PUT     /refinery/sites/blog_posts/:id(.:format)                      refinery/sites/admin/blog_posts#update
+                                                DELETE  /refinery/sites/blog_posts/:id(.:format)                      refinery/sites/admin/blog_posts#destroy
+                                                GET     /sites/events(.:format)                                       refinery/sites/events#index
+                                                GET     /sites/events/:id(.:format)                                   refinery/sites/events#show
+                                                POST    /refinery/sites/events/update_positions(.:format)             refinery/sites/admin/events#update_positions
+                                                GET     /refinery/sites/events(.:format)                              refinery/sites/admin/events#index
+                                                POST    /refinery/sites/events(.:format)                              refinery/sites/admin/events#create
+                                                GET     /refinery/sites/events/new(.:format)                          refinery/sites/admin/events#new
+                                                GET     /refinery/sites/events/:id/edit(.:format)                     refinery/sites/admin/events#edit
+                                                PUT     /refinery/sites/events/:id(.:format)                          refinery/sites/admin/events#update
+                                                DELETE  /refinery/sites/events/:id(.:format)                          refinery/sites/admin/events#destroy
+                                                GET     /sites/product_categories(.:format)                           refinery/sites/product_categories#index
+                                                GET     /sites/product_categories/:id(.:format)                       refinery/sites/product_categories#show
+                                                POST    /refinery/sites/product_categories/update_positions(.:format) refinery/sites/admin/product_categories#update_positions
+                                                GET     /refinery/sites/product_categories(.:format)                  refinery/sites/admin/product_categories#index
+                                                POST    /refinery/sites/product_categories(.:format)                  refinery/sites/admin/product_categories#create
+                                                GET     /refinery/sites/product_categories/new(.:format)              refinery/sites/admin/product_categories#new
+                                                GET     /refinery/sites/product_categories/:id/edit(.:format)         refinery/sites/admin/product_categories#edit
+                                                PUT     /refinery/sites/product_categories/:id(.:format)              refinery/sites/admin/product_categories#update
+                                                DELETE  /refinery/sites/product_categories/:id(.:format)              refinery/sites/admin/product_categories#destroy
+                                                GET     /sites/products(.:format)                                     refinery/sites/products#index
+                                                GET     /sites/products/:id(.:format)                                 refinery/sites/products#show
+                                                POST    /refinery/sites/products/update_positions(.:format)           refinery/sites/admin/products#update_positions
+                                                GET     /refinery/sites/products(.:format)                            refinery/sites/admin/products#index
+                                                POST    /refinery/sites/products(.:format)                            refinery/sites/admin/products#create
+                                                GET     /refinery/sites/products/new(.:format)                        refinery/sites/admin/products#new
+                                                GET     /refinery/sites/products/:id/edit(.:format)                   refinery/sites/admin/products#edit
+                                                PUT     /refinery/sites/products/:id(.:format)                        refinery/sites/admin/products#update
+                                                DELETE  /refinery/sites/products/:id(.:format)                        refinery/sites/admin/products#destroy
+                                                GET     /sites/google_calendars(.:format)                             refinery/sites/google_calendars#index
+                                                GET     /sites/google_calendars/:id(.:format)                         refinery/sites/google_calendars#show
+                                                POST    /refinery/sites/google_calendars/update_positions(.:format)   refinery/sites/admin/google_calendars#update_positions
+                                                GET     /refinery/sites/google_calendars(.:format)                    refinery/sites/admin/google_calendars#index
+                                                POST    /refinery/sites/google_calendars(.:format)                    refinery/sites/admin/google_calendars#create
+                                                GET     /refinery/sites/google_calendars/new(.:format)                refinery/sites/admin/google_calendars#new
+                                                GET     /refinery/sites/google_calendars/:id/edit(.:format)           refinery/sites/admin/google_calendars#edit
+                                                PUT     /refinery/sites/google_calendars/:id(.:format)                refinery/sites/admin/google_calendars#update
+                                                DELETE  /refinery/sites/google_calendars/:id(.:format)                refinery/sites/admin/google_calendars#destroy
+                                                GET     /refinery/users(.:format)                                     refinery/admin/users#index
+                                                POST    /refinery/users(.:format)                                     refinery/admin/users#create
+                                                GET     /refinery/users/new(.:format)                                 refinery/admin/users#new
+                                                GET     /refinery/users/:id/edit(.:format)                            refinery/admin/users#edit
+                                                PUT     /refinery/users/:id(.:format)                                 refinery/admin/users#update
+                                                DELETE  /refinery/users/:id(.:format)                                 refinery/admin/users#destroy
+                                                        /refinery/*path(.:format)                                     refinery/admin/base#error_404
+                                marketable_page GET     /*path(.:format)                                              refinery/pages#show
+                                                GET     /sites(.:format)                                              refinery/sites/sites#index
+                                                GET     /sites/:id(.:format)                                          refinery/sites/sites#show
+                                  coupon_create         /sites/:id/coupon_create/:coupon(.:format)                    refinery/sites/sites#coupon_create
+                                   message_post         /sites/:id/message(.:format)                                  refinery/sites/sites#message
+                                    search_site         /sites/:id/search(.:format)                                   refinery/sites/sites#search
+                                                POST    /refinery/sites/update_positions(.:format)                    refinery/sites/admin/sites#update_positions
+                                                GET     /refinery/sites/:id/close(.:format)                           refinery/sites/admin/sites#close
+                                                GET     /refinery/sites(.:format)                                     refinery/sites/admin/sites#index
+                                                POST    /refinery/sites(.:format)                                     refinery/sites/admin/sites#create
+                                                GET     /refinery/sites/new(.:format)                                 refinery/sites/admin/sites#new
+                                                GET     /refinery/sites/:id/edit(.:format)                            refinery/sites/admin/sites#edit
+                                                PUT     /refinery/sites/:id(.:format)                                 refinery/sites/admin/sites#update
+                                                DELETE  /refinery/sites/:id(.:format)                                 refinery/sites/admin/sites#destroy
+                                                GET     /sites/home_pages(.:format)                                   refinery/sites/home_pages#index
+                                                GET     /sites/home_pages/:id(.:format)                               refinery/sites/home_pages#show
+                                                POST    /refinery/sites/home_pages/update_positions(.:format)         refinery/sites/admin/home_pages#update_positions
+                                                GET     /refinery/sites/home_pages(.:format)                          refinery/sites/admin/home_pages#index
+                                                POST    /refinery/sites/home_pages(.:format)                          refinery/sites/admin/home_pages#create
+                                                GET     /refinery/sites/home_pages/new(.:format)                      refinery/sites/admin/home_pages#new
+                                                GET     /refinery/sites/home_pages/:id/edit(.:format)                 refinery/sites/admin/home_pages#edit
+                                                PUT     /refinery/sites/home_pages/:id(.:format)                      refinery/sites/admin/home_pages#update
+                                                DELETE  /refinery/sites/home_pages/:id(.:format)                      refinery/sites/admin/home_pages#destroy
+                                                GET     /sites/aboutus_pages(.:format)                                refinery/sites/aboutus_pages#index
+                                                GET     /sites/aboutus_pages/:id(.:format)                            refinery/sites/aboutus_pages#show
+                                                POST    /refinery/sites/aboutus_pages/update_positions(.:format)      refinery/sites/admin/aboutus_pages#update_positions
+                                                GET     /refinery/sites/aboutus_pages(.:format)                       refinery/sites/admin/aboutus_pages#index
+                                                POST    /refinery/sites/aboutus_pages(.:format)                       refinery/sites/admin/aboutus_pages#create
+                                                GET     /refinery/sites/aboutus_pages/new(.:format)                   refinery/sites/admin/aboutus_pages#new
+                                                GET     /refinery/sites/aboutus_pages/:id/edit(.:format)              refinery/sites/admin/aboutus_pages#edit
+                                                PUT     /refinery/sites/aboutus_pages/:id(.:format)                   refinery/sites/admin/aboutus_pages#update
+                                                DELETE  /refinery/sites/aboutus_pages/:id(.:format)                   refinery/sites/admin/aboutus_pages#destroy
+                                                        /sites/:id/:page(.:format)                                    refinery/sites/sites#show
+                                                GET     /sites/designs(.:format)                                      refinery/sites/designs#index
+                                                GET     /sites/designs/:id(.:format)                                  refinery/sites/designs#show
+                                                POST    /refinery/sites/designs/update_positions(.:format)            refinery/sites/admin/designs#update_positions
+                                                GET     /refinery/sites/designs(.:format)                             refinery/sites/admin/designs#index
+                                                POST    /refinery/sites/designs(.:format)                             refinery/sites/admin/designs#create
+                                                GET     /refinery/sites/designs/new(.:format)                         refinery/sites/admin/designs#new
+                                                GET     /refinery/sites/designs/:id/edit(.:format)                    refinery/sites/admin/designs#edit
+                                                PUT     /refinery/sites/designs/:id(.:format)                         refinery/sites/admin/designs#update
+                                                DELETE  /refinery/sites/designs/:id(.:format)                         refinery/sites/admin/designs#destroy
+                                                GET     /sites/services_pages(.:format)                               refinery/sites/services_pages#index
+                                                GET     /sites/services_pages/:id(.:format)                           refinery/sites/services_pages#show
+                                                POST    /refinery/sites/services_pages/update_positions(.:format)     refinery/sites/admin/services_pages#update_positions
+                                                GET     /refinery/sites/services_pages(.:format)                      refinery/sites/admin/services_pages#index
+                                                POST    /refinery/sites/services_pages(.:format)                      refinery/sites/admin/services_pages#create
+                                                GET     /refinery/sites/services_pages/new(.:format)                  refinery/sites/admin/services_pages#new
+                                                GET     /refinery/sites/services_pages/:id/edit(.:format)             refinery/sites/admin/services_pages#edit
+                                                PUT     /refinery/sites/services_pages/:id(.:format)                  refinery/sites/admin/services_pages#update
+                                                DELETE  /refinery/sites/services_pages/:id(.:format)                  refinery/sites/admin/services_pages#destroy
+                                                GET     /sites/coupons_pages(.:format)                                refinery/sites/coupons_pages#index
+                                                GET     /sites/coupons_pages/:id(.:format)                            refinery/sites/coupons_pages#show
+                                                POST    /refinery/sites/coupons_pages/update_positions(.:format)      refinery/sites/admin/coupons_pages#update_positions
+                                                GET     /refinery/sites/coupons_pages(.:format)                       refinery/sites/admin/coupons_pages#index
+                                                POST    /refinery/sites/coupons_pages(.:format)                       refinery/sites/admin/coupons_pages#create
+                                                GET     /refinery/sites/coupons_pages/new(.:format)                   refinery/sites/admin/coupons_pages#new
+                                                GET     /refinery/sites/coupons_pages/:id/edit(.:format)              refinery/sites/admin/coupons_pages#edit
+                                                PUT     /refinery/sites/coupons_pages/:id(.:format)                   refinery/sites/admin/coupons_pages#update
+                                                DELETE  /refinery/sites/coupons_pages/:id(.:format)                   refinery/sites/admin/coupons_pages#destroy
+                                                GET     /sites/coupons(.:format)                                      refinery/sites/coupons#index
+                                                GET     /sites/coupons/:id(.:format)                                  refinery/sites/coupons#show
+                                                POST    /refinery/sites/coupons/update_positions(.:format)            refinery/sites/admin/coupons#update_positions
+                                                GET     /refinery/sites/coupons(.:format)                             refinery/sites/admin/coupons#index
+                                                POST    /refinery/sites/coupons(.:format)                             refinery/sites/admin/coupons#create
+                                                GET     /refinery/sites/coupons/new(.:format)                         refinery/sites/admin/coupons#new
+                                                GET     /refinery/sites/coupons/:id/edit(.:format)                    refinery/sites/admin/coupons#edit
+                                                PUT     /refinery/sites/coupons/:id(.:format)                         refinery/sites/admin/coupons#update
+                                                DELETE  /refinery/sites/coupons/:id(.:format)                         refinery/sites/admin/coupons#destroy
+                                                GET     /sites/blog_posts(.:format)                                   refinery/sites/blog_posts#index
+                                                GET     /sites/blog_posts/:id(.:format)                               refinery/sites/blog_posts#show
+                                                POST    /refinery/sites/blog_posts/update_positions(.:format)         refinery/sites/admin/blog_posts#update_positions
+                                                GET     /refinery/sites/blog_posts(.:format)                          refinery/sites/admin/blog_posts#index
+                                                POST    /refinery/sites/blog_posts(.:format)                          refinery/sites/admin/blog_posts#create
+                                                GET     /refinery/sites/blog_posts/new(.:format)                      refinery/sites/admin/blog_posts#new
+                                                GET     /refinery/sites/blog_posts/:id/edit(.:format)                 refinery/sites/admin/blog_posts#edit
+                                                PUT     /refinery/sites/blog_posts/:id(.:format)                      refinery/sites/admin/blog_posts#update
+                                                DELETE  /refinery/sites/blog_posts/:id(.:format)                      refinery/sites/admin/blog_posts#destroy
+                                                GET     /sites/events(.:format)                                       refinery/sites/events#index
+                                                GET     /sites/events/:id(.:format)                                   refinery/sites/events#show
+                                                POST    /refinery/sites/events/update_positions(.:format)             refinery/sites/admin/events#update_positions
+                                                GET     /refinery/sites/events(.:format)                              refinery/sites/admin/events#index
+                                                POST    /refinery/sites/events(.:format)                              refinery/sites/admin/events#create
+                                                GET     /refinery/sites/events/new(.:format)                          refinery/sites/admin/events#new
+                                                GET     /refinery/sites/events/:id/edit(.:format)                     refinery/sites/admin/events#edit
+                                                PUT     /refinery/sites/events/:id(.:format)                          refinery/sites/admin/events#update
+                                                DELETE  /refinery/sites/events/:id(.:format)                          refinery/sites/admin/events#destroy
+                                                GET     /sites/product_categories(.:format)                           refinery/sites/product_categories#index
+                                                GET     /sites/product_categories/:id(.:format)                       refinery/sites/product_categories#show
+                                                POST    /refinery/sites/product_categories/update_positions(.:format) refinery/sites/admin/product_categories#update_positions
+                                                GET     /refinery/sites/product_categories(.:format)                  refinery/sites/admin/product_categories#index
+                                                POST    /refinery/sites/product_categories(.:format)                  refinery/sites/admin/product_categories#create
+                                                GET     /refinery/sites/product_categories/new(.:format)              refinery/sites/admin/product_categories#new
+                                                GET     /refinery/sites/product_categories/:id/edit(.:format)         refinery/sites/admin/product_categories#edit
+                                                PUT     /refinery/sites/product_categories/:id(.:format)              refinery/sites/admin/product_categories#update
+                                                DELETE  /refinery/sites/product_categories/:id(.:format)              refinery/sites/admin/product_categories#destroy
+                                                GET     /sites/products(.:format)                                     refinery/sites/products#index
+                                                GET     /sites/products/:id(.:format)                                 refinery/sites/products#show
+                                                POST    /refinery/sites/products/update_positions(.:format)           refinery/sites/admin/products#update_positions
+                                                GET     /refinery/sites/products(.:format)                            refinery/sites/admin/products#index
+                                                POST    /refinery/sites/products(.:format)                            refinery/sites/admin/products#create
+                                                GET     /refinery/sites/products/new(.:format)                        refinery/sites/admin/products#new
+                                                GET     /refinery/sites/products/:id/edit(.:format)                   refinery/sites/admin/products#edit
+                                                PUT     /refinery/sites/products/:id(.:format)                        refinery/sites/admin/products#update
+                                                DELETE  /refinery/sites/products/:id(.:format)                        refinery/sites/admin/products#destroy
+                                                GET     /sites/google_calendars(.:format)                             refinery/sites/google_calendars#index
+                                                GET     /sites/google_calendars/:id(.:format)                         refinery/sites/google_calendars#show
+                                                POST    /refinery/sites/google_calendars/update_positions(.:format)   refinery/sites/admin/google_calendars#update_positions
+                                                GET     /refinery/sites/google_calendars(.:format)                    refinery/sites/admin/google_calendars#index
+                                                POST    /refinery/sites/google_calendars(.:format)                    refinery/sites/admin/google_calendars#create
+                                                GET     /refinery/sites/google_calendars/new(.:format)                refinery/sites/admin/google_calendars#new
+                                                GET     /refinery/sites/google_calendars/:id/edit(.:format)           refinery/sites/admin/google_calendars#edit
+                                                PUT     /refinery/sites/google_calendars/:id(.:format)                refinery/sites/admin/google_calendars#update
+                                                DELETE  /refinery/sites/google_calendars/:id(.:format)                refinery/sites/admin/google_calendars#destroy
+                                                GET     /refinery/users(.:format)                                     refinery/admin/users#index
+                                                POST    /refinery/users(.:format)                                     refinery/admin/users#create
+                                                GET     /refinery/users/new(.:format)                                 refinery/admin/users#new
+                                                GET     /refinery/users/:id/edit(.:format)                            refinery/admin/users#edit
+                                                PUT     /refinery/users/:id(.:format)                                 refinery/admin/users#update
+                                                DELETE  /refinery/users/:id(.:format)                                 refinery/admin/users#destroy
+                                                        /refinery/*path(.:format)                                     refinery/admin/base#error_404
+                                                GET     /sites(.:format)                                              refinery/sites/sites#index
+                                                GET     /sites/:id(.:format)                                          refinery/sites/sites#show
+                                  coupon_create         /sites/:id/coupon_create/:coupon(.:format)                    refinery/sites/sites#coupon_create
+                                   message_post         /sites/:id/message(.:format)                                  refinery/sites/sites#message
+                                    search_site         /sites/:id/search(.:format)                                   refinery/sites/sites#search
+                                                POST    /refinery/sites/update_positions(.:format)                    refinery/sites/admin/sites#update_positions
+                                                GET     /refinery/sites/:id/close(.:format)                           refinery/sites/admin/sites#close
+                                                GET     /refinery/sites(.:format)                                     refinery/sites/admin/sites#index
+                                                POST    /refinery/sites(.:format)                                     refinery/sites/admin/sites#create
+                                                GET     /refinery/sites/new(.:format)                                 refinery/sites/admin/sites#new
+                                                GET     /refinery/sites/:id/edit(.:format)                            refinery/sites/admin/sites#edit
+                                                PUT     /refinery/sites/:id(.:format)                                 refinery/sites/admin/sites#update
+                                                DELETE  /refinery/sites/:id(.:format)                                 refinery/sites/admin/sites#destroy
+                                                GET     /sites/home_pages(.:format)                                   refinery/sites/home_pages#index
+                                                GET     /sites/home_pages/:id(.:format)                               refinery/sites/home_pages#show
+                                                POST    /refinery/sites/home_pages/update_positions(.:format)         refinery/sites/admin/home_pages#update_positions
+                                                GET     /refinery/sites/home_pages(.:format)                          refinery/sites/admin/home_pages#index
+                                                POST    /refinery/sites/home_pages(.:format)                          refinery/sites/admin/home_pages#create
+                                                GET     /refinery/sites/home_pages/new(.:format)                      refinery/sites/admin/home_pages#new
+                                                GET     /refinery/sites/home_pages/:id/edit(.:format)                 refinery/sites/admin/home_pages#edit
+                                                PUT     /refinery/sites/home_pages/:id(.:format)                      refinery/sites/admin/home_pages#update
+                                                DELETE  /refinery/sites/home_pages/:id(.:format)                      refinery/sites/admin/home_pages#destroy
+                                                GET     /sites/aboutus_pages(.:format)                                refinery/sites/aboutus_pages#index
+                                                GET     /sites/aboutus_pages/:id(.:format)                            refinery/sites/aboutus_pages#show
+                                                POST    /refinery/sites/aboutus_pages/update_positions(.:format)      refinery/sites/admin/aboutus_pages#update_positions
+                                                GET     /refinery/sites/aboutus_pages(.:format)                       refinery/sites/admin/aboutus_pages#index
+                                                POST    /refinery/sites/aboutus_pages(.:format)                       refinery/sites/admin/aboutus_pages#create
+                                                GET     /refinery/sites/aboutus_pages/new(.:format)                   refinery/sites/admin/aboutus_pages#new
+                                                GET     /refinery/sites/aboutus_pages/:id/edit(.:format)              refinery/sites/admin/aboutus_pages#edit
+                                                PUT     /refinery/sites/aboutus_pages/:id(.:format)                   refinery/sites/admin/aboutus_pages#update
+                                                DELETE  /refinery/sites/aboutus_pages/:id(.:format)                   refinery/sites/admin/aboutus_pages#destroy
+                                                        /sites/:id/:page(.:format)                                    refinery/sites/sites#show
+                                                GET     /sites/designs(.:format)                                      refinery/sites/designs#index
+                                                GET     /sites/designs/:id(.:format)                                  refinery/sites/designs#show
+                                                POST    /refinery/sites/designs/update_positions(.:format)            refinery/sites/admin/designs#update_positions
+                                                GET     /refinery/sites/designs(.:format)                             refinery/sites/admin/designs#index
+                                                POST    /refinery/sites/designs(.:format)                             refinery/sites/admin/designs#create
+                                                GET     /refinery/sites/designs/new(.:format)                         refinery/sites/admin/designs#new
+                                                GET     /refinery/sites/designs/:id/edit(.:format)                    refinery/sites/admin/designs#edit
+                                                PUT     /refinery/sites/designs/:id(.:format)                         refinery/sites/admin/designs#update
+                                                DELETE  /refinery/sites/designs/:id(.:format)                         refinery/sites/admin/designs#destroy
+                                                GET     /sites/services_pages(.:format)                               refinery/sites/services_pages#index
+                                                GET     /sites/services_pages/:id(.:format)                           refinery/sites/services_pages#show
+                                                POST    /refinery/sites/services_pages/update_positions(.:format)     refinery/sites/admin/services_pages#update_positions
+                                                GET     /refinery/sites/services_pages(.:format)                      refinery/sites/admin/services_pages#index
+                                                POST    /refinery/sites/services_pages(.:format)                      refinery/sites/admin/services_pages#create
+                                                GET     /refinery/sites/services_pages/new(.:format)                  refinery/sites/admin/services_pages#new
+                                                GET     /refinery/sites/services_pages/:id/edit(.:format)             refinery/sites/admin/services_pages#edit
+                                                PUT     /refinery/sites/services_pages/:id(.:format)                  refinery/sites/admin/services_pages#update
+                                                DELETE  /refinery/sites/services_pages/:id(.:format)                  refinery/sites/admin/services_pages#destroy
+                                                GET     /sites/coupons_pages(.:format)                                refinery/sites/coupons_pages#index
+                                                GET     /sites/coupons_pages/:id(.:format)                            refinery/sites/coupons_pages#show
+                                                POST    /refinery/sites/coupons_pages/update_positions(.:format)      refinery/sites/admin/coupons_pages#update_positions
+                                                GET     /refinery/sites/coupons_pages(.:format)                       refinery/sites/admin/coupons_pages#index
+                                                POST    /refinery/sites/coupons_pages(.:format)                       refinery/sites/admin/coupons_pages#create
+                                                GET     /refinery/sites/coupons_pages/new(.:format)                   refinery/sites/admin/coupons_pages#new
+                                                GET     /refinery/sites/coupons_pages/:id/edit(.:format)              refinery/sites/admin/coupons_pages#edit
+                                                PUT     /refinery/sites/coupons_pages/:id(.:format)                   refinery/sites/admin/coupons_pages#update
+                                                DELETE  /refinery/sites/coupons_pages/:id(.:format)                   refinery/sites/admin/coupons_pages#destroy
+                                                GET     /sites/coupons(.:format)                                      refinery/sites/coupons#index
+                                                GET     /sites/coupons/:id(.:format)                                  refinery/sites/coupons#show
+                                                POST    /refinery/sites/coupons/update_positions(.:format)            refinery/sites/admin/coupons#update_positions
+                                                GET     /refinery/sites/coupons(.:format)                             refinery/sites/admin/coupons#index
+                                                POST    /refinery/sites/coupons(.:format)                             refinery/sites/admin/coupons#create
+                                                GET     /refinery/sites/coupons/new(.:format)                         refinery/sites/admin/coupons#new
+                                                GET     /refinery/sites/coupons/:id/edit(.:format)                    refinery/sites/admin/coupons#edit
+                                                PUT     /refinery/sites/coupons/:id(.:format)                         refinery/sites/admin/coupons#update
+                                                DELETE  /refinery/sites/coupons/:id(.:format)                         refinery/sites/admin/coupons#destroy
+                                                GET     /sites/blog_posts(.:format)                                   refinery/sites/blog_posts#index
+                                                GET     /sites/blog_posts/:id(.:format)                               refinery/sites/blog_posts#show
+                                                POST    /refinery/sites/blog_posts/update_positions(.:format)         refinery/sites/admin/blog_posts#update_positions
+                                                GET     /refinery/sites/blog_posts(.:format)                          refinery/sites/admin/blog_posts#index
+                                                POST    /refinery/sites/blog_posts(.:format)                          refinery/sites/admin/blog_posts#create
+                                                GET     /refinery/sites/blog_posts/new(.:format)                      refinery/sites/admin/blog_posts#new
+                                                GET     /refinery/sites/blog_posts/:id/edit(.:format)                 refinery/sites/admin/blog_posts#edit
+                                                PUT     /refinery/sites/blog_posts/:id(.:format)                      refinery/sites/admin/blog_posts#update
+                                                DELETE  /refinery/sites/blog_posts/:id(.:format)                      refinery/sites/admin/blog_posts#destroy
+                                                GET     /sites/events(.:format)                                       refinery/sites/events#index
+                                                GET     /sites/events/:id(.:format)                                   refinery/sites/events#show
+                                                POST    /refinery/sites/events/update_positions(.:format)             refinery/sites/admin/events#update_positions
+                                                GET     /refinery/sites/events(.:format)                              refinery/sites/admin/events#index
+                                                POST    /refinery/sites/events(.:format)                              refinery/sites/admin/events#create
+                                                GET     /refinery/sites/events/new(.:format)                          refinery/sites/admin/events#new
+                                                GET     /refinery/sites/events/:id/edit(.:format)                     refinery/sites/admin/events#edit
+                                                PUT     /refinery/sites/events/:id(.:format)                          refinery/sites/admin/events#update
+                                                DELETE  /refinery/sites/events/:id(.:format)                          refinery/sites/admin/events#destroy
+                                                GET     /sites/product_categories(.:format)                           refinery/sites/product_categories#index
+                                                GET     /sites/product_categories/:id(.:format)                       refinery/sites/product_categories#show
+                                                POST    /refinery/sites/product_categories/update_positions(.:format) refinery/sites/admin/product_categories#update_positions
+                                                GET     /refinery/sites/product_categories(.:format)                  refinery/sites/admin/product_categories#index
+                                                POST    /refinery/sites/product_categories(.:format)                  refinery/sites/admin/product_categories#create
+                                                GET     /refinery/sites/product_categories/new(.:format)              refinery/sites/admin/product_categories#new
+                                                GET     /refinery/sites/product_categories/:id/edit(.:format)         refinery/sites/admin/product_categories#edit
+                                                PUT     /refinery/sites/product_categories/:id(.:format)              refinery/sites/admin/product_categories#update
+                                                DELETE  /refinery/sites/product_categories/:id(.:format)              refinery/sites/admin/product_categories#destroy
+                                                GET     /sites/products(.:format)                                     refinery/sites/products#index
+                                                GET     /sites/products/:id(.:format)                                 refinery/sites/products#show
+                                                POST    /refinery/sites/products/update_positions(.:format)           refinery/sites/admin/products#update_positions
+                                                GET     /refinery/sites/products(.:format)                            refinery/sites/admin/products#index
+                                                POST    /refinery/sites/products(.:format)                            refinery/sites/admin/products#create
+                                                GET     /refinery/sites/products/new(.:format)                        refinery/sites/admin/products#new
+                                                GET     /refinery/sites/products/:id/edit(.:format)                   refinery/sites/admin/products#edit
+                                                PUT     /refinery/sites/products/:id(.:format)                        refinery/sites/admin/products#update
+                                                DELETE  /refinery/sites/products/:id(.:format)                        refinery/sites/admin/products#destroy
+                                                GET     /sites/google_calendars(.:format)                             refinery/sites/google_calendars#index
+                                                GET     /sites/google_calendars/:id(.:format)                         refinery/sites/google_calendars#show
+                                                POST    /refinery/sites/google_calendars/update_positions(.:format)   refinery/sites/admin/google_calendars#update_positions
+                                                GET     /refinery/sites/google_calendars(.:format)                    refinery/sites/admin/google_calendars#index
+                                                POST    /refinery/sites/google_calendars(.:format)                    refinery/sites/admin/google_calendars#create
+                                                GET     /refinery/sites/google_calendars/new(.:format)                refinery/sites/admin/google_calendars#new
+                                                GET     /refinery/sites/google_calendars/:id/edit(.:format)           refinery/sites/admin/google_calendars#edit
+                                                PUT     /refinery/sites/google_calendars/:id(.:format)                refinery/sites/admin/google_calendars#update
+                                                DELETE  /refinery/sites/google_calendars/:id(.:format)                refinery/sites/admin/google_calendars#destroy
+                                                GET     /refinery/users(.:format)                                     refinery/admin/users#index
+                                                POST    /refinery/users(.:format)                                     refinery/admin/users#create
+                                                GET     /refinery/users/new(.:format)                                 refinery/admin/users#new
+                                                GET     /refinery/users/:id/edit(.:format)                            refinery/admin/users#edit
+                                                PUT     /refinery/users/:id(.:format)                                 refinery/admin/users#update
+                                                DELETE  /refinery/users/:id(.:format)                                 refinery/admin/users#destroy
+                                                        /refinery/*path(.:format)                                     refinery/admin/base#error_404

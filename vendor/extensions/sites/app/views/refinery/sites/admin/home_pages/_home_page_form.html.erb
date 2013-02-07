@@ -1,0 +1,33 @@
+<%= render '/refinery/admin/error_messages',
+           :object => home_page,
+           :include_object_name => true %>
+
+
+<%= f.label :description -%>
+<%= f.text_area :description, :rows => 20, :class => 'wymeditor saisie' -%>
+
+<div class='field'>
+  <%= f.label 'Splash image' -%>
+  <%= render '/refinery/admin/image_picker',
+             :f => f,
+             :field => :splash_id,
+             :image => home_page.splash,
+             :toggle_image_display => false %>
+
+  <div class='field'>
+    <%= f.label :seo_title -%>
+    <%= f.text_field :seo_title, :class => 'widest' -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :seo_keywords -%>
+    <%= f.text_field :seo_keywords, :class => 'widest' -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :seo_description -%>
+    <%= f.text_area :seo_description, :class => 'widest', :rows => 7 %>
+  </div>
+
+</div>
+

@@ -1,0 +1,82 @@
+.carousel-item {
+  width: 170px;
+  height: 200px;
+  /*    border: 1px solid #808080;*/
+  display: inline-block;
+  margin: 0px 5px;
+}
+
+.carousel-item img {
+/*  float: left; */
+    border-radius: 4px;
+}
+
+.carousel-caption {
+  float: left;
+  width: 170px;
+  text-align: center;
+  font-size: 0.80em;
+  line-height: 0.8em;
+}
+
+.image-carousel {
+/*  padding: 15px 0 15px 40px;
+  position: relative;         */
+    height: 130px;
+    width: 170px;
+    display: inline-block;
+}
+
+.image_carousel img {
+  border: 1px solid #ccc;
+  background-color: white;
+  padding: 9px;
+  margin: 7px;
+  display: block;
+  float: left;
+}
+a.prev, a.next {
+  background: url(/assets/bw_sprite.png) no-repeat transparent;
+  width: 45px;
+  height: 50px;
+  display: block;
+  position: absolute;
+  top: 85px;
+}
+a.prev {			left: -22px;
+  background-position: 0 0; }
+a.prev:hover {		background-position: 0 -50px; }
+a.prev.disabled {	background-position: 0 -100px !important;  }
+a.next {			right: -22px;
+  background-position: -50px 0; }
+a.next:hover {		background-position: -50px -50px; }
+a.next.disabled {	background-position: -50px -100px !important;  }
+a.prev.disabled, a.next.disabled {
+  cursor: default;
+}
+
+a.prev span, a.next span {
+  display: none;
+}
+.pagination {
+  text-align: right;
+  padding-right: 50px;
+}
+.pagination a {
+  background: url(/assets/bw_sprite.png) 0 -300px no-repeat transparent;
+  width: 15px;
+  height: 15px;
+  margin: 0 5px 0 0;
+  display: inline-block;
+}
+.pagination a.selected {
+  background-position: -25px -300px;
+  cursor: default;
+}
+.pagination a span {
+  display: none;
+}
+.clearfix {
+  float: none;
+  clear: both;
+}

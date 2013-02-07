@@ -1,0 +1,42 @@
+<% content_for :meta_tags do %>
+  <title><%= (@site.home_page.seo_title + ' - Contact') if @site.home_page.seo_title.present? %></title>
+  <%= raw(%(<meta name="description" content="#{@site.home_page.seo_description}" />)) if @site.home_page.seo_description.present? -%>
+  <%= raw(%(<meta name="keywords" content="#{@site.home_page.seo_keywords}">)) if @site.home_page.seo_keywords.present? -%>
+<% end %>
+
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag "inquiry" %>
+<% end %>
+
+<div class="inquiry-container">
+	<div class='inquiry'>
+		<h2><%= t('contact_form') %></h2>
+	  <% if @new_message %>
+	    <h3><%= t('please_send') %></h3>
+	    <%= form_tag (refinery.message_post_url(@site)), :action => "message", :method => :post do %>
+		    <div class="field">
+		      <%= required_label :name, t('name') %>
+		      <%= text_field_tag :name, '', :class => 'text', :required => 'required', :placeholder => t('name') %>
+		    </div>
+		    <div class="field">
+		      <%= required_label :email, t('email') %>
+		      <%= email_field_tag :email, '', :class => 'text email', :required => 'required', :placeholder => t('email') %>
+		    </div>
+		    <div class="field">
+		      <%= label :phone, t('phone') %>
+		      <%= text_field_tag :phone, '', :class => 'text phone', :placeholder => t('phone') %>
+		    </div>
+		    <div class='field message_field'>
+		      <%= required_label :message, t('message') %>
+		      <%= text_area_tag :message, '', :rows => 8, :required => 'required', :placeholder => t('message') %>
+		    </div>
+		    <div class="actions">
+		      <%= submit_tag t('send') %>
+		    </div>
+		  <% end %>
+	  <% else %>
+				<br/><br/>
+		   <h3><%= raw @message_feedback %></h3>
+	  <% end %>
+	</div>
+</div>
