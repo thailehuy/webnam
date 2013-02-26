@@ -33,6 +33,7 @@
       <% end %>
     </ul>
   </article>
+  <%= will_paginate @products, :param_name => 'page_count' %>
 </section>
 <% if @site.carousel_pages.include?('products') %>
   <%= render '/refinery/sites/sites/carousel' %>

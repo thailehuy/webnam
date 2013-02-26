@@ -155,7 +155,7 @@ module Refinery
         @products = Product.where(
             @gender == 0 ? '' : {:gender => @gender}).where(
             @category == 0 ? '' : {:product_category_id => @category}).where(
-            {:site_id => @site_id}).order("position")
+            {:site_id => @site_id}).order("position").paginate(:page => params[:page_count], :per_page => @site.products_per_page)
 
         @categories = ProductCategory.where(
             {:site_id => @site_id}).order("position").all.map {

@@ -3,7 +3,7 @@ require 'acts_as_indexed'
 module Refinery
   module Sites
     class Site < Refinery::Core::BaseModel
-      self.table_name = 'refinery_sites'      
+      self.table_name = 'refinery_sites'
 
       #:name, :slug,
       translates :products_title, :seo_product_title, :seo_product_keywords, :seo_product_description
@@ -15,13 +15,14 @@ module Refinery
                 :exclusion => { :in => 'New site',
                                 :message => "Please change the site name" }
       validates :contact_email, :presence => true
+      validates :products_per_page, :presence => true, :inclusion => 5..50
 
       extend FriendlyId
       friendly_id :name, :use => [:reserved, :slugged],  #, :globalize
 								  :reserved_words => %w(index new session login logout users refinery admin images wymiframe)
 
       attr_accessible :name, :published, :languages, :carousel_pages,
-                      :position, :slug, :contact_email, :logo_id, :videos, :has_services,
+                      :position, :slug, :contact_email, :logo_id, :videos, :has_services, :products_per_page,
                       :has_products,:use_categories,:use_gender,:has_gallery, :has_coupons,:has_blog,
                       :has_events,:has_calendars,:calendar_mode,:calendar_height,
                       :facebook_page,:twitter_page,:linkedin_page,:youtube_page, :zingme_page, :govn_page,
@@ -29,8 +30,8 @@ module Refinery
                       :slide_effect, :slide_delay, :slide_transition, :carousel_pause, :carousel_transition,
                       :seo_product_title, :seo_product_keywords, :seo_product_description, :analytics_code
 
-      
-      # Don't change the below list as it is used in a bit mask for displaying the carousel 
+
+      # Don't change the below list as it is used in a bit mask for displaying the carousel
       SITE_PAGES = ["home","aboutus","services","products","coupons","mediagallery","blog","events"]
 
       belongs_to :logo, :class_name => '::Refinery::Image'
@@ -125,7 +126,7 @@ module Refinery
         self.site_images[index].try(:id)
       end
 
-      
+
       # Carousel d'images
 
       def carousel_pages=(carousel_pages)

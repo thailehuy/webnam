@@ -67,6 +67,11 @@ module Refinery
 
 
         def update
+          p @site
+          p params[:site]
+          p "---------------------------------------"
+          p "---------------------------------------"
+          p "---------------------------------------"
           if @site.update_attributes(params[:site])
             flash.notice = t('refinery.crudify.updated', :what => 'The site ' + @site.name)
             session[:current_site_name] = @site.name
