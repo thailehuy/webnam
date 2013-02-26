@@ -6,7 +6,7 @@ gem 'rails', '3.2.2'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2'
-
+gem 'pg'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -45,7 +45,7 @@ gem 'jquery-rails'
 # Refinery CMS
 #gem 'refinerycms', '~> 2.0.1'
 #gem 'refinerycms', :path => 'vendor/gems/refinerycms-2-0-stable'
-gem 'refinerycms', :path => 'vendor/plugins/refinerycms-webnam21'
+gem 'refinerycms'#, :path => 'vendor/plugins/refinerycms-webnam21'
 
 # Specify additional Refinery CMS Extensions here (all optional):
 gem 'refinerycms-i18n', '~> 2.1.0.dev', :git => 'git://github.com/parndt/refinerycms-i18n.git'
