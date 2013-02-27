@@ -91,5 +91,3 @@ capybara-*html
 .rvmrc.*
 
 config/database.yml
-
-vendor/plugins/*

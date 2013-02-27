@@ -1,0 +1,99 @@
+h2. Translate Refinery
+
+Refinery supports translations. This guide will show you how to:
+
+* Improve upon or add a new translation to Refinery
+
+endprologue.
+
+h3. Setup
+
+Before you start translating, you should clone a fresh copy of Refinery from GitHub. See "this guide":/guides/how-to-contribute-to-refinery for information how to do that.
+
+It's not required but we like to create separate branch when adding new feature. You can create
+new branch by typing
+
+<shell>
+$ git checkout -b i18n_nl
+</shell>
+
+in the terminal.
+
+h3. Finding missing keys
+
+Execute the following rake task, to get a list of missing translations
+
+<shell>
+$ rake translate:lost_in_translation LOCALE=nl
+</shell>
+
+The output of this will look like this
+
+<pre>
+Searching for missing translations for the locale: nl
+refinery.admin.pages.form_advanced_options.page_options in pages/app/views/refinery/admin/pages/_form_advanced_options.html.erb      is not in any nl locale file
+refinery.admin.pages_dialogs.link_to.insert in pages/app/views/refinery/admin/pages_dialogs/link_to.html.erb     is not in any nl locale file
+Number of missing translations for nl: 2
+</pre>
+
+As you can see, there are two missing keys: +refinery.admin.pages.form_advanced_options.page_options+ and +refinery.admin.pages_dialogs.link_to.insert+
+
+h3. Adding the keys
+
+Each plugin has its own locale YAML files. The one we'll have to fix is +pages/config/locales/nl.yml+. Note that it is important to put the right key in the right file.
+
+The key +refinery.admin.pages_dialogs.link_to.insert+, is to be represented in YAML like this:
+
+<yaml>
+nl:
+  refinery:
+    admin:
+      pages_dialogs:
+        link_to:
+          insert: Voeg in
+</yaml>
+
+We'd love to see you order the keys exactly like the en.yml version. This way, you can use a diff-enabled-editor, to open both the +en.yml+ and +nl.yml+ file, and blazingly fast update the locale.
+
+TIP: If you're starting a new translation, copy +en.yml+ to "your_locale".yml</p>
+
+WARNING: Make sure you change +en:+ to your locale's key at the top of "your_locale".yml to avoid overriding the English translation (e.g. +nl:+)
+
+h3. Run the Refinery tests
+
+Run the Refinery tests to be sure you produced valid YAML or didn't break something.
+
+<shell>
+$ bundle exec rspec ./*/spec
+</shell>
+
+h3. Commit & Push
+
+Add the modified files to the git repository
+
+<shell>
+$ git add pages/config/locales/nl.yml
+</shell>
+
+Commit your changes
+
+<shell>
+$ git commit
+</shell>
+
+and push them back to GitHub
+
+<shell>
+$ git push origin i18n_nl
+</shell>
+
+h3. Pull request
+
+* Go to GitHub, and select your i18n_"your locale" branch. (I selected i18n_nl)
+* Click on the button "Pull request"
+* Add a message about I18n, like "Hi, i've translated the missing Dutch keys"
+* Press "Send pull request"
+
+h3. Done
+
+And now you're done! If your changes are accepted, you will end up on the "contributor list":http://github.com/resolve/refinerycms/contributors
