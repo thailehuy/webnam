@@ -40,8 +40,8 @@ Webnam21::Application.configure do
 
 end
 
-ENV['S3_KEY']='AKIAIDXYC27EPC3QFPPA'
-ENV['S3_SECRET']='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'
+ENV['S3_KEY']='ABIAIFXYC27EPA3QFPPA'
+ENV['S3_SECRET']='d6PXqaXTpw0rQ/Q6gdlGg2argefoORwq9cOoN+Slk'
 ENV['S3_BUCKET']='mwg-dev-space/webnam'
 
 # dev server in now in the US (default server)

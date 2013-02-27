@@ -1,7 +1,7 @@
 Webnam21::Application.configure do
 
   # Refinery has set config.assets.initialize_on_precompile = false by default.
-  config.assets.initialize_on_precompile = true
+  #config.assets.initialize_on_precompile = true
 
   # Settings specified here will take precedence over those in config/application.rb
 
@@ -73,7 +73,7 @@ Webnam21::Application.configure do
   ::MINIMUM_SECONDS_BETWEEN_REQUESTS = 7200
 end
 
-ENV['S3_KEY']='AKIAIDXYC27EPC3QFPPA'
-ENV['S3_SECRET']='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'
+ENV['S3_KEY']='AKIQIDXYC27APC3QSPPA'
+ENV['S3_SECRET']='d9PXKwXTpq0rQ/Q6gdlGg29xgefojRM9cOoN+Slk'
 ENV['S3_BUCKET']='webnam'
 ENV['S3_REGION']='ap-southeast-1'

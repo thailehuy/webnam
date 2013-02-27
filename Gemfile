@@ -46,7 +46,7 @@ gem 'jquery-rails'
 # Refinery CMS
 #gem 'refinerycms', '~> 2.0.1'
 #gem 'refinerycms', :path => 'vendor/gems/refinerycms-2-0-stable'
-gem 'refinerycms'#, :path => 'vendor/plugins/refinerycms-webnam21'
+gem 'refinerycms', :path => 'vendor/plugins/refinerycms-webnam21'
 
 # Specify additional Refinery CMS Extensions here (all optional):
 gem 'refinerycms-i18n', '~> 2.1.0.dev', :git => 'git://github.com/parndt/refinerycms-i18n.git'

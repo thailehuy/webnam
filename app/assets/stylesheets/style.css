@@ -444,6 +444,7 @@ body {
   }
 .post {
   padding: 10px 40px;
+	width: 920px;
   display: inline-block;
   overflow: hidden; }
   .post hr {
@@ -483,6 +484,7 @@ body {
     float: right; }
 
 #footer {
+	width: 970px;
   clear: both;
   border-radius: 0 0 10px 10px;
   -moz-border-radius: 0 0 10px 10px;
@@ -499,6 +501,7 @@ body {
   #footer .extra {
     width: 380px;
     float: left;
+	  text-align: left;
     padding-top: 8px;}
     #footer .extra a.contactus {
       height: 37px;
@@ -670,6 +673,10 @@ ul#coupons {
 .form-filter {
     float: left;
     padding: 0px 30px
+}
+
+#product-list {
+	width: 780px;
 }
 
 #product-list li {

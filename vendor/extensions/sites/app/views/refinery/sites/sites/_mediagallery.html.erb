@@ -32,12 +32,14 @@
     </div>
 
   </article>
-  <article class="post">
-    <h2><%= t('videos_gallery') %></h2>
-    <div id="videos" style="text-align: center;">
-      <%= raw @site.videos %>
-    </div>
-  </article>
+  <% unless @site.videos.blank? %>
+    <article class="post">
+      <h2><%= t('videos_gallery') %></h2>
+      <div id="videos" style="text-align: center;">
+        <%= raw @site.videos %>
+      </div>
+    </article>
+  <% end %>
 </section>
 
 
