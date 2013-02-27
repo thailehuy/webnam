@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130226135016) do
+ActiveRecord::Schema.define(:version => 20130227022408) do
 
   create_table "carousel_image_translations", :force => true do |t|
     t.integer  "carousel_image_id"
@@ -241,6 +241,7 @@ ActiveRecord::Schema.define(:version => 20130226135016) do
     t.integer  "slide_display",                     :default => 1
     t.boolean  "has_gallery",                       :default => false
     t.integer  "products_per_page",                 :default => 10
+    t.integer  "favicon_id"
   end
 
   create_table "refinery_sites_aboutus_page_translations", :force => true do |t|

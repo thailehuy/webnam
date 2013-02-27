@@ -74,6 +74,17 @@
       </div>
 
       <div class='field'>
+        <%= f.label :favicon -%>
+        <%= render '/refinery/admin/image_picker',
+                   :f => f,
+                   :field => :favicon_id,
+                   :image => @site.favicon,
+                   :toggle_image_display => false %>
+
+      </div>
+
+
+      <div class='field'>
         <%= f.label :carousel_images, "Images carousel" -%>
         <%= render :partial => "/refinery/sites/admin/flowing/images", :locals => {:f => f} %>
       </div>

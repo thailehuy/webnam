@@ -35,6 +35,7 @@ module Refinery
       SITE_PAGES = ["home","aboutus","services","products","coupons","mediagallery","blog","events"]
 
       belongs_to :logo, :class_name => '::Refinery::Image'
+      belongs_to :favicon, :class_name => "::Refinery::Image"
       belongs_to :webnam_logo, :class_name => '::Refinery::Image'
       belongs_to :virtual_tour, :class_name => '::Refinery::Image'
       belongs_to :music, :class_name => '::Refinery::Resource'
