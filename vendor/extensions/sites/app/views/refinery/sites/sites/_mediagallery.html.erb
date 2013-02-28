@@ -1,5 +1,5 @@
 <% content_for :meta_tags do %>
-  <title><%= (@site.home_page.seo_title + ' - Galleries') if @site.home_page.seo_title.present? %></title>
+  <title><%= (@site.seo_gallery_title || 'Gallery') %></title>
   <%= raw(%(<meta name="description" content="#{@site.home_page.seo_description}" />)) if @site.home_page.seo_description.present? -%>
   <%= raw(%(<meta name="keywords" content="#{@site.home_page.seo_keywords}">)) if @site.home_page.seo_keywords.present? -%>
 <% end %>

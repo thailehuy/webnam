@@ -234,6 +234,10 @@
         <%= f.check_box :has_gallery, :checked => @site[:has_gallery]  -%>Has gallery
       </div>
       <div class='field'>
+        <%= f.label :seo_gallery_title -%>
+        <%= f.text_field :seo_gallery_title, :class => 'widest' -%>
+      </div>
+      <div class='field'>
         <%= f.label :site_images, "Image gallery" -%>
         <%= render :partial => "/refinery/sites/admin/gallery/images", :locals => {:f => f} %>
       </div>

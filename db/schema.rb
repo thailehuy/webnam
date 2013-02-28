@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130227022408) do
+ActiveRecord::Schema.define(:version => 20130228012510) do
 
   create_table "carousel_image_translations", :force => true do |t|
     t.integer  "carousel_image_id"
@@ -193,6 +193,7 @@ ActiveRecord::Schema.define(:version => 20130227022408) do
     t.string   "seo_product_description"
     t.datetime "created_at",              :null => false
     t.datetime "updated_at",              :null => false
+    t.string   "seo_gallery_title"
   end
 
   add_index "refinery_site_translations", ["locale"], :name => "index_refinery_site_translations_on_locale"
@@ -242,6 +243,7 @@ ActiveRecord::Schema.define(:version => 20130227022408) do
     t.boolean  "has_gallery",                       :default => false
     t.integer  "products_per_page",                 :default => 10
     t.integer  "favicon_id"
+    t.string   "seo_gallery_title"
   end
 
   create_table "refinery_sites_aboutus_page_translations", :force => true do |t|

@@ -6,7 +6,7 @@ module Refinery
       self.table_name = 'refinery_sites'
 
       #:name, :slug,
-      translates :products_title, :seo_product_title, :seo_product_keywords, :seo_product_description
+      translates :products_title, :seo_product_title, :seo_product_keywords, :seo_product_description, :seo_gallery_title
 
 
       acts_as_indexed :fields => [:name, :slug]
@@ -28,7 +28,7 @@ module Refinery
                       :facebook_page,:twitter_page,:linkedin_page,:youtube_page, :zingme_page, :govn_page,
                       :flags_position, :flags_border, :virtual_tour_id, :music_id, :webnam_logo_id, :products_title,
                       :slide_effect, :slide_delay, :slide_transition, :carousel_pause, :carousel_transition,
-                      :seo_product_title, :seo_product_keywords, :seo_product_description, :analytics_code
+                      :seo_product_title, :seo_product_keywords, :seo_product_description, :analytics_code, :seo_gallery_title
 
 
       # Don't change the below list as it is used in a bit mask for displaying the carousel
