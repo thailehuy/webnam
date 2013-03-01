@@ -1,3 +1,10 @@
+# fix for old fog version compatibility
+module Excon
+ class Connection
+   VALID_CONNECTION_KEYS << :url
+ end
+end
+
 Refinery::Images.configure do |config|
   # Configures the maximum allowed upload size (in bytes) for an image
 #  config.max_image_size = 102400
