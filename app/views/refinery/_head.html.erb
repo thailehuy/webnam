@@ -10,7 +10,7 @@
   <%= yield :stylesheets %>
 
 	<% if @site.present? %>
-    <% if @site.published %>
+    <% if @site.published && @site.activated %>
 			<%= render '/refinery/site_styles', :site => @site %>
 
 		  <% if @site.analytics_code.present? %>

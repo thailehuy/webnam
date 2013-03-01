@@ -1,4 +1,4 @@
-<% if @site.published %>
+<% if @site.published && @site.activated %>
   <% content_for :stylesheets do %>
     <%= stylesheet_link_tag "style" %>
   <% end %>

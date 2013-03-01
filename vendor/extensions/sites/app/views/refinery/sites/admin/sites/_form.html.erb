@@ -49,8 +49,14 @@
 
       <div class='field'>
         <%= f.label :options -%>
-        <% if current_refinery_user.site_id.nil? %>
-          <%= f.check_box :published, :checked => @site[:published]  -%>Is activated
+        <% if current_refinery_user.site_id.nil? || (@site.id && current_refinery_user.site_id == @site.id) %>
+          <%= f.check_box :published, :checked => @site[:published]  -%>Is published
+        <% end %>
+      </div>
+      <div class='field'>
+        <%= f.label :options -%>
+        <% if (@site.id && current_refinery_user.site_id == @site.id) %>
+          <%= f.check_box :activated, :checked => @site[:activated]  -%>Is activated
         <% end %>
       </div>
       <div class='field'>

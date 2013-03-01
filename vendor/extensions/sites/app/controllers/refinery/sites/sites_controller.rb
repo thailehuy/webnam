@@ -8,7 +8,7 @@ module Refinery
 
       PARTIAL_PAGES = ["products","coupons","mediagallery","blog","events","contact"]
 
-      before_filter :find_all_sites
+      before_filter :find_all_sites, :only => [:index]
       before_filter :find_page
 
       def index
