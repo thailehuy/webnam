@@ -1,7 +1,7 @@
 # fix for old fog version compatibility
 module Excon
  class Connection
-   VALID_CONNECTION_KEYS << :url
+   VALID_CONNECTION_KEYS << :url if defined?(VALID_CONNECTION_KEYS)
  end
 end
 

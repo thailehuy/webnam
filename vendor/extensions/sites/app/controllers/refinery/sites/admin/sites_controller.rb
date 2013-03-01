@@ -14,7 +14,7 @@ module Refinery
           @site = Site.new
 
           # Creating a unique temporary site_id
-          session[:current_site] = (DateTime.now.to_f*100).to_i-133224063670
+          session[:current_site] = rand(50000..100000)
 
           @site.name = "New site"
           session[:current_site_name] = @site.name
