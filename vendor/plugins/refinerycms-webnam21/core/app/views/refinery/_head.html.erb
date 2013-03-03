@@ -8,6 +8,10 @@
   <%= csrf_meta_tags if Refinery::Core.authenticity_token_on_frontend -%>
   <%= yield :meta %>
 
+  <% if @site && @site.favicon %>
+    <%= favicon_link_tag @site.favicon.url %>
+  <% end %>
+
   <%= stylesheet_link_tag "application", "formatting", "theme" %>
   <%= stylesheet_link_tag "home" if home_page? %>
   <%= yield :stylesheets %>
