@@ -15,7 +15,7 @@
     <%= yield :meta %>
 
     <% if @site && @site.favicon %>
-      <%= favicon_link_tag @site.favicon.url %>
+      <%= favicon_link_tag @site.favicon.url, :type => "image/png" %>
     <% end %>
 
     <%= stylesheet_link_tag "application", "formatting", "theme" %>
