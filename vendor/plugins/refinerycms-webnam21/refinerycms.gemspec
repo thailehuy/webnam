@@ -2,7 +2,7 @@
 $:.push File.expand_path('../core/lib', __FILE__)
 require 'refinery/version'
 
-version = Refinery::Version.to_s
+version = '2.0.5'
 
 Gem::Specification.new do |s|
   s.platform          = Gem::Platform::RUBY
