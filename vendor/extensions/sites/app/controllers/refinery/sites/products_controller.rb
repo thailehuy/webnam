@@ -12,7 +12,7 @@ module Refinery
       end
 
       def show
-        @product = Product.find(params[:id])
+        @product = Product.find(params[:product_id])
 
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @product in the line below:
