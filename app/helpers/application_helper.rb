@@ -33,7 +33,8 @@ module ApplicationHelper
 
       when 'products'
         @site.products_title.blank? ? t('products') : @site.products_title
-
+      when 'mediagallery'
+        @site.seo_gallery_title.blank? ? t(page) : @site.seo_gallery_title
       else
         t(page)
     end
