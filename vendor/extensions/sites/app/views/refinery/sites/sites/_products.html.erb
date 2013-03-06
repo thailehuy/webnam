@@ -38,3 +38,11 @@
 <% if @site.carousel_pages.include?('products') %>
   <%= render '/refinery/sites/sites/carousel' %>
 <% end %>
+
+<% content_for :javascripts do %>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#product-list .product-photo a').lightBox();
+    });
+  </script>
+<% end %>
