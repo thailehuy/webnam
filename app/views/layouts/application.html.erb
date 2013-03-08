@@ -22,7 +22,19 @@
     <%= stylesheet_link_tag "home" if home_page? %>
     <%= yield :stylesheets %>
 
-    <%= render '/refinery/google_analytics' %>
+    <% if @site.present? && @site.published && @site.activated %>
+      <%= render '/refinery/site_styles', :site => @site %>
+
+      <% if @site.analytics_code.present? %>
+        <% page_code = @site.analytics_code.strip %>
+        <% unless local_request? or refinery_user? -%>
+          <script>var _gaq=[['_setAccount','<%= page_code %>'],['_trackPageview'],['_trackPageLoadTime']];(function(d,t){
+            var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.async=1;g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)
+          }(document,'script'))</script>
+        <% end -%>
+      <% end %>
+  <% end %>
 
     <%= javascript_include_tag 'modernizr-min' %>
   </head>

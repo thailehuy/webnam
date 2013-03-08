@@ -9,9 +9,8 @@
   <%= stylesheet_link_tag "home" if home_page? %>
   <%= yield :stylesheets %>
 
-	<% if @site.present? %>
-    <% if @site.published && @site.activated %>
-			<%= render '/refinery/site_styles', :site => @site %>
+	<% if @site.present? && @site.published && @site.activated %>
+			<%= render 'refinery/site_styles', :site => @site %>
 
 		  <% if @site.analytics_code.present? %>
 				<% page_code = @site.analytics_code.strip %>
@@ -22,7 +21,6 @@
 			    }(document,'script'))</script>
 			  <% end -%>
 			<% end %>
-    <% end %>
 	<% end %>
 
   <%= javascript_include_tag 'modernizr-min' %>
