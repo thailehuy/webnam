@@ -57,11 +57,620 @@ en:
   meet_us: "Meet us"
   powered_by: "Powered by"
 
+  login_as: "Logged in as"
+  logout: "Logout"
+  views:
+    refinery:
+      admin:
+        menu:
+          site: 'Site'
+          sites: 'Sites'
+          editors: 'Editors'
+          administrators: 'Administrators'
 
+  activerecord:
+    attributes:
+      refinery/page:
+        title: Title
+      refinery/sites/aboutus_page:
+        site_id: Site
+        category: Category
+        established: Established
+        features: Features
+      refinery/sites/blog_post:
+        site_id: Site
+        published: Published
+        title: Title
+        content: Content
+      refinery/sites/coupon:
+        site_id: Site
+        displayed: Displayed
+        decoration: Decoration
+        title: Title
+        description: Description
+        picture: Picture
+        expiry: Expiry
+        max_number: Max Number
+        seed_number: Seed Number
+      refinery/sites/coupons_page:
+        site_id: Site
+        displayed: Displayed
+        decoration: Decoration
+        title: Title
+        description: Description
+        picture: Picture
+        expiry: Expiry
+        max_number: Max Number
+        seed_number: Seed Number
+      refinery/sites/design:
+        site_id: Site
+        scss_model: Scss Model
+        background_color: Background Color
+        font_family: Font Family
+        font_color: Font Color
+      refinery/sites/event:
+        site_id: Site
+        published: Published
+        event_title: Event Title
+        event_summary: Event Summary
+        event_date: Event Date
+      refinery/sites/google_calendar:
+        site_id: Site
+        account: Account
+        bg_color: Bg Color
+      refinery/sites/product:
+        name: Name
+        description: Description
+        picture: Picture
+        product_category_id: Product Category
+        gender: Gender
+        site_id: Site
+      refinery/sites/product_category:
+        site_id: Site
+        name: Name
+      refinery/sites/services_page:
+        site_id: Site
+        left_col: Left Col
+        right_col: Right Col
+      refinery/sites/site:
+        name: Name
+        published: Published
+        slug: Slug
+      refinery/user:
+        email: Email
+        login: Login
+        password: Password
+        password_confirmation: Password confirmation
+        remember_me: Remember me
+        username: Username
+    errors:
+      models:
+        refinery/image:
+          blank: You must specify an image for upload
+          too_big: Image should be smaller than %{size} bytes in size
+          incorrect_format: 'Your image must be either a JPG, PNG or GIF'
+        refinery/resource:
+          blank: You must specify file for upload
+          too_big: File should be smaller than %{size} bytes in size
+    models:
+      refinery/resource: file
+      refinery/image: image
+      refinery/page: page
+      refinery/user: user
 
+  devise:
+    failure:
+      invalid: "Sorry, your login or password was incorrect."
+      unauthenticated: You need to sign in before continuing.
+    sessions:
+      signed_in: Signed in successfully.
 
+  refinery:
+    admin:
+      continue_editing:
+        save_and_continue_editing: 'Save & continue editing'
+      dashboard:
+        actions:
+          add_a_new_page: Add a new page
+          update_a_page: Update a page
+          upload_a_image: Upload an image
+          upload_a_file: Upload a file
+          change_language: Change language
+          see_home_page: See home page
+        index:
+          quick_tasks: Quick Tasks
+        recent_activity:
+          empty: There has not been any activity recently.
+          latest_activity: Latest Activity
+          latest_activity_message: '%{what} %{kind} was %{action}'
+        recent_inquiries:
+          latest_inquiries: Latest Inquiries
+      delete:
+        message: "Are you sure you want to remove '%{title}'?"
+      dialogs:
+        show:
+          save: Save
+          cancel: Cancel
+      error_messages:
+        problems_in_following_fields: There were problems with the following fields
+      form_actions:
+        save: Save
+        cancel: Cancel
+        cancel_lose_changes: If you cancel you will lose any changes you have made here
+        delete: Remove
+        close: Close
+      help: help
+      images:
+        actions:
+          create_new_image: Add new image
+        delete: Remove this image forever
+        edit: Edit this image
+        existing_image:
+          button_text: Insert
+          resize_image: Resize the image?
+          size: Size
+        form:
+          image: Image
+          use_current_image: Use current image
+          or: or
+          replace_image: " replace it with this one..."
+          current_image: Current Image
+          maximum_image_size: The maximum image size is %{bytes}.
+        grid_view:
+          view_live_html: View this image <br/><em>Opens in a new window</em>
+        index:
+          view:
+            switch_to: Switch to %{view_name} view
+            list: list
+            grid: grid
+        insert:
+          existing_image: Library
+          new_image: Upload
+        records:
+          no_images_yet: There are no images yet. Click "Add new image" to add your first image.
+      image_picker:
+        none_selected: There is currently no image selected, please click here to add one.
+        remove_current: Remove current image
+        change: Click here to pick an image
+        show: Show
+      menu:
+        reorder_menu: Reorder menu
+        reorder_menu_done: I'm done reordering the menu
+      pages:
+        actions:
+          create_new_page: Add new page
+          reorder_pages: Reorder pages
+          reorder_pages_done: Done reordering pages
+        delete: Remove this page forever
+        edit: Edit this page
+        expand_collapse: Expand or collapse sub pages
+        form:
+          preview: Preview
+          preview_changes: Preview your changes before making them live
+        form_advanced_options:
+          advanced_options: Advanced Options
+          custom_slug: Custom slug
+          custom_slug_help: A slug is a human-readable ID used to create a page&apos;s full URL, for example &apos;about-us&apos;. To override the slug that is automatically created by Refinery, enter your custom slug here.
+          layout_template: Layout template
+          layout_template_help: You can choose a different layout template for this page
+          link_url: Forward this page to another website or page
+          link_url_help: If you want this page to go to another website or page when you click this page in the menu, enter a URL. e.g. http://google.com otherwise leave it blank
+          menu_title: Menu title
+          menu_title_help: If you want the menu to display a different title than the one that dipsplays on the page, enter it here.
+          page_options: Page Options
+          parent_page: Parent page
+          parent_page_help: You can put a page under another page by selecting it in the list. If you want this page to be a top-level page, just leave it blank.
+          save_as_draft: Save as Draft
+          show_in_menu_description: Display this page in the site menu
+          show_in_menu_help: Uncheck this box if you want to remove a page from your site menu. This can be handy if you have a page you want to link people to directly but don&apos;t want to show the page in the menu.
+          show_in_menu_title: Show in menu
+          skip_to_first_child: Skip top-level page
+          skip_to_first_child_label: Redirect visitors to the first sub-level page.
+          skip_to_first_child_help: This option makes this page link to the first page underneath. This can be useful when grouping pages together.
+          toggle_advanced_options: Access meta tag settings and menu options
+          view_template: View template
+          view_template_help: You can choose a different view template for this page
+        form_advanced_options_seo:
+          meta_keywords_title: Meta keywords
+          meta_keywords_help: Enter 5-10 keywords that relate to this page. Separate keywords by a comma.
+          meta_description_title: Meta description
+          meta_description_help: Enter a concise two or three sentences describing what this page is about.
+          seo: Search Engine Optimization
+          seo_override_title: Browser title
+          seo_override_title_help: Enter a 5-10 word title that summarizes the contents of this page.
+        form_new_page_parts:
+          title: Title
+        form_page_parts:
+          create_content_section: Add content section
+          delete_content_section: Delete content section
+          reorder_content_section: Reorder content sections
+        new: Add a new child page
+        page:
+          view_live_html: View this page live <br/><em>(opens in a new window)</em>
+          hidden: hidden
+          draft: draft
+        records:
+          no_pages_yet: There are no pages yet. Click "Add new page" to add your first page.
+        translator_access: You do not have the required permission to modify pages in this language.
+      pages_dialogs:
+        link_to:
+          email_address:
+            body_optional: Optional body
+            not_sure: Not sure what to put in the boxes above?
+            subject_line_optional: Optional subject
+            step1_html: Write or copy and paste (e.g. from your address book) the email address to link to into the '<strong>Email Address</strong>' box above.
+            step2_html: Use the '<strong>Subject Line</strong>' box above if you want the message to be composed with a <strong>pre-written subject line</strong>.
+            step3_html: Use the <strong>Email Body</strong> box above if you want the message to be composed with a <strong>pre-written message</strong>.
+            tab_name: Email address
+          insert: Insert
+          web_address:
+            location: Location
+            new_window: New window
+            new_window_label: Check this box to have the link open in a new browser window.
+            not_sure: Not sure what to put in the box above?
+            step1: Find the page on the web you want to link to.
+            step2: Copy the web address from your browser's address bar and paste it into the box above.
+            tab_name: Website
+          your_page:
+            tab_name: Your page
+          your_resource:
+            tab_name: Your file
+            link_to_this_resource: Link to this file
+        page_link:
+          link_to_this_page: Link to this page
+      resource_picker:
+        download_current: Download current file
+        opens_in_new_window: Opens in a new window
+        remove_current: "Remove current file"
+        no_resource_selected: 'There is currently no file selected, click here to add one.'
+        name: Add File
+        current: Current File
+      resources:
+        actions:
+          upload_new: Upload new file
+        delete: Remove this file forever
+        edit: Edit this file
+        existing_resource:
+          button_text: Insert
+          link_to_file: Link to this file
+        form:
+          download_current: Download current file
+          maximum_file_size: The maximum file size is %{bytes}.
+          or: or
+          replace: " replace it with this one..."
+        insert:
+          existing: Existing File
+          new: New File
+          no_files: There are no files.
+        resource:
+          download: Download this file (%{size})
+        records:
+          no_files_yet: There are no files yet. Click "Upload new file" to add your first file.
+      search:
+        button_text: Search
+        results_for: "Search results for '%{query}'"
+        no_results: 'Sorry, no results found'
+      users:
+        actions:
+          create_new_user: Add new user
+        delete: Remove this user forever
+        edit: Edit this user
+        form:
+          blank_password_keeps_current: Leaving password blank keeps the current password
+          plugin_access: Plugin access
+          role_access: Role access
+          enable_all: enable all
+        update:
+          cannot_remove_user_plugin_from_current_user: You cannot remove the 'Users' plugin from the currently logged in account.
+        user:
+          email_user: Email this user
+          preview: '(%{who}) added %{created_at}'
+    created:
+      'with_article "the"': added
+    crudify:
+      created: '%{what} was successfully added.'
+      updated: '%{what} was successfully updated.'
+      destroyed: '%{what} was successfully removed.'
+    draft_page_message:
+      not_live: This page is NOT live for public viewing.
+    footer:
+      copyright: "Copyright © %{year} %{site_name}"
+    js:
+      admin:
+        confirm_changes: Any changes you've made will be lost. Are you sure you want to continue without saving?
+    message:
+      close: Close
+      close_this_message: Close this message
+    no_script:
+      enable_javascript_html: For full functionality of this page it is necessary to enable JavaScript.
+      here_are: Here are the
+      instructions_enable_javascript_html: instructions for how to enable JavaScript in your web browser
+    plugins:
+      aboutus_pages:
+        title: Aboutus Pages
+      blog_posts:
+        title: Blog Posts
+      coupons:
+        title: Coupons
+      coupons_pages:
+        title: Coupons Pages
+      designs:
+        title: Designs
+      events:
+        title: Events
+      google_calendars:
+        title: Google Calendars
+      home_pages:
+        title: Home Pages
+      products:
+        title: Products
+      product_categories:
+        title: Product Categories
+      services_pages:
+        title: Services Pages
+      refinery_core:
+        title: Refinery
+        description: Core refinery plugin
+      refinery_dashboard:
+        title: Dashboard
+        description: Gives an overview of activity in Refinery
+      refinery_dialogs:
+        title: Dialogs
+        description: Refinery dialogs plugin
+      refinery_files:
+        title: Files
+        description: Upload and link to files
+      refinery_images:
+        title: Images
+        description: Manage images
+      refinery_pages:
+        title: Pages
+        description: Manage content pages
+      refinery_users:
+        title: Users
+        description: Manage users
+      sites:
+        title: Sites
+    roles:
+      refinery: Refinery
+      superuser: Superuser
+    sessions:
+      new:
+        hello_please_sign_in: Hello! Please sign in.
+        sign_in: Sign in
+        forgot_password: I forgot my password
+    sites:
+      admin:
+        aboutus_pages:
+          aboutus_page:
+            edit: Edit this aboutus page
+            delete: Remove this aboutus page forever
+            view_live_html: View this aboutus page live <br/><em>(opens in a new window)</em>
+          actions:
+            create_new: Add New Aboutus Page
+            reorder: Reorder Aboutus Pages
+            reorder_done: Done Reordering Aboutus Pages
+          records:
+            no_items_yet: There are no Aboutus Pages yet. Click "Add New Aboutus Page" to add your first aboutus page.
+            sorry_no_results: Sorry! There are no results found.
+            title: Aboutus Pages
+        blog_posts:
+          actions:
+            create_new: Add New Blog Post
+            reorder: Reorder Blog Posts
+            reorder_done: Done Reordering Blog Posts
+          blog_post:
+            delete: Remove this blog post forever
+            edit: Edit this blog post
+            view_live_html: View this blog post live <br/><em>(opens in a new window)</em>
+          records:
+            no_items_yet: There are no Blog Posts yet. Click "Add New Blog Post" to add your first blog post.
+            sorry_no_results: Sorry! There are no results found.
+            title: Blog Posts
+        coupons:
+          actions:
+            create_new: Add New Coupon
+            reorder: Reorder Coupons
+            reorder_done: Done Reordering Coupons
+          coupon:
+            delete: Remove this coupon forever
+            edit: Edit this coupon
+            view_live_html: View this coupon live <br/><em>(opens in a new window)</em>
+          records:
+            no_items_yet: There are no Coupons yet. Click "Add New Coupon" to add your first coupon.
+            sorry_no_results: Sorry! There are no results found.
+            title: Coupons
+        coupons_pages:
+          actions:
+            create_new: Add New Coupons Page
+            reorder: Reorder Coupons Pages
+            reorder_done: Done Reordering Coupons Pages
+          coupons_page:
+            delete: Remove this coupons page forever
+            edit: Edit this coupons page
+            view_live_html: View this coupons page live <br/><em>(opens in a new window)</em>
+          records:
+            no_items_yet: There are no Coupons Pages yet. Click "Add New Coupons Page" to add your first coupons page.
+            sorry_no_results: Sorry! There are no results found.
+            title: Coupons Pages
+        designs:
+          actions:
+            create_new: Add New Design
+            reorder: Reorder Designs
+            reorder_done: Done Reordering Designs
+          design:
+            delete: Remove this design forever
+            edit: Edit this design
+            view_live_html: View this design live <br/><em>(opens in a new window)</em>
+          records:
+            no_items_yet: There are no Designs yet. Click "Add New Design" to add your first design.
+            sorry_no_results: Sorry! There are no results found.
+            title: Designs
+        events:
+          actions:
+            create_new: Add New Event
+            reorder: Reorder Events
+            reorder_done: Done Reordering Events
+          event:
+            delete: Remove this event forever
+            edit: Edit this event
+            view_live_html: View this event live <br/><em>(opens in a new window)</em>
+          records:
+            no_items_yet: There are no Events yet. Click "Add New Event" to add your first event.
+            sorry_no_results: Sorry! There are no results found.
+            title: Events
+        google_calendars:
+          actions:
+            create_new: Add New Google Calendar
+            reorder: Reorder Google Calendars
+            reorder_done: Done Reordering Google Calendars
+          google_calendar:
+            delete: Remove this google calendar forever
+            edit: Edit this google calendar
+            view_live_html: View this google calendar live <br/><em>(opens in a new window)</em>
+          records:
+            no_items_yet: There are no Google Calendars yet. Click "Add New Google Calendar" to add your first google calendar.
+            sorry_no_results: Sorry! There are no results found.
+            title: Google Calendars
+        home_pages:
+          actions:
+            create_new: Add New Home Page
+            reorder: Reorder Home Pages
+            reorder_done: Done Reordering Home Pages
+          home_page:
+            delete: Remove this home page forever
+            edit: Edit this home page
+            view_live_html: View this home page live <br/><em>(opens in a new window)</em>
+          records:
+            no_items_yet: There are no Home Pages yet. Click "Add New Home Page" to add your first home page.
+            sorry_no_results: Sorry! There are no results found.
+            title: Home Pages
+        products:
+          actions:
+            create_new: Add New Product
+            reorder: Reorder Products
+            reorder_done: Done Reordering Products
+          product:
+            delete: Remove this product forever
+            edit: Edit this product
+            view_live_html: View this product live <br/><em>(opens in a new window)</em>
+          records:
+            no_items_yet: There are no Products yet. Click "Add New Product" to add your first product.
+            sorry_no_results: Sorry! There are no results found.
+            title: Products
+        product_categories:
+          actions:
+            create_new: Add New Product Category
+            reorder: Reorder Product Categories
+            reorder_done: Done Reordering Product Categories
+          product_category:
+            delete: Remove this product category forever
+            edit: Edit this product category
+            view_live_html: View this product category live <br/><em>(opens in a new window)</em>
+          records:
+            no_items_yet: There are no Product Categories yet. Click "Add New Product Category" to add your first product category.
+            sorry_no_results: Sorry! There are no results found.
+            title: Product Categories
+        services_pages:
+          actions:
+            create_new: Add New Services Page
+            reorder: Reorder Services Pages
+            reorder_done: Done Reordering Services Pages
+          records:
+            no_items_yet: There are no Services Pages yet. Click "Add New Services Page" to add your first services page.
+            sorry_no_results: Sorry! There are no results found.
+            title: Services Pages
+          services_page:
+            delete: Remove this services page forever
+            edit: Edit this services page
+            view_live_html: View this services page live <br/><em>(opens in a new window)</em>
+        sites:
+          actions:
+            create_new: Add New Site
+            reorder: Reorder Sites
+            reorder_done: Done Reordering Sites
+          records:
+            no_items_yet: There are no Sites yet. Click "Add New Site" to add your first site.
+            sorry_no_results: Sorry! There are no results found.
+            title: Sites
+          site:
+            delete: Remove this site forever
+            edit: Edit this site
+            view_live_html: View this site live <br/><em>(opens in a new window)</em>
+      aboutus_pages:
+        show:
+          other: Other Aboutus Pages
+      blog_posts:
+        show:
+          other: Other Blog Posts
+      coupons:
+        show:
+          other: Other Coupons
+      coupons_pages:
+        show:
+          other: Other Coupons Pages
+      designs:
+        show:
+          other: Other Designs
+      events:
+        show:
+          other: Other Events
+      google_calendars:
+        show:
+          other: Other Google Calendars
+      home_pages:
+        show:
+          other: Other Home Pages
+      products:
+        show:
+          other: Other Products
+      product_categories:
+        show:
+          other: Other Product Categories
+      services_pages:
+        show:
+          other: Other Services Pages
+      sites:
+        show:
+          other: Other Sites
+    site_bar:
+      log_out: Log out
+      switch_to_your_website: Switch to your website
+      switch_to_your_website_editor: Switch to your website editor
+    updated:
+      'with_article "the"': updated
+    users:
+      create:
+        welcome: 'Welcome to Refinery, %{who}'
+      forgot:
+        blank_email: You did not enter an email address.
+        email_address: Email Address
+        email_not_associated_with_account_html: "Sorry, '%{email}' isn't associated with any accounts.<br />Are you sure you typed the correct email address?"
+        email_reset_sent: An email has been sent to you with a link to reset your password.
+        enter_email_address: Please enter the email address for your account.
+        password_encryption: You need to reset your password because there were changes in the password encryption methods that Refinery uses so that passwords are stored with even stronger encryption than before.
+        reset_password: Reset password
+      new:
+        fill_form: Fill out your details below so that we can get you started.
+        sign_up: Sign up
+      reset:
+        code_invalid: "We're sorry, but this reset code has expired or is invalid. If you are having issues try copying and pasting the URL from your email into your browser or restarting the reset password process."
+        pick_new_password_for: "Pick a new password for %{email}"
+        reset_password: Reset password
+        successful: "Password reset successfully for '%{email}'"
+    user_mailer:
+      reset_notification:
+        remain_same_if_no_action: Your password will remain the same if no action is taken
+        reset_request_received_for: "Request to reset password received for %{username}"
+        subject: Link to reset your password
+        visit_this_url: Visit this URL to choose a new password
+    welcome:
+      there_are_no_users: "There are no users yet, so we'll set you up first."
 
+  time:
+    formats:
+      short: "%A, %d %B %Y"
 
-
-
-
+  will_paginate:
+    previous_label: "&laquo;"
+    next_label: "&raquo;"
