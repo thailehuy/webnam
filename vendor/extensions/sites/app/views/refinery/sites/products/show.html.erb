@@ -5,7 +5,7 @@
 <% content_for :body_content_left do %>
 
   <section>
-    <h1>Name</h1>
+    <h1><%= t('.name') %></h1>
     <p>
 
       <%=raw @product.name %>
@@ -14,7 +14,7 @@
   </section>
 
   <section>
-    <h1>Description</h1>
+    <h1><%= t('.description') %></h1>
     <p>
 
       <%=raw @product.description %>
@@ -23,7 +23,7 @@
   </section>
 
   <section>
-    <h1>Picture</h1>
+    <h1><%= t('.picture') %></h1>
     <p>
 
       <%= image_fu @product.picture, nil %>
@@ -32,7 +32,7 @@
   </section>
 
   <section>
-    <h1>Product Category</h1>
+    <h1><%= t('.product_category') %></h1>
     <p>
 
       <%=raw @product.product_category_id %>
@@ -41,7 +41,7 @@
   </section>
 
   <section>
-    <h1>Gender</h1>
+    <h1><%= t('gender') %></h1>
     <p>
 
       <%=raw @product.gender %>
@@ -50,7 +50,7 @@
   </section>
 
   <section>
-    <h1>Site</h1>
+    <h1><%= t('.site') %></h1>
     <p>
 
       <%=raw @product.site_id %>

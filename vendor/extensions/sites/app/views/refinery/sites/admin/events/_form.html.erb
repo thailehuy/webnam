@@ -9,12 +9,12 @@
   <%= f.hidden_field :site_id -%>
 
   <div class='field'>
-    <%= f.label :event_title -%>
+    <%= f.label t('.event_title') -%>
     <%= f.text_field :event_title  -%>
   </div>
 
   <div class='field'>
-    <%= f.label :event_date -%>
+    <%= f.label t('.event_date') -%>
     <%= f.date_select :event_date  -%>
   </div>
 
@@ -38,13 +38,13 @@
   </div>
 
   <div class='field'>
-    <%= f.label :published -%>
+    <%= f.label t('.published') -%>
     <%= f.check_box :published, :checked => @event[:published]  -%>
   </div>
 
   <%= render '/refinery/admin/form_actions', :f => f,
              :continue_editing => true,
-             :delete_title => t('delete', :scope => 'refinery.events.admin.events.event'),
+             :delete_title => t('delete', :scope => 'refinery.sites.admin.events.event'),
              :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @event.event_title) %>
 <% end -%>
 

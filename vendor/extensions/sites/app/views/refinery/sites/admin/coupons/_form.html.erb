@@ -32,41 +32,41 @@
   </div>
   
   <div class='field'>
-    <%= f.label :expiry -%>
+    <%= f.label t('.expiry') -%>
     <%= f.date_select :expiry  -%>
   </div>
   
 
   <div class='field'>
-    <%= f.label :max_number -%>
+    <%= f.label t('.max_number') -%>
     <%= f.number_field :max_number  -%>
   </div>
   
 
   <div class='field'>
-    <%= f.label :seed_number -%>
+    <%= f.label t('.seed_number') -%>
     <%= f.number_field :seed_number  -%>
   </div>
 
   <div class='field'>
-    <%= f.label :hide_when_finished -%>
+    <%= f.label t('.hide_when_finished') -%>
     <%= f.check_box :hide_when_finished, :checked => @coupon[:hide_when_finished]  -%>
   </div>
 
   <div class='field'>
-    <%= f.label :displayed -%>
+    <%= f.label t('.displayed') -%>
     <%= f.check_box :displayed, :checked => @coupon[:displayed]  -%>
   </div>
 
   <div class='field'>
-    <%= f.label :no_coupons_left -%>
+    <%= f.label t('.no_coupons_left') -%>
     <%= f.check_box :no_coupons_left, :checked => @coupon[:no_coupons_left]  -%>
   </div>
 
 
   <%= render '/refinery/admin/form_actions', :f => f,
              :continue_editing => true,
-             :delete_title => t('delete', :scope => 'refinery.coupons.admin.coupons.coupon'),
+             :delete_title => t('delete', :scope => 'refinery.sites.admin.coupons.coupon'),
              :delete_confirmation => t('message', :scope => 'refinery.admin.delete') %>
 <% end -%>
 

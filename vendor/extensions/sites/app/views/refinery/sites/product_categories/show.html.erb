@@ -5,7 +5,7 @@
 <% content_for :body_content_left do %>
 
   <section>
-    <h1>Site</h1>
+    <h1><%= t('.site') %></h1>
     <p>
 
       <%=raw @product_category.site_id %>
@@ -14,7 +14,7 @@
   </section>
 
   <section>
-    <h1>Name</h1>
+    <h1><%= t('.name') %></h1>
     <p>
 
       <%=raw @product_category.name %>

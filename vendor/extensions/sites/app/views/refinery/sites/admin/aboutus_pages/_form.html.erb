@@ -8,19 +8,19 @@
 
   
   <div class='field'>
-    <%= f.label :site_id -%>
+    <%= f.label t('.site_id') -%>
     <%= f.number_field :site_id  -%>
 
   </div>
   
   <div class='field'>
-    <%= f.label :category -%>
+    <%= f.label t('category') -%>
     <%= f.text_field :category  -%>
 
   </div>
   
   <div class='field'>
-    <%= f.label :established -%>
+    <%= f.label t('.established') -%>
     <%= f.date_select :established  -%>
 
   </div>
@@ -47,7 +47,7 @@
   
   <%= render '/refinery/admin/form_actions', :f => f,
              :continue_editing => false,
-             :delete_title => t('delete', :scope => 'refinery.aboutus_pages.admin.aboutus_pages.aboutus_page'),
+             :delete_title => t('delete', :scope => 'refinery.sites.admin.aboutus_pages.aboutus_page'),
              :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @aboutus_page.category) %>
 <% end -%>
 <% content_for :javascripts do %>

@@ -5,7 +5,7 @@
 <% content_for :body_content_left do %>
 
   <section>
-    <h1>Site</h1>
+    <h1><%= t('.site') %></h1>
     <p>
 
       <%=raw @coupon.site_id %>
@@ -14,7 +14,7 @@
   </section>
 
   <section>
-    <h1>Displayed</h1>
+    <h1><%= t('.displayed') %></h1>
     <p>
 
       <%=raw @coupon.displayed %>
@@ -23,7 +23,7 @@
   </section>
 
   <section>
-    <h1>Decoration</h1>
+    <h1><%= t('.decoration') %></h1>
     <p>
 
       <%=raw @coupon.decoration %>
@@ -32,7 +32,7 @@
   </section>
 
   <section>
-    <h1>Title</h1>
+    <h1><%= t('.title') %></h1>
     <p>
 
       <%=raw @coupon.title %>
@@ -41,7 +41,7 @@
   </section>
 
   <section>
-    <h1>Description</h1>
+    <h1><%= t('.description') %></h1>
     <p>
 
       <%=raw @coupon.description %>
@@ -50,7 +50,7 @@
   </section>
 
   <section>
-    <h1>Expiry</h1>
+    <h1><%= t('.expiry') %></h1>
     <p>
 
       <%=raw @coupon.expiry %>
@@ -59,7 +59,7 @@
   </section>
 
   <section>
-    <h1>Max Number</h1>
+    <h1><%= t('.max_number') %></h1>
     <p>
 
       <%=raw @coupon.max_number %>
@@ -68,7 +68,7 @@
   </section>
 
   <section>
-    <h1>Seed Number</h1>
+    <h1><%= t('.seed_number') %></h1>
     <p>
 
       <%=raw @coupon.seed_number %>
