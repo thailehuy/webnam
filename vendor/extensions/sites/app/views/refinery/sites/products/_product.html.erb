@@ -19,7 +19,10 @@
       </div>
       <div class='product-photo'>
 	      <% unless product.picture.nil? %>
-          <%= image_tag product.picture.thumbnail("170x130#").url %>
+          <%= link_to image_tag(product.picture.thumbnail("170x130").url,
+                                  :id => product.picture.id.to_s,
+                                  :title => strip_tags(product.name)),
+                                product.picture.thumbnail("800x500").url %>
 	      <% end %>
       </div>
     </div>

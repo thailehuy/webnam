@@ -53,8 +53,8 @@ Refinery::Core::Engine.routes.append do
       end
     end
   end
-
-	match "/sites/:id/:page" => 'sites/sites#show'
+  match "/sites/:id/products/:product_id" => "sites/products#show"
+  match "/sites/:id/:page" => 'sites/sites#show'
 
 
   # Frontend routes

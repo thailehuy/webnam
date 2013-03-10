@@ -38,3 +38,14 @@
 <% if @site.carousel_pages.include?('products') %>
   <%= render '/refinery/sites/sites/carousel' %>
 <% end %>
+
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag "jquery.lightbox-0.5" %>
+<% end %>
+<% content_for :javascripts do %>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#product-list .product-photo a').lightBox();
+    });
+  </script>
+<% end %>

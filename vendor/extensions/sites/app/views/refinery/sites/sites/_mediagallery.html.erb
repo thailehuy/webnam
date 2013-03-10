@@ -1,11 +1,13 @@
 <% content_for :meta_tags do %>
-  <title><%= (@site.seo_gallery_title || 'Gallery') %></title>
   <%= raw(%(<meta name="description" content="#{@site.home_page.seo_description}" />)) if @site.home_page.seo_description.present? -%>
   <%= raw(%(<meta name="keywords" content="#{@site.home_page.seo_keywords}">)) if @site.home_page.seo_keywords.present? -%>
 <% end %>
-
 <% content_for :stylesheets do %>
   <%= stylesheet_link_tag "jquery.lightbox-0.5" %>
+<% end %>
+
+<% content_for :title do %>
+  <%= (@site.seo_gallery_title || 'Gallery') %>
 <% end %>
 
 <section>

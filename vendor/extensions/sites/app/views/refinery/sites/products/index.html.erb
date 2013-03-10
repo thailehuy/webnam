@@ -9,3 +9,10 @@
 <% end %>
 
 <%= render '/refinery/content_page' %>
+<% content_for :javascripts do %>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#gallery a').lightBox();
+    });
+  </script>
+<% end %>
