@@ -3,15 +3,15 @@
   <%= render '/refinery/admin/error_messages', :object => @user, :include_object_name => true %>
 
   <div class='field'>
-    <%= f.label :username %>
+    <%= f.label t('.username') %>
     <%= f.text_field :username %>
   </div>
   <div class='field'>
-    <%= f.label :email %>
+    <%= f.label t('.email') %>
     <%= f.text_field :email %>
   </div>
   <div class='field'>
-    <%= f.label :password %>
+    <%= f.label t('.password') %>
     <%= f.password_field :password, :autocomplete => 'off' %>
     <% if @user.persisted? %>
       <%= content_tag(:br) %>
@@ -19,7 +19,7 @@
     <% end %>
   </div>
   <div class='field'>
-    <%= f.label :password_confirmation %>
+    <%= f.label t('.password_confirmation') %>
     <%= f.password_field :password_confirmation, :autocomplete => 'off' %>
   </div>
   <div class='field plugin_access' style="display: none">

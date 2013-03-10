@@ -9,13 +9,13 @@
   <%= f.hidden_field :site_id -%>
 
   <div class='field'>
-    <%= f.label :name -%>
+    <%= f.label t('.name') -%>
     <%= f.text_field :name  -%>
   </div>
   
   <%= render '/refinery/admin/form_actions', :f => f,
              :continue_editing => true,
-             :delete_title => t('delete', :scope => 'refinery.product_categories.admin.product_categories.product_category'),
+             :delete_title => t('delete', :scope => 'refinery.sites.admin.product_categories.product_category'),
              :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @product_category.name) %>
 <% end -%>
 

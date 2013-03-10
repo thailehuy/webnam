@@ -8,7 +8,7 @@
 
   
   <div class='field'>
-    <%= f.label :site_id -%>
+    <%= f.label t('.site_id') -%>
     <%= f.number_field :site_id  -%>
 
   </div>
@@ -34,7 +34,7 @@
   </div>
   
   <div class='field'>
-    <%= f.label :logo -%>
+    <%= f.label t('.logo') -%>
     <%= render '/refinery/admin/image_picker',
                :f => f,
                :field => :logo_id,
@@ -45,7 +45,7 @@
   
   <%= render '/refinery/admin/form_actions', :f => f,
              :continue_editing => false,
-             :delete_title => t('delete', :scope => 'refinery.home_pages.admin.home_pages.home_page'),
+             :delete_title => t('delete', :scope => 'refinery.sites.admin.home_pages.home_page'),
              :delete_confirmation => t('message', :scope => 'refinery.admin.delete') %>
 <% end -%>
 <% content_for :javascripts do %>

@@ -2,7 +2,7 @@
 
 <ul>
   <li>
-    <%= link_to editing_site ? 'Add new editor' : 'Add new administrator',
+    <%= link_to editing_site ? t('.create_new_editor') : t('.create_new_admin'),
                 refinery.new_admin_user_path, :class => "add_icon" %>
   </li>
 </ul>

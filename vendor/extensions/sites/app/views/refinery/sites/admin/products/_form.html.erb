@@ -9,12 +9,12 @@
   <%= f.hidden_field :site_id -%>
 
   <div class='field'>
-    <%= f.label :name -%>
+    <%= f.label t('.name') -%>
     <%= f.text_field :name, :class => 'larger widest'  -%>
   </div>
 
   <div class='field'>
-    <%= f.label :product_category -%>
+    <%= f.label t('.product_category') -%>
     <%= f.select(:product_category_id,
                    options_for_select([[t('no_category'), 0]] + ::Refinery::Sites::ProductCategory.where({:site_id => session[:current_site]}).order("position").all.map {|category| [category.name, category.id]},
                                       @product.product_category_id)) %>
@@ -47,7 +47,7 @@
   </div>
   
   <div class='field'>
-    <%= f.label :picture -%>
+    <%= f.label t('.picture') -%>
     <%= render '/refinery/admin/image_picker',
                :f => f,
                :field => :picture_id,
@@ -57,7 +57,7 @@
 
   <%= render '/refinery/admin/form_actions', :f => f,
              :continue_editing => true,
-             :delete_title => t('delete', :scope => 'refinery.products.admin.products.product'),
+             :delete_title => t('delete', :scope => 'refinery.sites.admin.products.product'),
              :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @product.name) %>
 <% end -%>
 

@@ -5,7 +5,7 @@
 <% content_for :body_content_left do %>
 
   <section>
-    <h1>Site</h1>
+    <h1><%= t('.site') %></h1>
     <p>
 
       <%=raw @event.site_id %>
@@ -14,7 +14,7 @@
   </section>
 
   <section>
-    <h1>Published</h1>
+    <h1><%= t('.published') %></h1>
     <p>
 
       <%=raw @event.published %>
@@ -23,7 +23,7 @@
   </section>
 
   <section>
-    <h1>Event Title</h1>
+    <h1><%= t('.event_title') %></h1>
     <p>
 
       <%=raw @event.event_title %>
@@ -32,7 +32,7 @@
   </section>
 
   <section>
-    <h1>Event Summary</h1>
+    <h1><%= t('.event_summary') %></h1>
     <p>
 
       <%=raw @event.event_summary %>
@@ -41,7 +41,7 @@
   </section>
 
   <section>
-    <h1>Event Date</h1>
+    <h1><%= t('.event_date') %></h1>
     <p>
 
       <%=raw @event.event_date %>
