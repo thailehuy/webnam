@@ -80,7 +80,7 @@
     $('body').on('click', 'a', function() {
       var href = $(this).attr('href');
       if(href.match(/\.pdf$/)) {
-        $('#pdf-viewer').dialog();
+        $('#pdf-viewer').dialog({width: 600, height: 400});
         $('#pdf-viewer object').attr('data', href);
         return false
       }

@@ -1,6 +1,7 @@
 
 function setLocationOnMap(latitude,longitude) {
-
+    if(!latitude || !longitude)
+      return false;
     var mapOptions = {
         zoom: 14,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
