@@ -73,14 +73,8 @@
     });
   </script>
 
-  <script>
-
-    $(window).unload(function() {
-      close_pano();
-    });
-
+  <script type="text/javascript">
     $(document).ready(function() {
-
       <% if @site.product_images.count > 1 %>
 
         $('#slide-show').camera({
