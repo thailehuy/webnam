@@ -193,7 +193,7 @@ module Refinery
 
       # Slide show d'images
 
-      has_many :home_images, :class_name => '::HomeImage', :dependent => :destroy, :order => 'position ASC'
+      has_many :home_images, :class_name => '::HomeImage', :dependent => :destroy, :order => 'position ASC', :conditions => ["home_images.type = 'HomeImage'"]
       has_many :slide_images, :class_name => '::Refinery::Image', :through => :home_images, :order => 'position ASC'
       accepts_nested_attributes_for :slide_images, :allow_destroy => false
       attr_accessible :slide_images_attributes
