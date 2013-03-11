@@ -267,7 +267,7 @@ module Refinery
 
           next if image_id.blank?
 
-          product_image = if home_image_id.present?
+          product_image = if product_image_id.present?
                              self.product_images.find(product_image_id)
                            else
                              self.product_images.build(:slide_image_id => image_id)
