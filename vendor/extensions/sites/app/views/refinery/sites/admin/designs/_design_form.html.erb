@@ -94,19 +94,22 @@
 
 <div class='field'>
   <span class="design-grounds">Menuground</span>
-  <%= f.text_field t('.menu_color'), :maxlength => 7,
+  <%= f.label t('.menu_color') %>
+  <%= f.text_field :menu_color, :maxlength => 7,
                    :class => "back-color color {hash:true,pickerPosition:'right',pickerClosable:true}" -%>
 </div>
 
 <div class='field'>
   <span class="design-grounds">Foreground</span>
-  <%= f.text_field t('.foreground_color'), :maxlength => 7,
+  <%= f.label t('.foreground_color') %>
+  <%= f.text_field :foreground_color, :maxlength => 7,
                    :class => "back-color color {hash:true,pickerPosition:'right',pickerClosable:true}" -%>
 </div>
 
 <div class='field'>
   <span class="design-grounds">Background</span>
-  <%= f.text_field t('.background_color'), :maxlength => 7,
+  <%= f.label t('.background_color')%>
+  <%= f.text_field :background_color, :maxlength => 7,
                    :class => "back-color color {hash:true,pickerPosition:'right',pickerClosable:true}" -%>
 </div>
 
