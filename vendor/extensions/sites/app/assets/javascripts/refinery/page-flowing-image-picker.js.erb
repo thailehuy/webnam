@@ -41,8 +41,8 @@ $(document).ready(function(){
 	$('#content #page_flowing_images li input.page_weblink').each(function(index) {
 		var old_name = $(this).attr('name');
 		$(this).attr('data-old-id', $(this).attr('id'));
-		$(this).attr('name', 'ignor_me_' + index);
-		$(this).attr('id', 'ignor_me_' + index);
+		$(this).attr('name', 'ignore_me_' + index);
+		$(this).attr('id', 'ignore_me_' + index);
 
 		var hidden = $('<input>')
 						.addClass('weblink')

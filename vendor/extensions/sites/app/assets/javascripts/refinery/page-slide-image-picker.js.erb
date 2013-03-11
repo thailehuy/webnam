@@ -1,4 +1,8 @@
 $(document).ready(function(){
+  $('form').submit(function() {
+    $('input[name^="ignore_me_"]').remove();
+    return true;
+  })
   $('#custom_images_tab a').click(function(){
     if (!(picker = $('#page_slide_image_picker')).data('size-applied')){
       wym_box = $('.page_part:first .wym_box');
