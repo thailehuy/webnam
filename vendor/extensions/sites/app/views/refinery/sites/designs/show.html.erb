@@ -4,31 +4,31 @@
 
 <% content_for :body_content_left do %>
   <section>
-    <h1>Site</h1>
+    <h1><%= t('.site') %></h1>
     <p>
       <%=raw @design.site_id %>
     </p>
   </section>
   <section>
-    <h1>Scss Model</h1>
+    <h1><%= t('.scss_model') %></h1>
     <p>
       <%=raw @design.scss_model %>
     </p>
   </section>
   <section>
-    <h1>Background Color</h1>
+    <h1><%= t('.background_color') %></h1>
     <p>
       <%=raw @design.background_color %>
     </p>
   </section>
   <section>
-    <h1>Font Family</h1>
+    <h1><%= t('.font_family') %></h1>
     <p>
       <%=raw @design.font_family %>
     </p>
   </section>
   <section>
-    <h1>Font Color</h1>
+    <h1><%= t('.font_color') %></h1>
     <p>
       <%=raw @design.font_color %>
     </p>

@@ -13,7 +13,7 @@ module Refinery
 
       validates :name, :presence => true, :uniqueness => {:case_sensitive => false},
                 :exclusion => { :in => 'New site',
-                                :message => "Please change the site name" }
+                                :message => t('site_name_not_unique', :scope => 'activerecord.errors.models.refinery/sites/site') }
       validates :contact_email, :presence => true
       validates :products_per_page, :presence => true, :inclusion => 5..50
 

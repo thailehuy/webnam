@@ -5,37 +5,37 @@
 
   
   <div class='field'>
-    <%= f.label :site_id -%>
+    <%= f.label t('.site_id') -%>
     <%= f.number_field :site_id  -%>
 
   </div>
   
   <div class='field'>
-    <%= f.label :scss_model -%>
+    <%= f.label t('.scss_model') -%>
     <%= f.text_field :scss_model  -%>
 
   </div>
   
   <div class='field'>
-    <%= f.label :background_color -%>
+    <%= f.label t('.background_color') -%>
     <%= f.text_field :background_color  -%>
 
   </div>
   
   <div class='field'>
-    <%= f.label :font_family -%>
+    <%= f.label t('.font_family') -%>
     <%= f.text_field :font_family  -%>
 
   </div>
   
   <div class='field'>
-    <%= f.label :font_color -%>
+    <%= f.label t('.font_color') -%>
     <%= f.text_field :font_color  -%>
 
   </div>
   
   <%= render '/refinery/admin/form_actions', :f => f,
              :continue_editing => false,
-             :delete_title => t('delete', :scope => 'refinery.designs.admin.designs.design'),
+             :delete_title => t('delete', :scope => 'refinery.sites.admin.designs.design'),
              :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @design.scss_model) %>
 <% end -%>
