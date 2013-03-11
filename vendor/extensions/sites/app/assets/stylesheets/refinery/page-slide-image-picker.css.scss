@@ -1,4 +1,4 @@
-#page_slide_images {
+.page_slide_images {
   margin: 0;
   padding: 0;
   width: 280px;
@@ -41,7 +41,7 @@
     border: 0;
     background: none !important;
   }
-  #page_slide_images.ui-sortable li.placeholder {
+  .page_slide_images.ui-sortable li.placeholder {
     width: 135px;
     height: 135px;
   }

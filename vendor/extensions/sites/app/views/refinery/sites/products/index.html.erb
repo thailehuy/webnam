@@ -7,8 +7,34 @@
     <% end %>
   </ul>
 <% end %>
+<% if @site.product_images.count > 0 %>
+  <section id="banner">
+    <div id="first-image">
+      <% image = @site.product_images.order('position').first.product_slide_image %>
+      <% unless image.nil? %>
+      <%= image_tag image.url %>
+      <% end %>
+    </div>
+    <% if @site.product_images.count > 1 %>
+      <div class="camera_wrap hidden" id="slide-show">
+        <% @site.product_images.order('position').each do |i| %>
+          <% unless i.product_slide_image.nil? %>
+            <div data-src="<%= i.product_slide_image.url %>">
+              <% unless i.caption.blank? %>
+                <div class="camera_caption fadeIn">
+                  <%= strip_tags(i.caption) %>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  <section>
+<% end %>
 
 <%= render '/refinery/content_page' %>
+
 <% content_for :javascripts do %>
   <script type="text/javascript">
     $(document).ready(function() {

@@ -1,7 +1,7 @@
 <div class='wym_box field images_field'>
   <ul class='page_slide_images' class='clearfix'>
     <%= f.fields_for :"#{custom}_slide_images" do |image_form| %>
-      <li class='slide-image_<%= image_form.object.id %>'>
+      <li id='slide-image_<%= image_form.object.id %>'>
         <%= image_form.hidden_field :id %>
         <%= image_fu image_form.object, '135x135#c' %>
         <% index = image_form.object_name.split('[').last.split(']').first.to_i %>
@@ -18,7 +18,7 @@
         <% end %>
       </li>
     <% end %>
-    <li class='slide empty'>
+    <li class='<%= custom %>-slide empty'>
       <%= hidden_field_tag "#{f.object_name.demodulize}[#{custom}_slide_images_attributes][#{f.object.slide_images.size}][id]" %>
       <% if true # yes we want captions %>
         <div class='textarea_wrapper_for_wym'>

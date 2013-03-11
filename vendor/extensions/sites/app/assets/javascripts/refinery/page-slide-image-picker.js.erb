@@ -101,6 +101,27 @@ slide_image_added = function(image) {
 	slide_reset_functionality();
 }
 
+slide_custom_image_added = function(image, custom) {
+  new_list_item = (current_list_item = $('li.empty.' + custom + '-slide')).clone();
+  image_id = $(image).attr('id').replace('image_', '');
+  current_list_item.find('input:hidden:first').val(image_id);
+
+  $("<img />").attr({
+    title: $(image).attr('title')
+    , alt: $(image).attr('alt')
+    , src: $(image).attr('data-grid') // use 'grid' size that is built into Refinery CMS (135x135#c).
+  }).appendTo(current_list_item);
+
+  current_list_item.attr('id', 'slide-image_' + image_id).removeClass('empty ' + custom + '-slide');
+
+  new_list_item.appendTo($(current_list_item).parents('.page_slide_images'));
+  slide_reset_functionality();
+}
+
+slide_product_image_added = function(image) {
+  slide_custom_image_added(image, 'product')
+}
+
 slide_open_image_caption = function(e) {
   // move the textarea out of the list item, and then move the textarea back into it when we click done.
   (list_item = $(this).parents('li').first()).addClass('current_caption_list_item');
