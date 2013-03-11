@@ -72,4 +72,44 @@
       $('#product-list .product-photo a').lightBox();
     });
   </script>
+
+  <script>
+
+    $(window).unload(function() {
+      close_pano();
+    });
+
+    $(document).ready(function() {
+
+      <% if @site.product_images.count > 1 %>
+
+        $('#slide-show').camera({
+          width: '1000px',
+          height: '500px',
+          alignment: 'center',
+          loader: 'none',
+          overlayer: true,
+          navigation: false,
+          navigationHover: false,
+          mobileNavHover: false,
+          opacityOnGrid: false,
+          playPause: false,
+          pauseOnClick: false,
+          pagination: true,
+          thumbnails: false,
+          fx: '<%= @site.slide_effect %>',
+          time: <%= @site.slide_delay %>,
+          transPeriod: <%= @site.slide_transition %>,
+          rows: 5,
+          cols: 10,
+          onLoaded: function() {
+            $('#first-image').hide();
+            $('#slide-show').css({marginBottom:40});
+            $('#slide-show').removeClass('hidden');
+          }
+        });
+      <% end %>
+    });
+
+  </script>
 <% end %>
