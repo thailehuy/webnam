@@ -1,7 +1,7 @@
 <div class='wym_box field images_field'>
-  <ul id='page_slide_images' class='clearfix'>
+  <ul class='page_slide_images' class='clearfix'>
     <%= f.fields_for :slide_images do |image_form| %>
-      <li id='slide-image_<%= image_form.object.id %>'>
+      <li class='slide-image_<%= image_form.object.id %>'>
         <%= image_form.hidden_field :id %>
         <%= image_fu image_form.object, '135x135#c' %>
         <% index = image_form.object_name.split('[').last.split(']').first.to_i %>

@@ -4,7 +4,11 @@
 
 <div class='wym_skin_refinery page_part' id='page_slide_image_picker'>
   <%= render '/refinery/sites/admin/slide/images_bar', :f => f %>
-  <%= render '/refinery/sites/admin/slide/images_field', :f => f %>
+  <% if custom == "home" %>
+    <%= render '/refinery/sites/admin/slide/images_field', :f => f %>
+  <% else %>
+    <%= render '/refinery/sites/admin/slide/custom_images_field', :f => f, :custom => custom %>
+  <% end %>
 </div>
 
 <% content_for :stylesheets, stylesheet_link_tag('refinery/page-slide-image-picker') %>

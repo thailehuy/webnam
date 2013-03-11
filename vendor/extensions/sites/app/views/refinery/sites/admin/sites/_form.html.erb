@@ -143,7 +143,7 @@
 
       <div class='field'>
         <%= f.label t('.home_images'), "Images slideshow" -%>
-        <%= render :partial => "/refinery/sites/admin/slide/images", :locals => {:f => f} %>
+        <%= render :partial => "/refinery/sites/admin/slide/images", :locals => {:f => f, :custom => "home"} %>
       </div>
 
       <div class='field'>
@@ -232,6 +232,11 @@
       <div class='field'>
         <%= f.label t('.seo_product_description') -%>
         <%= f.text_area :seo_product_description, :class => 'widest', :rows => 7 %>
+      </div>
+
+      <div class='field'>
+        <%= f.label t('.product_images'), "Product Images slideshow" -%>
+        <%= render :partial => "/refinery/sites/admin/slide/images", :locals => {:f => f, :custom => "product"} %>
       </div>
     </div>
     <h4><a href="#"><%= t('mediagallery') %></a></h4>

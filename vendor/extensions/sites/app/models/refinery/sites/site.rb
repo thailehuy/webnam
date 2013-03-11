@@ -193,7 +193,7 @@ module Refinery
 
       # Slide show d'images
 
-      has_many :home_images, :dependent => :destroy, :order => 'position ASC'
+      has_many :home_images, :class_name => '::HomeImage', :dependent => :destroy, :order => 'position ASC'
       has_many :slide_images, :class_name => '::Refinery::Image', :through => :home_images, :order => 'position ASC'
       accepts_nested_attributes_for :slide_images, :allow_destroy => false
       attr_accessible :slide_images_attributes
@@ -241,7 +241,52 @@ module Refinery
       end
 
 
+      has_many :product_images, :class_name => '::ProductImage', :dependent => :destroy, :order => 'position ASC'
+      has_many :product_slide_images, :class_name => '::Refinery::Image', :through => :product_images, :order => 'position ASC'
+      accepts_nested_attributes_for :product_slide_images, :allow_destroy => false
+      attr_accessible :product_slide_images_attributes
 
+      # need to do it this way because of the way accepts_nested_attributes_for
+      # deletes an already defined images_attributes
+      def product_slide_images_attributes=(data)
+        ids_to_keep = data.map{|i, d| d['product_image_id']}.compact
+
+        product_images_to_delete = if ids_to_keep.empty?
+                                      self.product_images
+                                    else
+                                      self.product_images.where(
+                                          ProductImage.arel_table[:id].not_in(ids_to_keep)
+                                      )
+                                    end
+
+        product_images_to_delete.destroy_all
+
+        data.each do |i, image_data|
+          product_image_id, image_id, caption =
+              image_data.values_at('product_image_id', 'id', 'caption')
+
+          next if image_id.blank?
+
+          product_image = if home_image_id.present?
+                             self.product_images.find(product_image_id)
+                           else
+                             self.product_images.build(:slide_image_id => image_id)
+                           end
+
+          product_image.position = i
+          product_image.caption = caption
+          product_image.save
+        end
+      end
+
+
+      def caption_for_product_slide_image_index(index)
+        self.product_images[index].try(:caption).presence || ""
+      end
+
+      def product_image_id_for_image_index(index)
+        self.product_images[index].try(:id)
+      end
 
 
 
