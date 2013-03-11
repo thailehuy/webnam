@@ -10,7 +10,7 @@
   
 
   <div class='field'>
-    <%= f.label :site_id -%>
+    <%= f.label t('.site_id') -%>
 
 
     <%= f.number_field :site_id  -%>
@@ -49,7 +49,7 @@
   
   <%= render '/refinery/admin/form_actions', :f => f,
              :continue_editing => false,
-             :delete_title => t('delete', :scope => 'refinery.services_pages.admin.services_pages.services_page'),
+             :delete_title => t('delete', :scope => 'refinery.sites.admin.services_pages.services_page'),
              :delete_confirmation => t('message', :scope => 'refinery.admin.delete') %>
 <% end -%>
 

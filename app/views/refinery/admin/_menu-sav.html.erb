@@ -4,11 +4,11 @@
     <% ::Refinery::Plugins.active.in_menu.each do |plugin| -%>
 			<% case plugin.title %>
 		    <%  when 'Sites' %>
-	        <%= link_to 'Site', refinery.url_for(plugin.url),
+	        <%= link_to "#{t('views.refinery.admin.menu.sites')}", refinery.url_for(plugin.url),
 	                    :class => ("active" if plugin.highlighted?(params)),
 	                    :id => "plugin_#{plugin.name}" %>
 				<%  when 'Users' %>
-	        <%= link_to 'Editors', refinery.url_for(plugin.url),
+	        <%= link_to "#{t('views.refinery.admin.menu.editors')}", refinery.url_for(plugin.url),
 	                    :class => ("active" if plugin.highlighted?(params)),
 	                    :id => "plugin_#{plugin.name}" %>
 				<% else %>
@@ -21,7 +21,7 @@
   <% else %>
 	  <% ::Refinery::Plugins.active.in_menu.each do |plugin| -%>
 			<% if plugin.title == 'Users' && (session[:current_site].present? && (session[:current_site] != -1)) %>
-        <%= link_to 'Editors', refinery.url_for(plugin.url),
+        <%= link_to "#{t('views.refinery.admin.menu.editors')}", refinery.url_for(plugin.url),
                     :class => ("active" if plugin.highlighted?(params)),
                     :id => "plugin_#{plugin.name}" %>
 			<% else %>

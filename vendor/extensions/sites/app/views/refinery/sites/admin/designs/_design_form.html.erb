@@ -1,5 +1,5 @@
 <div class='field'>
-  <%= f.label :font_family -%>
+  <%= f.label t('.font_family') -%>
   <%= f.select :font_family, ['Arial',
                               'Arial Black',
                               'Calibri',
@@ -16,7 +16,7 @@
 </div>
 
 <div class='field'>
-  <%= f.label :menu_style -%>
+  <%= f.label t('.menu_style') -%>
   <%= f.hidden_field :menu_style  -%>
   <input id="menu-size" value="" size="6"/>
   <select id="menu-weight">
@@ -27,7 +27,7 @@
 </div>
 
 <div class='field'>
-  <%= f.label :p_style -%>
+  <%= f.label t('.p_style') -%>
   <%= f.hidden_field :p_style  -%>
   <input id="p-size" value="" size="6"/>
   <select id="p-weight">
@@ -38,7 +38,7 @@
 </div>
 
 <div class='field'>
-  <%= f.label :h1_style -%>
+  <%= f.label t('.h1_style') -%>
   <%= f.hidden_field :h1_style  -%>
   <input id="h1-size" value="" size="6"/>
   <select id="h1-weight">
@@ -49,7 +49,7 @@
 </div>
 
 <div class='field'>
-  <%= f.label :h2_style -%>
+  <%= f.label t('.h2_style') -%>
   <%= f.hidden_field :h2_style  -%>
   <input id="h2-size" value="" size="6"/>
   <select id="h2-weight">
@@ -60,7 +60,7 @@
 </div>
 
 <div class='field'>
-  <%= f.label :h3_style -%>
+  <%= f.label t('.h3_style') -%>
   <%= f.hidden_field :h3_style  -%>
   <input id="h3-size" value="" size="6"/>
   <select id="h3-weight">
@@ -71,7 +71,7 @@
 </div>
 
 <div class='field'>
-  <%= f.label :table_caption_style -%>
+  <%= f.label t('.table_caption_style') -%>
   <%= f.hidden_field :table_caption_style  -%>
   <input id="table_caption-size" value="" size="6"/>
   <select id="table_caption-weight">
@@ -82,7 +82,7 @@
 </div>
 
 <div class='field'>
-  <%= f.label :table_row_style -%>
+  <%= f.label t('.table_row_style') -%>
   <%= f.hidden_field :table_row_style  -%>
   <input id="table_row-size" value="" size="6"/>
   <select id="table_row-weight">
@@ -94,24 +94,24 @@
 
 <div class='field'>
   <span class="design-grounds">Menuground</span>
-  <%= f.text_field :menu_color, :maxlength => 7,
+  <%= f.text_field t('.menu_color'), :maxlength => 7,
                    :class => "back-color color {hash:true,pickerPosition:'right',pickerClosable:true}" -%>
 </div>
 
 <div class='field'>
   <span class="design-grounds">Foreground</span>
-  <%= f.text_field :foreground_color, :maxlength => 7,
+  <%= f.text_field t('.foreground_color'), :maxlength => 7,
                    :class => "back-color color {hash:true,pickerPosition:'right',pickerClosable:true}" -%>
 </div>
 
 <div class='field'>
   <span class="design-grounds">Background</span>
-  <%= f.text_field :background_color, :maxlength => 7,
+  <%= f.text_field t('.background_color'), :maxlength => 7,
                    :class => "back-color color {hash:true,pickerPosition:'right',pickerClosable:true}" -%>
 </div>
 
 <div class='field'>
-  <%= f.label :background_image, 'Background image' -%>
+  <%= f.label t('.background_image'), 'Background image' -%>
   <%= render '/refinery/admin/image_picker',
              :f => f,
              :field => :background_image_id,
@@ -121,11 +121,11 @@
 </div>
 
 <div class='field'>
-  <%= f.label :background_repeat -%>
-  <%= f.select(:background_repeat, options_for_select([['No repeat', 0],
-                                                  ['Horizontal', 1],
-                                                  ['Vertical', 2],
-                                                  ['Both', 3]], @site.design.background_repeat)) %>
+  <%= f.label t('.background_repeat') -%>
+  <%= f.select(:background_repeat, options_for_select([[t('.no_repeat'), 0],
+                                                  [t('.horizontal'), 1],
+                                                  [t('.vertical'), 2],
+                                                  [t('.both'), 3]], @site.design.background_repeat)) %>
 </div>
 
 
