@@ -82,7 +82,7 @@
       if(href.match(/\.pdf$/)) {
         $('#pdf-viewer iframe').attr('src', "");
         $('#pdf-viewer').dialog({width: 600, height: 430, open: function(){
-          $('#pdf-viewer iframe').attr('src', 'http://docs.google.com/gview?url=http://' + window.location.hostname + href);
+          $('#pdf-viewer iframe').attr('src', 'http://docs.google.com/gview?embedded=true&url=http://' + window.location.hostname + href);
         } });
         return false
       }
