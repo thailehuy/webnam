@@ -9,7 +9,6 @@
   <% custom_stylesheets.each do |css| %>
     <%= stylesheet_link_tag css.path, css.options %>
   <% end %>
-  <%= stylesheet_link_tag "admin" %>
   <%= stylesheet_link_tag "wn-admin" %>
   <%= yield :stylesheets %>
   <%= render 'refinery/admin/javascripts' %>
