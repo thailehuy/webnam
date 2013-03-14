@@ -184,6 +184,10 @@
     </div>
     <h4><a href="#"><%= t('aboutus') %></a></h4>
     <div id="aboutus">
+      <div class='field'>
+        <%= f.label t('.about_images'), "About Us Images slideshow" -%>
+        <%= render :partial => "/refinery/sites/admin/slide/images", :locals => {:f => f, :custom => "about"} %>
+      </div>
       <%= f.fields_for :aboutus_page do |f_aboutus| -%>
         <%= render '/refinery/sites/admin/aboutus_pages/aboutus_page_form', :f => f_aboutus, :aboutus_page => @site.aboutus_page %>
       <% end -%>
@@ -192,6 +196,10 @@
     <div id="services">
       <div class='field'>
         <%= f.check_box :has_services, :checked => @site[:has_services] -%><%= t('.has_services') %>
+      </div>
+      <div class='field'>
+        <%= f.label t('.service_images'), "Service Images slideshow" -%>
+        <%= render :partial => "/refinery/sites/admin/slide/images", :locals => {:f => f, :custom => "service"} %>
       </div>
       <%= f.fields_for :services_page do |f_services| -%>
         <%= render '/refinery/sites/admin/services_pages/services_page_form', :f => f_services, :services_page => @site.services_page %>
