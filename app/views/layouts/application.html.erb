@@ -35,19 +35,6 @@
         <% end -%>
       <% end %>
   <% end %>
-
-    <%= yield :before_javascript_libraries -%>
-    <%= yield :javascript_libraries %>
-    <%= yield :after_javascript_libraries %>
-    <% if request.env['HTTP_USER_AGENT'] =~ /MSIE/ %>
-      <!--[if lt IE 7 ]>
-        <%= javascript_include_tag 'dd_belatedpng' %>
-        <script> DD_belatedPNG.fix('img, .png_bg'); //fix any <img> or .png_bg background-images </script>
-      <![endif]-->
-    <% end %>
-    <%= javascript_include_tag 'application' %>
-    <%= yield :javascripts -%>
-
   </head>
   <body>
     <%#= site_bar -%>
@@ -69,7 +56,19 @@
       </div>
     </div>
     <% end %>
-    <%= render '/refinery/javascripts' %>
+
+    <%= yield :before_javascript_libraries -%>
+    <%= yield :javascript_libraries %>
+    <%= yield :after_javascript_libraries %>
+    <% if request.env['HTTP_USER_AGENT'] =~ /MSIE/ %>
+      <!--[if lt IE 7 ]>
+        <%= javascript_include_tag 'dd_belatedpng' %>
+        <script> DD_belatedPNG.fix('img, .png_bg'); //fix any <img> or .png_bg background-images </script>
+      <![endif]-->
+    <% end %>
+    <%= javascript_include_tag 'application' %>
+    <%= yield :javascripts -%>
+
     <div style="display: none">
       <div id='pdf-viewer' style="width: 600px; height: 400px">
         <iframe style="width: 100%; height: 100%" frameborder="0"></iframe>
