@@ -240,53 +240,55 @@ module Refinery
         self.home_images[index].try(:id)
       end
 
+      ["product", "about", "service"].each do |page|
+        has_many "#{page}_images".to_sym, :class_name => "::#{page.capitalize}Image", :dependent => :destroy, :order => 'position ASC'
+        has_many "#{page}_slide_images".to_sym, :class_name => '::Refinery::Image', :through => "#{page}_images".to_sym, :order => 'position ASC'
+        accepts_nested_attributes_for "#{page}_slide_images".to_sym, :allow_destroy => false
+        attr_accessible "#{page}_slide_images_attributes".to_sym
 
-      has_many :product_images, :class_name => '::ProductImage', :dependent => :destroy, :order => 'position ASC'
-      has_many :product_slide_images, :class_name => '::Refinery::Image', :through => :product_images, :order => 'position ASC'
-      accepts_nested_attributes_for :product_slide_images, :allow_destroy => false
-      attr_accessible :product_slide_images_attributes
+        # need to do it this way because of the way accepts_nested_attributes_for
+        # deletes an already defined images_attributes
+        define_method "#{page}_slide_images_attributes=" do |data|
+          ids_to_keep = data.map{|i, d| d["#{page}_image_id"]}.compact
 
-      # need to do it this way because of the way accepts_nested_attributes_for
-      # deletes an already defined images_attributes
-      def product_slide_images_attributes=(data)
-        ids_to_keep = data.map{|i, d| d['product_image_id']}.compact
+          images_to_delete = if ids_to_keep.empty?
+                                        self.send("#{page}_images")
+                                      else
+                                        self.send("#{page}_images").where(
+                                            "#{page.capitalize}Image".constantize.arel_table[:id].not_in(ids_to_keep)
+                                        )
+                                      end
 
-        product_images_to_delete = if ids_to_keep.empty?
-                                      self.product_images
-                                    else
-                                      self.product_images.where(
-                                          ProductImage.arel_table[:id].not_in(ids_to_keep)
-                                      )
-                                    end
+          images_to_delete.destroy_all
 
-        product_images_to_delete.destroy_all
+          data.each do |i, image_data|
+            page_image_id, image_id, caption =
+                image_data.values_at("#{page}_image_id", 'id', 'caption')
 
-        data.each do |i, image_data|
-          product_image_id, image_id, caption =
-              image_data.values_at('product_image_id', 'id', 'caption')
+            next if image_id.blank?
 
-          next if image_id.blank?
+            page_image = if page_image_id.present?
+                               self.send("#{page}_images").find(page_image_id)
+                             else
+                               self.send("#{page}_images").build(:slide_image_id => image_id)
+                             end
 
-          product_image = if product_image_id.present?
-                             self.product_images.find(product_image_id)
-                           else
-                             self.product_images.build(:slide_image_id => image_id)
-                           end
+            page_image.position = i
+            page_image.caption = caption
+            page_image.save
+          end
+        end
 
-          product_image.position = i
-          product_image.caption = caption
-          product_image.save
+        define_method "caption_for_#{page}_slide_image_index" do |index|
+          self.send("#{page}_images")[index].try(:caption).presence || ""
+        end
+
+        define_method "#{page}_image_id_for_image_index" do |index|
+          self.send("#{page}_images")[index].try(:id)
         end
       end
 
 
-      def caption_for_product_slide_image_index(index)
-        self.product_images[index].try(:caption).presence || ""
-      end
-
-      def product_image_id_for_image_index(index)
-        self.product_images[index].try(:id)
-      end
 
 
 

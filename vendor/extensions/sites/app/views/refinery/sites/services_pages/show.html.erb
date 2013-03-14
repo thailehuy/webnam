@@ -3,7 +3,31 @@
   <%= raw(%(<meta name="description" content="#{@services_page.seo_description}" />)) if @services_page.seo_description.present? -%>
   <%= raw(%(<meta name="keywords" content="#{@services_page.seo_keywords}">)) if @services_page.seo_keywords.present? -%>
 <% end %>
-
+<% if @site.service_images.count > 0 %>
+  <section id="banner">
+    <div id="first-image">
+      <% image = @site.service_images.order('position').first.slide_image %>
+      <% unless image.nil? %>
+      <%= image_tag image.url %>
+      <% end %>
+    </div>
+    <% if @site.service_images.count > 1 %>
+      <div class="camera_wrap hidden" id="slide-show">
+        <% @site.service_images.order('position').each do |i| %>
+          <% unless i.slide_image.nil? %>
+            <div data-src="<%= i.slide_image.url %>">
+              <% unless i.caption.blank? %>
+                <div class="camera_caption fadeIn">
+                  <%= strip_tags(i.caption) %>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  <section>
+<% end %>
 <section id="content" class="content">
   <article class="list">
     <div class="col left-col">
@@ -18,5 +42,42 @@
   <%= render '/refinery/sites/sites/carousel' %>
 <% end %>
 
+<% content_for :javascripts do %>
+  <script type="text/javascript">
+
+    $(document).ready(function() {
+            <% if @site.service_images.count > 1 %>
+
+              $('#slide-show').camera({
+                width: '1000px',
+                height: '500px',
+                alignment: 'center',
+                loader: 'none',
+                overlayer: true,
+                navigation: false,
+                navigationHover: false,
+                mobileNavHover: false,
+                opacityOnGrid: false,
+                playPause: false,
+                pauseOnClick: false,
+                pagination: true,
+                thumbnails: false,
+                fx: '<%= @site.slide_effect %>',
+                time: <%= @site.slide_delay %>,
+                transPeriod: <%= @site.slide_transition %>,
+                rows: 5,
+                cols: 10,
+                onLoaded: function() {
+                  $('#first-image').hide();
+                  $('#slide-show').css({marginBottom:40});
+                  $('#slide-show').removeClass('hidden');
+                }
+              });
+            <% end %>
+    });
+
+  </script>
+
+<% end %>
 
 
