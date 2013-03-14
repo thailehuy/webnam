@@ -126,6 +126,14 @@ slide_product_image_added = function(image) {
   slide_custom_image_added(image, 'product')
 }
 
+slide_about_image_added = function(image) {
+  slide_custom_image_added(image, 'about')
+}
+
+slide_service_image_added = function(image) {
+  slide_custom_image_added(image, 'service')
+}
+
 slide_open_image_caption = function(e) {
   // move the textarea out of the list item, and then move the textarea back into it when we click done.
   (list_item = $(this).parents('li').first()).addClass('current_caption_list_item');
