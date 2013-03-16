@@ -192,7 +192,7 @@ module Refinery
       end
 
       ["product", "about", "service"].each do |page|
-        has_many "#{page}_carousel_images".to_sym, :dependent => :destroy, :order => 'position ASC'
+        has_many "#{page}_carousel_images".to_sym, :dependent => :destroy, :order => 'position ASC', :class_name => "#{page.capitalize}CarouselImage"
         has_many "#{page}_flowing_images".to_sym, :class_name => '::Refinery::Image', :through => "#{page}_carousel_images".to_sym, :order => 'position ASC'
         accepts_nested_attributes_for "#{page}_flowing_images".to_sym, :allow_destroy => false
         attr_accessible "#{page}_flowing_images_attributes".to_sym
