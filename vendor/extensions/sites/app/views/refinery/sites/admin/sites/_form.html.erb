@@ -92,7 +92,7 @@
 
       <div class='field'>
         <%= f.label t('.carousel_images'), "Images carousel" -%>
-        <%= render :partial => "/refinery/sites/admin/flowing/images", :locals => {:f => f} %>
+        <%= render :partial => "/refinery/sites/admin/flowing/images", :locals => {:f => f, :custom => 'home'} %>
       </div>
 
       <div class='field'>
@@ -184,6 +184,10 @@
       <%= f.fields_for :aboutus_page do |f_aboutus| -%>
         <%= render '/refinery/sites/admin/aboutus_pages/aboutus_page_form', :f => f_aboutus, :aboutus_page => @site.aboutus_page %>
       <% end -%>
+      <div class='field'>
+        <%= f.label t('.carousel_images'), "Images carousel" -%>
+        <%= render :partial => "/refinery/sites/admin/flowing/images", :locals => {:f => f, :custom => 'about'} %>
+      </div>
     </div>
     <h4><a href="#"><%= t('services') %></a></h4>
     <div id="services">
@@ -197,6 +201,10 @@
       <%= f.fields_for :services_page do |f_services| -%>
         <%= render '/refinery/sites/admin/services_pages/services_page_form', :f => f_services, :services_page => @site.services_page %>
       <% end -%>
+      <div class='field'>
+        <%= f.label t('.carousel_images'), "Images carousel" -%>
+        <%= render :partial => "/refinery/sites/admin/flowing/images", :locals => {:f => f, :custom => 'service'} %>
+      </div>
     </div>
     <h4><a href="#"><%= t('products') %></a></h4>
     <div id="products">
@@ -238,6 +246,10 @@
       <div class='field'>
         <%= f.label t('.product_images'), "Product Images slideshow" -%>
         <%= render :partial => "/refinery/sites/admin/slide/images", :locals => {:f => f, :custom => "product"} %>
+      </div>
+      <div class='field'>
+        <%= f.label t('.carousel_images'), "Images carousel" -%>
+        <%= render :partial => "/refinery/sites/admin/flowing/images", :locals => {:f => f, :custom => 'product'} %>
       </div>
     </div>
     <h4><a href="#"><%= t('mediagallery') %></a></h4>
