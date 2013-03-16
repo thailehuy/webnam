@@ -1,4 +1,4 @@
-#page_flowing_images {
+.page_flowing_images {
   margin: 0;
   padding: 0;
   width: 280px;
@@ -50,7 +50,7 @@
     border: 0;
     background: none !important;
   }
-  #page_flowing_images.ui-sortable li.placeholder {
+  .page_flowing_images.ui-sortable li.placeholder {
     width: 135px;
     height: 135px;
   }

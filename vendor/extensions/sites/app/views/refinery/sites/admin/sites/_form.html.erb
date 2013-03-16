@@ -88,13 +88,6 @@
                    :toggle_image_display => false %>
 
       </div>
-
-
-      <div class='field'>
-        <%= f.label t('.carousel_images'), "Images carousel" -%>
-        <%= render :partial => "/refinery/sites/admin/flowing/images", :locals => {:f => f, :custom => 'home'} %>
-      </div>
-
       <div class='field'>
         <%= f.label t('.carousel_pause'), 'Pause time in miliseconds' -%>
         <%= f.number_field :carousel_pause  -%>
@@ -173,6 +166,10 @@
                    :image => @site.virtual_tour,
                    :toggle_image_display => false %>
 
+      </div>
+      <div class='field'>
+        <%= f.label t('.carousel_images'), "Images carousel" -%>
+        <%= render :partial => "/refinery/sites/admin/flowing/images", :locals => {:f => f, :custom => 'home'} %>
       </div>
     </div>
     <h4><a href="#"><%= t('aboutus') %></a></h4>
