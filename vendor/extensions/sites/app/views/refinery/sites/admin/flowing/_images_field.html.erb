@@ -27,7 +27,7 @@
         <% end %>
       </li>
     <% end %>
-    <li class='<%= custom %>-flowing empty'>
+    <li class='flowing empty'>
       <%= hidden_field_tag "#{f.object_name.demodulize}[flowing_images_attributes][#{f.object.flowing_images.size}][id]" %>
       <% if true # yes we want captions %>
         <div class='textarea_wrapper_for_wym'>
