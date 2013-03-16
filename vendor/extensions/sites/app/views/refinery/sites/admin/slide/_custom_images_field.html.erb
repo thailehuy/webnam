@@ -5,7 +5,7 @@
         <%= image_form.hidden_field :id %>
         <%= image_fu image_form.object, '135x135#c' %>
         <% index = image_form.object_name.split('[').last.split(']').first.to_i %>
-        <%= hidden_field_tag "#{f.object_name.demodulize}[#{custom}_slide_images_attributes][#{index}][home_image_id]",
+        <%= hidden_field_tag "#{f.object_name.demodulize}[#{custom}_slide_images_attributes][#{index}][#{custom}_image_id]",
                              f.object.send("#{custom}_image_id_for_image_index", index) %>
         <% if true # yes we want captions %>
           <div class='textarea_wrapper_for_wym'>

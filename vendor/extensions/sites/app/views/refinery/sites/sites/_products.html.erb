@@ -59,9 +59,7 @@
   </article>
   <%= will_paginate @products, :param_name => 'page_count' %>
 </section>
-<% if @site.carousel_pages.include?('products') %>
-  <%= render '/refinery/sites/sites/carousel' %>
-<% end %>
+<%= render '/refinery/sites/sites/custom_carousel', :custom => "product" %>
 
 <% content_for :stylesheets do %>
   <%= stylesheet_link_tag "jquery.lightbox-0.5" %>

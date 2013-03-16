@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130311192133) do
+ActiveRecord::Schema.define(:version => 20130316005534) do
 
   create_table "carousel_image_translations", :force => true do |t|
     t.integer  "carousel_image_id"
@@ -29,9 +29,10 @@ ActiveRecord::Schema.define(:version => 20130311192133) do
     t.integer  "flowing_image_id"
     t.integer  "position"
     t.text     "caption"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",                                    :null => false
+    t.datetime "updated_at",                                    :null => false
     t.string   "weblink"
+    t.string   "type",             :default => "CarouselImage"
   end
 
   create_table "home_image_translations", :force => true do |t|

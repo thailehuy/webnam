@@ -1,5 +1,5 @@
 <div class='wym_box field images_field'>
-  <ul id='page_flowing_images' class='clearfix'>
+  <ul class='page_flowing_images' class='clearfix'>
     <%= f.fields_for :flowing_images do |image_form| %>
       <li id='flowing-image_<%= image_form.object.id %>'>
         <%= image_form.hidden_field :id %>
@@ -27,7 +27,7 @@
         <% end %>
       </li>
     <% end %>
-    <li class='flowing empty'>
+    <li class='<%= custom %>-flowing empty'>
       <%= hidden_field_tag "#{f.object_name.demodulize}[flowing_images_attributes][#{f.object.flowing_images.size}][id]" %>
       <% if true # yes we want captions %>
         <div class='textarea_wrapper_for_wym'>

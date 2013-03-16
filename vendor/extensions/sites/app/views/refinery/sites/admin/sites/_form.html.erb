@@ -96,13 +96,6 @@
       </div>
 
       <div class='field'>
-        <%= f.label t('.carousel_pages'), 'Pages with carousel' -%>
-        <% Refinery::Sites::Site::SITE_PAGES.first(4).each do |page| %>
-          <%= carousel_page_display_tag(page) %><%= t(page) %><br/>
-        <% end %>
-      </div>
-
-      <div class='field'>
         <%= f.label t('.carousel_pause'), 'Pause time in miliseconds' -%>
         <%= f.number_field :carousel_pause  -%>
       </div>

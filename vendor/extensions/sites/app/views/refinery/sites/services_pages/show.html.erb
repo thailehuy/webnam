@@ -38,9 +38,7 @@
     </div>
   </article>
 </section>
-<% if @site.carousel_pages.include?('services') %>
-  <%= render '/refinery/sites/sites/carousel' %>
-<% end %>
+<%= render '/refinery/sites/sites/custom_carousel', :custom => "service" %>
 
 <% content_for :javascripts do %>
   <script type="text/javascript">

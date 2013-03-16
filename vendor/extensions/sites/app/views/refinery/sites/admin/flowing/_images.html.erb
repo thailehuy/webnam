@@ -1,6 +1,11 @@
-<div class='wym_skin_refinery page_part' id='page_flowing_image_picker'>
-  <%= render '/refinery/sites/admin/flowing/images_bar', :f => f %>
-  <%= render '/refinery/sites/admin/flowing/images_field', :f => f %>
+<div class='wym_skin_refinery page_part' class='page_flowing_image_picker'>
+  <% if custom == 'home' %>
+    <%= render '/refinery/sites/admin/flowing/images_bar', :f => f %>
+    <%= render '/refinery/sites/admin/flowing/images_field', :f => f %>
+  <% else %>
+    <%= render '/refinery/sites/admin/flowing/custom_images_bar', :f => f, :custom => custom %>
+    <%= render '/refinery/sites/admin/flowing/custom_images_field', :f => f, :custom => custom %>
+  <% end %>
 </div>
 
 <% content_for :stylesheets, stylesheet_link_tag('refinery/page-flowing-image-picker') %>

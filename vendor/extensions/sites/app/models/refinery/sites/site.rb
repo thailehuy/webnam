@@ -140,7 +140,7 @@ module Refinery
       end
 
 
-      has_many :carousel_images, :dependent => :destroy, :order => 'position ASC'
+      has_many :carousel_images, :dependent => :destroy, :order => 'position ASC', :conditions => ["carousel_images.type='CarouselImage'"]
       has_many :flowing_images, :class_name => '::Refinery::Image', :through => :carousel_images, :order => 'position ASC'
       accepts_nested_attributes_for :flowing_images, :allow_destroy => false
       attr_accessible :flowing_images_attributes
@@ -190,6 +190,67 @@ module Refinery
       def weblink_for_flowing_image_index(index)
         self.carousel_images[index].try(:weblink).presence || ""
       end
+
+      ["product", "about", "service"].each do |page|
+        has_many "#{page}_carousel_images".to_sym, :dependent => :destroy, :order => 'position ASC'
+        has_many "#{page}_flowing_images".to_sym, :class_name => '::Refinery::Image', :through => "#{page}_carousel_images".to_sym, :order => 'position ASC'
+        accepts_nested_attributes_for "#{page}_flowing_images".to_sym, :allow_destroy => false
+        attr_accessible "#{page}_flowing_images_attributes".to_sym
+
+         # need to do it this way because of the way accepts_nested_attributes_for
+        # deletes an already defined images_attributes
+        define_method "#{page}_flowing_images_attributes=" do |data|
+          ids_to_keep = data.map{|i, d| d['carousel_image_id']}.compact
+
+          carousel_images_to_delete = if ids_to_keep.empty?
+                                    self.send("#{page}_carousel_images")
+                                  else
+                                    self.send("#{page}_carousel_images").where(
+                                        "#{page.capitalize}CarouselImage".constantize.arel_table[:id].not_in(ids_to_keep)
+                                    )
+                                  end
+
+          carousel_images_to_delete.destroy_all
+
+          data.each do |i, image_data|
+            carousel_image_id, image_id, caption, weblink =
+                image_data.values_at('carousel_image_id', 'id', 'caption', 'weblink')
+
+            next if image_id.blank?
+
+            carousel_image = if carousel_image_id.present?
+                           self.send("#{page}_carousel_images").find(carousel_image_id)
+                         else
+                           self.send("#{page}_carousel_images").build(:flowing_image_id => image_id)
+                         end
+
+            carousel_image.position = i
+            carousel_image.caption = caption
+            carousel_image.weblink = weblink
+            carousel_image.save
+          end
+        end
+
+        define_method "#{page}_caption_for_flowing_image_index" do |index|
+          self.send("#{page}_carousel_images")[index].try(:caption).presence || ""
+        end
+
+        define_method "#{page}_carousel_image_id_for_image_index" do |index|
+          self.send("#{page}_carousel_images")[index].try(:id)
+        end
+
+        define_method "#{page}_weblink_for_flowing_image_index" do |index|
+          self.send("#{page}_carousel_images")[index].try(:weblink).presence || ""
+        end
+      end
+
+
+
+
+
+
+
+
 
       # Slide show d'images
 
