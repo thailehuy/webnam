@@ -1,4 +1,4 @@
-<% if @site.published && @site.activated %>
+<% if (@site.published && @site.activated) || @admin_preview %>
   <% content_for :stylesheets do %>
     <%= stylesheet_link_tag "style" %>
   <% end %>

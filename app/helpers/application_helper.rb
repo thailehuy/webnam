@@ -1,5 +1,21 @@
 module ApplicationHelper
-
+  def submit_to_popup(label, options = {})
+    form_var = options[:form_id] ? "$('#{options[:form_id]}')" : 'this.form'
+    js = <<-js
+      var form=#{form_var};
+      form.target='_blank';
+      $('#preview').val('#{options[:page] || 'home'}');
+      $('input[name^=\"ignore_me_\"]').remove();
+      $('.wymeditor').each(function(index, element){
+        $(element).html($.wymeditors(index).xhtml())
+        });
+      form.submit();
+      form.target='';
+      $('#preview').val('');
+      return false;
+    js
+    button_to_function label, js
+  end
 
 	def darken_color(hex_color, amount=0.5)
 		hex_color = hex_color.gsub('#','')

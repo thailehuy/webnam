@@ -1,5 +1,5 @@
 <%= form_for [refinery, :sites_admin, @site] do |f| -%>
-
+  <%= hidden_field_tag :preview, "", :id => 'preview' %>
   <%= render "locale_picker",
              :current_locale => Thread.current[:globalize_locale] if Refinery.i18n_enabled? %>
 
@@ -126,7 +126,7 @@
     </div>
     <h4><a href="#"><%= t('home_page') %></a></h4>
     <div id="homepage">
-
+      <%= submit_to_popup "Preview", :page => 'home' %>
       <div class='field'>
         <%= f.label t('.home_images'), "Images slideshow" -%>
         <%= render :partial => "/refinery/sites/admin/slide/images", :locals => {:f => f, :custom => "home"} %>
@@ -174,6 +174,7 @@
     </div>
     <h4><a href="#"><%= t('aboutus') %></a></h4>
     <div id="aboutus">
+      <%= submit_to_popup "Preview", :page => 'aboutus' %>
       <div class='field'>
         <%= f.label t('.about_images'), "About Us Images slideshow" -%>
         <%= render :partial => "/refinery/sites/admin/slide/images", :locals => {:f => f, :custom => "about"} %>
@@ -188,6 +189,7 @@
     </div>
     <h4><a href="#"><%= t('services') %></a></h4>
     <div id="services">
+      <%= submit_to_popup "Preview", :page => 'services' %>
       <div class='field'>
         <%= f.check_box :has_services, :checked => @site[:has_services] -%><%= t('.has_services') %>
       </div>
@@ -205,6 +207,7 @@
     </div>
     <h4><a href="#"><%= t('products') %></a></h4>
     <div id="products">
+      <%= submit_to_popup "Preview", :page => 'products' %>
       <div class='field'>
         <%= f.check_box :has_products, :checked => @site[:has_products]  -%><%= t('.has_products') %>
       </div>
