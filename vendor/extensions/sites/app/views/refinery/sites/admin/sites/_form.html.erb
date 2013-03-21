@@ -126,7 +126,7 @@
     </div>
     <h4><a href="#"><%= t('home_page') %></a></h4>
     <div id="homepage">
-      <% if @site.persisted %>
+      <% if @site.persisted? %>
         <%= submit_to_popup "Preview", :page => 'home' %>
       <% end %>
       <div class='field'>
@@ -176,7 +176,7 @@
     </div>
     <h4><a href="#"><%= t('aboutus') %></a></h4>
     <div id="aboutus">
-      <% if @site.persisted %>
+      <% if @site.persisted? %>
         <%= submit_to_popup "Preview", :page => 'aboutus' %>
       <% end %>
       <div class='field'>
@@ -193,7 +193,7 @@
     </div>
     <h4><a href="#"><%= t('services') %></a></h4>
     <div id="services">
-      <% if @site.persisted %>
+      <% if @site.persisted? %>
         <%= submit_to_popup "Preview", :page => 'services' %>
       <% end %>
       <div class='field'>
@@ -213,7 +213,7 @@
     </div>
     <h4><a href="#"><%= t('products') %></a></h4>
     <div id="products">
-      <% if @site.persisted %>
+      <% if @site.persisted? %>
         <%= submit_to_popup "Preview", :page => 'products' %>
       <% end %>
       <div class='field'>
