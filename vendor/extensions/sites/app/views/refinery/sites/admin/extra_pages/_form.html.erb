@@ -11,6 +11,10 @@
     <%= f.hidden_field :site_id  -%>
   </div>
 
+  <% if @extra_page.persisted? %>
+    <%= submit_to_popup t('preview'), :page => "extra", :url => refinery.preview_sites_admin_extra_page_path(@extra_page) %>
+  <% end %>
+
   <div class='field'>
     <%= f.label t('title') -%>
     <%= f.text_field :title  -%>

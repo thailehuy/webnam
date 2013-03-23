@@ -110,6 +110,11 @@ module Refinery
             @site.flowing_images.build(attrs) unless attrs.empty?
           end
 
+          params[:site][:gallery_images_attributes].each do |id, image_attributes|
+            attrs = image_attributes.delete_if{|k, v| v.blank?}
+            @site.gallery_images.build(attrs) unless attrs.empty?
+          end
+
           ["product", "about", "service"].each do |page|
             params[:site]["#{page}_flowing_images_attributes".to_sym].each do |id, image_attributes|
               attrs = image_attributes.delete_if{|k, v| v.blank?}

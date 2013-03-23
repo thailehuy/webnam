@@ -4,6 +4,8 @@ module ApplicationHelper
     js = <<-js
       var form=#{form_var};
       form.target='_blank';
+      var action = form.action;
+      #{options[:url] ? "form.action='#{options[:url]}'"  : ""}
       $('#preview').val('#{options[:page] || 'home'}');
       $('input[name^=\"ignore_me_\"]').remove();
       $('.wymeditor').each(function(index, element){
@@ -11,6 +13,7 @@ module ApplicationHelper
         });
       form.submit();
       form.target='';
+      form.action = action;
       $('#preview').val('');
       return false;
     js

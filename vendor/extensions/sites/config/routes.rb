@@ -49,6 +49,9 @@ Refinery::Core::Engine.routes.append do
         collection do
           post :update_positions
         end
+        member do
+          put :preview
+        end
       end
     end
   end

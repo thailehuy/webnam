@@ -127,7 +127,7 @@
     <h4><a href="#"><%= t('home_page') %></a></h4>
     <div id="homepage">
       <% if @site.persisted? %>
-        <%= submit_to_popup "Preview", :page => 'home' %>
+        <%= submit_to_popup t('preview'), :page => 'home' %>
       <% end %>
       <div class='field'>
         <%= f.label t('.home_images'), "Images slideshow" -%>
@@ -177,7 +177,7 @@
     <h4><a href="#"><%= t('aboutus') %></a></h4>
     <div id="aboutus">
       <% if @site.persisted? %>
-        <%= submit_to_popup "Preview", :page => 'aboutus' %>
+        <%= submit_to_popup t('preview'), :page => 'aboutus' %>
       <% end %>
       <div class='field'>
         <%= f.label t('.about_images'), "About Us Images slideshow" -%>
@@ -194,7 +194,7 @@
     <h4><a href="#"><%= t('services') %></a></h4>
     <div id="services">
       <% if @site.persisted? %>
-        <%= submit_to_popup "Preview", :page => 'services' %>
+        <%= submit_to_popup t('preview'), :page => 'services' %>
       <% end %>
       <div class='field'>
         <%= f.check_box :has_services, :checked => @site[:has_services] -%><%= t('.has_services') %>
@@ -214,7 +214,7 @@
     <h4><a href="#"><%= t('products') %></a></h4>
     <div id="products">
       <% if @site.persisted? %>
-        <%= submit_to_popup "Preview", :page => 'products' %>
+        <%= submit_to_popup t('preview'), :page => 'products' %>
       <% end %>
       <div class='field'>
         <%= f.check_box :has_products, :checked => @site[:has_products]  -%><%= t('.has_products') %>
@@ -262,6 +262,9 @@
     </div>
     <h4><a href="#"><%= t('mediagallery') %></a></h4>
     <div id="media-gallery">
+      <% if @site.persisted? %>
+        <%= submit_to_popup t('preview'), :page => "mediagallery" %>
+      <% end %>
       <div class='field'>
         <%= f.check_box :has_gallery, :checked => @site[:has_gallery]  -%><%= t('.has_gallery') %>
       </div>
