@@ -1,0 +1,85 @@
+<% if @extra_page.use_slideshow && @extra_page.parent_page != "" && @site.send("#{@extra_page.parent_page}_images").count > 0 %>
+  <section id="banner">
+    <div id="first-image">
+      <% image = @site.send("#{@extra_page.parent_page}_images").order('position').first.slide_image %>
+      <% unless image.nil? %>
+      <%= image_tag image.url %>
+      <% end %>
+    </div>
+    <% if @site.send("#{@extra_page.parent_page}_images").count > 1 %>
+      <div class="camera_wrap hidden" id="slide-show">
+        <% @site.send("#{@extra_page.parent_page}_images").order('position').each do |i| %>
+          <% unless i.slide_image.nil? %>
+            <div data-src="<%= i.slide_image.url %>">
+              <% unless i.caption.blank? %>
+                <div class="camera_caption fadeIn">
+                  <%= strip_tags(i.caption) %>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  <section>
+<% end %>
+
+<% if @extra_page.one_column?%>
+  <section>
+    <article class="post">
+      <%=raw @extra_page.description %>
+    </article>
+  </section>
+<% else %>
+  <section id="content" class="content">
+    <article class="list">
+      <div class="col left-col">
+        <%=raw @extra_page.left_col %>
+      </div>
+      <div class="col right-col">
+        <%=raw @extra_page.right_col %>
+      </div>
+    </article>
+  </section>
+<% end %>
+
+<% if @extra_page.use_carousel && @extra_page.parent_page != "" %>
+  <%= render '/refinery/sites/sites/custom_carousel', :custom => @extra_page.parent_page %>
+<% end %>
+
+<% content_for :javascripts do %>
+  <script type="text/javascript">
+    $(document).ready(function() {
+            <% if @extra_page.parent_page != "" && @site.send("#{@extra_page.parent_page}_images").count > 1 %>
+
+              $('#slide-show').camera({
+                width: '1000px',
+                height: '500px',
+                alignment: 'center',
+                loader: 'none',
+                overlayer: true,
+                navigation: false,
+                navigationHover: false,
+                mobileNavHover: false,
+                opacityOnGrid: false,
+                playPause: false,
+                pauseOnClick: false,
+                pagination: true,
+                thumbnails: false,
+                fx: '<%= @site.slide_effect %>',
+                time: <%= @site.slide_delay %>,
+                transPeriod: <%= @site.slide_transition %>,
+                rows: 5,
+                cols: 10,
+                onLoaded: function() {
+                  $('#first-image').hide();
+                  $('#slide-show').css({marginBottom:40});
+                  $('#slide-show').removeClass('hidden');
+                }
+              });
+            <% end %>
+    });
+
+  </script>
+
+<% end %>

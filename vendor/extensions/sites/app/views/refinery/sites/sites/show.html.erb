@@ -6,10 +6,10 @@
   <div id="container">
 	  <header id="header">
 	    <nav id="main-menu">
-	      <ul>
-	        <% @menu_items.each do |site_page| %>
-			      <% if site_page == 'home' %>
-	            <li>
+	      <ul id='nav'>
+	         <% @menu_items.each do |site_page| %>
+                <li>
+	          <% if site_page == 'home' %>
 	              <a href="/sites/<%= @slug %>/<%= site_page %>" title="<%= t(site_page) %>">
 	                <% if @site.logo.nil?  %>
 	                  <div class="menu-text"  <% if site_page == @selected_menu %> style="color: white;"<% end %>><%= @site.name %></div>
@@ -19,17 +19,41 @@
 			              </div>
 		              <% end %>
 	              </a>
-	            </li>
 	          <% else %>
-	            <li>
 	              <a href="/sites/<%= @slug %>/<%= site_page %>" title="<%= menu_title(site_page) %>">
 	                <div class="menu-text"  <% if site_page == @selected_menu %> style="color: white;"<% end %>>
 	                  <%= menu_title(site_page) %>
 	                </div>
 	              </a>
-	            </li>
-	          <% end %>
+  	           <% end %>
+                  <%- parent_site_page = 'about' if site_page== "aboutus" %>
+                    <%- parent_site_page = site_page.singularize unless parent_site_page %>
+                    <%- extra_pages = @site.extra_pages.where(:parent_page => parent_site_page) %>
+                  <% if extra_pages.any? %>
+                    <ul class='submenu'>
+                      <% extra_pages.each do |extra_page| %>
+                      <li>
+                        <a href="/sites/<%= @slug %>/<%= extra_page.url %>" title="<%= extra_page.title %>">
+                        <div class="menu-text"  <% if extra_page.url == @selected_menu %> style="color: white;"<% end %>>
+                          <%= extra_page.title %>
+                        </div>
+                      </a>
+                      </li>
+                    </ul>
+                    <% end %>
+                  </li>
+                  <% end %>
 	        <% end %>
+
+              <% @site.extra_pages.where(:parent_page => "").each do |extra_page| %>
+                <li>
+                  <a href="/sites/<%= @slug %>/<%= extra_page.url %>" title="<%= extra_page.title %>">
+                  <div class="menu-text"  <% if extra_page.url == @selected_menu %> style="color: white;"<% end %>>
+                    <%= extra_page.title %>
+                  </div>
+                </a>
+                </li>
+              <% end %>
 	      </ul>
 	    </nav>
 		  <div id="search-bar">

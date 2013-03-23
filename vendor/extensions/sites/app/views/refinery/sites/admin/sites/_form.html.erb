@@ -349,6 +349,8 @@
     </div>
   </div>
 
+
+
   <%= render '/refinery/admin/form_actions', :f => f,
              :continue_editing => false,
              :hide_delete => true,
@@ -357,6 +359,10 @@
              :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @site.name) %>
 
 	<% end -%>
+
+<div style="display: none">
+
+</div>
 
 <% content_for :javascripts do %>
   <script>

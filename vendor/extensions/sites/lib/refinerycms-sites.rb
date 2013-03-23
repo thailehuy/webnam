@@ -1,5 +1,6 @@
 require 'refinery/sites'
 require 'refinery/home_pages'
+require 'refinery/extra_pages'
 require 'refinery/aboutus_pages'
 require 'refinery/designs'
 require 'refinery/services_pages'

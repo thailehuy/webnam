@@ -8,7 +8,7 @@ module Refinery
       #:name, :slug,
       translates :products_title, :seo_product_title, :seo_product_keywords, :seo_product_description, :seo_gallery_title
 
-
+      has_many :extra_pages
       acts_as_indexed :fields => [:name, :slug]
 
       validates :name, :presence => true, :uniqueness => {:case_sensitive => false},

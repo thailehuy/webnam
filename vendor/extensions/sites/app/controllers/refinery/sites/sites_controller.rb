@@ -45,12 +45,23 @@ module Refinery
       def show
 
         if prepare_show
-          @selected_menu = params[:page] || session[('site' + @site.id.to_s).to_sym] || 'home'
-          @selected_menu = 'home' unless ((Refinery::Sites::Site::SITE_PAGES.include? @selected_menu) || (@selected_menu == 'contact'))
-          session[('site' + @site.id.to_s).to_sym] = @selected_menu
-          class_name = @selected_menu.to_s.camelize+"Page"
+          extra = @site.extra_pages.where(url: params[:page]).first
+          unless extra
+            @selected_menu = params[:page] || session[('site' + @site.id.to_s).to_sym] || 'home'
+            @selected_menu = 'home' unless ((Refinery::Sites::Site::SITE_PAGES.include? @selected_menu) || (@selected_menu == 'contact'))
+          end
 
-          if !PARTIAL_PAGES.include?(@selected_menu) then
+          if  extra
+            @requested_page = '/refinery/sites/extra_pages/show'
+
+            @extra_page = extra
+            @selected_menu = extra.parent_page
+            @selected_menu = extra.url if @selected_menu.blank?
+            session[('site' + @site.id.to_s).to_sym] = @selected_menu
+
+          elsif !PARTIAL_PAGES.include?(@selected_menu)
+            session[('site' + @site.id.to_s).to_sym] = @selected_menu
+            class_name = @selected_menu.to_s.camelize+"Page"
             eval %(@#{@selected_menu}_page = #{class_name}.find_by_site_id(#{@site_id}))
             @requested_page = eval %('/refinery/sites/#{@selected_menu}_pages/show')
           else

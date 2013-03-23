@@ -1,5 +1,6 @@
 en:
   home: "Home"
+  extra_page: "Extra pages"
   home_page: "Home page"
   aboutus: "About us"
   services: "Services"
@@ -72,7 +73,7 @@ en:
           sites: 'Sites'
           editors: 'Editors'
           administrators: 'Administrators'
-          
+
   slide_effect:
     simple: 'simple'
     horizontal: 'horizontal'
@@ -412,6 +413,8 @@ en:
       here_are: Here are the
       instructions_enable_javascript_html: instructions for how to enable JavaScript in your web browser
     plugins:
+      extra_pages:
+        title: Extra Pages
       aboutus_pages:
         title: Aboutus Pages
       blog_posts:

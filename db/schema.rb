@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130316005534) do
+ActiveRecord::Schema.define(:version => 20130321154258) do
 
   create_table "carousel_image_translations", :force => true do |t|
     t.integer  "carousel_image_id"
@@ -366,6 +366,37 @@ ActiveRecord::Schema.define(:version => 20130316005534) do
     t.string   "event_title"
     t.text     "event_summary"
     t.date     "event_date"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "refinery_sites_extra_page_translations", :force => true do |t|
+    t.integer  "refinery_sites_extra_page_id"
+    t.string   "locale"
+    t.text     "description"
+    t.text     "left_col"
+    t.text     "right_col"
+    t.string   "title"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+  end
+
+  add_index "refinery_sites_extra_page_translations", ["locale"], :name => "index_refinery_sites_extra_page_translations_on_locale"
+  add_index "refinery_sites_extra_page_translations", ["refinery_sites_extra_page_id"], :name => "index_162c53924571ce2e9882b0c02fea4fa9659982f6"
+
+  create_table "refinery_sites_extra_pages", :force => true do |t|
+    t.integer  "site_id"
+    t.text     "description"
+    t.text     "left_col"
+    t.text     "right_col"
+    t.boolean  "one_column"
+    t.integer  "position"
+    t.string   "parent_page"
+    t.boolean  "use_carousel"
+    t.boolean  "use_slideshow"
+    t.boolean  "is_submenu"
+    t.string   "title"
+    t.string   "url"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
