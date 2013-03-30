@@ -14,6 +14,9 @@ en:
   google_calendar: "Google calendar"
   design: "Design"
   preview: "Preview"
+  chat_with_website_owner: "Chat with website owner"
+  chat_with_admin: "Chat with our admins"
+  chat_with_visitors: "Chat with visitors"
 
   category: "Category"
   no_category: "No category"

@@ -9,6 +9,9 @@
 <% end %>
 
 <div class="inquiry-container">
+      <div class='chat'>
+        <%= link_to t('chat_with_website_owner'), "http://widget00.mibbit.com/?settings=037b3ec8acc0df5ba63c8fc5d6ad6038&server=irc.mibbit.net&channel=%23webnam21_#{@site.slug}_client"%>
+      </div>
 	<div class='inquiry'>
 		<h2><%= t('contact_form') %></h2>
 	  <% if @new_message %>
