@@ -18,6 +18,8 @@ en:
   check_out: "Check out"
   empty_cart_checkout: "No items to checkout"
   cart_checkout: "Checkout order"
+  add_to_cart: "Add to cart"
+  remove_from_cart: "Remove from cart"
 
 
   reorder_done: "Done reordering"

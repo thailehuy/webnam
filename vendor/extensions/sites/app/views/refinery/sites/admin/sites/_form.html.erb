@@ -10,16 +10,6 @@
   <div id="accordion">
     <h4><a href="#">General</a></h4>
     <div id="general">
-      <% if @site.persisted? %>
-        <div class='field'>
-          <% if current_refinery_user.site_id.nil? %>
-            <%= link_to t('chat_with_website_owner'), "http://widget00.mibbit.com/?settings=037b3ec8acc0df5ba63c8fc5d6ad6038&server=irc.mibbit.net&channel=%23webnam21_#{@site.slug}_admin_channel"%>
-          <% else %>
-            <%= link_to t('chat_with_admin'), "http://widget00.mibbit.com/?settings=037b3ec8acc0df5ba63c8fc5d6ad6038&server=irc.mibbit.net&channel=%23webnam21_#{@site.slug}_admin_channel"%>
-            <%= link_to t('chat_with_visitors'), "http://widget00.mibbit.com/?settings=037b3ec8acc0df5ba63c8fc5d6ad6038&server=irc.mibbit.net&channel=%23webnam21_#{@site.slug}_client"%>
-          <% end %>
-        </div>
-      <% end %>
       <div class='field'>
         <%= f.label t('.name') -%>
         <%= f.text_field :name, :class => 'larger widest'  -%>
