@@ -58,10 +58,9 @@
     </ul>
   </article>
   <%= will_paginate @products, :param_name => 'page_count' %>
-
-  <% unless session[:cart_items].blank? %>
+  <div class="checkout-cart">
     <%= link_to t('cart_checkout'), "/orders/view_cart" %>
-  <% end %>
+  </div>
 </section>
 <%= render '/refinery/sites/sites/custom_carousel', :custom => "product" %>
 
