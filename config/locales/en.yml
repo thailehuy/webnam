@@ -1,6 +1,26 @@
 en:
   home: "Home"
   extra_page: "Extra pages"
+
+  order: "Orders"
+  mark_as_delivered: "Mark as delivered"
+  delivered: "Delivered"
+  reorder: "Reorder"
+  information: "Information"
+  customer: "Customer name"
+  customer_phone: "Customer phone"
+  customer_address: "Address"
+  total: "Total"
+  items: "Items"
+  order_created: "Order created"
+  error_order_created: "Error placing order"
+  remove_line_item: "Remove"
+  check_out: "Check out"
+  empty_cart_checkout: "No items to checkout"
+  cart_checkout: "Checkout order"
+
+
+  reorder_done: "Done reordering"
   home_page: "Home page"
   aboutus: "About us"
   services: "Services"
@@ -417,6 +437,8 @@ en:
       here_are: Here are the
       instructions_enable_javascript_html: instructions for how to enable JavaScript in your web browser
     plugins:
+      orders:
+        title: Orders
       extra_pages:
         title: Extra Pages
       aboutus_pages:

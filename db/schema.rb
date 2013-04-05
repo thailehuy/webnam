@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130321154258) do
+ActiveRecord::Schema.define(:version => 20130405125049) do
 
   create_table "carousel_image_translations", :force => true do |t|
     t.integer  "carousel_image_id"
@@ -54,6 +54,26 @@ ActiveRecord::Schema.define(:version => 20130321154258) do
     t.datetime "created_at",                              :null => false
     t.datetime "updated_at",                              :null => false
     t.string   "type",           :default => "HomeImage"
+  end
+
+  create_table "line_items", :force => true do |t|
+    t.integer  "order_id"
+    t.integer  "product_id"
+    t.integer  "quantity"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "orders", :force => true do |t|
+    t.string   "name"
+    t.string   "phone"
+    t.string   "address"
+    t.text     "note"
+    t.float    "total"
+    t.boolean  "delivered"
+    t.integer  "site_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "printed_coupons", :force => true do |t|

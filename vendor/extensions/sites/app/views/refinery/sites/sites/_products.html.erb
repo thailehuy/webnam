@@ -58,6 +58,10 @@
     </ul>
   </article>
   <%= will_paginate @products, :param_name => 'page_count' %>
+
+  <% unless session[:cart_items].blank? %>
+    <%= link_to t('cart_checkout'), "/orders/view_cart" %>
+  <% end %>
 </section>
 <%= render '/refinery/sites/sites/custom_carousel', :custom => "product" %>
 
@@ -68,6 +72,42 @@
   <script type="text/javascript">
     $(document).ready(function() {
       $('#product-list .product-photo a').lightBox();
+      $('body').on('click', '.add-to-cart', function() {
+        var _this = $(this)
+        var product_id = _this.attr('product-id');
+        var quantity = _this.parents('.cart-container').find('.cart-add .quantity').val();
+        $.ajax({
+          type: 'POST',
+          url: '/orders/add_to_cart',
+          data: {product_id: product_id, quantity: quantity},
+          success: function() {
+            _this.parents('.cart-container').find('.cart-add').hide();
+            _this.parents('.cart-container').find('.cart-remove').show();
+          },
+          error: function() {
+
+          }
+        });
+        return false;
+      });
+
+      $('body').on('click', '.remove-from-cart', function() {
+        var _this = $(this)
+        var product_id = _this.attr('product-id');
+        $.ajax({
+          type: 'POST',
+          url: '/orders/remove_from_cart',
+          data: {product_id: product_id},
+          success: function() {
+            _this.parents('.cart-container').find('.cart-add').show();
+            _this.parents('.cart-container').find('.cart-remove').hide();
+          },
+          error: function() {
+
+          }
+        });
+        return false;
+      });
     });
   </script>
 

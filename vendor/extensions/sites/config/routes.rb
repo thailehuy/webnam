@@ -56,6 +56,18 @@ Refinery::Core::Engine.routes.append do
     end
   end
 
+  # Frontend routes
+    resources :orders, :only => [:index, :show]
+
+  # Admin routes
+    namespace :admin, :path => 'refinery/sites' do
+      resources :orders do
+        collection do
+          post :update_positions
+        end
+      end
+    end
+
 
   # Frontend routes
   namespace :sites do

@@ -1,4 +1,11 @@
 Webnam21::Application.routes.draw do
+  resources :orders, only: [:create] do
+    collection do
+      get :view_cart
+      post :add_to_cart
+      post :remove_from_cart
+    end
+  end
 
   # This line mounts Refinery's routes at the root of your application.
   # This means, any requests to the root URL of your application will go to Refinery::PagesController#home.
@@ -6,6 +13,8 @@ Webnam21::Application.routes.draw do
   #
   # We ask that you don't use the :as option here, as Refinery relies on it being the default of "refinery"
   mount Refinery::Core::Engine, :at => '/'
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

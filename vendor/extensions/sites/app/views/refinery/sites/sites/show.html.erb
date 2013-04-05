@@ -76,8 +76,9 @@
 	        <% locales.each do |new_locale| %>
 			      <% if @site.languages_key.include?(new_locale.to_s) %>
 		          <li>
+                        <% page = refinery.url_for(params.merge(new_locale: new_locale)) rescue "/orders/view_cart?new_locale=#{new_locale}"%>
 		            <%= link_to refinery_icon_tag("flags/#{new_locale}.png", :size => '16x11'),
-		                        refinery.url_for(params.merge(new_locale: new_locale)) %>
+		                        page %>
 		          </li>
 	          <% end %>
 	        <% end %>

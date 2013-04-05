@@ -1,0 +1,59 @@
+<%= form_for [refinery, :sites_admin, @order] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @order,
+              :include_object_name => true %>
+
+
+  <div class='field' style="display:none">
+    <%= f.hidden_field :site_id  -%>
+  </div>
+
+  <h3><%= t('information') %></h3>
+  <table>
+    <tr>
+      <td><%= t('customer') %>: </td>
+      <td><%= @order.name %></td>
+    </tr>
+    <tr>
+      <td><%= t('customer_phone') %>: </td>
+      <td><%= @order.phone %></td>
+    </tr>
+    <tr>
+      <td><%= t('customer_address') %>: </td>
+      <td><%= @order.address %></td>
+    </tr>
+    <tr>
+      <td><%= t('total') %>: </td>
+      <td><%= @order.total %></td>
+    </tr>
+    <tr>
+      <td><%= t('items') %>: </td>
+      <td>
+        <ul>
+          <% @order.line_items.each do |line_item| %>
+            <li>
+              <%= line_item.quantity %> x <%= line_item.product.name %>
+            </li>
+          <% end %>
+        </ul>
+      </td>
+    </tr>
+  </table>
+
+  <div class='field'>
+    <%= f.label t('mark_as_delivered') -%>
+    <%= f.check_box :delivered  -%>
+  </div>
+
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.sites.admin.orders.order'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete') %>
+<% end -%>
+<% content_for :javascripts do %>
+  <script>
+    $(document).ready(function(){
+      page_options.init(false, '', '');
+    });
+  </script>
+<% end %>

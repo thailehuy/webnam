@@ -1,0 +1,58 @@
+<%= form_for @order do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @order,
+              :include_object_name => true %>
+
+  <h3><%= t('information') %></h3>
+  <table>
+    <tr>
+      <td><%= t('customer') %>: </td>
+      <td><%= f.text_field :name %></td>
+    </tr>
+    <tr>
+      <td><%= t('customer_phone') %>: </td>
+      <td><%= f.text_field :phone %></td>
+    </tr>
+    <tr>
+      <td><%= t('customer_address') %>: </td>
+      <td><%= f.text_field :address %></td>
+    </tr>
+    <tr>
+      <td><%= t('items') %>: </td>
+      <td>
+        <ul>
+          <% @order.line_items.each do |line_item| %>
+            <li>
+              <%= text_field_tag "cart_item_product_#{line_item.product_id}", line_item.quantity %> x <%= line_item.product.name %>
+              <%= link_to_function t('delete'), "", "product-id" => line_item.product_id, :class => "remove_product" %>
+            </li>
+          <% end %>
+        </ul>
+      </td>
+    </tr>
+  </table>
+
+  <%= f.submit t('check_out') %>
+<% end -%>
+<% content_for :javascripts do %>
+  <script>
+    $(document).ready(function(){
+      $('body').on('click', '.remove_product', function() {
+        var _this = $(this)
+        var product_id = _this.attr('product-id');
+        $.ajax({
+          type: 'POST',
+          url: '/orders/remove_from_cart',
+          data: {product_id: product_id},
+          success: function() {
+            _this.remove();
+          },
+          error: function() {
+
+          }
+        })
+      });
+      return false;
+    });
+  </script>
+<% end %>
