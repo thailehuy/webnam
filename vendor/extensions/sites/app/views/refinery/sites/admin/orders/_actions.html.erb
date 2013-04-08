@@ -4,7 +4,7 @@
       <%= render '/refinery/admin/search', :url => refinery.sites_admin_orders_path %>
     </li>
   <% end %>
-<% if !searching? && ::Refinery::Sites::Admin::OrdersController.sortable? && ::Order.any? %>
+<% if !searching? && ::Refinery::Sites::Admin::OrdersController.sortable? && Refinery::Sites::Order.any? %>
   <li>
     <%= link_to t('reorder', :what => "Orders"),
                  refinery.sites_admin_orders_path,

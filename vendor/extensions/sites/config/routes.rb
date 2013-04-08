@@ -57,9 +57,12 @@ Refinery::Core::Engine.routes.append do
   end
 
   # Frontend routes
+  namespace :sites do
     resources :orders, :only => [:index, :show]
+  end
 
   # Admin routes
+  namespace :sites, :path => '' do
     namespace :admin, :path => 'refinery/sites' do
       resources :orders do
         collection do
@@ -67,7 +70,7 @@ Refinery::Core::Engine.routes.append do
         end
       end
     end
-
+  end
 
   # Frontend routes
   namespace :sites do

@@ -1,4 +1,4 @@
-class OrdersController < ApplicationController
+class CartsController < ApplicationController
   before_filter :find_site
 
   layout 'application'

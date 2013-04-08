@@ -1,5 +1,5 @@
 Webnam21::Application.routes.draw do
-  resources :orders, only: [:create] do
+  resources :carts, only: [:create] do
     collection do
       get :view_cart
       post :add_to_cart

@@ -59,7 +59,7 @@
   </article>
   <%= will_paginate @products, :param_name => 'page_count' %>
   <div class="checkout-cart">
-    <%= link_to t('cart_checkout'), "/orders/view_cart" %>
+    <%= link_to t('cart_checkout'), "/carts/view_cart" %>
   </div>
 </section>
 <%= render '/refinery/sites/sites/custom_carousel', :custom => "product" %>
@@ -77,7 +77,7 @@
         var quantity = _this.parents('.cart-container').find('.cart-add .quantity').val();
         $.ajax({
           type: 'POST',
-          url: '/orders/add_to_cart',
+          url: '/carts/add_to_cart',
           data: {product_id: product_id, quantity: quantity},
           success: function() {
             _this.parents('.cart-container').find('.cart-add').hide();
@@ -95,7 +95,7 @@
         var product_id = _this.attr('product-id');
         $.ajax({
           type: 'POST',
-          url: '/orders/remove_from_cart',
+          url: '/carts/remove_from_cart',
           data: {product_id: product_id},
           success: function() {
             _this.parents('.cart-container').find('.cart-add').show();

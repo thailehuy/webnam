@@ -32,11 +32,11 @@
   <div class='cart-container'>
     <% if session[:cart_items] && session[:cart_items].include?(product.id) %>
       <div class='cart-remove'>
-        <%= link_to_function t('remove_from_cart'), "product-id" => product.id, class: "remove-from-cart" %>
+        <%= link_to_function t('remove_from_cart'), "", "product-id" => product.id, class: "remove-from-cart" %>
       </div>
       <div class='cart-add' style='display:none'>
         <%= text_field_tag :quantity, 1 %>
-        <%= link_to_function t('add_to_cart'), "product-id" => product.id, class: "add-to-cart" %>
+        <%= link_to_function t('add_to_cart'), "", "product-id" => product.id, class: "add-to-cart" %>
         </div>
     <% else %>
       <div class='cart-add'>

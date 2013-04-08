@@ -8,7 +8,7 @@ module Refinery
       #:name, :slug,
       translates :products_title, :seo_product_title, :seo_product_keywords, :seo_product_description, :seo_gallery_title
 
-      has_many :orders
+      has_many :orders, class_name: "Refinery::Sites::Order"
 
       has_many :extra_pages
       acts_as_indexed :fields => [:name, :slug]
