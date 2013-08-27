@@ -9,6 +9,7 @@ module Refinery
 
  #       before_filter :reset_current_site_id, :except => [:create, :update]
         before_filter :pre_index, :only => :index
+        after_filter :set_back_site_id, only: [:create]
 
 				def new
           @site = Site.new
@@ -59,7 +60,7 @@ module Refinery
           session[:current_site_name] = @site.name
         end
 
-        def after_create
+        def set_back_site_id
 	        update_site_id_in_resources
           session[:current_site] = @site.id
           session[:current_site_name] = @site.name
