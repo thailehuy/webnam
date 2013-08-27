@@ -199,7 +199,7 @@ module Refinery
 
         def pre_index
           if (session[:current_site].present? && (session[:current_site] != -1))
-            @site = Site.find(session[:current_site].to_(i)).to_i
+            @site = Site.find(session[:current_site].to_i)
             session[:current_site_name] = @site.name
             redirect_to refinery.edit_sites_admin_site_path(@site)
           end
