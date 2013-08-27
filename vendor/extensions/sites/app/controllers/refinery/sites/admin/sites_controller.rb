@@ -14,7 +14,7 @@ module Refinery
           @site = Site.new
 
           # Creating a unique temporary site_id
-          session[:current_site] = (rand * 5000).to_i + 50000
+          session[:current_site] = ((rand * 5000).to_i + 50000).to_i
 
           @site.name = "New site"
           session[:current_site_name] = @site.name
@@ -199,7 +199,7 @@ module Refinery
 
         def pre_index
           if (session[:current_site].present? && (session[:current_site] != -1))
-            @site = Site.find(session[:current_site])
+            @site = Site.find(session[:current_site].to_(i)).to_i
             session[:current_site_name] = @site.name
             redirect_to refinery.edit_sites_admin_site_path(@site)
           end
