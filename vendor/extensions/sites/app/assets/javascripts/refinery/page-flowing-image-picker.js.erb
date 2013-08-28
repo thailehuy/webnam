@@ -110,7 +110,8 @@ flowing_reset_functionality = function() {
 flowing_image_added = function(image) {
   new_list_item = $('<li>');
   current_list_item = $('li.empty.flowing');
-  new_list_item.html(current_list_item.html())
+  new_list_item.html(current_list_item.html());
+  new_list_item.attr('class', 'empty flowing');
   image_id = $(image).attr('id').replace('image_', '');
   current_list_item.find('input:hidden:first').val(image_id);
 
