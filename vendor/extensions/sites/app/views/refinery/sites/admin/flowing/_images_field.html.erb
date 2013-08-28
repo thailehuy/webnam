@@ -1,5 +1,5 @@
 <div class='wym_box field images_field'>
-  <ul class='page_flowing_images' class='clearfix'>
+  <ul id='page_flowing_images' class='page_flowing_images' class='clearfix'>
     <%= f.fields_for :flowing_images do |image_form| %>
       <li id='flowing-image_<%= image_form.object.id %>'>
         <%= image_form.hidden_field :id %>
