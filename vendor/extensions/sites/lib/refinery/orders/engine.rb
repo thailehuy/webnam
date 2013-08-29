@@ -12,7 +12,7 @@ module Refinery
           plugin.url = proc { Refinery::Core::Engine.routes.url_helpers.sites_admin_orders_path }
           plugin.pathname = root
           plugin.activity = {
-            :class_name => :'refinery/sites/orders',
+            :class_name => :'refinery/sites/order',
           }
           plugin.menu_match = %r{refinery/sites/orders(/.*)?$}
         end
