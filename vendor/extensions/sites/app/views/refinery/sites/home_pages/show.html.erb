@@ -46,9 +46,9 @@
     </div>
   </div>
 <% end %>
-<% if @site.carousel_pages.include?('home') %>
-  <%= render '/refinery/sites/sites/carousel' %>
-<% end %>
+
+<%= render '/refinery/sites/sites/carousel' %>
+
 <% if @site.has_calendars %>
   <div id="calendar" style="width: 100%">
     <div id="calendar-container" style="width: 920px;margin: 0px auto;text-align:center">
