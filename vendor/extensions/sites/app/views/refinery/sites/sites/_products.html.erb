@@ -57,7 +57,7 @@
       <% end %>
     </ul>
   </article>
-  <%= will_paginate @products, :param_name => 'page_count', :params => {:controller => '/sites/products', :action => 'index'}  %>
+  <%= will_paginate @products, :param_name => 'page_count', :params => {:controller => ::Refinery::Sites::ProductsController, :action => 'index'}  %>
   <div class="checkout-cart">
     <%= link_to t('cart_checkout'), "/carts/view_cart" %>
   </div>
