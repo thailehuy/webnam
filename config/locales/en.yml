@@ -20,6 +20,7 @@ en:
   cart_checkout: "Checkout order"
   add_to_cart: "Add to cart"
   remove_from_cart: "Remove from cart"
+  order_confirm: "Once you click submit, you can no longer cancel your order, so please review your order carefully. We will contact you via phone or email shortly to confirm your order as well, so please enter your correct email or phone."
 
 
   reorder_done: "Done reordering"
