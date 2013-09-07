@@ -34,7 +34,7 @@
                       <% extra_pages.each do |extra_page| %>
                       <li>
                         <a href="/sites/<%= @slug %>/<%= extra_page.url %>" title="<%= extra_page.title %>">
-                        <div class="menu-text"  <% if extra_page.url == @selected_menu %> style="color: white;"<% end %>>
+                        <div class="menu-text"  <% if @extra_page && extra_page.url == @extra_page.url %> style="color: white;"<% end %>>
                           <%= extra_page.title %>
                         </div>
                       </a>
@@ -48,7 +48,7 @@
               <% @site.extra_pages.where(:parent_page => "").each do |extra_page| %>
                 <li>
                   <a href="/sites/<%= @slug %>/<%= extra_page.url %>" title="<%= extra_page.title %>">
-                  <div class="menu-text"  <% if extra_page.url == @selected_menu %> style="color: white;"<% end %>>
+                  <div class="menu-text"  <% if @extra_page && extra_page.url == @extra_page %> style="color: white;"<% end %>>
                     <%= extra_page.title %>
                   </div>
                 </a>

@@ -12,7 +12,8 @@ module Refinery
 
         def preview
           @site = Site.find(session[:current_site])
-          extra = @site.extra_pages.build(params[:extra_page])
+          page = @site.extra_pages.find(params[:id])
+          extra = @site.extra_pages.build(params[:extra_page].merge(:one_column => page.one_column))
           @slug = params[:id].to_s
 
           @site_id = @site.id.to_s

@@ -10,7 +10,7 @@ module Refinery
       belongs_to :site
 
       attr_accessor :layout
-      attr_accessible :description, :left_col, :right_col, :title, :parent_page, :site_id, :layout, :use_carousel, :use_slideshow, :is_submenu, :position, :url
+      attr_accessible :description, :left_col, :right_col, :title, :parent_page, :site_id, :layout, :use_carousel, :use_slideshow, :is_submenu, :position, :url, :one_column
 
       before_save :set_layout
 
