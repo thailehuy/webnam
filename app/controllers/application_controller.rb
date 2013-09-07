@@ -38,7 +38,7 @@ class ApplicationController < ActionController::Base
   end
 
   def best_choice_from_browser
-    ((request.compatible_language_from ::Refinery::I18n.frontend_locales) || 'en').try(:to_sym)
+    ((http_accept_language.compatible_language_from ::Refinery::I18n.frontend_locales) || 'en').try(:to_sym)
   end
 
 end
