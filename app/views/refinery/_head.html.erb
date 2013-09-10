@@ -9,7 +9,7 @@
   <%= stylesheet_link_tag "home" if home_page? %>
   <%= yield :stylesheets %>
 
-	<% if @site.present? && ()(@site.published && @site.activated) || @admin_preview) %>
+	<% if @site.present? && ((@site.published && @site.activated) || @admin_preview) %>
 			<%= render 'refinery/site_styles', :site => @site %>
 
 		  <% if @site.analytics_code.present? && !@admin_preview %>
