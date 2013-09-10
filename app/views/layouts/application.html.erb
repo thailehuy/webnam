@@ -23,10 +23,10 @@
     <%= stylesheet_link_tag "home" if home_page? %>
     <%= yield :stylesheets %>
 
-    <% if @site.present? && @site.published && @site.activated %>
+    <% if @site.present? && ((@site.published && @site.activated) || @admin_preview) %>
       <%= render '/refinery/site_styles', :site => @site %>
 
-      <% if @site.analytics_code.present? %>
+      <% if @site.analytics_code.present? && !@admin_preview %>
         <% page_code = @site.analytics_code.strip %>
         <% unless local_request? or refinery_user? -%>
           <script>var _gaq=[['_setAccount','<%= page_code %>'],['_trackPageview'],['_trackPageLoadTime']];(function(d,t){
