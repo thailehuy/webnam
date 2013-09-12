@@ -5,6 +5,7 @@ module ActionView
         if @site
           options[:alt] = @site.seo_image_tags.to_s.split(",").map(&:strip).sample
         end
+        options[:src] = source
         tag("img", options)
       end
     end
