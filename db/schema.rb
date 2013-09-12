@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130408142223) do
+ActiveRecord::Schema.define(:version => 20130912225454) do
 
   create_table "carousel_image_translations", :force => true do |t|
     t.integer  "carousel_image_id"
@@ -255,6 +255,7 @@ ActiveRecord::Schema.define(:version => 20130408142223) do
     t.integer  "favicon_id"
     t.string   "seo_gallery_title"
     t.boolean  "activated"
+    t.string   "seo_image_tags"
   end
 
   create_table "refinery_sites_aboutus_page_translations", :force => true do |t|

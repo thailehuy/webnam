@@ -25,6 +25,8 @@ en:
 
   reorder_done: "Done reordering"
   home_page: "Home page"
+  seo_images_tags: 'SEO image tags'
+  seo_images_hint: 'Comma separated tags'
   aboutus: "About us"
   services: "Services"
   products: "Products"
@@ -735,6 +737,7 @@ en:
             carousel_pause: 'Carousel Pause'
             carousel_transition: 'Carousel Transition'
             music: 'Music'
+
             webnam_logo: 'Webnam Logo'
             analytics_code: 'Analytics Code'
             home_images: 'Home Images'

@@ -119,6 +119,12 @@
       </div>
 
       <div class='field'>
+        <%= f.label t('seo_images_tags') -%>
+        <%= f.text_field :seo_image_tags -%>
+        <p><%= t('seo_images_hint') %></p>
+      </div>
+
+      <div class='field'>
         <%= f.label t('.analytics_code') -%>
         <%= f.text_field :analytics_code, :maxlength => 15 -%>
       </div>
