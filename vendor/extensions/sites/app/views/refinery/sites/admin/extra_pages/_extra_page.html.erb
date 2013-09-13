@@ -18,14 +18,14 @@
   <span class='actions'>
 
     <%= link_to refinery_icon_tag("application_go.png"), refinery.sites_extra_page_path(extra_page),
-        :title => t('.view_live_html'),
+        :title => t('view_live_html'),
         :target => "_blank" %>
 
     <%= link_to refinery_icon_tag("application_edit.png"), refinery.edit_sites_admin_extra_page_path(extra_page),
-         :title => t('.edit') %>
+         :title => t('edit') %>
     <%= link_to refinery_icon_tag("delete.png"), refinery.sites_admin_extra_page_path(extra_page),
         :class => "cancel confirm-delete",
-        :title => t('.delete'),
+        :title => t('delete'),
         :confirm => t('message', :scope => 'refinery.admin.delete', :title => extra_page.title),
         :method => :delete %>
   </span>

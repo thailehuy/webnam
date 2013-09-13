@@ -26,35 +26,35 @@
   </div>
 
   <div class='field'>
-    <%= f.label t('.parent') %>
+    <%= f.label t('parent_page') %>
     <%= f.select :parent_page, options_for_select([["", ""], ["Home", 'home'], ["About Us", 'about'], ["Products", 'product'], ["Services", "service"]], @extra_page.parent_page) %>
   </div>
 
   <% unless @extra_page.persisted? %>
     <div class='field'>
-      <%= f.label t('.layout') %>
+      <%= f.label t('layout') %>
       <%= f.select :layout, options_for_select([["One-column", 'one_column'], ["Two-column", 'two_column']]) %>
     </div>
   <% end %>
 
   <div class='field'>
-    <%= f.label t('.use_parent_carousel') -%>
+    <%= f.label t('use_parent_carousel') -%>
     <%= f.check_box :use_carousel  -%>
   </div>
 
   <div class='field'>
-    <%= f.label t('.use_parent_slideshow') -%>
+    <%= f.label t('use_parent_slideshow') -%>
     <%= f.check_box :use_slideshow  -%>
   </div>
 
   <div class='field'>
-    <%= f.label t('.becomes_parent_submenu') -%>
+    <%= f.label t('becomes_parent_submenu') -%>
     <%= f.check_box :is_submenu  -%>
   </div>
 
   <% if @extra_page.persisted? %>
     <% if @extra_page.one_column? %>
-      <%= f.label t('.description') -%>
+      <%= f.label t('description') -%>
       <%= f.text_area :description, :rows => 20, :class => 'wymeditor saisie' -%>
     <% else %>
       <div class='field'>

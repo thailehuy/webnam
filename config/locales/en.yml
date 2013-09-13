@@ -1,6 +1,19 @@
 en:
   home: "Home"
   extra_page: "Extra pages"
+  edit: "Edit"
+  delete: "Delete"
+  create_new: "Create new"
+  view_live_html: "View live HTML"
+  title: "Title"
+  url: "URL"
+  parent_page: Parent page
+  parent_page_help: You can put a page under another page by selecting it in the list. If you want this page to be a top-level page, just leave it blank.
+  layout: Layout
+  use_parent_carousel: Use parent's carousel
+  use_parent_slideshow: Use parent's slideshow
+  becomes_parent_submenu: Becomes parent submenu
+  description: Description
 
   order: "Orders"
   mark_as_delivered: "Mark as delivered"
@@ -308,8 +321,6 @@ en:
           menu_title: Menu title
           menu_title_help: If you want the menu to display a different title than the one that dipsplays on the page, enter it here.
           page_options: Page Options
-          parent_page: Parent page
-          parent_page_help: You can put a page under another page by selecting it in the list. If you want this page to be a top-level page, just leave it blank.
           save_as_draft: Save as Draft
           show_in_menu_description: Display this page in the site menu
           show_in_menu_help: Uncheck this box if you want to remove a page from your site menu. This can be handy if you have a page you want to link people to directly but don&apos;t want to show the page in the menu.

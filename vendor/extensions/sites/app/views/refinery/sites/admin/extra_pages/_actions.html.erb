@@ -5,17 +5,17 @@
     </li>
   <% end %>
   <li>
-    <%= link_to t('.create_new'), refinery.new_sites_admin_extra_page_path,
+    <%= link_to t('create_new'), refinery.new_sites_admin_extra_page_path,
                  :class => "add_icon" %>
   </li>
 <% if !searching? && ::Refinery::Sites::Admin::ExtraPagesController.sortable? && ::Refinery::Sites::ExtraPage.any? %>
   <li>
-    <%= link_to t('.reorder', :what => "Extra Pages"),
+    <%= link_to t('reorder', :what => "Extra Pages"),
                  refinery.sites_admin_extra_pages_path,
                  :id => "reorder_action",
                  :class => "reorder_icon" %>
 
-    <%= link_to t('.reorder_done', :what => "Extra Pages"),
+    <%= link_to t('reorder_done', :what => "Extra Pages"),
                  refinery.sites_admin_extra_pages_path,
                  :id => "reorder_action_done",
                  :style => "display: none;",
