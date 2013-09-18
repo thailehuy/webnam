@@ -63,7 +63,13 @@ class CartsController < ApplicationController
 
       session[:cart_items] = nil
       flash[:notice] = t('order_created')
-      redirect_to "/sites/#{@site.slug}/products"
+      @requested_page = "orders/complete"
+      @selected_menu = "products"
+
+      if prepare_show
+        present(@site)
+        render "refinery/sites/sites/show"
+      end
     else
       flash[:error] = t('error_order_created')
       @requested_page = "orders/view_cart"
