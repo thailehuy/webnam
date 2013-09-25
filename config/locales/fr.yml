@@ -1,62 +1,901 @@
 fr:
-  home: "Accueil"
+  home: "Acceuil"
+  extra_page: "Page additionnelle"
+  edit: "Editer"
+  delete: "Suprimer"
+  create_new: "Creer une nouvelle page"
+  view_live_html: "Voir en HTML"
+  title: "Titre"
+  url: "URL"
+  parent_page: page parent
+  parent_page_help: Vous pouver ajouter une page dependante en selectionnant la page dans la liste. Si vous voulez creer une page parent, laissez ce champ vide.
+  layout: format
+  use_parent_carousel: Utiliser le caroussel de la page parent
+  use_parent_slideshow: Utiliser le slideshow de la page parent
+  becomes_parent_submenu: En faire une page dependante
+  description: Description
+
+  order: "Commande"
+  mark_as_delivered: "Marquer comme livre"
+  delivered: "Livre"
+  reorder: "Recommander"
+  information: "Information"
+  customer: "Nom du client"
+  customer_phone: "Telephone du client"
+  customer_address: "Addresse"
+  total: "Total"
+  items: "produits"
+  order_created: "Commande cree"
+  error_order_created: "Erreur de commande"
+  remove_line_item: "Supprimer"
+  check_out: "Payer"
+  empty_cart_checkout: "Aucun produit commande"
+  cart_checkout: "Payer la commande"
+  add_to_cart: "Ajouter au panier"
+  remove_from_cart: "Enelver du panier"
+  order_confirm: "Apres avoir clique valider, vous ne pouvez plus supprimer votre commande, merci de verifier votre commande. Nous vous contacterons par telephone ou par email peu après votre validation pour confirmer votre commande, merci done de renseigner correctement votre email et numero de telephone."
+
+
+  reorder_done: "Recommande effectuee"
+  home_page: "Acceuil"
+  seo_images_tags: 'SEO tags image'
+  seo_images_hint: 'tags separes par des virgules'
   aboutus: "A propos"
   services: "Services"
   products: "Produits"
   coupons: "Coupons"
-  mediagallery: "Galerie"
+  mediagallery: "Gallerie media"
   blog: "Blog"
-  events: "Evènements"
-  contact: "Contactez-nous"
+  events: "Evenements"
+  contact: "Contacts"
+  social_medias: "Social medias"
+  google_calendar: "calendrier Google"
+  design: "Design"
+  preview: "Prevue"
+  chat_with_website_owner: "Tchat avec le manager du site"
+  chat_with_admin: "Tchat avec l’administrateur"
+  chat_with_visitors: "Tchat avec les visiteurs du site"
 
-  category: "Categorie"
-  no_category: "Pas de catégorie"
-  all_categories: "Toutes les catégories"
+  category: "Categories"
+  no_category: "Pas de categories"
+  all_categories: "Toutes les categories"
   gender: "Genre"
-  none: "Indifférencié"
-  male: "Homme"
-  female: "Femme"
-  filter_category: "Filtrer par catégorie"
-  filter_gender: "Filtrer par genre"
+  none: "Les deux"
+  male: "Masculin"
+  female: "Feminin"
+  filter_category: "Filtrer par categorie de produit"
+  filter_gender: "Filter par genre"
 
-  posted_on: "Posté le"
-  contact_form: "Formulaire de contact"
-  please_send : "Veuillez nous envoyer un message et nous vous contacterons rapidement"
+  posted_on: "Poste le"
+  contact_form: "Fromulaire de contact"
+  please_send : "Merci de nous ecrire un message et nous vous contacterons rapidement"
   name: "Nom"
   email: "Email"
-  phone: "Téléphone"
+  phone: "Telehone"
   message: "Message"
   send: "Envoyer mon message"
-  send_ok: "Merci !<br/><br/>Votre message a bien été envoyé.<br/><br/>Nous reviendrons vers vous rapidement."
-  send_nok: "Sorry but something went wrong !<br/><br/>Please try again later"
-  send_too_many: "Vous avez déjà envoyé un message, notre équipe va revenir vers vous rapidement. Veuillez patienter avant d'envoyer un autre message."
-  inquiry_notif_subject: "Merci pour votre demande"
-  inquiry_notif_body: "Merci pour votre demande %{inquirer},\n\nCet email est une confirmation que nous avons reçu votre demande et que nous vous recontacterons rapidement.\n\nMerci.\n%{site_name}"
+  send_ok: "Merci!<br/><br/>Votre message a ete envoye avec success.<br/><br/>Nous vous repondrons rapidement"
+  send_nok: "Desole, il y a eu une erreur!<br/><br/>Merci de reessayer plus tard"
+  send_too_many: "Vous avez deja envoye un message, notre equipe vous repondra rapdiement. Merci d’attendre avant d’envoyer un nouveau message."
+  inquiry_notif_subject: "Merci de votre requette"
+  inquiry_notif_body: "Merci de votre requette %{inquirer},\n\nCet email confirme la reception de votre requette; nous vous repondrons dans les plus brefs delais.\n\nMerci!\n%{site_name}"
 
-  search_results_for: "Trouvé %{count} résultats pour la requête '%{what}' sur les pages suivantes :"
+  search_results_for: "Nous avons trouve %{count} resultats a votre recherche '%{what}' sur les pages :"
 
-  please_cut: "VEUILLEZ DECOUPER NETTEMENT SUR LA LIGNE POINTILLEE"
-  coupon_status: "STATUT D'IMPRESSION"
-  not_valid: "IMPRESSION NON VALIDE"
-  no_coupons: "COUPONS EPUISES"
-  coupon_id: "N° DE COUPON"
-  hidden: "MASQUE"
-  valid_coupon: "COUPON VALIDE"
-  coupon_expiry: "ECHEANCE DU COUPON"
-  click_to_print: "Cliquez pour imprimer ce coupon !"
+  please_cut: "Couper le long de la ligne en pointilles "
+  coupon_status: "Status d’impression du coupon"
+  not_valid: "Impression non valide"
+  no_coupons: "Il n’y a plus de coupons"
+  coupon_id: "Numero du coupons"
+  hidden: "cache"
+  valid_coupon: "Coupon valide"
+  coupon_expiry: "Expiration du coupon"
+  click_to_print: "Cliquer ici pour imprimer le coupon"
 
   add_image: "Ajouter une image"
-  photos_gallery: "Galerie photos"
-  videos_gallery: "Galerie vidéos"
+  photos_gallery: "Gallerie photo"
+  videos_gallery: "Gallerie video"
 
-  not_activated: "Le site < %{site_name} > n'est pas activé actuellement<br/><br/>Si vous en êtes le propriétaire, veuillez nous contacter"
+  not_activated: "Le site < %{site_name} > n’est pas active <br/><br/>si vous en etes le proprietaire, merci de nous contacter"
 
-  virtual_tour_tip: "Déplacer avec la souris pour naviguer dans le panorama."
-
-  calendar_title: "Agenda de nos services"
+  virtual_tour_tip: "Tirer avec la souris pour naviguer dans l’image."
+  browser_not_support_html5: "Votre navigateur ne supporte pas les elements canvasse de HTML5."
+  calendar_title: "Calendrier de nos services"
 
   meet_us: "Rencontrez nous"
-  powered_by: "Powered by"
+  powered_by: "Fait par"
+
+  login_as: "Connecte sous le nom"
+  logout: "Deconnecter"
+  views:
+    refinery:
+      admin:
+        menu:
+          site: 'Site'
+          sites: 'Sites'
+          editors: 'Editeurs'
+          administrators: 'Administrateurs'
+
+  slide_effect:
+    simple: 'simple'
+    horizontal: 'horizontal'
+    vertical: 'vertical'
+    mosaic: 'mosaique'
+    stampede: 'en desordre'
+    slice: 'coupe'
+    curtain: 'rideau'
 
 
+  activerecord:
+    attributes:
+      refinery/page:
+        title: Titre
+      refinery/sites/aboutus_page:
+        site_id: Site
+        category: Categorie
+        established: Etablit
+        features: Fonctionalites
+      refinery/sites/blog_post:
+        site_id: Site
+        published: Publie
+        title: Titre
+        content: Contenu
+      refinery/sites/coupon:
+        site_id: Site
+        displayed: Affiche
+        decoration: Decoration
+        title: Titre
+        description: Description
+        picture: Photo
+        expiry: Echeance
+        max_number: Nombre maximum
+        seed_number: Numero de debut
+      refinery/sites/coupons_page:
+        site_id: Site
+        displayed: Affiche
+        decoration: Decoration
+        title: Titre
+        description: Description
+        picture: Image
+        expiry: Echeance
+        max_number: Max Number
+        seed_number: Seed Number
+      refinery/sites/design:
+        site_id: Site
+        scss_model: Model Scss
+        background_color: Couleur de fond
+        font_family: groupe de police
+        font_color: Couleur de police
+      refinery/sites/event:
+        site_id: Site
+        published: Publie
+        event_title: Titre de l’evenement
+        event_summary: Sommaire de l’evenement
+        event_date: Deate de l’evenement
+        videos: Videos
+      refinery/sites/google_calendar:
+        site_id: Site
+        account: Compte
+        bg_color: Couleur de fond
+      refinery/sites/home_page:
+        description: Description
+      refinery/sites/product:
+        name: Nom
+        description: Description
+        picture: Image
+        product_category_id: Categorie de produit
+        gender: Genre
+        site_id: Site
+      refinery/sites/product_category:
+        site_id: Site
+        name: Nome
+      refinery/sites/services_page:
+        site_id: Site
+        left_col: Col de gauche
+        right_col: Col de droite
+      refinery/sites/site:
+        name: Nom
+        published: Publie
+        slug: Slug
+      refinery/user:
+        email: Email
+        login: Connexion
+        password: Mot de passe
+        password_confirmation: confirmation du mot de passe
+        remember_me: Se souvenir de moi
+        username: Nom d’utilisateur
+    errors:
+      models:
+        refinery/image:
+          blank: Vous devez choisir une image a charger
+          too_big: L’image doit etre plus legere que %{size} bytes
+          incorrect_format: 'Votre image doit etre sous un de ces format: JPG, PNG, GIF'
+        refinery/resource:
+          blank: Vous devez choisir un document a charger
+          too_big: "Votre document doit etre plus leger que %{size} bytes"
+        refinery/sites/site:
+          site_name_not_unique: Merci de changer le nom du site
+    models:
+      refinery/resource: document
+      refinery/image: image
+      refinery/page: page
+      refinery/user: utilisateur
 
+  devise:
+    failure:
+      invalid: "Votre nom d’utilisateur ou votre mot de passe est errone."
+      unauthenticated: Vous devez etre connecte pour continuer.
+    sessions:
+      signed_in: Connexion reussie.
+
+  refinery:
+    admin:
+      continue_editing:
+        save_and_continue_editing: 'Sauvegarder et continuer l’edition'
+      dashboard:
+        actions:
+          add_a_new_page: Ajouter une nouvelle page
+          update_a_page: mettre a jour une page
+          upload_a_image: mettre en ligne une image
+          upload_a_file: Mettre en ligne un document
+          change_language: Changer la langue
+          see_home_page: Voir la page d’acceuil
+        index:
+          quick_tasks: Taches rapides
+        recent_activity:
+          empty: Acune activite recente.
+          latest_activity: Recentes activites
+          latest_activity_message: '%{what} %{kind} etait %{action}'
+        recent_inquiries:
+          latest_inquiries: Requettes recentes
+      delete:
+        message: "Etes vous sur de vouloir supprimer '%{title}'?"
+      dialogs:
+        show:
+          save: Sauvegarder
+          cancel: Annuler
+      error_messages:
+        problems_in_following_fields: Des problemes sont survenus sur les champs suivants
+      form_actions:
+        save: Sauvegarder
+        cancel: Annuler
+        cancel_lose_changes: Si vous annuler vous allez perdre les changements faits
+        delete: Supprimer
+        close: Fermer
+      help: Aide
+      images:
+        actions:
+          create_new_image: Ajouter une image
+        delete: Supprimer definitivement cette image
+        edit: Modofier cette image
+        existing_image:
+          button_text: Inserer
+          resize_image: Change la taille de l’image?
+          size: Poids
+        form:
+          image: Image
+          use_current_image: Utiliser l’image actuelle
+          or: ou
+          replace_image: " repmlacer par celle ci…"
+          current_image: Image actuelle
+          maximum_image_size: La taille maximum est %{bytes}.
+        grid_view:
+          view_live_html: Visulaliser cette image en <br/><em>Ouvrir dans une nouvelle fenetre </em>
+        index:
+          view:
+            switch_to: changer pour une vue %{view_name}
+            list: liste
+            grid: grille
+        insert:
+          existing_image: Librarie
+          new_image: Mettre en ligne
+        records:
+          no_images_yet: Il n’y a pas d’image. Clicquer sur “ajouter une image” pour ajouter votre premiere image.
+      image_picker:
+        none_selected: Aucune image selectionnee, merci d’en ajouter une.
+        remove_current: Supprimer l’image actuelle
+        change: Cliquez ici pour choisir une image
+        show: Afficher
+      menu:
+        reorder_menu: Changer l’ordre du menu
+        reorder_menu_done: Finir les changmenents sur le menu
+      pages:
+        actions:
+          create_new_page: Ajouter une nouvelle page
+          reorder_pages: Changer l’ordre des pages
+          reorder_pages_done: Finir les changement sur l’ordre des pages
+        delete: Supprimer definitivement cette page
+        edit: Modifier cette page
+        expand_collapse: Agrandir ou reduire les pages dependantes
+        form:
+          preview: Prevue
+          preview_changes: Visualiser vos changements avant de les mettre en ligne
+        form_advanced_options:
+          advanced_options: Options avancees
+          custom_slug: Customiser le slug
+          custom_slug_help: Slug est le nom donne al’URL d’une page dependante. Pour changer le slug cree automatiquement, entez votre slug customise ici.
+          layout_template: Agencement du template
+          layout_template_help: Vous pouvez choisir differents agencement du template pour cette page
+          link_url: Rediriger cette page vers une autre page ou un autre site internet
+          link_url_help: si vous voulez que cette page redirige vers un autre site ou une autre page lorsque vous clique dessus dans le menu, entrez une URL. Par example http://google.com, sinon laissez ce champs vide
+          menu_title: Titre dans le menu
+          menu_title_help: Si vous voulez changer le nom dans menu, entrez le nom ici.
+          page_options: Page Options
+          save_as_draft: Sauvegarder le brouillon.
+          show_in_menu_description: Afficher cette page dans le menu du site
+          show_in_menu_help: Decocher cette case si vous voulez enlever la page de votre du menu de votre site. Ca peut etre utile si vous voulez donner une access direct a certaines personnes a cette page sans avoir de lien y menant.
+          show_in_menu_title: Afficher dans le menu
+          skip_to_first_child: atteindre directement la page parent
+          skip_to_first_child_label: Rediriger les visiteurs vers la page parent.
+          skip_to_first_child_help: Cette option permet de de lier cette page a la page dependante. Cela peut etre utilie pour regrouper des pages.
+          toggle_advanced_options: Acceder au menu des options meta tag
+          view_template: Voir le template
+          view_template_help: Vous pouvez choisir entre plusieurs templates pour cette page
+        form_advanced_options_seo:
+          meta_keywords_title: Meta mots cle
+          meta_keywords_help: Entrez 5-10 mots cle concernant cette page. Separez chaque mot cle avec une virgule.
+          meta_description_title: Meta description
+          meta_description_help: Entre 2 ou 3 phrases de description du contenu de cette page.
+          seo: Referencement
+          seo_override_title: Titre dans le navigateur
+          seo_override_title_help: Entrez un titre de 5-10 mots qui resume le contenu de cette page.
+        form_new_page_parts:
+          title: Titre
+        form_page_parts:
+          create_content_section: Ajouter un champ de contenu
+          delete_content_section: Supprimer un champ de contenu
+          reorder_content_section: Reorganiser les champs de contenu
+        new: Ajouter une nouvelle page dependante
+        page:
+          view_live_html: Visualiser cette page <br/><em>(cette action ouvrira une nouvelle fenetre)</em>
+          hidden: cache
+          draft: brouillon
+        records:
+          no_pages_yet: Il n’y a pas de page pour l’instant. Clicquez "Ajouter une nouvelle page" pour ajouter votre premiere page.
+        translator_access: Vous n’avez as la permission de modifier la page dans cette langue.
+      pages_dialogs:
+        link_to:
+          email_address:
+            body_optional: Optionel
+            not_sure: Vous ne savez pas quoi mettre dans les cases ci-dessus?
+            subject_line_optional: sujet optionel
+            step1_html: tappez ou copies/collez (depuis votre carnet d’addresse par exemple) l’addresse email a lier avec la case '<strong>Email Address</strong>' ci-dessus.
+            step2_html: Utiliser la case '<strong>Subject Line</strong>' ci-dessus si vous voulez que votre email ait un <strong> sujet pre-ecrit</strong>.
+            step3_html: Utiliser la case <strong>Email Body</strong> ci-dessus si vous voulez que votre email ait un <strong>message pre-ecrit</strong>.
+            tab_name: Addresse email
+          insert: Insserer
+          web_address:
+            location: Lieu
+            new_window: Nouvelle fenetre
+            new_window_label: Cochez cette case pour que le lien s’ouvre dans une nouvelle fenetre.
+            not_sure: Vous ne savez pas quoi mettre dans le champ ci-dessus?
+            step1: Trouvez la page web vers laquelle le lien redirigera.
+            step2: Copier l’addresse web qui est dans le champt d’addresse de votre navigateur, et collez la dans le champ ci-dessus.
+            tab_name: Website
+          your_page:
+            tab_name: Votre page
+          your_resource:
+            tab_name: Votre document
+            link_to_this_resource: Lien vers ce document
+        page_link:
+          link_to_this_page: Lien vers cette page
+      resource_picker:
+        download_current: Telecharger le document actuel
+        opens_in_new_window: Ouvrir dans une nouvelle fenetre
+        remove_current: "Supprimer le document actuel"
+        no_resource_selected: 'Aucun document selectionne. Cliquez ici pour en ajouter un.'
+        name: Ajouter un document
+        current: Document actuel
+      resources:
+        actions:
+          upload_new: Mettre en ligne un nouveau document
+        delete: Supprimer ce document
+        edit: Modifier ce document
+        existing_resource:
+          button_text: Inserer
+          link_to_file: Lien vers ce document
+        form:
+          download_current: Telecharger le document actuel
+          maximum_file_size: La taille de votre document ne doit pas depasser %{bytes}.
+          or: ou
+          replace: " remplacer avec celui ci..."
+        insert:
+          existing: Document existant
+          new: Nouveau document
+          no_files: Il n’y a pas de document.
+        resource:
+          download: Telecharger ce document (%{size})
+        records:
+          no_files_yet: Il n’y a pas encore de document. Cliquez sur "Mettre en ligne un nouveau document" pour ajouter votre premier document.
+      search:
+        button_text: Recherche
+        results_for: "Resultats de la recherche '%{query}'"
+        no_results: 'Desole, nous ne trouvons aucun resultat'
+      users:
+        actions:
+          create_new_user: Ajouter un nouvel utilisateur
+          create_new_editor: Ajouter un nouvel editeur
+          create_new_admin: Ajouter un nouvel administrateur
+        delete: Suprimer cet utilisateur
+        edit: Modifier utilisateur
+        form:
+          blank_password_keeps_current: Si vous laisser le champ mot de passé vide, le mot de passe actuel sera conserve
+          plugin_access: Access au plug-in
+          role_access: Access au roles
+          enable_all: Tout activer
+          username: Utilisateur ABC
+          email: Email
+          password: Mot de Passe
+          password_confirmation: Confirmation du mot de passe
+        update:
+          cannot_remove_user_plugin_from_current_user: Vous ne pouvez pas supprimer le plug in 'Utilisateurs'  a partir du compte avec lequel vous etes connecte.
+        user:
+          email_user: Envoyer un email a cet utilisateur
+          preview: '(%{who}) a ajoute %{created_at}'
+    created:
+      'with_article "the"': ajoute
+    crudify:
+      created: '%{what} a ete ajoute avec success.'
+      updated: '%{what} a ete mis a jour avec success.'
+      destroyed: '%{what} a ete supprime avec success.'
+    draft_page_message:
+      not_live: Cette page n’est pas en ligne pour le public.
+    footer:
+      copyright: "Tous droits reserves ¬© %{year} %{site_name}"
+    js:
+      admin:
+        confirm_changes: Les changements effectue seront perdu. Etes vous sur de vouloir continuer sans sauvegarder?
+    message:
+      close: Fermer
+      close_this_message: Fermer ce message
+    no_script:
+      enable_javascript_html: Pour le bon fonctionnement de cette page, il vous faut installer Javascript.
+      here_are: Voici les
+      instructions_enable_javascript_html: instructions pour installer Javascript dans votre navigateur
+    plugins:
+      orders:
+        title: Commandes
+      extra_pages:
+        title: Pages additionnelles
+      aboutus_pages:
+        title: Pages A propos
+      blog_posts:
+        title: Blog Posts
+      coupons:
+        title: Coupons
+      coupons_pages:
+        title: Pages Coupons
+      designs:
+        title: Designs
+      events:
+        title: Events
+      google_calendars:
+        title: Calendrier Google
+      home_pages:
+        title: Pages Acceuil
+      products:
+        title: Products
+      product_categories:
+        title: Categories Produits
+      services_pages:
+        title: Pages Services
+      refinery_core:
+        title: Refinery
+        description: Core refinery plugin
+      refinery_dashboard:
+        title: Dashboard
+        description: Donne une vue globale de votre activite sur Refinery
+      refinery_dialogs:
+        title: Dialogues
+        description: Refinery dialogs plugin
+      refinery_files:
+        title: Files
+        description: Mettre en ligne et lier vers les documents
+      refinery_images:
+        title: Images
+        description: Manager les images
+      refinery_pages:
+        title: Pages
+        description: Manager le contenu des pages
+      refinery_users:
+        title: Users
+        description: Manager les utilisateurs
+      sites:
+        title: Sites
+    roles:
+      refinery: Refinery
+      superuser: Superuser
+    sessions:
+      new:
+        hello_please_sign_in: Bonjour! Merci de vous connecter.
+        sign_in: Connexter
+        forgot_password: Mot de passé oublie?
+    sites:
+      admin:
+        aboutus_pages:
+          aboutus_page:
+            edit: Modifier cette page A Propos
+            delete: Suprimer cette page A Propos
+            view_live_html: Voir cette page A Propos <br/><em>(cette action ouvrira une nouvelle fenetre)</em>
+          actions:
+            create_new: Ajouter une nouvelle page A Propos
+            reorder: Reorganiser les pages A Propos
+            reorder_done: Reorganisation des pages A Propos effectuee
+          form:
+            site_id: 'Site Identification'
+            category: 'Categorie'
+            established: 'etablie'
+          aboutus_page_form:
+            menu_title: 'Titre du menu'
+            latitude: 'Latitude'
+            longitude: 'Longitude'
+            seo_title: 'Titre SEO'
+            seo_keywords: 'Mots cles SEO'
+            seo_description: 'Description SEO'
+          records:
+            no_items_yet: Il n’y a pas encore de page A Propos. Cliquez sur “ajouter une nouvelle page A Propos” pour ajouter votre premiere page A Propos.
+            sorry_no_results: Desole! Aucun resultat trouve.
+            title: Pages A Propos
+        blog_posts:
+          actions:
+            create_new: Ajouter un nouveau message sur le blog
+            reorder: Reorganiser les messages du blog
+            reorder_done: Reorganisation des messages du blog effectuee
+          blog_post:
+            delete: Supprimer ce message de blog
+            edit: Modifier ce message de blog
+            view_live_html: Voir ce message en ligne <br/><em>(cette action ouvrira une nouvelle fenetre)</em>
+          form:
+            title: 'Titre'
+            published: 'Publie'
+          records:
+            no_items_yet: Il n’y a pas encore de message sur le blog. Cliquz sur “Ajouter un nouveau message sur le blog“ pour ajouter votre premiere message sur le blog.
+            sorry_no_results: Desole! Aucun resultat.
+            title: Message de blog
+        coupons:
+          actions:
+            create_new: Ajouter un nouveau coupon
+            reorder: Rorganiser les coupons
+            reorder_done: Reorganisation des coupons effectuee
+          coupon:
+            delete: Supprimer ce coupon
+            edit: Modifier ce coupon
+            view_live_html: Voir ce coupon en ligne <br/><em>(cette action ouvrira une nouvelle fenetre)</em>
+          form:
+            expiry: 'Expiration'
+            max_number: 'Nombre maximum'
+            seed_number: 'Chiffre souche'
+            hide_when_finished: 'Cache une fois fini'
+            displayed: 'affiche'
+            no_coupons_left: 'Il ne reste plus de coupons'
+          records:
+            no_items_yet: Il n’y a pas encore de coupon. Cliquez sur” Ajouter un nouveau coupon” pour creer votre premier coupon.
+            sorry_no_results: Desole! Aucun resultat.
+            title: Coupons
+        coupons_pages:
+          actions:
+            create_new: Ajouter une nouvelle page Coupons
+            reorder: Reorganiser les pages coupons
+            reorder_done: Reorganisation des pages coupons effectuee
+          coupons_page:
+            delete: Supprimer cette page coupon
+            edit: Modifier cette page coupon
+            view_live_html: Voir cette page coupon en ligne live <br/><em>( cette action ouvrira une nouvelle fenetre)</em>
+          records:
+            no_items_yet: Il n’y a pas encore de page Coupon. Cliquez sur "Ajouter une nouvelle page Coupons" pour ajouter votre premiere page Coupon.
+            sorry_no_results: Desole! Aucun resultat.
+            title: Pages Coupons
+        designs:
+          actions:
+            create_new: Ajouter un nouveau design
+            reorder: Reorganiser les Designs
+            reorder_done: Reorganisation des designs effectuee
+          design:
+            delete: Supprimer ce design
+            edit: Modifier ce design
+            view_live_html: Voir ce design en ligne <br/><em>( cette action ouvrira une nouvelle fenetre)</em>
+          design_form:
+            font_family: 'Type de police'
+            menu_style: 'Style de Menu'
+            p_style: 'Style p'
+            h1_style: 'Style h1'
+            h2_style: 'Style h2'
+            h3_style: 'Style h3'
+            table_caption_style: 'Style du contenu du tbelau'
+            table_row_style: 'Style des lignes du tableau'
+            menu_color: 'Couleur du Menu'
+            foreground_color: 'Coleur du premier plan'
+            background_color: 'Couleur de l’arriere plan'
+            background_image: 'Image d’arriere plan'
+            background_repeat: 'Repetter l’arriere plan'
+            no_repeat: 'Pas de repetition'
+            horizontal: 'Horizontal'
+            vertical: 'Vertical'
+            both: 'Les deux'
+          form:
+            site_id: 'Identification du site'
+            scss_model: 'Model SCSS'
+            background_color: 'couleur d’arriere plan'
+            font_family: 'famille de police'
+            font_color: 'Couleur de police'
+          records:
+            no_items_yet: Il n’y a pas encore de design. Cliquez sur “Ajouter un nouveau design” pour ajouter votre premier design.
+            sorry_no_results: Desole! Aucun resultat.
+            title: Designs
+        events:
+          actions:
+            create_new: Ajouter nouveau contenu
+            reorder: Reorganiser les evenements
+            reorder_done: Reorganisation des evenements effectuee
+          event:
+            delete: Supprimer cette evenement
+            edit: Modifier cet evenement
+            view_live_html: Voir cette evenement en ligner <br/><em>(cette action ouvrira une nouvelle fenetre)</em>
+          form:
+            event_title: 'Titre de l’evenement'
+            event_date: 'Date de l’evenement'
+            published: 'Publiee'
+          records:
+            no_items_yet: Il n’y a pas encore d’evenement. Cliquez sur “Ajouter un evenement” pour ajouter votre premier evenement.
+            sorry_no_results: Desole! Aucun resultat.
+            title: Evenements
+        google_calendars:
+          actions:
+            create_new: Ajouter un nouveau calendrier Google
+            reorder: Reorganiser les calendriers Google
+            reorder_done: Reorganisation des calendriers Google effectuee
+          form:
+            account: Compte
+          google_calendar:
+            delete: Supprimer ce calendrier Google
+            edit: Modifier ce calendrier Google
+            view_live_html: Voir ce calendrier Google en ligne <br/><em>( cette action ouvrira une nouvelle fenetre)</em>
+          records:
+            no_items_yet: Il n’y a pas encore de calendrier Google, cliquez sur “ajouter un nouveau calendrier Google” pour ajouter votre premier calendrier.
+            sorry_no_results: Desole! Aucun resultat.
+            title: Calendrier Google
+        home_pages:
+          actions:
+            create_new: Ajouter une nouvelle page d’acceuil
+            reorder: Reorganiser les pages d’acceuil
+            reorder_done: Reorganisation des pages d’acceuil effectuee
+          form:
+            site_id: 'Identification du site'
+            logo: 'Logo'
+          home_page:
+            delete: Suprimer cette page d’acceuil
+            edit: Modifie cette page d’acceuil
+            view_live_html: Voir cette page d’acceuil en ligne <br/><em>(cette action ouvrira une nouvelle fenetre)</em>
+          home_page_form:
+            description: 'Description'
+            splash_image: 'Splash Image'
+            seo_title: 'Titre SEO'
+            seo_keywords: 'Mots cle SEO'
+            seo_description: 'Description SEO'
+          records:
+            no_items_yet: Il n’y a pas encore de page d’acceuil. Cliquez sur “Ajouter une nouvelle page d’acceuil” pour ajouter votre premiere page d’acceuil.
+            sorry_no_results: Desole! Aucun resultat.
+            title: Pages d’acceuil
+        product_categories:
+          actions:
+            create_new: Ajouter une nouvelle categorie de produit
+            reorder: Reorganiser les categories de produits
+            reorder_done: Reorganisation des categories de produits effectuee
+          form:
+            name: 'Nom'
+          product_category:
+            delete: Supprimer cette categorie de produit
+            edit: Modifier cette categorie de produit
+            view_live_html: Voir cette categorie de poduit en ligne <br/><em>(cette action ouvrira une nouvelle fenetre)</em>
+          records:
+            no_items_yet: There are no Product Categories yet. Click "Add New Product Category" to add your first product category.
+            sorry_no_results: Desole! Aucun resultat.
+            title: Product Categories
+        products:
+          actions:
+            create_new: Add New Product
+            reorder: Reorder Products
+            reorder_done: Done Reordering Products
+          form:
+            name: 'Name'
+            product_category: 'Product Category'
+            picture: 'Picture'
+          product:
+            delete: Remove this product forever
+            edit: Edit this product
+            view_live_html: View this product live <br/><em>(cette action ouvrira une nouvelle fenetre)</em>
+          records:
+            no_items_yet: Il n’y a pas encore de produits. Cliquez sur “Ajouter un nouveau produit” pour ajouter votre premier produit.
+            sorry_no_results: Desole! Aucun resultat.
+            title: Produits
+        services_pages:
+          actions:
+            create_new: Ajouter une nouvelle Page de Services
+            reorder: Reorganiser les pages de Services
+            reorder_done: Reorganisation des pages Services effectuee
+          form:
+            site_id: 'Identification du site'
+          services_page_form:
+            menu_title: 'Titre du menu'
+            seo_title: 'Titre SEO'
+            seo_keywords: 'Mots cle SEO'
+            seo_description: 'Descritpion SEO'
+          records:
+            no_items_yet: Il n’y a pas encore de page Service. Cliques sur “Ajouter une nouvelle Page de Services” pour ajouter votre premier page de Service.
+            sorry_no_results: Desole! Aucun resultat.
+            title: Pages Services
+          services_page:
+            delete: Supprimer cette page Services
+            edit: Modifier cette page Services
+            view_live_html: Voir cette page Service en ligne <br/><em>(cette action ouvrira une nouvelle fenetre)</em>
+        sites:
+          actions:
+            create_new: Ajouter un nouveau site
+            reorder: Reorganiser les sites
+            reorder_done: Reorganisation des sites effectuee
+          form:
+            name: 'Nom'
+            website_url: 'URL du site'
+            language_flags: 'Drapeaux de langue'
+            flags_position: 'Position des drapeaux'
+            flags_border: 'Contour des drapeaux'
+            contact_email: 'Email de contact'
+            options: 'Options'
+            logo: 'Logo'
+            favicon: 'Favicon'
+            carousel_images: 'Carrousel d’images'
+            carousel_pages: 'Page Carrousel'
+            carousel_pause: 'Pause Carrousel'
+            carousel_transition: 'Transition Carrousel'
+            music: 'Musique'
+
+            webnam_logo: 'Logo Webnam'
+            analytics_code: 'Code Analytics'
+            home_images: 'Images d’accueil'
+            slide_effect: 'Effet glisse'
+            slide_delay: 'retardement de l’effet glisse'
+            slide_transition: 'Transition glissee'
+            virtual_tour: 'Tour virtuel'
+            products_per_page: 'Produits par page'
+            products_title: 'Titre Produit'
+            seo_product_title: 'Style de produit SEO'
+            seo_product_keywords: 'Mots cels SEO'
+            seo_product_description: 'Description SEO des produits'
+            seo_gallery_title: 'Titre de la gallerie'
+            site_images: 'Image du site'
+            facebook_page: 'Page Facebook '
+            zingme_page: 'Page ZingMe'
+            govn_page: 'Page Govn'
+            twitter_page: 'Page Twitter'
+            linkedin_page: 'Page LinkedIn'
+            youtube_page: 'Page Youtube'
+            calendar_mode: 'Mode calendrier'
+            calendar_height: 'Hauteur du Calendrier'
+            email_of_business: 'Email de l’entreprise'
+            is_published: 'publie'
+            is_activated: 'Active'
+            has_coupons: 'A des coupons'
+            has_a_blog: 'A un blog'
+            has_events: 'A des evenements'
+            has_services: 'A des services'
+            has_products: 'A des produits'
+            use_categories: 'Utilise des categories'
+            uses_gender: 'Utilise les genres'
+            has_gallery: 'A une gallerie'
+          records:
+            no_items_yet: Il n’y a pas encore de sites. Cliquez sur “ajouter un nouveau  site” pour ajouter votre premier site.
+            sorry_no_results: Desole! Aucun resultat.
+            title: Sites
+          site:
+            delete: Supprimer ce site
+            edit: Modifier ce site
+            view_live_html: Voir ce site en ligne <br/><em>(cette action ouvrira une nouvelle fenetre)</em>
+      aboutus_pages:
+        show:
+          other: Autre pages A Propos
+      blog_posts:
+        show:
+          other: Autres messages de blog
+          site: Site
+          published: Publie
+          title: Titre
+          content: Contenu
+      coupons:
+        show:
+          other: Autres coupons
+          site: Site
+          displayed: Affiche
+          decoration: Decoration
+          title: Titre
+          description: Description
+          expiry: Expiration
+          max_number: Nombre maximum
+          seed_number: Nombre souche
+      coupons_pages:
+        show:
+          other: Autres pages de coupons
+      designs:
+        show:
+          other: Autres designs
+          site: Site
+          scss_model: Model Scss
+          background_color: Couleur de fond
+          font_family: Famille de police
+          font_color: Couleur de police
+      events:
+        show:
+          other: Autres evenements
+          site: Site
+          published: Publie
+          event_title: Titre de l’evenement
+          event_summary: Sommaire de l’evenement
+          event_date: Date de l’evenement
+      google_calendars:
+        show:
+          other: Autres calendriers Google
+          site: Site
+          account: Compte
+          bg_color: Coleur de fond
+      home_pages:
+        show:
+          other: Autres pages d’acceuil
+      product_categories:
+        show:
+          other: Autre Categories de Produit
+          site: Site
+          name: Nom
+      products:
+        show:
+          other: Autres Produits
+          name: Name
+          description: Description
+          picture: Image
+          product_category: Categorie de produit
+          site: Site
+      services_pages:
+        show:
+          other: Autres pages de Services
+      sites:
+        show:
+          other: Autres Sites
+    site_bar:
+      log_out: Deconnexion
+      switch_to_your_website: Basculer vers votre site
+      switch_to_your_website_editor: Basculer vers l’edieur de votre site
+    updated:
+      'with_article "the"': mis a jour
+    users:
+      create:
+        welcome: 'Bienvenue dans Refinery, %{who}'
+      forgot:
+        blank_email: Vous n’avez pas entre votre adresse email.
+        email_address: Adresse Email
+        email_not_associated_with_account_html: "Desole, '%{email}' n’est associe a aucun compte.<br />Etes vous sur d’avoir entre une adresse email valide?"
+        email_reset_sent: Un email vous a ete envoye avec un lien pour changer votre mot de passe.
+        enter_email_address: Merci d’entrer votre adresse email pour votre compte.
+        password_encryption: Vous devez changer votre password  car la method de cryptage de mot de passé du systeme a ete amelioree.
+        reset_password: Reinitialiser le mot de passe
+      new:
+        fill_form: Entrez les details ci-dessous pour demarrer.
+        sign_up: Creer un compte
+      reset:
+        code_invalid: "Desole, mais ce code est expire ou non-valide. Si vous avez des problemes, essayez de copier/coller l’URL de votre email dans votre navigateur ou recommencez le process de reinitialisation de votre mot de passe."
+        pick_new_password_for: "Choisissez un nouveau mot de passé pour %{email}"
+        reset_password: Reinitialiser le mot de passe
+        successful: "Mot de passé reinitialize avec success pour '%{email}'"
+    user_mailer:
+      reset_notification:
+        remain_same_if_no_action: Si il n’y a aucune action, votre mot de passé restera le meme
+        reset_request_received_for: "Requette de reinitialisation du mot de passé pour %{username}"
+        subject: Lien de reinitialisation de votre mot de passe
+        visit_this_url: Aller vers cette URL pour choisir votre nouveau mot de passe
+    welcome:
+      there_are_no_users: "Il n’y a pas encore d’utilisateur. Nous allons donc commencer par vous enregistrer."
+
+  time:
+    formats:
+      short: "%A, %d %B %Y"
+
+  will_paginate:
+    previous_label: "&laquo;"
+    next_label: "&raquo;"
